@@ -18,15 +18,23 @@ Get all the updates Daily</b>
 
 START_BUTTONS = InlineKeyboardMarkup(
   [[
+    InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
+  ],[
     InlineKeyboardButton('🆘 Help', callback_data='help'),
-    InlineKeyboardButton('About Dev ❤️', callback_data='close')
+    InlineKeyboardButton('About Dev ❤️', callback_data='abtadmin')
   ],[
     InlineKeyboardButton('Close', callback_data='close')
   ]]
   )
 
-
-
+LBRYOPEN_BUTTONS = InlineKeyboardMarkup(
+  [[
+    InlineKeyboardButton('⚡ Current Affairs', callback_data='libraryopen')
+  ],[
+    InlineKeyboardButton('Home', callback_data='home'),
+  ]]
+  )
+  
 ################Danger
 HELP = """
 **Send Me Direct Download Link Like Mirror Or From @LinkXGenBot.
@@ -71,13 +79,7 @@ async def help(bot, message):
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
-    if update.data == "home":
-        await update.message.edit_text(
-            text=START.format(update.from_user.mention),
-            disable_web_page_preview=True,
-            reply_markup=START_BUTTONS
-        )
-    elif update.data == "help":
+    if update.data == "help":
         await update.message.edit_text(
             text=HELP,
             disable_web_page_preview=True,
