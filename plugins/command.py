@@ -20,7 +20,7 @@ async def start(bot, message):
   await message.reply_text(
     text=helper.STARTText.format(message.from_user.mention),
     disable_web_page_preview=True,
-    reply_markup=START_BUTTONS
+    reply_markup=helper.START_BUTTONS
     )
 
 @Client.on_message(filters.regex('http') & filters.private)
