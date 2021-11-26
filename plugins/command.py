@@ -23,6 +23,15 @@ async def start(bot, message):
     reply_markup=helper.START_BUTTONS
     )
 
+@Client.on_message(filters.command('help') & filters.private)
+async def help(bot, message):
+  await message.reply_chat_action("typing")
+  await message.reply_text(
+    text=helper.HELPTEXT,
+    disable_web_page_preview=True,
+    reply_markup=helper.HELP_BUTTONS
+    )
+
 
 
 
