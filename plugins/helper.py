@@ -63,13 +63,13 @@ LBRYOPEN_BUTTONS = InlineKeyboardMarkup([
   ])
   
 HELP_BUTTONS = InlineKeyboardMarkup([
-  [OpenLibeary]
+  [OpenLibeary],
   [HomeToStart,AboutDev],
   [UpdateOfBot,SupportPfBot],
   ])
 
 DVLGBTN = InlineKeyboardMarkup([
-  [OpenLibeary]
+  [OpenLibeary],
   [HelpBtn,HomeToStart],
   [UpdateOfBot,SupportPfBot],
   ])
