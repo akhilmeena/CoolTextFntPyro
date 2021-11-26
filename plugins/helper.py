@@ -23,7 +23,7 @@ START_BUTTONS = InlineKeyboardMarkup(
     InlineKeyboardButton('🆘 Help', callback_data='help'),
     InlineKeyboardButton('About Dev ❤️', callback_data='abtadmin')
   ],[
-    InlineKeyboardButton('Close', callback_data='close')
+    InlineKeyboardButton('❌ Close', callback_data='close')
   ]]
   )
 
@@ -31,27 +31,16 @@ LBRYOPEN_BUTTONS = InlineKeyboardMarkup(
   [[
     InlineKeyboardButton('⚡ Current Affairs', callback_data='libraryopen')
   ],[
-    InlineKeyboardButton('Home', callback_data='home'),
+    InlineKeyboardButton('🏘️ Home', callback_data='home'),
   ]]
   )
   
-################Danger
-HELP = """
-**Send Me Direct Download Link Like Mirror Or From @LinkXGenBot.
+HELPTEXT = """⚠️ This is Help Pannel:
 
-Send As This Format**
-
-`link | Title`
-
-**Or**
-
-`Video link | Title | Thumbnail link`
-
-**NOTE:
-➢ Do Not Spam, Send Link One By One
-➢ To Know Status Just Go To cofilink.com/home**
+This Is A Library Bot. If u Need any Type study Material Just send us in Complaint & Suggestions Pannel.
 """
 
+################Danger
 # NON_OWNER = "You Can't Use Me Ask My [Owner](tg://user?id={})"
 
 
