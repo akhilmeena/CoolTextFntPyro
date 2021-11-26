@@ -23,6 +23,19 @@ async def start(bot, message):
     reply_markup=helper.START_BUTTONS
     )
 
+
+
+
+
+
+
+
+
+
+
+
+
+################Danger
 @Client.on_message(filters.regex('http') & filters.private)
 async def pdisk(bot, message):
         text = message.text
