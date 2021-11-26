@@ -16,6 +16,18 @@ This Is Library Bot😇
 Get all the updates Daily</b>
 """
 
+START_BUTTONS = InlineKeyboardMarkup(
+  [[
+    InlineKeyboardButton('🆘 Help', callback_data='help'),
+    InlineKeyboardButton('About Dev ❤️', callback_data='close')
+  ],[
+    InlineKeyboardButton('Close', callback_data='close')
+  ]]
+  )
+
+
+
+################Danger
 HELP = """
 **Send Me Direct Download Link Like Mirror Or From @LinkXGenBot.
 
@@ -35,12 +47,7 @@ Send As This Format**
 # NON_OWNER = "You Can't Use Me Ask My [Owner](tg://user?id={})"
 
 
-START_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('Help', callback_data='help'),
-        InlineKeyboardButton('Close', callback_data='close')
-        ]]
-    )
+
 HELP_BUTTONS = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('📮 Update 📮', url='https://telegram.dog/HeimanSupports/'),
