@@ -31,5 +31,11 @@ async def cb_data(bot, update):
     disable_web_page_preview=True,
     reply_markup=helper.HELP_BUTTONS
     )
+  if update.data == "abtdvlngbot":
+    await update.message.edit_text(
+    text=helper.BotAboutText.format(update.message.from_user.mention),
+    disable_web_page_preview=True,
+    reply_markup=helper.DVLGBTN
+    )
   if update.data == "close":
     await update.message.delete()
