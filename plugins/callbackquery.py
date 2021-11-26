@@ -19,9 +19,17 @@ async def cb_data(bot, update):
       disable_web_page_preview=True,
       reply_markup=helper.LBRYOPEN_BUTTONS
       )
-  if update.data == "home":
+  if update.data == "home2start":
     await update.message.edit_text(
     text=helper.STARTText.format(update.from_user.mention),
     disable_web_page_preview=True,
     reply_markup=helper.START_BUTTONS
     )
+  if update.data == "help":
+    await update.message.edit_text(
+    text=helper.HELPTEXT,
+    disable_web_page_preview=True,
+    reply_markup=helper.HELP_BUTTONS
+    )
+  if update.data == "close":
+    await update.message.delete()
