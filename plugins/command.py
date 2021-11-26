@@ -32,7 +32,7 @@ async def help(bot, message):
     reply_markup=helper.HELP_BUTTONS
     )
     
-@Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Cofig.OWNER_ID) & ~filters.edited)
+@Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Config.OWNER_ID) & ~filters.edited)
 async def settings(bot,message):
   await message.reply_text(
     "<b>👤 Admin Pannel</b>",
