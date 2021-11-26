@@ -5,8 +5,7 @@ from config import Config
 import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from plugins import*
-import helper
+from plugins import helper
 
 
 logging.basicConfig(level=logging.DEBUG,
