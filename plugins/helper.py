@@ -29,7 +29,7 @@ HelpBtn = InlineKeyboardButton('🆘 Help', callback_data='help')
 AboutDev = InlineKeyboardButton('About Dev ❤️', callback_data='abtadmin')
 
 CurrentAfrsBtn = InlineKeyboardButton('⚡ Current Affairs', callback_data='libraryopen')
-HomeToStart = InlineKeyboardButton('🏘️ Home', callback_data='home2start'),
+HomeToStart = InlineKeyboardButton('🏘️ Home', callback_data='home2start')
 
 UpdateOfBot = InlineKeyboardButton('📮 Update 📮', url='https://telegram.dog/HeimanSupports/')
 SupportPfBot = InlineKeyboardButton('🛠️ Support 🛠️', url='https://telegram.dog/HeimanSupport/')
