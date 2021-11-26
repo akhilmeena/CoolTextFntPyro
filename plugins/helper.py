@@ -16,11 +16,13 @@ This Is Library Bot😇
 Get all the updates Daily</b>
 """
 
+OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
+HelpBtn = InlineKeyboardButton('🆘 Help', callback_data='help')
 START_BUTTONS = InlineKeyboardMarkup(
   [[
-    InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
+    OpenLibeary
   ],[
-    InlineKeyboardButton('🆘 Help', callback_data='help'),
+    HelpBtn,
     InlineKeyboardButton('About Dev ❤️', callback_data='abtadmin')
   ],[
     InlineKeyboardButton('❌ Close', callback_data='close')
