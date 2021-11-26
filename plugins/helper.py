@@ -21,8 +21,8 @@ HELPTEXT = """⚠️ This is Help Pannel:
 
 This Is A Library Bot. If u Need any Type study Material Just send us in Complaint & Suggestions Pannel.
 """
+#AdminPannel = """👤 Admin Pannel:"""
 
-#🤖 Name :''' + "<a href='t.me/{}'>{}</a>" + '''
 BotAboutText = """<b>About Me 😎
 <b>----------------------------------------------------</b>
 🤖 Name : {}
@@ -45,7 +45,9 @@ HomeToStart = InlineKeyboardButton('🔙', callback_data='home2start')
 
 UpdateOfBot = InlineKeyboardButton('📮 Update 📮', url='https://telegram.dog/HeimanSupports/')
 SupportPfBot = InlineKeyboardButton('🛠️ Support 🛠️', url='https://telegram.dog/HeimanSupport/')
-
+MainTainanceMode = InlineKeyboardButton('Maintainance ', callback_data='close')
+MainTainanceModeY = InlineKeyboardButton('✅ Maintainance ON', callback_data='close')
+MainTainanceModeN = InlineKeyboardButton('◻️ Maintainance OFF', callback_data='close')
 ClosePannel = InlineKeyboardButton('❌ Close', callback_data='close')
 
 ############### BUTTONS Add #####################
@@ -72,4 +74,9 @@ DVLGBTN = InlineKeyboardMarkup([
   [OpenLibeary],
   [HelpBtn,HomeToStart],
   [UpdateOfBot,SupportPfBot],
+  ])
+
+AdminKeyboard = InlineKeyboardMarkup([
+  [MainTainanceMode],
+  [ClosePannel]
   ])
