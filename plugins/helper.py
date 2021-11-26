@@ -1,28 +1,19 @@
-# (c) HeimanPictures
 import logging
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
-
 import os
-
 from config import Config
-
 import pyrogram
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
-START = """
-Hi {}!
-        
-This Is PDisk Bot For Free 😇
-Read /help Carefully & Do Follow All Given Instruction...
-
-For More Bots Join @HeimanSupports
+STARTText = """<b>Hi {}!
+This Is Library Bot😇
+Get all the updates Daily</b>
 """
 
 HELP = """
@@ -59,17 +50,6 @@ HELP_BUTTONS = InlineKeyboardMarkup(
         InlineKeyboardButton('Close', callback_data='close')
         ]]
     )
-
-
-
-@Client.on_message(filters.command('start') & filters.private)
-async def start(bot, message):
-        await message.reply_chat_action("typing")
-        await message.reply_text(
-            text=START.format(message.from_user.mention),
-            disable_web_page_preview=True,
-            reply_markup=START_BUTTONS
-        )
 
 
 @Client.on_message(filters.command('help') & filters.private)
