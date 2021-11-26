@@ -21,7 +21,7 @@ async def cb_data(bot, update):
       )
   if update.data == "home":
     await update.message.edit_text(
-    text=helper.STARTText.format(message.from_user.mention),
+    text=helper.STARTText.format(update.message.from_user.mention),
     disable_web_page_preview=True,
     reply_markup=helper.START_BUTTONS
     )
