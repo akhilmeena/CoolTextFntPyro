@@ -37,11 +37,11 @@ async def start(bot, message):
   #print(ak)
   #ak = list(chunk(Btn, 3))
   #[(0, 1, 2), (3, 4, 5), (6, 7, 8), (9, 10, 11), (12, 13)]
-  LBRYOPEN_BUTTONS = InlineKeyboardMarkup(ak)
   #await message.reply_text(text=ak)
   #await message.reply_text(text=LBRYOPEN_BUTTONS)
-  await message.reply_text(text="akh",reply_markup=LBRYOPEN_BUTTONS)
-  
+  START_BUTTONS = InlineKeyboardMarkup(ak)
+  await message.reply_text(text=START_BUTTONS,reply_markup=START_BUTTONS)
+   
 
       
     
