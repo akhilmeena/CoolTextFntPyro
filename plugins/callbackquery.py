@@ -34,7 +34,7 @@ async def cb_data(bot, update):
   if update.data == "chngemaintaincemode":
     if str(Config.MaintainaceYN) == "No":
       await update.message.edit_text(text="Change Maintainace Mode",reply_markup=helper.MaintainanceKeyN)
-    elss:
+    else:
       await update.message.edit_text(text="Change Maintainace Mode",reply_markup=helper.MaintainanceKeyY)
   if update.data == "close":
     await update.message.delete()
