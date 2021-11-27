@@ -17,7 +17,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
   await message.reply_chat_action("typing")
-  if str(Config.MaintainaceYN) == "No":
+  if str(Config.MaintainaceYN[0]) == "No":
     await message.reply_text(text=helper.STARTText.format(message.from_user.mention),reply_markup=helper.START_BUTTONS)
   else:
     await message.reply_text(text=helper.MaintainanceProgress)
