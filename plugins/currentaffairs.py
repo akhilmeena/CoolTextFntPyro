@@ -60,8 +60,8 @@ def makeBtnFromDict(Source_List):
     x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
     Btn.append(x)
   ak = [Btn[i:i+3] for i in range(0, len(Btn)-1, 3)]
-  x = InlineKeyboardButton("🔙",callback_data="crnafrsdaily")
-  am.append(x)
+  #x = InlineKeyboardButton("🔙",callback_data="crnafrsdaily")
+  #am.append(x)
   newbtns = InlineKeyboardMarkup(ak)
   return newbtns
 
@@ -96,7 +96,7 @@ async def start(bot, message):
     Btn.append(x)
   ak = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
   START_BUTTONS = InlineKeyboardMarkup(ak)
-  await message.reply_text(text=START_BUTTONS,reply_markup=START_BUTTONS)
+  await message.reply_text(text=ak,reply_markup=START_BUTTONS)
    
 
   
