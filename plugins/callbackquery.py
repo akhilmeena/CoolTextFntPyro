@@ -14,6 +14,10 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if update.data == "vsniascrnt":
+    getallmonthfromiasvsncurrentafr()
+    makeBtnFromDict(Source_List)
+    await update.message.edit_text(text="<b>Choose Your Month</b>",reply_markup=newbtns)
   if update.data == "crnafrsdaily":
     await update.message.edit_text(text="<b>Choose Your Source</b>",reply_markup=currentaffairs.CRNTAFRSOURCEBTN)
   if update.data == "libraryopen":
