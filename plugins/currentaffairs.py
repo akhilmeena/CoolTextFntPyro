@@ -4,6 +4,7 @@ from pyrogram.types import InlineKeyboardButton ,InlineKeyboardMarkup
 import string
 from bs4 import BeautifulSoup
 import requests
+import datetime
 from itertools import islice
 
 
@@ -53,6 +54,18 @@ def makeBtnFromDict(Source_List):
   ak = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
   newbtns = InlineKeyboardMarkup(ak)
   return newbtns
+
+def getMonthnamefromnu(month_num):
+  datetime_object = datetime.datetime.strptime(str(month_num), "%m")
+  full_month_name = datetime_object.strftime("%B")
+  return full_month_name
+  
+
+
+
+
+
+
 
 
 
