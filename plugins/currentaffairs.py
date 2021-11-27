@@ -16,7 +16,7 @@ CRNTAFRSOURCEBTN = InlineKeyboardMarkup([
   [BackToLibrary]
   ])
 
-def getallmonthfromiasvsncurrentafr():
+def getallmonthfromiasvsncurrentafr(bot,update):
   url = "http://www.visionias.in/resources/daily_current_affairs.php?type=1"
   response = requests.get(url)
   soup = BeautifulSoup(response.text, 'html.parser')
@@ -39,6 +39,17 @@ def getallmonthfromiasvsncurrentafr():
     addList.append(str(YearFull))
     addDict["CallBtnData"] = f"{addList}"
   #return Source_List
+  Btn = []
+  for d in Source_List:
+    print(d)
+    CallbackText = d['CallBtnTedt']
+    CallbackData = d['CallBtnData']
+    x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
+    Btn.append(x)
+  ak = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
+  newbtns = InlineKeyboardMarkup(ak)
+  await update.message.edit_text(text="<b>Choose Your Month</b>",reply_markup=newbtns)
+
   
 
 
