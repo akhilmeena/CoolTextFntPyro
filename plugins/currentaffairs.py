@@ -39,7 +39,6 @@ def getallmonthfromiasvsncurrentafr(bot,update):
     addList.append(str(YearFull))
     addDict["CallBtnData"] = f"{addList}"
     Source_List.append(addDict)
-  print(Source_List)
   return Source_List
   
   
