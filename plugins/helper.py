@@ -27,8 +27,7 @@ STARTText = """<b>Hi {}!
 
 This Is Library Bot😇.........
 Get all the updates Daily
-
-</b>Note: <i>All the Content uploaded here is taken out from other sources.if anybody have issue with that,just write ur msg...we will remove that.
+Note:</b> <i>All the Content uploaded here is taken out from other sources.if anybody have issue with that,just write ur msg...we will remove that.
 Thanks ❤️</i>
 """
 
