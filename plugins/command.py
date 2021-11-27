@@ -25,7 +25,8 @@ async def start(bot, message):
 #@Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Config.OWNER_ID) & ~filters.edited)
 @Client.on_message(filters.private & filters.command(["admin"]))
 async def settings(bot,message):
-  if str(message.chat.id) == Config.OWNER_ID[0]:
+  #if str(message.chat.id) == Config.OWNER_ID[0]:
+  if int(message.chat.id) in Config.OWNER_ID:
     await message.reply_text("<b>👤 Admin Pannel</b>",reply_markup=helper.AdminKeyboard)
   else:
     Chat_Id = message.chat.id
