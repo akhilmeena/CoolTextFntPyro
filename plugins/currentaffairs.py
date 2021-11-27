@@ -31,7 +31,7 @@ async def startu(bot, message):
 @Client.on_message(filters.command('btn') & filters.private)
 async def start(bot, message):
   for i in range(10):
-    x = InlineKeyboardButton(i,callback_data=i)
+    x = InlineKeyboardButton(str(i),callback_data=str(i))
     Btn.append(x)
   ak = list(list(t) for t in zip(*[iter(Btn)]*3))
   #print(ak)
