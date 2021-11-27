@@ -16,7 +16,7 @@ CRNTAFRSOURCEBTN = InlineKeyboardMarkup([
   [BackToLibrary]
   ])
 
-def getallmonthfromiasvsncurrentafr(bot,update):
+async def getallmonthfromiasvsncurrentafr(bot,update):
   url = "http://www.visionias.in/resources/daily_current_affairs.php?type=1"
   response = requests.get(url)
   soup = BeautifulSoup(response.text, 'html.parser')
