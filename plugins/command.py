@@ -31,7 +31,7 @@ async def settings(bot,message):
     Chat_Id = message.chat.id
     message.delete_messages(Chat_Id, message.message_id)
     await message.reply_text("<b>💔 Only Admin Command!!</b>")
-    message.message.delete_messages()Chat_Id, message.message_id)
+    message.message.delete_messages(Chat_Id, message.message_id)
 
  
 
