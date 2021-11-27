@@ -16,6 +16,7 @@ finalbtn = []
 
 @Client.on_message(filters.command('btnu') & filters.private)
 async def start(bot, message):
+  print("1")
   OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
   HelpBtn = InlineKeyboardButton('🆘 Help', callback_data='help')
   AboutDev = InlineKeyboardButton('About Dev ❤️', callback_data='abtdvlngbot')
