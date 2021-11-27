@@ -26,7 +26,6 @@ def getallmonthfromiasvsncurrentafr(bot,update):
   urls = urls[:-1]
   Source_List = []
   for Url in urls:
-    print(Url)
     addDict = {}
     addList = ["getcurrentofmonth"]
     monthstring = Url.split("&")[1]
@@ -39,6 +38,7 @@ def getallmonthfromiasvsncurrentafr(bot,update):
     addList.append(str(month_num))
     addList.append(str(YearFull))
     addDict["CallBtnData"] = f"{addList}"
+  print(Source_List)
   return Source_List
   
   
