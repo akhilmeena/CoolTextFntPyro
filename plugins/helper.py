@@ -10,6 +10,17 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+
+############### Additional Functional #####################
+
+def create_markup(_list: list=[[]]):
+  result = []
+  for row in _list:
+    result.append([])
+    for item in row:
+      btn = cb(item)
+      result[-1].append(btn)
+  return InlineKeyboardMarkup(result)
 ############### General Text #####################
 
 STARTText = """<b>Hi {}!
@@ -21,7 +32,7 @@ HELPTEXT = """⚠️ This is Help Pannel:
 
 This Is A Library Bot. If u Need any Type study Material Just send us in Complaint & Suggestions Pannel.
 """
-#AdminPannel = """👤 Admin Pannel:"""
+
 
 BotAboutText = """<b>About Me 😎
 <b>----------------------------------------------------</b>
@@ -34,6 +45,15 @@ BotAboutText = """<b>About Me 😎
 <b>----------------------------------------------------</b>
 <b>Made With ❤️ In India 🇮🇳 </b>"""
 
+#AdminPannel = """👤 Admin Pannel:"""
+
+MaintainanceProgress = """<b>🛠 Maintenance in Progress....
+
+▪Bot's ADMINISTRATION Updating Some Modules In The Bot.
+▪Due to this reason content will not be available till further notice.
+▪All functionality will be back after completion.
+
+🙏 Try Few Time Later…</b>"""
 ############### BUTTONS Text #####################
 
 OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
@@ -42,13 +62,14 @@ AboutDev = InlineKeyboardButton('About Dev ❤️', callback_data='abtdvlngbot')
 
 CurrentAfrsBtn = InlineKeyboardButton('⚡ Current Affairs', callback_data='libraryopen')
 HomeToStart = InlineKeyboardButton('🔙', callback_data='home2start')
+BacktoAdminpnl = InlineKeyboardButton('🔙', callback_data='backtoAdminpnl')
 
 UpdateOfBot = InlineKeyboardButton('📮 Update 📮', url='https://telegram.dog/HeimanSupports/')
 SupportPfBot = InlineKeyboardButton('🛠️ Support 🛠️', url='https://telegram.dog/HeimanSupport/')
-MainTainanceMode = InlineKeyboardButton('Maintainance ', callback_data='close')
-MainTainanceModeY = InlineKeyboardButton('✅ Maintainance ON', callback_data='close')
-MainTainanceModeN = InlineKeyboardButton('◻️ Maintainance OFF', callback_data='close')
+MainTainanceMode = InlineKeyboardButton('Maintainance ', callback_data='chngemaintaincemode')
 ClosePannel = InlineKeyboardButton('❌ Close', callback_data='close')
+MainTainanceModeY = InlineKeyboardButton('✅ Maintainance ON', callback_data='maintainanceon')
+MainTainanceModeN = InlineKeyboardButton('◻️ Maintainance OFF', callback_data='maintainanceoff')
 
 ############### BUTTONS Add #####################
 
@@ -80,3 +101,17 @@ AdminKeyboard = InlineKeyboardMarkup([
   [MainTainanceMode],
   [ClosePannel]
   ])
+  
+#Conditional BUTTONS
+
+MaintainanceKeyY = InlineKeyboardMarkup([
+  [MainTainanceModeY],
+  [BacktoAdminpnl]
+  ])
+  
+MaintainanceKeyN = InlineKeyboardMarkup([
+  [MainTainanceModeN],
+  [BacktoAdminpnl]
+  ])
+
+
