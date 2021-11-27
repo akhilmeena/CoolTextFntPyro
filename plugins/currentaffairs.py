@@ -48,7 +48,7 @@ def getallmonthfromiasvsncurrentafr(bot,update):
     Btn.append(x)
   ak = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
   newbtns = InlineKeyboardMarkup(ak)
-  update.message.edit_text(text="<b>Choose Your Month</b>",reply_markup=newbtns)
+  await update.message.edit_text(text="<b>Choose Your Month</b>",reply_markup=newbtns)
 
   
 
