@@ -4,6 +4,7 @@ from config import Config
 import pyrogram
 from pyrogram import Client, filters
 from plugins import helper
+from plugins import currentaffairs
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -13,8 +14,8 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
-  if update.data == "akhil":
-    print("Done process")
+  if update.data == "crnafrsdaily":
+    await update.message.edit_text(text="<b>Choose Your Source</b>",reply_markup=currentaffairs.CRNTAFRSOURCEBTN)
   if update.data == "libraryopen":
     await update.message.edit_text(text="<b>Choose Your Study Material Items</b>",reply_markup=helper.LBRYOPEN_BUTTONS)
   if update.data == "home2start":
