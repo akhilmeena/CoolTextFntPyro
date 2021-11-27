@@ -14,6 +14,20 @@ def chunk(it, size):
 Btn = []
 finalbtn = []
 
+@Client.on_message(filters.command('btn1') & filters.private)
+async def start(bot, message):
+  OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
+  HelpBtn = InlineKeyboardButton('🆘 Help', callback_data='help')
+  AboutDev = InlineKeyboardButton('About Dev ❤️', callback_data='abtdvlngbot')
+  UpdateOfBot = InlineKeyboardButton('🚀 Update ', url='https://telegram.dog/channelanalyser/')
+  SupportPfBot = InlineKeyboardButton(' Support 💌', url='https://telegram.dog/channelanalyser/')
+  START_BUTTONS = InlineKeyboardMarkup([
+    [OpenLibeary],
+    [HelpBtn,AboutDev],
+    [UpdateOfBot,SupportPfBot],
+    ])
+  await message.reply_text(text=START_BUTTONS)
+  
 @Client.on_message(filters.command('btn') & filters.private)
 async def start(bot, message):
   for i in range(10):
