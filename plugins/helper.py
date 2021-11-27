@@ -32,10 +32,10 @@ Note:</b> <i>All the Content uploaded here is taken out from other sources.if an
 Thanks ❤️</i>
 """
 
-HELPTEXT = """⚠️ This is Help Pannel:
+HELPTEXT = """<b>⚠️ This is Help Pannel</b>:
 
-This Is A Library Bot. If u Need any Type study Material Just send us in Complaint & Suggestions Pannel.
-"""
+<i>This Is A Library Bot. If u Need any Type study Material Just send us in Complaint & Suggestions Pannel.
+</i>"""
 
 
 BotAboutText = """<b>About Me 😎
