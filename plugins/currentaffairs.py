@@ -4,10 +4,10 @@ from pyrogram.types import InlineKeyboardButton ,InlineKeyboardMarkup
 import string
 from itertools import islice
 
-Source_Dict = {
-  "Name":"✨ Vision IAS","CallBack":"vsniascrnt",
-  "Name":"test","CallBack":"test"
-}
+Source_Dict = [
+  {"Name":"✨ Vision IAS","CallBack":"vsniascrnt"},
+  {"Name":"test","CallBack":"test"}
+  ]
 
 
 VisionIas = InlineKeyboardButton('✨ Vision IAS', callback_data='crnafrsdaily')
