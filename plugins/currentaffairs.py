@@ -39,10 +39,6 @@ def getallmonthfromiasvsncurrentafr(bot,update):
     addList.append(str(YearFull))
     addDict["CallBtnData"] = f"{addList}"
     Source_List.append(addDict)
-  #BackDict = {}
-  #BackDict["CallBtnTedt"] = "🔙"
-  #BackDict["CallBtnData"] = "crnafrsdaily"
-  #Source_List.append(BackDict)
   return Source_List
   
   
@@ -59,7 +55,7 @@ def makeBtnFromDict(Source_List):
     CallbackData = d['CallBtnData']
     x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
     Btn.append(x)
-  ak = [Btn[i:i+3] for i in range(0, len(Btn)-1, 3)]
+  ak = [Btn[i:i+3] for i in range(0, len(Btn)-1, 2)]
   x = InlineKeyboardButton("🔙",callback_data="crnafrsdaily")
   ak.append([x])
   newbtns = InlineKeyboardMarkup(ak)
