@@ -38,18 +38,8 @@ def getallmonthfromiasvsncurrentafr(bot,update):
     addList.append(str(month_num))
     addList.append(str(YearFull))
     addDict["CallBtnData"] = f"{addList}"
-  #return Source_List
-  Btn = []
-  for d in Source_List:
-    print(d)
-    CallbackText = d['CallBtnTedt']
-    CallbackData = d['CallBtnData']
-    x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
-    Btn.append(x)
-  ak = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
-  newbtns = InlineKeyboardMarkup(ak)
-  update.message.edit_text(text="<b>Choose Your Month</b>",reply_markup=newbtns)
-
+  return Source_List
+  
   
 
 
