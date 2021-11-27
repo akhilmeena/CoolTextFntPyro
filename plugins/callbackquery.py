@@ -32,7 +32,7 @@ async def cb_data(bot, update):
     Config.MaintainaceYN.append("No")
     await update.message.edit_text(text="Change Maintainace Mode",reply_markup=helper.MaintainanceKeyN)
   if update.data == "chngemaintaincemode":
-    if str(Config.MaintainaceYN) == "No":
+    if str(Config.MaintainaceYN[0]) == "No":
       await update.message.edit_text(text="Change Maintainace Mode",reply_markup=helper.MaintainanceKeyN)
     else:
       await update.message.edit_text(text="Change Maintainace Mode",reply_markup=helper.MaintainanceKeyY)
