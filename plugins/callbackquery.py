@@ -21,14 +21,16 @@ async def cb_data(bot, update):
     await update.message.edit_text(text=helper.HELPTEXT,reply_markup=helper.HELP_BUTTONS)
   if update.data == "abtdvlngbot":
     await update.message.edit_text(text=helper.BotAboutText.format(update.message.from_user.mention),reply_markup=helper.DVLGBTN)
-  if update.data == "BacktoAdminpnl"
+  if update.data == "BacktoAdminpnl":
     await update.message.edit_text(text="<b>👤 Admin Pannel</b>",reply_markup=helper.AdminKeyboard)
   if update.data == "maintainanceon":
     Config.MaintainaceYN.clear()
     Config.MaintainaceYN.append("Yes")
+    await update.message.edit_text(text="Change Maintainace Mode",reply_markup=helper.MaintainanceKeyY)
   if update.data == "maintainanceoff":
     Config.MaintainaceYN.clear()
     Config.MaintainaceYN.append("No")
+    await update.message.edit_text(text="Change Maintainace Mode",reply_markup=helper.MaintainanceKeyN)
   if update.data == "chngemaintaincemode":
     if str(Config.MaintainaceYN) == "No":
       await update.message.edit_text(text="Change Maintainace Mode",reply_markup=helper.MaintainanceKeyN)
