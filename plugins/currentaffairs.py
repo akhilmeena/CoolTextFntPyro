@@ -4,6 +4,11 @@ from pyrogram.types import InlineKeyboardButton ,InlineKeyboardMarkup
 import string
 from itertools import islice
 
+Source_Dict = {
+  "Name":"✨ Vision IAS","CallBack":"vsniascrnt",
+  "Name":"test","CallBack":"test"
+}
+
 
 VisionIas = InlineKeyboardButton('✨ Vision IAS', callback_data='crnafrsdaily')
 BackToLibrary = InlineKeyboardButton('🔙', callback_data='libraryopen')
@@ -13,6 +18,16 @@ CRNTAFRSOURCEBTN = InlineKeyboardMarkup([
   [BackToLibrary]
   ])
 
+def makeBtnFromDict():
+  Btn = []
+  for i in Source_Dict:
+    CallbackText = i['Name']
+    CallbackData = i['CallBack']
+    x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
+    Btn.append(x)
+  ak = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
+  newbtns = InlineKeyboardMarkup(ak)
+  return newbtns
 
 
 
@@ -21,10 +36,10 @@ CRNTAFRSOURCEBTN = InlineKeyboardMarkup([
 
 
 
-Btn = []
 
 @Client.on_message(filters.command('btn') & filters.private)
 async def start(bot, message):
+  Btn = []
   for i in range(10):
     x = InlineKeyboardButton(str(i),callback_data="akhil")
     Btn.append(x)
