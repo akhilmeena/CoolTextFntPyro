@@ -21,9 +21,8 @@ CRNTAFRSOURCEBTN = InlineKeyboardMarkup([
 def makeBtnFromDict():
   Btn = []
   for d in Source_Dict:
-    print(d)
     CallbackText = d['Name']
-    CallbackData = i['CallBack']
+    CallbackData = d['CallBack']
     x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
     Btn.append(x)
   ak = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
