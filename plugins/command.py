@@ -21,16 +21,17 @@ async def start(bot, message):
     await message.reply_text(text=helper.STARTText.format(message.from_user.mention),reply_markup=helper.START_BUTTONS)
   else:
     await message.reply_text(text=helper.MaintainanceProgress)
-@Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Config.OWNER_ID) & ~filters.edited)
+
+#@Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Config.OWNER_ID) & ~filters.edited)
+@Client.on_message(filters.private & filters.command(["admin"]))
 async def settings(bot,message):
   if str(message.chat.id) in Config.OWNER_ID:
-  #print(message)
     await message.reply_text("<b>👤 Admin Pannel</b>",reply_markup=helper.AdminKeyboard)
   else:
     Chat_Id = message.chat.id
     message.delete_messages(Chat_Id, message.message_id)
     await message.reply_text("<b>💔 Only Admin Command!!</b>")
-    message.delete_messages(Chat_Id, message.message_id)
+    message.message.delete_messages()Chat_Id, message.message_id)
 
  
 
