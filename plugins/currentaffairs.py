@@ -14,7 +14,7 @@ def chunk(it, size):
 Btn = []
 finalbtn = []
 
-@Client.on_message(filters.command('btn1') & filters.private)
+@Client.on_message(filters.command('btnu') & filters.private)
 async def start(bot, message):
   OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
   HelpBtn = InlineKeyboardButton('🆘 Help', callback_data='help')
