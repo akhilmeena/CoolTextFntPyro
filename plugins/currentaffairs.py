@@ -1,6 +1,6 @@
 import pyrogram
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton
+from pyrogram.types import InlineKeyboardButton ,InlineKeyboardMarkup
 import string
 from itertools import islice
 
