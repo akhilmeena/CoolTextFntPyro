@@ -67,8 +67,8 @@ CurrentAfrsBtn = InlineKeyboardButton('⚡ Current Affairs', callback_data='libr
 HomeToStart = InlineKeyboardButton('🔙', callback_data='home2start')
 BacktoAdminpnl = InlineKeyboardButton('🔙', callback_data='backtoAdminpnl')
 
-UpdateOfBot = InlineKeyboardButton('📮 Update 📮', url='https://telegram.dog/HeimanSupports/')
-SupportPfBot = InlineKeyboardButton('🛠️ Support 🛠️', url='https://telegram.dog/HeimanSupport/')
+UpdateOfBot = InlineKeyboardButton('🚀 Update ', url='https://telegram.dog/channelanalyser/')
+SupportPfBot = InlineKeyboardButton(' Support 💌', url='https://telegram.dog/channelanalyser/')
 MainTainanceMode = InlineKeyboardButton('Maintainance ', callback_data='chngemaintaincemode')
 ClosePannel = InlineKeyboardButton('❌ Close', callback_data='close')
 MainTainanceModeY = InlineKeyboardButton('✅ Maintainance ON', callback_data='maintainanceon')
