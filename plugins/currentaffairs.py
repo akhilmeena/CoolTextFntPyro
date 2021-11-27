@@ -27,7 +27,7 @@ def makeBtnFromDict():
     Btn.append(x)
   ak = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
   newbtns = InlineKeyboardMarkup(ak)
-  newbtns.row(BackToLibrary)
+  newbtns.add(BackToLibrary)
   return newbtns
 
 
