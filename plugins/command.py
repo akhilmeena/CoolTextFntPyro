@@ -17,27 +17,14 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
   await message.reply_chat_action("typing")
-  await message.reply_text(
-    text=helper.STARTText.format(message.from_user.mention),
-    disable_web_page_preview=True,
-    reply_markup=helper.START_BUTTONS
-    )
-
-@Client.on_message(filters.command('help') & filters.private)
-async def help(bot, message):
-  await message.reply_chat_action("typing")
-  await message.reply_text(
-    text=helper.HELPTEXT,
-    disable_web_page_preview=True,
-    reply_markup=helper.HELP_BUTTONS
-    )
-    
+  if str(Config.MaintainaceYN) == "No":
+    await message.reply_text(text=helper.STARTText.format(message.from_user.mention),reply_markup=helper.START_BUTTONS)
+  else:
+    await message.reply_text(text=helper.MaintainanceProgress)
+      
 @Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Config.OWNER_ID) & ~filters.edited)
 async def settings(bot,message):
-  await message.reply_text(
-    "<b>👤 Admin Pannel</b>",
-    reply_markup=helper.AdminKeyboard
-    )
+  await message.reply_text("<b>👤 Admin Pannel</b>",reply_markup=helper.AdminKeyboard)
  
 
 
