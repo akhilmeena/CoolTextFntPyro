@@ -4,34 +4,12 @@ from pyrogram.types import InlineKeyboardButton ,InlineKeyboardMarkup
 import string
 from itertools import islice
 
-def chunk(it, size):
-    it = iter(it)
-    return iter(lambda: tuple(islice(it, size)), ())
-
-
-
-
 Btn = []
-finalbtn = []
 
-@Client.on_message(filters.command('btnu') & filters.private)
-async def startu(bot, message):
-  print("1")
-  OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
-  HelpBtn = InlineKeyboardButton('🆘 Help', callback_data='help')
-  AboutDev = InlineKeyboardButton('About Dev ❤️', callback_data='abtdvlngbot')
-  UpdateOfBot = InlineKeyboardButton('🚀 Update ', url='https://telegram.dog/channelanalyser/')
-  SupportPfBot = InlineKeyboardButton(' Support 💌', url='https://telegram.dog/channelanalyser/')
-  #print(SupportPfBot)
-  ak = [[OpenLibeary],[HelpBtn,AboutDev],[UpdateOfBot,SupportPfBot]]
-  #await message.reply_text(text=ak)
-  START_BUTTONS = InlineKeyboardMarkup(ak)
-  await message.reply_text(text=START_BUTTONS,reply_markup=START_BUTTONS)
-  
 @Client.on_message(filters.command('btn') & filters.private)
 async def start(bot, message):
   for i in range(10):
-    x = InlineKeyboardButton(str(i),callback_data=str(i))
+    x = InlineKeyboardButton(str(i),callback_data="akhil")
     Btn.append(x)
   ak = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
   #ak =  [Btn[i:i+3] for i in range(0,len(l),3)]
@@ -46,7 +24,10 @@ async def start(bot, message):
   START_BUTTONS = InlineKeyboardMarkup(ak)
   await message.reply_text(text=START_BUTTONS,reply_markup=START_BUTTONS)
    
-
+@Client.on_callback_query()
+async def cb_data(bot, update):
+  if update.data == "akhil":
+    print("Done process")
       
     
   
