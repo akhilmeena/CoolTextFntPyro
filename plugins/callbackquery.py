@@ -15,8 +15,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @Client.on_callback_query()
 async def cb_data(bot, update):
   if update.data == "crnafrsdaily":
-    CRNTAFRSOURCEBTN = currentaffairs.makeBtnFromDict()
-    await update.message.edit_text(text="<b>Choose Your Source</b>",reply_markup=CRNTAFRSOURCEBTN)
+    await update.message.edit_text(text="<b>Choose Your Source</b>",reply_markup=currentaffairs.CRNTAFRSOURCEBTN)
   if update.data == "libraryopen":
     await update.message.edit_text(text="<b>Choose Your Study Material Items</b>",reply_markup=helper.LBRYOPEN_BUTTONS)
   if update.data == "home2start":
