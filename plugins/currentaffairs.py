@@ -47,6 +47,7 @@ def getallmonthfromiasvsncurrentafr():
 def makeBtnFromDict(Source_List):
   Btn = []
   for d in Source_Dict:
+    print(d)
     CallbackText = d['CallBtnTedt']
     CallbackData = d['CallBtnData']
     x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
