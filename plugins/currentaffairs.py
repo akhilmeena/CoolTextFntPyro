@@ -2,6 +2,8 @@ import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton ,InlineKeyboardMarkup
 import string
+from bs4 import BeautifulSoup
+import requests
 from itertools import islice
 
 
@@ -36,7 +38,6 @@ def getallmonthfromiasvsncurrentafr():
     addList.append(str(YearFull))
     Dict["CallBtnData"] = f"{addList}"
   return Source_List
-  #Source_List = {}
   
 
 
@@ -51,7 +52,6 @@ def makeBtnFromDict(Source_List):
     Btn.append(x)
   ak = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
   newbtns = InlineKeyboardMarkup(ak)
-  #newbtns.add(BackToLibrary)
   return newbtns
 
 
