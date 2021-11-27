@@ -33,7 +33,11 @@ async def start(bot, message):
   for i in range(10):
     x = InlineKeyboardButton(str(i),callback_data=str(i))
     Btn.append(x)
-  ak = list(list(t) for t in zip(*[iter(Btn)]*3))
+  ak =  = [Btn[i:i+3] for i in range(0, len(Btn), 3)]
+  #ak =  [Btn[i:i+3] for i in range(0,len(l),3)]
+#Out[17]: [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11], [12, 13]]
+#Share Edit Follow
+  #ak = list(list(t) for t in zip(*[iter(Btn)]*3))
   #print(ak)
   #ak = list(chunk(Btn, 3))
   #[(0, 1, 2), (3, 4, 5), (6, 7, 8), (9, 10, 11), (12, 13)]
