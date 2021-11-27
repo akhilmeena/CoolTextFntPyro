@@ -13,6 +13,8 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if update.data == "akhil":
+    print("Done process")
   if update.data == "libraryopen":
     await update.message.edit_text(text="<b>Choose Your Study Material Items</b>",reply_markup=helper.LBRYOPEN_BUTTONS)
   if update.data == "home2start":
