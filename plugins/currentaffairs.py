@@ -40,8 +40,8 @@ def getallmonthfromiasvsncurrentafr(bot,update):
     addDict["CallBtnData"] = f"{addList}"
     Source_List.append(addDict)
   BackDict = {}
-  addDict["CallBtnTedt"] = "🔙"
-  addDict["CallBtnData"] = "crnafrsdaily"
+  BackDict["CallBtnTedt"] = "🔙"
+  BackDict["CallBtnData"] = "crnafrsdaily"
   Source_List.append(BackDict)
   return Source_List
   
