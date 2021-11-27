@@ -24,10 +24,8 @@ async def start(bot, message):
   START_BUTTONS = InlineKeyboardMarkup(ak)
   await message.reply_text(text=START_BUTTONS,reply_markup=START_BUTTONS)
    
-@Client.on_callback_query()
-async def cb_data(bot, update):
-  if update.data == "akhil":
-    print("Done process")
+
+  
       
     
   
