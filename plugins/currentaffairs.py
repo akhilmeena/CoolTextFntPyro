@@ -22,10 +22,10 @@ async def startu(bot, message):
   AboutDev = InlineKeyboardButton('About Dev ❤️', callback_data='abtdvlngbot')
   UpdateOfBot = InlineKeyboardButton('🚀 Update ', url='https://telegram.dog/channelanalyser/')
   SupportPfBot = InlineKeyboardButton(' Support 💌', url='https://telegram.dog/channelanalyser/')
-  print(SupportPfBot)
+  #print(SupportPfBot)
   ak = [[OpenLibeary],[HelpBtn,AboutDev],[UpdateOfBot,SupportPfBot]]
-  await message.reply_text(text=ak)
-  START_BUTTONS = InlineKeyboardMarkup([ak])
+  #await message.reply_text(text=ak)
+  START_BUTTONS = InlineKeyboardMarkup(ak)
   await message.reply_text(text=START_BUTTONS,reply_markup=START_BUTTONS)
   
 @Client.on_message(filters.command('btn') & filters.private)
