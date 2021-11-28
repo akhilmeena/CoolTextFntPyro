@@ -3,4 +3,12 @@ tgcrypto
 bs4
 requests
 datetime
-
+aiohttp
+python-decouple
+pyaesni
+asyncio
+hachoir
+pyromod
+Pillow
+ffmpeg
+gdown
