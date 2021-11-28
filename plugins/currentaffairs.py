@@ -68,7 +68,6 @@ def currentdaypdfbuttonvsnias(month_num,year_num):
   urls = []
   for link in soup.find_all('a'):
     urls.append(link.get('href'))
-  #Url = "https://s3-us-west-2.amazonaws.com/visionresources/daily_current_affairs/6b135-22-november-2021.pdf"
   Source_List = []
   for Url in urls:
     addDict = {}
