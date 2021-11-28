@@ -18,6 +18,7 @@ async def cb_data(bot, update):
   if (update.data.startswith("['crnttodayvsnias'")):
     await update.message.edit_text(text=update.data)
     getcodeheadwithday = ast.literal_eval(update.data)[1]
+    ms = await Client.send_message(chat_id = update.message.chat.id, text = "Hello!")
     print(getcodeheadwithday)
   if (update.data.startswith("['getcurrentofmonthvsnias'")):
     month_num = ast.literal_eval(update.data)[1]
