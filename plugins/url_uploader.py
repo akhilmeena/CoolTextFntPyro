@@ -26,7 +26,7 @@ async def leecher2(bot , update,Url):
   sw = "direct"
   directory = f"{update.chat.id}"
   mainpath = os.path.join(download_path, directory) 
-  os.mkdir(path)
+  os.mkdir(mainpath)
   if "|" in Url:
     url , cfname = m.text.split("|", 1)
     url = url.strip()
