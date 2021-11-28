@@ -100,8 +100,9 @@ async def leecher2(bot , update,Url):
       fsw = "aud"
     else:
       fsw = "app"
-  size_of_file = os.path.getsize(file_path)
-  size = get_size(size_of_file)
+  #size_of_file = os.path.getsize(file_path)
+  #size = get_size(size_of_file)
+  size = "akhil"
   if fsw == "vid":
     try:
       probe = await stream_creator(file_path)
