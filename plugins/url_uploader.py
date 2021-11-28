@@ -37,7 +37,7 @@ async def leecher2(bot , update,Url):
     if os.path.splitext(url)[1]:
       ofn = os.path.basename(url)
     else:
-      await m.reply_text(text=f"I Could not Determine The FileType !\nPlease Use Custom Filename With Extension\nSee /help", quote=True)
+      await update.message.reply_text(text=f"I Could not Determine The FileType !\nPlease Use Custom Filename With Extension\nSee /help", quote=True)
       return
   try:
     msg = await update.message.reply_text(text=f"`Analyzing Your Link ...`", quote=True)
@@ -84,7 +84,7 @@ async def leecher2(bot , update,Url):
     fsw = "aud"
   else:
     fsw = "app"
-  if "|" in m.text:
+  if "|" in Url:
     filename = cfname
     cfnmt = mimetypes.guess_type(str(cfname))[0]
     if cfnmt and cfnmt.startswith("video/"):
