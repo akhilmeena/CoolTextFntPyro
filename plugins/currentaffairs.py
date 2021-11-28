@@ -75,7 +75,7 @@ def currentdaypdfbuttonvsnias(month_num,year_num):
     getpdfcodehead = incpltDatestrng2[0:5]
     incpltDatestrng1 = incpltDatestrng2.replace(f"{getpdfcodehead}-","")
     incpltDatestrng = incpltDatestrng1.replace(".pdf","")
-    addList = ["downldcrntofdayvsnias"]
+    addList = ["crnttodayvsnias"]
     addList.append(f"{getpdfcodehead}-{incpltDatestrng}")
     #addList.append(str(incpltDatestrng))
     addDict["CallBtnTedt"] = str(incpltDatestrng)
