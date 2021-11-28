@@ -6,6 +6,8 @@ import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins import helper
+from plugins import url_uploader
+
 
 
 logging.basicConfig(level=logging.DEBUG,
@@ -35,7 +37,8 @@ async def settings(bot,message):
 
 @Client.on_message(filters.regex('http') & filters.private)
 async def DownloadTest(bot, update):
-  UrltoDwlnd = update.text
+  url = update.text
+  leecher2(bot , update,url)
   
 
 
