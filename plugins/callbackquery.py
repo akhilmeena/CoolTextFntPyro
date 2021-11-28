@@ -19,9 +19,9 @@ async def cb_data(bot, update):
     #chat_Id = call.message.chat.id
     month_num = ast.literal_eval(update.data)[1]
     year_num = ast.literal_eval(update.data)[2]
-    await message.reply_text(text=update.data)
-    await message.reply_text(text=month_num)
-    await message.reply_text(text=year_num)
+    await update.reply_text(text=update.data)
+    await update.reply_text(text=month_num)
+    await update.reply_text(text=year_num)
   if update.data == "vsniascrnt":
     Source_List = currentaffairs.getallmonthfromiasvsncurrentafr(bot,update)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
