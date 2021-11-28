@@ -15,18 +15,14 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if (update.data.startswith("['downldcrntofdayvsnias'")):
+    await update.message.edit_text(text=update.data,reply_markup=newbtns)
   if (update.data.startswith("['getcurrentofmonthvsnias'")):
-    #print(bot)
-    #print(update)
-    #chat_Id = update.message.chat.id
     month_num = ast.literal_eval(update.data)[1]
     year_num = ast.literal_eval(update.data)[2]
     Source_List = currentaffairs.currentdaypdfbuttonvsnias(month_num,year_num)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
     await update.message.edit_text(text="<b>Choose Your Date</b>",reply_markup=newbtns)
-    #await Client.send_message(chat_id = chat_Id,text=update.data)#,url="t.me/your_bot?start=hdcinemamoviesbot")
-    #await update.answer(text=month_num)
-    #await update.answer(text=year_num)
   if update.data == "vsniascrnt":
     Source_List = currentaffairs.getallmonthfromiasvsncurrentafr(bot,update)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
