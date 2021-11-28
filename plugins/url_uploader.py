@@ -46,11 +46,11 @@ async def leecher2(bot , update,Url):
     msg = await update.reply_text(text=f"`Analyzing Your Link ...`", quote=True)
   except:
     msg = await update.message.reply_text(text=f"`Analyzing Your Link ...`", quote=True)
-  file_name = url.split('/')[-1]
   file_path = os.path.join(mainpath, os.path.basename(url))
-  filename = filename.replace('%25','_')
-  filename = filename.replace(' ','_')
-  filename = filename.replace('%40','@')
+  file_name3 = url.split('/')[-1]
+  filename2 = filename3.replace('%25','_')
+  filename1 = filename2.replace(' ','_')
+  filename = filename1.replace('%40','@')
   start = time.time()
   try:
     file_path = await download_file(url, filename, msg, start, bot)
