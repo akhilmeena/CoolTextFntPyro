@@ -37,12 +37,15 @@ async def leecher2(bot , update,Url):
     if os.path.splitext(url)[1]:
       ofn = os.path.basename(url)
     else:
-      await update.message.reply_text(text=f"I Could not Determine The FileType !\nPlease Use Custom Filename With Extension\nSee /help", quote=True)
+      try:
+        await update.reply_text(text=f"I Could not Determine The FileType !\nPlease Use Custom Filename With Extension\nSee /help", quote=True)
+      except:
+        await update.message.reply_text(text=f"I Could not Determine The FileType !\nPlease Use Custom Filename With Extension\nSee /help", quote=True)
       return
   try:
-    msg = await update.message.reply_text(text=f"`Analyzing Your Link ...`", quote=True)
-  except:
     msg = await update.reply_text(text=f"`Analyzing Your Link ...`", quote=True)
+  except:
+    msg = await update.message.reply_text(text=f"`Analyzing Your Link ...`", quote=True)
   #file_name = url.split('/')[-1]
   filename = os.path.join(mainpath, os.path.basename(url))
   filename = filename.replace('%25','_')
