@@ -7,7 +7,7 @@ download_path = "Downloads/"
  
 async def leecher2(bot , update,url):
   sw = "direct"
-  directory = f"{update.chat.id)}"
+  directory = f"{update.chat.id}"
   mainpath = os.path.join(download_path, directory) 
   os.mkdir(path)
   file_name = url.split('/')[-1]
