@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pyromod import listen
+#from pyromod import listen
 from urllib.parse import quote_plus, unquote
 import math
 import os
