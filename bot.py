@@ -10,6 +10,11 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+download_path = "Downloads/"
+if not os.path.isdir(download_path):
+    os.mkdir(download_path)
+
+
 if __name__ == "__main__" :
   plugins = dict(root="plugins")
   app = Client(
@@ -21,4 +26,5 @@ if __name__ == "__main__" :
     parse_mode = "combined"
     )
   app.run()
+  
 
