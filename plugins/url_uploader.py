@@ -46,8 +46,8 @@ async def leecher2(bot , update,Url):
     msg = await update.reply_text(text=f"`Analyzing Your Link ...`", quote=True)
   except:
     msg = await update.message.reply_text(text=f"`Analyzing Your Link ...`", quote=True)
-  #file_name = url.split('/')[-1]
-  filename = os.path.join(mainpath, os.path.basename(url))
+  file_name = url.split('/')[-1]
+  file_path = os.path.join(mainpath, os.path.basename(url))
   filename = filename.replace('%25','_')
   filename = filename.replace(' ','_')
   filename = filename.replace('%40','@')
