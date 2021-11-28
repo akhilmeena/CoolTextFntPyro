@@ -19,15 +19,9 @@ from hachoir.metadata import extractMetadata
 from plugins.tools import execute
 from plugins.file_handler import send_to_transfersh_async, progress
 
-
-
-
-
-
-
-
 download_path = "Downloads/"
  
+#async def leecher2(bot , update,Url):
 async def leecher2(bot , update,Url):
   sw = "direct"
   directory = f"{update.chat.id}"
