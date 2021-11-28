@@ -27,7 +27,7 @@ def getallmonthfromiasvsncurrentafr(bot,update):
   Source_List = []
   for Url in urls:
     addDict = {}
-    addList = ["getcurrentofmonth"]
+    addList = ["getcurrentofmonthvsnias"]
     monthstring = Url.split("&")[1]
     month_num = monthstring.split("=")[1]
     full_month_name = getMonthnamefromnu(month_num)
@@ -61,7 +61,29 @@ def getMonthnamefromnu(month_num):
   full_month_name = datetime_object.strftime("%B")
   return full_month_name
   
-
+def currentdaypdfbuttonvsnias(month_num,year_num):
+  url = "http://www.visionias.in/resources/daily_current_affairs_programs.php?type=1&m={}&y={}".format(month_num,year_num)
+  response = requests.get(url)
+  soup = BeautifulSoup(response.text, 'html.parser')
+  urls = []
+  for link in soup.find_all('a'):
+    urls.append(link.get('href'))
+  #Url = "https://s3-us-west-2.amazonaws.com/visionresources/daily_current_affairs/6b135-22-november-2021.pdf"
+  Source_List = []
+  for Url in urls:
+    addDict = {}
+    incpltDatestrng2 = Url.split("/")[5]
+    getpdfcodehead = incpltDatestrng2[0:5]
+    incpltDatestrng1 = incpltDatestrng2.replace(f"{getpdfcodehead}-","")
+    incpltDatestrng = incpltDatestrng1.replace(".pdf","")
+    addList = ["downldcrntofdayvsnias"]
+    addList.append(str(getpdfcodehead))
+    addList.append(str(incpltDatestrng))
+    addDict["CallBtnTedt"] = str(incpltDatestrng)
+    addDict["CallBtnData"] = f"{addList}"
+    Source_List.append(addDict)
+  return Source_List
+ 
 
 
 
