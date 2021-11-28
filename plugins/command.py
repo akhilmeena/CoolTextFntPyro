@@ -38,7 +38,7 @@ async def settings(bot,message):
 @Client.on_message(filters.regex('http') & filters.private)
 async def DownloadTest(bot, update):
   url = update.text
-  url_uploader.leecher2(bot , update,url)
+  await url_uploader.leecher2(bot , update,url)
   
 
 
