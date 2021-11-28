@@ -14,11 +14,16 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if (update.data.startswith("['getcurrentofmonth'")):
+    #chat_Id = call.message.chat.id
+    month_num = ast.literal_eval(call.data)[1]
+    year_num = ast.literal_eval(call.data)[2]
+    await message.reply_text(text=update.data)
+    await message.reply_text(text=month_num)
+    await message.reply_text(text=year_num)
   if update.data == "vsniascrnt":
     Source_List = currentaffairs.getallmonthfromiasvsncurrentafr(bot,update)
-    #await update.message.reply_text(Source_List)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
-    #await update.message.reply_text(newbtns)
     await update.message.edit_text(text="<b>Choose Your Month</b>",reply_markup=newbtns)
   if update.data == "crnafrsdaily":
     await update.message.edit_text(text="<b>Choose Your Source</b>",reply_markup=currentaffairs.CRNTAFRSOURCEBTN)
