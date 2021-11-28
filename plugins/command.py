@@ -25,7 +25,6 @@ async def start(bot, message):
 #@Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Config.OWNER_ID) & ~filters.edited)
 @Client.on_message(filters.private & filters.command(["admin"]))
 async def settings(bot,message):
-  #if str(message.chat.id) == Config.OWNER_ID[0]:
   if int(message.chat.id) in Config.OWNER_ID:
     await message.reply_text("<b>👤 Admin Pannel</b>",reply_markup=helper.AdminKeyboard)
   else:
@@ -34,8 +33,10 @@ async def settings(bot,message):
     await message.reply_text("<b>💔 Only Admin Command!!</b>")
     #message.message.delete_messages(Chat_Id, message.message_id)
 
- 
-
+@Client.on_message(filters.regex('http') & filters.private)
+async def DownloadTest(bot, update):
+  UrltoDwlnd = update.text
+  
 
 
 
@@ -49,8 +50,9 @@ async def settings(bot,message):
 
 
 ################Danger
-@Client.on_message(filters.regex('http') & filters.private)
-async def pdisk(bot, message):
+#@Client.on_message(filters.regex('http') & filters.private)
+#async def pdisk(bot, message):
+def pdisk(bot, message):
         text = message.text
         if 'cofilink.com' in text or 'www.cofilink.com' in text or 'pdisk.me' in text or 'www.pdisk.me' in text:
             spl = link.split('=')
