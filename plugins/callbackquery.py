@@ -17,8 +17,8 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 async def cb_data(bot, update):
   if (update.data.startswith("['getcurrentofmonth'")):
     #chat_Id = call.message.chat.id
-    month_num = ast.literal_eval(call.data)[1]
-    year_num = ast.literal_eval(call.data)[2]
+    month_num = ast.literal_eval(update.data)[1]
+    year_num = ast.literal_eval(update.data)[2]
     await message.reply_text(text=update.data)
     await message.reply_text(text=month_num)
     await message.reply_text(text=year_num)
