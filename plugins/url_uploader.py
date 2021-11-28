@@ -54,7 +54,7 @@ async def leecher2(bot , update,Url):
   filename3 = url.split('/')[-1]
   filename2 = filename3.replace('%25','_')
   filename1 = filename2.replace(' ','_')
-  filename = filename1.replace('%40','@')
+  #filename = filename1.replace('%40','@')
   start = time.time()
   try:
     file_path = await download_file(url, filename, msg, start, bot)
