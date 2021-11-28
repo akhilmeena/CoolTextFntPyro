@@ -139,7 +139,7 @@ async def leecher2(bot , update,Url):
       return
     except Exception as e:
       fsw = "app"
-    await msg.edit(f"❌ Uploading as Video Failed **Error:** {e} \n Trying to Upload as File in 3 second!")
+      await msg.edit(f"❌ Uploading as Video Failed **Error:** {e} \n Trying to Upload as File in 3 second!")
     await asyncio.sleep(3)
   
   if fsw == "aud":
