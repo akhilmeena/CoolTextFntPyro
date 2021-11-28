@@ -2,7 +2,7 @@ import datetime
 import aiohttp
 import os
 import time
-from helpers.download_from_url import get_size, time_formatter
+from plugins.download_from_url import get_size, time_formatter
 
 async def progress(current, total, event, start):
     """Generic progress_callback for both
