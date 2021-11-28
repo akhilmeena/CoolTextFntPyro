@@ -16,9 +16,9 @@ async def leecher2(bot , update,url):
   filename = filename.replace(' ','_')
   filename = filename.replace('%40','@')
   start = time.time()
-  try:
+  #try:
     #msg ka pangaa h yhaa pr
-    file_path = await download_file(url, filename, msg, start, bot)
-    print(f"file downloaded to {file_path} with name: {filename}")
+    #file_path = await download_file(url, filename, msg, start, bot)
+    #print(f"file downloaded to {file_path} with name: {filename}")
 
   #m = u.reply_to_message
