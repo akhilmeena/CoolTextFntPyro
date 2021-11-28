@@ -24,6 +24,7 @@ download_path = "Downloads/"
 #async def leecher2(bot , update,Url):
 async def leecher2(bot , update,Url):
   sw = "direct"
+  
   directory = f"{update.chat.id}"
   mainpath = os.path.join(download_path, directory) 
   try:
@@ -115,7 +116,7 @@ async def leecher2(bot , update,Url):
       await msg.edit(f"⬆️ Trying to Upload as Video ...")
       start = time.time()
       await bot.send_video(
-        chat_id=m.chat.id,
+        chat_id=update.chat.id,
         progress=progress_for_pyrogram,
         progress_args=(
           "⬆️ Uploading as Video:",
@@ -152,7 +153,7 @@ async def leecher2(bot , update,Url):
         start = time.time()
         await msg.edit(f"⬆️ Trying to Upload as Audio ...")
         await bot.send_audio(
-          chat_id=m.chat.id,
+          chat_id=update.chat.id,
           progress=progress_for_pyrogram,
           progress_args=(
             "⬆️ Uploading as Audio:",
@@ -181,7 +182,7 @@ async def leecher2(bot , update,Url):
       start = time.time()
       await msg.edit(f"⬆️ Trying to Upload as Document ...")
       await bot.send_document(
-        chat_id=m.chat.id,
+        chat_id=update.chat.id,
         progress=progress_for_pyrogram,
         progress_args=(
           "⬆️ Uploading as Document:",
