@@ -8,7 +8,6 @@ python-decouple
 pyaesni
 asyncio
 hachoir
-pyromod
 Pillow
 ffmpeg
 gdown
