@@ -16,6 +16,8 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @Client.on_callback_query()
 async def cb_data(bot, update):
   if (update.data.startswith("['getcurrentofmonth'")):
+    print(bot)
+    print(update)
     #chat_Id = call.message.chat.id
     month_num = ast.literal_eval(update.data)[1]
     year_num = ast.literal_eval(update.data)[2]
