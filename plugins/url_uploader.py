@@ -28,7 +28,7 @@ async def leecher2(bot , update,Url):
   mainpath = os.path.join(download_path, directory) 
   os.mkdir(mainpath)
   if "|" in Url:
-    url , cfname = m.text.split("|", 1)
+    url , cfname = Url.split("|", 1)
     url = url.strip()
     cfname = cfname.strip()
     cfname = cfname.replace('%40','@')
