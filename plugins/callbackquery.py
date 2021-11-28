@@ -14,7 +14,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 @Client.on_callback_query()
-async def cb_data(self,bot, update):
+async def cb_data(bot, update):
   if (update.data.startswith("['crnttodayvsnias'")):
     await update.message.edit_text(text=update.data)
     getcodeheadwithday = ast.literal_eval(update.data)[1]
