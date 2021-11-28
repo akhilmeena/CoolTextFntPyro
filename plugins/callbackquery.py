@@ -16,7 +16,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @Client.on_callback_query()
 async def cb_data(bot, update):
   if (update.data.startswith("['downldcrntofdayvsnias'")):
-    await update.message.edit_text(text=update.data,reply_markup=newbtns)
+    await update.message.edit_text(text=update.data)
   if (update.data.startswith("['getcurrentofmonthvsnias'")):
     month_num = ast.literal_eval(update.data)[1]
     year_num = ast.literal_eval(update.data)[2]
