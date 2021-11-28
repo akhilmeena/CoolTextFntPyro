@@ -5,6 +5,7 @@ import pyrogram
 from pyrogram import Client, filters
 from plugins import helper
 from plugins import currentaffairs
+import ast
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
