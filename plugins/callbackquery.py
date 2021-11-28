@@ -18,10 +18,10 @@ async def cb_data(bot, update):
   if (update.data.startswith("['getcurrentofmonth'")):
     print(bot)
     print(update)
-    #chat_Id = call.message.chat.id
+    chat_Id = update.chat.id
     month_num = ast.literal_eval(update.data)[1]
     year_num = ast.literal_eval(update.data)[2]
-    await update.answer(text=update.data,url="t.me/your_bot?start=hdcinemamoviesbot")
+    await Client.send_message(chat_Id,text=update.data)#,url="t.me/your_bot?start=hdcinemamoviesbot")
     await update.answer(text=month_num)
     await update.answer(text=year_num)
   if update.data == "vsniascrnt":
