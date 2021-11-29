@@ -18,7 +18,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
       pass
     except Exception as e:
       await msg.edit(f"Creating Directory Failed !\n\n**Error:** {e}")
-      break
+      #break
   file_name = Url2Dowload.split('/')[-1]
   file_path = os.path.join(path, file_name)
   url = Url2Dowload 
