@@ -28,7 +28,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
     print(f"file downloaded to {file_path} with name: {file_name}")
   except Exception as e:
     await msg.edit(f"Creating Directory Failed !\n\n**Error:** {e}")
-    break
+    #break
   await msg.edit(f"✅ **Successfully Downloaded**")
   try:
     start = time.time()
