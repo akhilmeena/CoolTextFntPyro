@@ -35,10 +35,11 @@ async def Urlleaccher(bot,update,Url2Dowload):
   #isExist = os.path.exists(path)
   #if not isExist:
   try:
-    os.remove(path)
+    #os.remove(path)
     os.mkdir(path)
   except:
-    os.mkdir(path)
+    continue
+    #os.mkdir(path)
   file_name = url.split('/')[-1]
   #Downloads8183969797bfa1-19-march-2021.pdf
   #oldname = oldname.replace('%40','@')
@@ -66,6 +67,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
       force_document=True,
       caption=f"{file_name}"
       )
+  os.remove(file_path)
       #file_name=file_name,
   #prpgressmsg = bot.send_message(chat_Id,text="📥 Trying to Download...",parse_mode="HTML")
   
