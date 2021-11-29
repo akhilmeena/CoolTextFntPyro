@@ -40,7 +40,8 @@ HELPTEXT = """<b>⚠️ This is Help Pannel</b>:
 DonloadFiletext = """**Initiating Download**
 **URL:** {}
 **File Name:** {}
-**File Size:** {}"""
+**File Size:** {}
+**File Type:** {}"""
 
 DownloadingProgress = """Downloading : {}%
 URL: {}
