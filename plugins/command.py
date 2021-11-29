@@ -15,6 +15,10 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
+@Client.on_message(filters.private & filters.command(["akhil"]))
+async def settingsjj(bot,message):
+  print("kwkwkkwwk")
+
 @Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
   await message.reply_chat_action("typing")
@@ -23,7 +27,6 @@ async def start(bot, message):
   else:
     await message.reply_text(text=helper.MaintainanceProgress)
 
-#@Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Config.OWNER_ID) & ~filters.edited)
 @Client.on_message(filters.private & filters.command(["admin"]))
 async def settings(bot,message):
   print("akhill")
@@ -39,7 +42,9 @@ async def settings(bot,message):
 async def DownloadTest(bot, update):
   url = update.text
   #await url_uploader.leecher2(bot , update,url)
-  
+
+#@Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Config.OWNER_ID) & ~filters.edited)
+
 @Client.on_message(filters.private & filters.command(["folders"]))
 async def settings(bot,message):
   start_path = 'Downloads/'
