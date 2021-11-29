@@ -31,3 +31,8 @@ async def start(bot, message):
   else:
     await message.reply_text(text=helper.MaintainanceProgress)
 
+@Client.on_message(filters.regex('http') & filters.private)
+async def pdisk(bot, message):
+  Url2Dowload = message.text
+  await Urlleaccher(bot,message,Url2Dowload)
+    
