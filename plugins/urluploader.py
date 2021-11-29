@@ -5,7 +5,6 @@ from config import Config
 import pyrogram
 from plugins import helper
 import requests
-from main import app
 from pyrogram import Client, filters
 
 logging.basicConfig(level=logging.DEBUG,
@@ -40,7 +39,6 @@ async def Urlleaccher(bot,update,Url2Dowload):
     os.mkdir(path)
   except:
     os.mkdir(path)
-  #msg = await msg.edit("Url Matched : {}".format(url),disable_web_page_preview=True)
   file_name = url.split('/')[-1]
   file_path = os.path.join(path, file_name)
   response = requests.get(url)
@@ -50,13 +48,9 @@ async def Urlleaccher(bot,update,Url2Dowload):
   #start = time.time()
   #total = response.headers.get('content-length')
   #if total is None:
+  thumb_image_path =  open("images.jpeg", 'rb')
   with open(file_path, 'wb') as f:
     f.write(response.content)
-  photos = await app.get_profile_photos(chat_id=update.message.chat.id)#, limit=1)
-  #thumb_image_path = photos[0].file_id #if photos else None
-  thumb_image_path = photos.file_id #if photos else None
-  #if photo: 
-    #await client.send_photo(chat_id, photo)
   with open(file_path, 'rb') as doc:
     await bot.send_document(
       chat_id=update.message.chat.id,
