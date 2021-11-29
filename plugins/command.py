@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
-@Client.on_message(filters.private & filters.command(["akhil"]))
+@Client.on_message(filters.private & filters.command(["admin"]))
 async def settingsjj(bot,message):
   print(f"{message.chat.id}")
   if int(message.chat.id) in Config.OWNER_ID:
@@ -33,22 +33,12 @@ async def start(bot, message):
   else:
     await message.reply_text(text=helper.MaintainanceProgress)
 
-@Client.on_message(filters.private & filters.command(["admin"]))
-async def settings(bot,message):
-  print("akhill")
-  if int(message.chat.id) in Config.OWNER_ID:
-    await message.reply_text("<b>👤 Admin Pannel</b>",reply_markup=helper.AdminKeyboard)
-  else:
-    Chat_Id = message.chat.id
-    #message.delete_messages(Chat_Id, message.message_id)
-    await message.reply_text("<b>💔 Only Admin Command!!</b>")
-    #message.message.delete_messages(Chat_Id, message.message_id)
+
 
 @Client.on_message(filters.regex('http') & filters.private)
 async def DownloadTest(bot, update):
   url = update.text
   #await url_uploader.leecher2(bot , update,url)
-
 #@Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Config.OWNER_ID) & ~filters.edited)
 
 @Client.on_message(filters.private & filters.command(["folders"]))
