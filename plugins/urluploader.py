@@ -6,6 +6,8 @@ import pyrogram
 from plugins import helper
 import requests
 from pyrogram import Client, filters
+from plugins.display_progress import progress_for_pyrogram
+import time
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -34,18 +36,10 @@ async def Urlleaccher(bot,update,Url2Dowload):
   path = os.path.join(parent_dir, directory) 
   isExist = os.path.exists(path)
   if not isExist:
-  #try:
-    #os.remove(path)
     os.mkdir(path)
-  #except:
   else:
     pass
-    #os.mkdir(path)
   file_name = url.split('/')[-1]
-  #Downloads8183969797bfa1-19-march-2021.pdf
-  #oldname = oldname.replace('%40','@')
-  #oldname = oldname.replace('%25','_')
-  #oldname = oldname.replace(' ','_')
   file_path = os.path.join(path, file_name)
   response = requests.get(url)
   total_length = int(response.headers["Content-Length"])
@@ -61,17 +55,23 @@ async def Urlleaccher(bot,update,Url2Dowload):
     os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
     newfilename = f"@LibraryInBot {file_name}"
     newfile_path = os.path.join(path, newfilename)
-    #return newfilename
     with open(newfile_path, 'rb') as doc:
+      c_time = time.time()
       await bot.send_document(
         chat_id=update.message.chat.id,
         document=doc,
         file_name=newfilename,
         thumb=thumb_image_path,
         force_document=True,
-        caption=f"{file_name}"
+        caption=f"{file_name}",
+        progress=progress_for_pyrogram,
+        progress_args=(
+          helperTranslation.UPLOAD_START,
+          msg, 
+          c_time
+          )
         )
-    os.remove(file_path)
+    os.remove(newfile_path)
   except Exception as e:
     msg = await msg.edit("Exit with error : {}".format(e))
   #prpgressmsg = bot.send_message(chat_Id,text="📥 Trying to Download...",parse_mode="HTML")
