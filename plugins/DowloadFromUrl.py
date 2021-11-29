@@ -37,7 +37,7 @@ async def download_file(url,file_path, file_name, msg, start, bot):
     content_type = response.headers["Content-Type"]
     if "text" in content_type and total_length < 500:
       return await response.release()
-      await msg.edit(helper.DonloadFiletext.format(url,file_name,get_size(total_length))
+      await msg.edit(helper.DonloadFiletext.format(url,file_name,get_size(total_length)))
       with open(file_path, 'wb') as f_handle:
         if total_length is None:
           f.write(response.content)
