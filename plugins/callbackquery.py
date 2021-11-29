@@ -5,7 +5,7 @@ import pyrogram
 from pyrogram import Client, filters
 from plugins import helper
 from plugins import currentaffairs
-from plugins import urluploader
+#from plugins.urluploader import urluploader
 import ast
 
 logging.basicConfig(level=logging.DEBUG,
@@ -19,7 +19,7 @@ async def cb_data(bot, update):
   if (update.data.startswith("['crnttodayvsnias'")):
     getcodeheadwithday = ast.literal_eval(update.data)[1]
     Url2Dowload = "https://s3-us-west-2.amazonaws.com/visionresources/daily_current_affairs/{}.pdf".format(getcodeheadwithday)
-    await urluploader.Urlleaccher(bot,update,Url2Dowload)
+    #await urluploader.Urlleaccher(bot,update,Url2Dowload)
     #await update.message.edit_text(text=update.data)
     #await update.message.reply_text(text="akhil")
     #print(getcodeheadwithday)
