@@ -48,7 +48,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
   #start = time.time()
   #total = response.headers.get('content-length')
   #if total is None:
-  thumb_image_path =  open("images.jpeg", 'rb')
+  thumb_image_path =  open(Config.LoGoPath, 'rb')
   with open(file_path, 'wb') as f:
     f.write(response.content)
   with open(file_path, 'rb') as doc:
