@@ -37,7 +37,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
   try:
     os.remove(path)
     os.mkdir(path)
-  else:
+  except:
     os.mkdir(path)
   msg = await msg.edit("Url Matched : {}".format(url),disable_web_page_preview=True)
   file_name = url.split('/')[-1]
