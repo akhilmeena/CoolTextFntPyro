@@ -20,6 +20,7 @@ async def settingsjj(bot,message):
   print("akhiiil")
   start_path = 'Downloads/'
   try:
+    print("goof")
     for path,dirs,files in os.walk(start_path):
       for filename in files:
         print(os.path.join(path,filename))
