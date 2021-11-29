@@ -7,15 +7,8 @@ import math
 import os
 import time
 
-# the secret configuration specific things
-if bool(os.environ.get("WEBHOOK", False)):
-    from sample_config import Config
-else:
-    from config import Config
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-# the Strings used for this "thing"
-from translation import Translation
 
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 async def progress_for_pyrogram(current, total, ud_type, message, start):
     reply_markup=InlineKeyboardMarkup(
