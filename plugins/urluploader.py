@@ -37,7 +37,6 @@ async def Urlleaccher(bot,update,Url2Dowload):
     break
   else:
     continue
-    break
   await msg.edit("Good")
   
   
