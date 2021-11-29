@@ -38,22 +38,22 @@ async def Urlleaccher(bot,update,Url2Dowload):
     progress_args=("⬆️ Uploading as Document:",msg,start),
     file_name=filename,
     document=file_path,
-        force_document=True,
-        caption=f"`{filename}` [{size}]",
-        reply_to_message_id=None
-      )
-      await msg.delete()
-      try:
-        os.remove(file_path)
-      except:
-        pass
-    except Exception as e:
-      await msg.edit(f"❌ Uploading as Document Failed !\n\n**Error:** {e}")
-      try:
-        os.remove(file_path)
-      except:
-        pass
-      return
+    force_document=True,
+    caption=f"`{filename}` [{size}]",
+    reply_to_message_id=None
+    )
+    await msg.delete()
+    try:
+      os.remove(file_path)
+    except:
+      pass
+  except Exception as e:
+    await msg.edit(f"❌ Uploading as Document Failed !\n\n**Error:** {e}")
+    try:
+      os.remove(file_path)
+    except:
+      pass
+    return
 
   #response = requests.get(urlforpdf)
   
