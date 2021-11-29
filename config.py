@@ -7,3 +7,4 @@ class Config(object):
     OWNER_ID = [818396979]
     MaintainaceYN = ["No"]
     LoGoPath = "IMG_20211129_174923.jpg"
+    Bot_Username = "@LibraryInBot"
