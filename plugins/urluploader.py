@@ -1,6 +1,10 @@
 #preapred By Akhil Meena
 from plugins import DowloadFromUrl
 import os
+import time
+import requests
+from plugins.display_progress import progress_for_pyrogram, humanbytes
+
 
 async def Urlleaccher(bot,update,Url2Dowload):
   try:
