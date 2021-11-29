@@ -58,10 +58,11 @@ async def Urlleaccher(bot,update,Url2Dowload):
     thumb_image_path =  open(Config.LoGoPath, 'rb')
     with open(file_path, 'wb') as f:
       f.write(response.content)
-    #os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
+    os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
     newfilename = f"@LibraryInBot {file_name}"
+    newfile_path = os.path.join(path, newfilename)
     #return newfilename
-    with open(file_path, 'rb') as doc:
+    with open(newfile_path, 'rb') as doc:
       await bot.send_document(
         chat_id=update.message.chat.id,
         document=doc,
