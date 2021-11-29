@@ -38,7 +38,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
   try:
     start = time.time()
     await msg.edit(f"⬆️ Trying to Upload as Document ...")
-    await bot.send_document(chat_id=update.chat.id,
+    await bot.send_document(chat_id=update.message.chat.id,
     progress=progress_for_pyrogram,
     progress_args=("⬆️ Uploading as Document:",msg,start),
     file_name=filename,
