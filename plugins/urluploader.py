@@ -50,7 +50,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
   response = requests.get(url)
   total_length = int(response.headers["Content-Length"])
   content_type = response.headers["Content-Type"]
-  msg = await msg.edit(helper.DonloadFiletext.format(url,total_length,file_path,content_type),disable_web_page_preview=True)
+  msg = await msg.edit(helper.DonloadFiletext.format(url,file_path,total_length,content_type),disable_web_page_preview=True)
   #start = time.time()
   #total = response.headers.get('content-length')
   #if total is None:
