@@ -51,11 +51,14 @@ async def Urlleaccher(bot,update,Url2Dowload):
   #if total is None:
   with open(file_path, 'wb') as f:
     f.write(response.content)
+  photo = await Client.get_profile_photos("@LibraryInBot", limit=1)
+  thumb_image_path = photo.file_id
   with open(file_path, 'rb') as doc:
     await bot.send_document(
       chat_id=update.message.chat.id,
       file_name=file_name,
       document=doc,
+      thumb=thumb_image_path,
       force_document=True,
       caption=f"{file_name}"
       )
