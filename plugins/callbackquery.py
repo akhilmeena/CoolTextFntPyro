@@ -8,6 +8,7 @@ from plugins import currentaffairs
 from plugins.urluploader import Urlleaccher
 import ast
 
+
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
