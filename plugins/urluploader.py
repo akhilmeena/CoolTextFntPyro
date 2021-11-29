@@ -66,7 +66,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
         caption=f"{file_name}",
         progress=progress_for_pyrogram,
         progress_args=(
-          helperTranslation.UPLOAD_START,
+          "Uploading Document",
           msg, 
           c_time
           )
