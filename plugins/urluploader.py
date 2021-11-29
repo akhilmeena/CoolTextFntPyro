@@ -40,6 +40,10 @@ async def Urlleaccher(bot,update,Url2Dowload):
   except:
     os.mkdir(path)
   file_name = url.split('/')[-1]
+  #Downloads8183969797bfa1-19-march-2021.pdf
+  #oldname = oldname.replace('%40','@')
+  #oldname = oldname.replace('%25','_')
+  #oldname = oldname.replace(' ','_')
   file_path = os.path.join(path, file_name)
   response = requests.get(url)
   total_length = int(response.headers["Content-Length"])
@@ -51,15 +55,18 @@ async def Urlleaccher(bot,update,Url2Dowload):
   thumb_image_path =  open(Config.LoGoPath, 'rb')
   with open(file_path, 'wb') as f:
     f.write(response.content)
+  #os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
+  newfilename = f"@LibraryInBot {file_name}"
+  return newfilename
   with open(file_path, 'rb') as doc:
     await bot.send_document(
       chat_id=update.message.chat.id,
-      file_name=file_name,
       document=doc,
       thumb=thumb_image_path,
       force_document=True,
       caption=f"{file_name}"
       )
+      #file_name=file_name,
   #prpgressmsg = bot.send_message(chat_Id,text="📥 Trying to Download...",parse_mode="HTML")
   
   
