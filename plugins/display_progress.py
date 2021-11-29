@@ -5,7 +5,7 @@ import time
 from plugins.helper import Config
 
 
-async def progress_for_pyrogram(current, total, ud_type, message, start):
+async def progress_for_pyrogram(current, total, ud_type, msg, start):
     now = time.time()
     diff = now - start
     if round(diff % 10.00) == 0 or current == total:
