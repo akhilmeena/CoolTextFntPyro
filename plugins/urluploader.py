@@ -45,12 +45,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
   content_type = response.headers["Content-Type"]
   msg = await msg.edit(helper.DonloadFiletext.format(url,total_length,file_path,content_type),disable_web_page_preview=True)
   
-        
-  
-  
-  
-    prpgressmsg = bot.send_message(chat_Id,text="📥 Trying to Download...",parse_mode="HTML")
-    try:
+  #prpgressmsg = bot.send_message(chat_Id,text="📥 Trying to Download...",parse_mode="HTML")
   
   
   
