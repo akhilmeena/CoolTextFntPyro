@@ -6,7 +6,6 @@ import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins import helper
-#from plugins import url_uploader
 
 
 
