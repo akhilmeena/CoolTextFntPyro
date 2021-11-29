@@ -17,15 +17,13 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_message(filters.private & filters.command(["akhil"]))
 async def settingsjj(bot,message):
-  print("akhiiil")
-  start_path = 'Downloads/'
-  try:
-    print("goof")
-    for path,dirs,files in os.walk(start_path):
-      for filename in files:
-        print(os.path.join(path,filename))
-  except Exception as e:
-    print(e)
+  print(f"{message.chat.id}")
+  if int(message.chat.id) in Config.OWNER_ID:
+    await message.reply_text("<b>👤 Admin Pannel</b>",reply_markup=helper.AdminKeyboard)
+  else:
+    Chat_Id = message.chat.id
+    await message.reply_text("<b>💔 Only Admin Command!!</b>")
+   
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
