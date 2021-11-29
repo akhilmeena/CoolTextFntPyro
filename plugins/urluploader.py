@@ -57,7 +57,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
       file_name=file_name,
       document=doc,
       force_document=True,
-      caption=f"{filename}"
+      caption=f"{file_name}"
       )
   #prpgressmsg = bot.send_message(chat_Id,text="📥 Trying to Download...",parse_mode="HTML")
   
