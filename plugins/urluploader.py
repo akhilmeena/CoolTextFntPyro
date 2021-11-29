@@ -26,8 +26,9 @@ async def Urlleaccher(bot,update,Url2Dowload):
   try:
     url = await Find(Url2Dowload)
   except:
+    msg = await update.message.reply_text("Couldn't Found Url in Given Text...")
     return
-  msg = await update.message.reply_text("Validating Url...")
+  msg = await msg.edit("Url Matched : {}".format(url),disable_web_page_preview=True)
   
   
   
