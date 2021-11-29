@@ -30,7 +30,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
   msg = await msg.edit("Url Matched : {}".format(url),disable_web_page_preview=True)
   directory = f"{update.message.chat.id}"
   print(directory)
-  parent_dir = "DownloadPdf/"
+  parent_dir = "Downloads/"
   path = os.path.join(parent_dir, directory) 
   #isExist = os.path.exists(path)
   #if not isExist:
@@ -42,11 +42,23 @@ async def Urlleaccher(bot,update,Url2Dowload):
   msg = await msg.edit("Url Matched : {}".format(url),disable_web_page_preview=True)
   file_name = url.split('/')[-1]
   file_path = os.path.join(path, file_name)
-  response = requests.get(urlforpdf)
+  response = requests.get(url)
   total_length = int(response.headers["Content-Length"])
   content_type = response.headers["Content-Type"]
   msg = await msg.edit(helper.DonloadFiletext.format(url,total_length,file_path,content_type),disable_web_page_preview=True)
-  
+  #start = time.time()
+  #total = response.headers.get('content-length')
+  #if total is None:
+  with open(file_path, 'wb') as f:
+    f.write(response.content)
+  with open(newfilelocation, 'rb') as doc:
+    bot.send_document(
+      chat_id=update.message.chat.id,
+      file_name=filename,
+      document=doc,
+      force_document=True,
+      caption=f"{filename}"
+      )
   #prpgressmsg = bot.send_message(chat_Id,text="📥 Trying to Download...",parse_mode="HTML")
   
   
