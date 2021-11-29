@@ -6,7 +6,7 @@ import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins import helper
-from plugins import url_uploader
+#from plugins import url_uploader
 
 
 
@@ -38,7 +38,7 @@ async def settings(bot,message):
 @Client.on_message(filters.regex('http') & filters.private)
 async def DownloadTest(bot, update):
   url = update.text
-  await url_uploader.leecher2(bot , update,url)
+  #await url_uploader.leecher2(bot , update,url)
   
 @Client.on_message(filters.private & filters.command(["folders"]))
 async def settings(bot,message):
