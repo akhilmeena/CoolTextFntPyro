@@ -6,7 +6,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
     msg = await update.reply_text(text=f"`Creating Path......`", quote=True)
   except:
     msg = await update.message.reply_text(text=f"`Creating Path......`", quote=True)
-  directory = f"{update.chat.id}"
+  directory = f"{update.message.chat.id}"
   parent_dir = "Downloads/"
   path = os.path.join(parent_dir, directory) 
   try:
