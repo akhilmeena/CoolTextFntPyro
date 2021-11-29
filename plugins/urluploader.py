@@ -28,8 +28,16 @@ async def Urlleaccher(bot,update,Url2Dowload):
     url = await Find(Url2Dowload)
     LinkValid = True
   except:
-    if LinkValid is False:
-      await msg.edit("Link is Invalid")
-      break
+    continue
+  if LinkValid is False:
+    await msg.edit("Link is Invalid")
+  else:
+    continue
+  if LinkValid is False:
+    break
+  else:
+    continue
+    break
+  await msg.edit("Good")
   
   
