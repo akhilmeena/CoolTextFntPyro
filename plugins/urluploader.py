@@ -41,7 +41,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
     await bot.send_document(chat_id=update.message.chat.id,
     progress=progress_for_pyrogram,
     progress_args=("⬆️ Uploading as Document:",msg,start),
-    file_name=filename,
+    file_name=file_name,
     document=file_path,
     force_document=True,
     caption=f"`{filename}` [{size}]",
