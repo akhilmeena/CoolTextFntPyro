@@ -27,7 +27,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
     msg = await update.message.reply_text("Couldn't Found Url in Given Text...")
     return
   msg = await msg.edit("Url Matched : {}".format(url),disable_web_page_preview=True)
-  directory = f"{update.chat.id}"
+  directory = f"{update.message.chat.id}"
   print(directory)
   parent_dir = "DownloadPdf/"
   path = os.path.join(parent_dir, directory) 
