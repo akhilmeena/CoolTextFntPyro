@@ -64,7 +64,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
     await bot.send_document(
       chat_id=update.message.chat.id,
       document=doc,
-      file_name=newfilename,
+      file_name=file_name,
       thumb=thumb_image_path,
       force_document=True,
       caption=f"{file_name}"
