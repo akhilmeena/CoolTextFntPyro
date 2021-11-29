@@ -17,6 +17,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_message(filters.private & filters.command(["akhil"]))
 async def settingsjj(bot,message):
+  print("akhiiil")
   start_path = 'Downloads/'
   try:
     for path,dirs,files in os.walk(start_path):
