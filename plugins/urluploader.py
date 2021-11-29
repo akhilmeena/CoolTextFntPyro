@@ -5,6 +5,7 @@ from config import Config
 import pyrogram
 from plugins import helper
 import requests
+from main import app
 from pyrogram import Client, filters
 
 logging.basicConfig(level=logging.DEBUG,
