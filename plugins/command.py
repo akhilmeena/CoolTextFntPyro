@@ -7,8 +7,6 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins import helper
 
-
-
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -33,22 +31,3 @@ async def start(bot, message):
   else:
     await message.reply_text(text=helper.MaintainanceProgress)
 
-
-
-@Client.on_message(filters.regex('http') & filters.private)
-async def DownloadTest(bot, update):
-  url = update.text
-  #await url_uploader.leecher2(bot , update,url)
-#@Client.on_message(filters.command(["admin"]) & filters.private & filters.user(Config.OWNER_ID) & ~filters.edited)
-
-@Client.on_message(filters.private & filters.command(["folders"]))
-async def settings(bot,message):
-  start_path = 'Downloads/'
-  try:
-    for path,dirs,files in os.walk(start_path):
-      for filename in files:
-        print(os.path.join(path,filename))
-  except Exception as e:
-    print(e)
-        #await message.reply_text(akhil)
-    #message.message.delete_messages(Chat_Id, message.message_id)
