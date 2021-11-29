@@ -43,10 +43,13 @@ async def DownloadTest(bot, update):
 @Client.on_message(filters.private & filters.command(["folders"]))
 async def settings(bot,message):
   start_path = 'Downloads/'
-  for path,dirs,files in os.walk(start_path):
-    for filename in files:
-        akhil = (os.path.join(path,filename))
-        await message.reply_text(akhil)
+  try:
+    for path,dirs,files in os.walk(start_path):
+      for filename in files:
+        print(os.path.join(path,filename))
+  except Exception as e:
+    print(e)
+        #await message.reply_text(akhil)
     #message.message.delete_messages(Chat_Id, message.message_id)
 
 
