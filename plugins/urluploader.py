@@ -39,7 +39,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
     os.mkdir(path)
   except:
     os.mkdir(path)
-  msg = await msg.edit("Url Matched : {}".format(url),disable_web_page_preview=True)
+  #msg = await msg.edit("Url Matched : {}".format(url),disable_web_page_preview=True)
   file_name = url.split('/')[-1]
   file_path = os.path.join(path, file_name)
   response = requests.get(url)
