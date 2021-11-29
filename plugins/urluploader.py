@@ -54,22 +54,25 @@ async def Urlleaccher(bot,update,Url2Dowload):
   #start = time.time()
   #total = response.headers.get('content-length')
   #if total is None:
-  thumb_image_path =  open(Config.LoGoPath, 'rb')
-  with open(file_path, 'wb') as f:
-    f.write(response.content)
-  #os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
-  newfilename = f"@LibraryInBot {file_name}"
-  return newfilename
-  with open(file_path, 'rb') as doc:
-    await bot.send_document(
-      chat_id=update.message.chat.id,
-      document=doc,
-      file_name=file_name,
-      thumb=thumb_image_path,
-      force_document=True,
-      caption=f"{file_name}"
-      )
-  os.remove(file_path)
+  try:
+    thumb_image_path =  open(Config.LoGoPath, 'rb')
+    with open(file_path, 'wb') as f:
+      f.write(response.content)
+    #os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
+    newfilename = f"@LibraryInBot {file_name}"
+    #return newfilename
+    with open(file_path, 'rb') as doc:
+      await bot.send_document(
+        chat_id=update.message.chat.id,
+        document=doc,
+        file_name=file_name,
+        thumb=thumb_image_path,
+        force_document=True,
+        caption=f"{file_name}"
+        )
+    os.remove(file_path)
+  except Exception as e:
+    msg = await msg.edit("Exit with error : {}".format(e))
   #prpgressmsg = bot.send_message(chat_Id,text="📥 Trying to Download...",parse_mode="HTML")
   
   
