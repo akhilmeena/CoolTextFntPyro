@@ -37,6 +37,18 @@ HELPTEXT = """<b>⚠️ This is Help Pannel</b>:
 <i>This Is A Library Bot. If u Need any Type study Material Just send us in Complaint & Suggestions Pannel.
 </i>"""
 
+DonloadFiletext = """**Initiating Download**
+**URL:** {}
+**File Name:** {}
+**File Size:** {}"""
+
+DownloadingProgress = """Downloading : {}%
+URL: {}
+File Name: {}
+File Size: {}
+Downloaded: {}
+ETA: {}"""
+
 
 BotAboutText = """<b>About Me 😎
 <b>----------------------------------------------------</b>
