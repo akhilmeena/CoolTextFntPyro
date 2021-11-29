@@ -54,7 +54,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
   with open(file_path, 'rb') as doc:
     bot.send_document(
       chat_id=update.message.chat.id,
-      file_name=filename,
+      file_name=file_name,
       document=doc,
       force_document=True,
       caption=f"{filename}"
