@@ -39,7 +39,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
     os.mkdir(path)
   #except:
   else:
-    continue
+    pass
     #os.mkdir(path)
   file_name = url.split('/')[-1]
   #Downloads8183969797bfa1-19-march-2021.pdf
