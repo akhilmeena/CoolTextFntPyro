@@ -51,7 +51,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
   #if total is None:
   with open(file_path, 'wb') as f:
     f.write(response.content)
-  with open(newfilelocation, 'rb') as doc:
+  with open(file_path, 'rb') as doc:
     bot.send_document(
       chat_id=update.message.chat.id,
       file_name=filename,
