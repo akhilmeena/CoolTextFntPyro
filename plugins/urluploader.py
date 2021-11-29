@@ -23,20 +23,12 @@ async def Find(string):
 
 async def Urlleaccher(bot,update,Url2Dowload):
   msg = await update.message.reply_text("Validating Url...")
-  LinkValid = False
   try:
     url = await Find(Url2Dowload)
-    LinkValid = True
   except:
-    continue
-  if LinkValid is False:
-    await msg.edit("Link is Invalid")
-  else:
-    continue
-  if LinkValid is False:
-    break
-  else:
-    continue
-  await msg.edit("Good")
+    return
+  msg = await update.message.reply_text("Validating Url...")
+  
+  
   
   
