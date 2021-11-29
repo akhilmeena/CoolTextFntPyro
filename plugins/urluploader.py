@@ -32,12 +32,13 @@ async def Urlleaccher(bot,update,Url2Dowload):
   print(directory)
   parent_dir = "Downloads/"
   path = os.path.join(parent_dir, directory) 
-  #isExist = os.path.exists(path)
-  #if not isExist:
-  try:
+  isExist = os.path.exists(path)
+  if not isExist:
+  #try:
     #os.remove(path)
     os.mkdir(path)
-  except:
+  #except:
+  else:
     continue
     #os.mkdir(path)
   file_name = url.split('/')[-1]
