@@ -62,8 +62,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
         print("akhil")
         downloaded = 0
         total = int(total_length)
-        #for data in response.iter_content(chunk_size=max(int(total/1000), 1024*1024)):
-        for data in response.iter_content(chunk_size=CHUNK_SIZE):
+        for data in response.iter_content(chunk_size=max(int(total/1000), 1024*1024)):
           downloaded += len(data)
           f.write(data)
           done = int(25*downloaded/total)
@@ -71,8 +70,10 @@ async def Urlleaccher(bot,update,Url2Dowload):
           diff = now - start
           elapsed_time = round(diff) * 1000
           progressBar = '[{}{}]'.format('●' * done, '○' * (25-done))
-          totalInMb = round(total/1024/1024,2)
-          downloadedInMb = round(downloaded/1024/1024,2)
+          totalInMb = humanbytes(total)
+          downloadedInMb = humanbytes(downloaded)
+          #totalInMb = round(total/1024/1024,2)
+          #downloadedInMb = round(downloaded/1024/1024,2)
           speed = downloaded / diff
           speedInMb = round(downloadedInMb / diff,2)
           time_to_completion = (round((total - downloaded) / speed) * 1000)
