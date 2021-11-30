@@ -55,6 +55,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
     display_message = ""
     humanbytes = get_size
     with open(file_path, 'wb') as f:
+      chunk = response.iter_content(CHUNK_SIZE)
       chunk = await response.iter_content(CHUNK_SIZE)
       if not chunk:
         return
