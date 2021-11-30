@@ -30,7 +30,7 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
 
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
-        done = int(22*speed)
+        done = int(22*current/total)
         progressBar = "[{0}{1}]".format(
           '■' * done,
           '□' * (22-done))
