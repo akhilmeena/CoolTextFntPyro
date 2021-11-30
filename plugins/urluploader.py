@@ -78,11 +78,9 @@ async def Urlleaccher(bot,update,Url2Dowload):
           diff = now - start
           elapsed_time = round(diff) * 1000
           progressBar = '[{}{}]'.format('■' * done, '□' * (22-done))
-          totalInMb = round(convert_size(int(total)),2)
-          #totalInMb = round(total/1024/1024,2)
-          downloadedInMb = round(convert_size(int(downloaded)),2)
+          totalInMb = round(total/1024/1024,2)
           progressinPercebtnt =  round((downloaded*100)/total,2)
-          #downloadedInMb = round(downloaded/1024/1024,2)
+          downloadedInMb = round(downloaded/1024/1024,2)
           speed = downloaded / diff
           speedInMb = round(downloadedInMb / diff,2)
           #time_to_completion = (round((total - downloaded) / speed) * 1000)
@@ -111,12 +109,13 @@ async def Urlleaccher(bot,update,Url2Dowload):
         file_name=newfilename,
         thumb=thumb_image_path,
         force_document=True,
-        caption=f"{file_name}",
+        caption=f"<b>{file_name}</b>",
         progress=progress_for_pyrogram,
         progress_args=(
-          "Uploading Document",
+          "<b>File is Downloading ⌛</b>",
           msg, 
-          c_time
+          c_time,
+          file_name
           )
         )
     os.remove(newfile_path)
