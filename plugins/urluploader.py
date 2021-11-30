@@ -69,7 +69,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
           now = time.time()
           diff = now - start
           elapsed_time = round(diff) * 1000
-          progressBar = '[{}{}]'.format('●' * done, '○' * (25-done))
+          progressBar = '[{}{}]'.format('■' * done, '□' * (25-done))
           totalInMb = round(total/1024/1024,2)
           downloadedInMb = round(downloaded/1024/1024,2)
           speed = downloaded / diff
