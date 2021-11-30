@@ -59,6 +59,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
       if total_length is None:
         f.write(response.content)
       else:
+        print("akhil")
         downloaded = 0
         total = int(total_length)
         for data in response.iter_content(chunk_size=max(int(total/1000), 1024*1024)):
