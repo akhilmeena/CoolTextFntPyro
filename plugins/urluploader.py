@@ -75,7 +75,8 @@ async def Urlleaccher(bot,update,Url2Dowload):
           downloadedInMb = round(downloaded/1024/1024,2)
           speed = downloaded / diff
           speedInMb = round(downloadedInMb / diff,2)
-          time_to_completion = (round((total - downloaded) / speed) * 1000)
+          #time_to_completion = (round((total - downloaded) / speed) * 1000)
+          time_to_completion = (round((total - downloaded) / speed))
         #time_to_completion = (round((total - downloaded) / speed) * 1000)
         #estimated_total_time = (elapsed_time + time_to_completion)/1000
           progressText = '''<b>File is Downloading ⌛
