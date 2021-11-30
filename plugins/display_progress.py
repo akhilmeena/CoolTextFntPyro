@@ -34,6 +34,7 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
         progressBar = "[{0}{1}]".format(
           '■' * done,
           '□' * (22-done))
+        print(progressBar)
         #progress = "[{0}{1}] \n<b>🗂️ File Name </b>:<code>akh</code>\n <b>📊Percentage:</b> {2}%\n".format(
 #            ''.join(["■" for i in range(math.floor(percentage / 5))]),
 #            ''.join(["□" for i in range(22 - math.floor(percentage / 5))]),
@@ -50,7 +51,7 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
             await message.edit(
                 text="{}\n {}".format(ud_type,progressBar), reply_markup=reply_markup
             )
-        except:
+        except Exception as e:
           await message.edit(e)
           pass
 
