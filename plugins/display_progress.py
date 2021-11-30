@@ -11,6 +11,7 @@ import time
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 async def progress_for_pyrogram(current, total, ud_type, message, start):
+    print(ud_type)
     reply_markup=InlineKeyboardMarkup(
             [
                 [
