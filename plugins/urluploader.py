@@ -51,7 +51,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
   #if total is None:
   try:
     thumb_image_path =  open(Config.LoGoPath, 'rb')
-    #CHUNK_SIZE = 1024*6 # 2341
+    CHUNK_SIZE = 1024*6 # 2341
     downloaded = 0
     #display_message = ""
     humanbytes = get_size
@@ -62,7 +62,8 @@ async def Urlleaccher(bot,update,Url2Dowload):
         print("akhil")
         downloaded = 0
         total = int(total_length)
-        for data in response.iter_content(chunk_size=max(int(total/1000), 1024*1024)):
+        #for data in response.iter_content(chunk_size=max(int(total/1000), 1024*1024)):
+        for data in response.iter_content(chunk_size=CHUNK_SIZE):
           downloaded += len(data)
           f.write(data)
           done = int(25*downloaded/total)
