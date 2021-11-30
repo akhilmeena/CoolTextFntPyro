@@ -77,10 +77,10 @@ File Name: {}
 File Size: {}
 Downloaded: {}
 ETA: {}""".format("%.2f" % (percentage), url, file_name.split("/")[-1], humanbytes(total_length), humanbytes(downloaded), time_formatter(estimated_total_time))
-            if (current_message != display_message and current_message != "empty"):
-              print(current_message)
-              await event.edit(current_message, parse_mode="html")
-              display_message = current_message
+          if (current_message != display_message and current_message != "empty"):
+            print(current_message)
+            await msg.edit(current_message, parse_mode="html")
+            display_message = current_message
         except Exception as e:
           print("Error",e)
       #f.write(response.content)
