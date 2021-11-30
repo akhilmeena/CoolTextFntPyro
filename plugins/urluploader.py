@@ -6,7 +6,7 @@ import pyrogram
 from plugins import helper
 import requests
 from pyrogram import Client, filters
-from plugins.display_progress import progress_for_pyrogram
+from plugins.display_progress import progress_for_pyrogram,get_size
 import time
 
 logging.basicConfig(level=logging.DEBUG,
@@ -50,8 +50,40 @@ async def Urlleaccher(bot,update,Url2Dowload):
   #if total is None:
   try:
     thumb_image_path =  open(Config.LoGoPath, 'rb')
+    CHUNK_SIZE = 1024*6 # 2341
+    downloaded = 0
+    display_message = ""
+    humanbytes = get_size
     with open(file_path, 'wb') as f:
-      f.write(response.content)
+      chunk = await response.content.read(CHUNK_SIZE)
+      if not chunk:
+        break
+      f.write(chunk)
+      downloaded += CHUNK_SIZE
+      now = time.time()
+      diff = now - start
+      if round(diff % 10.00) == 0:
+        percentage = downloaded * 100 / total_length
+        speed = downloaded / diff
+        elapsed_time = round(diff) * 1000
+        time_to_completion = (round((total_length - downloaded) / speed) * 1000)
+        estimated_total_time = elapsed_time + time_to_completion
+        try:
+          if total_length < downloaded:
+            total_length = downloaded
+            current_message = """Downloading : {}%
+URL: {}
+File Name: {}
+File Size: {}
+Downloaded: {}
+ETA: {}""".format("%.2f" % (percentage), url, file_name.split("/")[-1], humanbytes(total_length), humanbytes(downloaded), time_formatter(estimated_total_time))
+            if (current_message != display_message and current_message != "empty"):
+              print(current_message)
+              await event.edit(current_message, parse_mode="html")
+              display_message = current_message
+        except Exception as e:
+          print("Error",e)
+      #f.write(response.content)
     os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
     newfilename = f"@LibraryInBot {file_name}"
     newfile_path = os.path.join(path, newfilename)
