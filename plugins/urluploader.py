@@ -6,7 +6,7 @@ import pyrogram
 from plugins import helper
 import requests
 from pyrogram import Client, filters
-from plugins.display_progress import progress_for_pyrogram,get_size
+from plugins.display_progress import progress_for_pyrogram,get_size,TimeFormatter
 import time
 
 logging.basicConfig(level=logging.DEBUG,
@@ -84,7 +84,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
 <b>⚡ Speed :</b> <code>{}</code> Mbps
 <b>🕛 Est :</b> <code>{}</code>
 {}'''
-          progstext = progressText.format(file_name,downloadedInMb,totalInMb,speedInMb,time_to_completion,progressBar)
+          progstext = progressText.format(file_name,downloadedInMb,totalInMb,speedInMb,TimeFormatter(milliseconds=time_to_completion),progressBar)
           await msg.edit(progstext)
       #f.write(response.content)
     os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
