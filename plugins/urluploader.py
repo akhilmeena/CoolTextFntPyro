@@ -1,6 +1,7 @@
 import re 
 import logging
 import os
+import math
 from config import Config
 import pyrogram
 from plugins import helper
