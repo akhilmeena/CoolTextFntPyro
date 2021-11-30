@@ -55,35 +55,35 @@ async def Urlleaccher(bot,update,Url2Dowload):
     display_message = ""
     humanbytes = get_size
     with open(file_path, 'wb') as f:
-      chunk = response.iter_content(CHUNK_SIZE)
-      #chunk = await response.iter_content(CHUNK_SIZE)
-      if not chunk:
-        return
-      f.write(chunk)
-      downloaded += CHUNK_SIZE
-      now = time.time()
-      diff = now - start
-      if round(diff % 10.00) == 0:
-        percentage = downloaded * 100 / total_length
-        speed = downloaded / diff
+      if total is None:
+      f.write(response.content)
+    else:
+      downloaded = 0
+      total = int(total)
+      for data in response.iter_content(chunk_size=max(int(total/1000), 1024*1024)):
+        downloaded += len(data)
+        f.write(data)
+        done = int(25*downloaded/total)
+        now = time.time()
+        diff = now - start
         elapsed_time = round(diff) * 1000
-        time_to_completion = (round((total_length - downloaded) / speed) * 1000)
-        estimated_total_time = elapsed_time + time_to_completion
-        try:
-          if total_length < downloaded:
-            total_length = downloaded
-            current_message = """Downloading : {}%
-URL: {}
-File Name: {}
-File Size: {}
-Downloaded: {}
-ETA: {}""".format("%.2f" % (percentage), url, file_name.split("/")[-1], humanbytes(total_length), humanbytes(downloaded), time_formatter(estimated_total_time))
-          if (current_message != display_message and current_message != "empty"):
-            print(current_message)
-            await msg.edit(current_message, parse_mode="html")
-            display_message = current_message
-        except Exception as e:
-          print("Error",e)
+        progressBar = '[{}{}]'.format('●' * done, '○' * (25-done))
+        totalInMb = round(total/1024/1024,2)
+        downloadedInMb = round(downloaded/1024/1024,2)
+        speed = downloaded / diff
+        speedInMb = round(downloadedInMb / diff,2)
+        time_to_completion = (round((total - downloaded) / speed) * 1000)
+        #time_to_completion = (round((total - downloaded) / speed) * 1000)
+        #estimated_total_time = (elapsed_time + time_to_completion)/1000
+        progressText = '''<b>File is Downloading ⌛
+ 
+🗂️ File Name :</b> <code>{}</code>
+<b>📥 Download Progess :</b> <code>{}</code>/<code>{}</code>
+<b>⚡ Speed :</b> <code>{}</code> Mbps
+<b>🕛 Est :</b> <code>{}</code>
+{}'''
+        progstext = progressText.format(file_name,downloadedInMb,totalInMb,speedInMb,time_to_completion,progressBar)
+        msg.edit(progstext)
       #f.write(response.content)
     os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
     newfilename = f"@LibraryInBot {file_name}"
