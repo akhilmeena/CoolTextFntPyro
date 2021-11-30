@@ -14,7 +14,14 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-
+def convert_size(size_bytes):
+   if size_bytes == 0:
+       return "0B"
+   size_name = ("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")
+   i = int(math.floor(math.log(size_bytes, 1024)))
+   p = math.pow(1024, i)
+   s = round(size_bytes / p, 2)
+   return "%s %s" % (s, size_name[i])
 
 async def Find(string): 
   regex = r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))"
@@ -70,9 +77,11 @@ async def Urlleaccher(bot,update,Url2Dowload):
           diff = now - start
           elapsed_time = round(diff) * 1000
           progressBar = '[{}{}]'.format('■' * done, '□' * (22-done))
-          totalInMb = round(total/1024/1024,2)
+          totalInMb = convert_size(total)
+          #totalInMb = round(total/1024/1024,2)
+          downloadedInMb = convert_size(downloaded)
           progressinPercebtnt =  round((downloaded*100)/total,2)
-          downloadedInMb = round(downloaded/1024/1024,2)
+          #downloadedInMb = round(downloaded/1024/1024,2)
           speed = downloaded / diff
           speedInMb = round(downloadedInMb / diff,2)
           #time_to_completion = (round((total - downloaded) / speed) * 1000)
