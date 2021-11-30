@@ -57,7 +57,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
     with open(file_path, 'wb') as f:
       chunk = await response.content.read(CHUNK_SIZE)
       if not chunk:
-        break
+        return
       f.write(chunk)
       downloaded += CHUNK_SIZE
       now = time.time()
