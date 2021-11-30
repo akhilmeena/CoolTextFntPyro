@@ -78,9 +78,9 @@ async def Urlleaccher(bot,update,Url2Dowload):
           diff = now - start
           elapsed_time = round(diff) * 1000
           progressBar = '[{}{}]'.format('■' * done, '□' * (22-done))
-          totalInMb = convert_size(str(total))
+          totalInMb = round(convert_size(int(total)),2)
           #totalInMb = round(total/1024/1024,2)
-          downloadedInMb = convert_size(str(downloaded))
+          downloadedInMb = round(convert_size(int(downloaded)),2)
           progressinPercebtnt =  round((downloaded*100)/total,2)
           #downloadedInMb = round(downloaded/1024/1024,2)
           speed = downloaded / diff
