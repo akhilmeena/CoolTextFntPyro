@@ -112,10 +112,9 @@ async def Urlleaccher(bot,update,Url2Dowload):
         caption=f"<b>{file_name}</b>",
         progress=progress_for_pyrogram,
         progress_args=(
-          "<b>File is Downloading ⌛</b>",
+          "<b>File is Uploading ⌛</b>",
           msg, 
-          c_time,
-          file_name
+          c_time
           )
         )
     os.remove(newfile_path)
