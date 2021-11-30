@@ -85,7 +85,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
 <b>🕛 Est :</b> <code>{}</code>
 {}'''
           progstext = progressText.format(file_name,downloadedInMb,totalInMb,speedInMb,time_to_completion,progressBar)
-          msg.edit(progstext)
+          await msg.edit(progstext)
       #f.write(response.content)
     os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
     newfilename = f"@LibraryInBot {file_name}"
