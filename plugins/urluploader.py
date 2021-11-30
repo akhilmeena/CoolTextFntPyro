@@ -113,7 +113,6 @@ async def Urlleaccher(bot,update,Url2Dowload):
         progress=progress_for_pyrogram,
         progress_args=(
           "<b>File is Uploading ⌛</b>",
-          file_path,
           msg, 
           c_time
           )
