@@ -71,6 +71,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
           elapsed_time = round(diff) * 1000
           progressBar = '[{}{}]'.format('■' * done, '□' * (22-done))
           totalInMb = round(total/1024/1024,2)
+          progressinPercebtnt =  round((downloaded*100)/total,2)
           downloadedInMb = round(downloaded/1024/1024,2)
           speed = downloaded / diff
           speedInMb = round(downloadedInMb / diff,2)
@@ -80,11 +81,12 @@ async def Urlleaccher(bot,update,Url2Dowload):
           progressText = '''<b>File is Downloading ⌛
  
 🗂️ File Name :</b> <code>{}</code>
+<b>📊Percentage :</b> <code>{}%</code>
 <b>📥 Download Progess :</b> <code>{}</code>/<code>{}</code>
 <b>⚡ Speed :</b> <code>{}</code> Mbps
 <b>🕛 Est :</b> <code>{}</code>
 {}'''
-          progstext = progressText.format(file_name,downloadedInMb,totalInMb,speedInMb,TimeFormatter(milliseconds=time_to_completion),progressBar)
+          progstext = progressText.format(file_name,progressinPercebtnt,downloadedInMb,totalInMb,speedInMb,TimeFormatter(milliseconds=time_to_completion),progressBar)
           await msg.edit(progstext)
       #f.write(response.content)
     os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
