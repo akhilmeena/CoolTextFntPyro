@@ -21,7 +21,7 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
         )
     now = time.time()
     diff = now - start
-    if round(diff % 5.00) == 0 or current == total:
+    if round(diff % 10.00) == 0 or current == total:
         # if round(current / total * 100, 0) % 5 == 0:
         percentage = current * 100 / total
         speed = current / diff
@@ -31,23 +31,16 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
 
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
-        done = int(22*current/total)
-        progressBar = "[{0}{1}]".format(
-          '■' * done,
-          '□' * (22-done))
-        print(progressBar)
-        #progress = "[{0}{1}] \n<b>🗂️ File Name </b>:<code>akh</code>\n <b>📊Percentage:</b> {2}%\n".format(
-#            ''.join(["■" for i in range(math.floor(percentage / 5))]),
-#            ''.join(["□" for i in range(22 - math.floor(percentage / 5))]),
-#            round(percentage, 2))
-
-        #tmp = progressBar + "<b>✅Completed:</b>{0} \n<b>📁Total Size:</b> {1}\n<b>🚀Speed:</b> {2}/s\n<b>⌚️ETA:</b> {3}\n".format(
-#            humanbytes(current),
-#            humanbytes(total),
-#            humanbytes(speed),
-#            # elapsed_time if elapsed_time != '' else "0 s",
-#            estimated_total_time if estimated_total_time != '' else "0 s"
-#        )
+        progress = "\n\n <b>📊Percentage:</b> {0}%\n".format(round(percentage, 2))
+        tmp = progressBar + "<b>✅Completed:</b>{0} \n<b>📁Total Size:</b> {1}\n<b>🚀Speed:</b> {2}/s\n<b>⌚️ETA:</b> {3}\n[{4}{5}]".format(
+            humanbytes(current),
+            humanbytes(total),
+            humanbytes(speed),
+            elapsed_time if elapsed_time != '' else "0 s",
+            estimated_total_time if estimated_total_time != '' else "0 s"),
+            ''.join(["■" for i in range(math.floor(percentage / 5))]),
+            ''.join(["□" for i in range(22 - math.floor(percentage / 5))]),
+            )
         try:
             await message.edit(
                 text="{}\n {}".format(ud_type,progressBar), reply_markup=reply_markup
