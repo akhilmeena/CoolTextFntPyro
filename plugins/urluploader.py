@@ -63,11 +63,11 @@ async def Urlleaccher(bot,update,Url2Dowload):
     downloaded = 0
     #display_message = ""
     humanbytes = get_size
+    msg = await msg.edit("Tring to Download Your Document......")
     with open(file_path, 'wb') as f:
       if total_length is None:
         f.write(response.content)
       else:
-        print("akhil")
         downloaded = 0
         total = int(total_length)
         for data in response.iter_content(chunk_size=max(int(total/1000), 1024*1024)):
@@ -93,14 +93,16 @@ async def Urlleaccher(bot,update,Url2Dowload):
 <b>📊Percentage :</b> <code>{}%</code>
 <b>📥 Download Progess :</b> <code>{}</code>/<code>{}</code>
 <b>⚡ Speed :</b> <code>{}</code> Mbps
-<b>🕛 Est :</b> <code>{}</code>
+<b>🕛 ETA:</b> <code>{}</code>
 {}'''
-          progstext = progressText.format(file_name,progressinPercebtnt,downloadedInMb,totalInMb,speedInMb,TimeFormatter(milliseconds=time_to_completion),progressBar)
+          progstext = progressText.format(file_name,progressinPercebtnt,downloadedInMb,totalInMb,speedInMb,TimeFormatter(milliseconds=time_to_completion),progressBar,)
           await msg.edit(progstext)
       #f.write(response.content)
+    msg = await msg.edit("Tring to Rename Your Document......")
     os.rename(file_path,os.path.join(path,f"{Config.Bot_Username} {file_name}"))
     newfilename = f"@LibraryInBot {file_name}"
     newfile_path = os.path.join(path, newfilename)
+    msg = await msg.edit("Tring to Uplaod Your Document......")
     with open(newfile_path, 'rb') as doc:
       c_time = time.time()
       await bot.send_document(
@@ -112,7 +114,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
         caption=f"<b>{file_name}</b>",
         progress=progress_for_pyrogram,
         progress_args=(
-          "<b>File is Uploading ⌛</b>",
+          f"<b>File is Uploading ⌛</b>\n\n🗂️ File Name :</b> <code>{file_name}</code>",
           msg, 
           c_time
           )
