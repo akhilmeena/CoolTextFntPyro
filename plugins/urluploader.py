@@ -119,7 +119,9 @@ async def Urlleaccher(bot,update,Url2Dowload):
           c_time
           )
         )
-      await Client.delete_message(chat_id=update.chat.id,message_id=msg.message_id)
+      #await Client.delete_message(chat_id=update.chat.id,message_id=msg.message_id)
+      #await delete_messages([message, msg])
+      await msg.delete()
     os.remove(newfile_path)
   except Exception as e:
     msg = await msg.edit("Exit with error : {}".format(e))
