@@ -22,7 +22,7 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
         estimated_total_time = elapsed_time + time_to_completion
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
-        tmp = """<b>📊Percentage :</b> <code>{0}</code>
+        tmp = """<b>📊Percentage :</b> <code>{0}%</code>
 <b>✅Completed:</b>{0} 
 <b>📁Total Size:</b> {1}
 <b>🚀Speed:</b> {2}/s
