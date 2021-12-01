@@ -33,7 +33,7 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
   humanbytes(speed),
   estimated_total_time if estimated_total_time != '' else "0 s"
   )
-        progress = tmp +  "[{0}{1}] \n".format(
+        progress = tmp +  "\n[{0}{1}]".format(
             ''.join(["■" for i in range(math.floor(percentage / 5))]),
             ''.join(["□" for i in range(20 - math.floor(percentage / 5))])
         )
