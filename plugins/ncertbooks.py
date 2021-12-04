@@ -127,8 +127,8 @@ NCERTBOOKSPDF = {
     'Sociology-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Sociology-Part-1.pdf',
     'Sociology-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Sociology-Part-2.pdf',
     'Urdu-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Urdu-Part-1.pdf',
-    'Urdu-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Urdu-Part-2.pdf',
-    "अभिव्यक्ति और माध्यम": 'https://ncert.nic.in/textbook/pdf/kham1dd.zip'
+    'Urdu-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Urdu-Part-2.pdf'
+    #"अभिव्यक्ति और माध्यम": 'https://ncert.nic.in/textbook/pdf/kham1dd.zip'
   },
   'Class 12' : {
     'Accountancy-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2017/07/NCERT-Class-12-Accountancy-Part-1.pdf',
@@ -153,7 +153,7 @@ NCERTBOOKSPDF = {
     'Sociology-Part-2':'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-12-Sociology-Part-2.pdf',
     'Urdu-Part-1':'https://freehomedelivery.net/wp-content/uploads/2019/07/NCERT-Class-12-Urdu-Part-1.pdf',
     'Urdu-Part-2':'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-12-Urdu-Part-2.pdf',
-    "अभिव्यक्ति और माध्यम": 'https://ncert.nic.in/textbook/pdf/kham1dd.zip'
+    #"अभिव्यक्ति और माध्यम": 'https://ncert.nic.in/textbook/pdf/kham1dd.zip'
   },
 }
 
