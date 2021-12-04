@@ -8,29 +8,29 @@ Classes = ["1⃣","2⃣","3⃣","4⃣","5⃣","6⃣","7⃣","8⃣","9⃣","🔟"
 
 NCERTBOOKSPDF = {
   'Class 1' : {
-    'Hindi' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-1-Hindi.pdf',
+    'हिंदी' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-1-Hindi.pdf',
     'Maths' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-1-Mathematics.pdf',
     'English' : 'https://freehomedelivery.net/wp-content/uploads/2017/02/NCERT-Class-1-English.pdf'
   },
   'Class 2' : {
-    'Hindi' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-2-Hindi.pdf',
+    'हिंदी' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-2-Hindi.pdf',
     'Maths' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-2-Mathematics.pdf',
     'English' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-2-English.pdf'
   },
   'Class 3' : {
-    'Hindi' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-3-Hindi.pdf',
+    'हिंदी' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-3-Hindi.pdf',
     'Maths' : 'https://freehomedelivery.net/wp-content/uploads/2017/02/NCERT-Class-3-Mathematics.pdf',
     'EVS' : 'https://freehomedelivery.net/wp-content/uploads/2019/04/ceap1dd.zip',
     'English': 'https://freehomedelivery.net/wp-content/uploads/2017/02/NCERT-Class-3-English.pdf'
   },
   'Class 4' : {
-    'Hindi' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-4-Hindi.pdf',
+    'हिंदी' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-4-Hindi.pdf',
     'Maths' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-4-Mathematics.pdf',
     'EVS' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-4-Environmental-Science.pdf',
     'English' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-4-English.pdf'
   },
   'Class 5' : {
-    'Hindi' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-5-Hindi.pdf',
+    'हिंदी' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-5-Hindi.pdf',
     'Maths' : 'https://freehomedelivery.net/wp-content/uploads/2017/02/NCERT-Class-5-Mathematics.pdf',
     'EVS' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-5-Environmental-Science.pdf',
     'English' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-5-English.pdf'
@@ -38,9 +38,9 @@ NCERTBOOKSPDF = {
   'Class 6' : {
     'English (Part 1)' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-6-English-Part-1.pdf',
     'English (Part 2)' : 'https://freehomedelivery.net/wp-content/uploads/2017/03/NCERT-Class-6-English-Part-2.pdf',
-    'Hindi (Part 1)' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-6-Hindi-Part-1.pdf',
-    'Hindi (Part 2)' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-6-Hindi-Part-2.pdf',
-    'Hindi (Part 3)' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-6-Hindi-Part-3.pdf',
+    'हिंदी (Part 1)' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-6-Hindi-Part-1.pdf',
+    'हिंदी (Part 2)' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-6-Hindi-Part-2.pdf',
+    'हिंदी (Part 3)' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-6-Hindi-Part-3.pdf',
     'Maths':'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-6-Mathematics.pdf',
     'Science':'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-6-Science.pdf',
     'History':'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-6-History.pdf',
@@ -51,7 +51,7 @@ NCERTBOOKSPDF = {
   'Class 7' : {
     'English-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-7-English-Part-1.pdf',
     'English-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-7-English-Part-2.pdf',
-    'Hindi' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-7-Hindi.pdf',
+    'हिंदी' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-7-Hindi.pdf',
     'Mathematics' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-7-Mathematics.pdf',
     'Science' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-7-Science.pdf',
     'History' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-7-History.pdf',
@@ -63,9 +63,9 @@ NCERTBOOKSPDF = {
   'Class 8' : {
     'English-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-8-English-Part-1.pdf',
     'English-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-8-English-Part-2.pdf',
-    'Hindi-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-8-Hindi-Part-1.pdf',
-    'Hindi-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-8-Hindi-Part-2.pdf',
-    'Hindi-Part-3' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-8-Hindi-Part-3.pdf',
+    'हिंदी-भाग-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-8-Hindi-Part-1.pdf',
+    'हिंदी-भाग-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-8-Hindi-Part-2.pdf',
+    'हिंदी-भाग-3' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-8-Hindi-Part-3.pdf',
     'Mathematics' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-8-Mathematics.pdf',
     'Science' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-8-Science.pdf',
     'History' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-8-History.pdf',
@@ -76,10 +76,10 @@ NCERTBOOKSPDF = {
   'Class 9' : {
     'English-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-9-English-Part-1.pdf',
     'English-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-9-English-Part-2.pdf',
-    'Hindi-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-9-Hindi-Part-1.pdf',
-    'Hindi-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-9-Hindi-Part-2.pdf',
-    'Hindi-Part-3' : '',
-    'Hindi-Part-4' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-9-Hindi-Part-4.pdf',
+    'हिंदी-भाग-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-9-Hindi-Part-1.pdf',
+    'हिंदी-भाग-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-9-Hindi-Part-2.pdf',
+    'हिंदी-भाग-3' : '',
+    'हिंदी-भाग-4' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-9-Hindi-Part-4.pdf',
     'Mathematics' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-9-Mathematics.pdf',
     'Mathematics-Exemplar-Problems' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-9-Mathematics-Exemplar-Problems.pdf',
     'Science' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-9-Science.pdf',
@@ -92,10 +92,10 @@ NCERTBOOKSPDF = {
   'Class 10' : {
     'English-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-English-Part-1.pdf',
     'English-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-English-Part-2.pdf',
-    'Hindi-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-10-Hindi-Part-1.pdf',
-    'Hindi-Part-2' : '',
-    'Hindi-Part-3' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-10-Hindi-Part-3.pdf',
-    'Hindi-Part-4' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-10-Hindi-Part-4.pdf',
+    'हिंदी-भाग-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-10-Hindi-Part-1.pdf',
+    'हिंदी-भाग-2' : '',
+    'हिंदी-भाग-3' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-10-Hindi-Part-3.pdf',
+    'हिंदी-भाग-4' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-10-Hindi-Part-4.pdf',
     'Mathematics' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-Mathematics.pdf',
     'Mathematics-Exemplar-Problems' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-Mathematics-Exemplar-Problems.pdf',
     'Science' : '',
@@ -113,10 +113,10 @@ NCERTBOOKSPDF = {
     'Geography-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Geography-Part-1.pdf',
     'Geography-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Geography-Part-2.pdf',
     'Geography-Practical' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Geography-Practical.pdf',
-    'Hindi-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Hindi-Class-11-Hindi-Part-1.pdf',
-    'Hindi-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Hindi-Class-11-Hindi-Part-2.pdf',
-    'Hindi-Part-3' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Hindi-Class-11-Hindi-Part-3.pdf',
-    'Hindi-Part-4' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Hindi-Class-11-Hindi-Part-4.pdf',
+    'हिंदी-भाग-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Hindi-Class-11-Hindi-Part-1.pdf',
+    'हिंदी-भाग-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Hindi-Class-11-Hindi-Part-2.pdf',
+    'हिंदी-भाग-3' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Hindi-Class-11-Hindi-Part-3.pdf',
+    'हिंदी-भाग-4' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Hindi-Class-11-Hindi-Part-4.pdf',
     'Mathematics' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Mathematics-1.pdf',
     'Physics-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Physics-Part-1-1.pdf',
     'Physics-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-11-Physics-Part-2-1.pdf',
@@ -152,6 +152,9 @@ NCERTBOOKSPDF = {
     'Sociology-Part-2':'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-12-Sociology-Part-2.pdf',
     'Urdu-Part-1':'https://freehomedelivery.net/wp-content/uploads/2019/07/NCERT-Class-12-Urdu-Part-1.pdf',
     'Urdu-Part-2':'https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-12-Urdu-Part-2.pdf'
+  },
+  'Class 11 & 12 Combined' : {
+    "अभिव्यक्ति और माध्यम": 'https://ncert.nic.in/textbook/pdf/kham1dd.zip'
   },
 }
 
