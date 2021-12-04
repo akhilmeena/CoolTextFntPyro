@@ -5,6 +5,49 @@ import string
 
 Classes = ["1⃣","2⃣","3⃣","4⃣","5⃣","6⃣","7⃣","8⃣","9⃣","🔟","1⃣1⃣","1⃣2⃣"]
 
+NCERTBOOKSPDF = {
+  "Class 1" : {
+    "Hindi" : "https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-1-Hindi.pdf",
+    "Maths" : "https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-1-Mathematics.pdf",
+    "English" : "https://freehomedelivery.net/wp-content/uploads/2017/02/NCERT-Class-1-English.pdf"
+  },
+  "Class 2" : {
+    "Hindi" : "https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-2-Hindi.pdf",
+    "Maths" : "https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-2-Mathematics.pdf",
+    "English" : "https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-2-English.pdf"
+  },
+  "Class 3" : {
+    "Hindi" : "https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-3-Hindi.pdf",
+    "Maths" : "https://freehomedelivery.net/wp-content/uploads/2017/02/NCERT-Class-3-Mathematics.pdf",
+    "EVS" : "https://freehomedelivery.net/wp-content/uploads/2019/04/ceap1dd.zip",
+    "English": "https://freehomedelivery.net/wp-content/uploads/2017/02/NCERT-Class-3-English.pdf"
+  },
+  "Class 4" : {
+    "Hindi" : "https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-4-Hindi.pdf",
+    "Maths" : "https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-4-Mathematics.pdf",
+    "EVS" : "https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-4-Environmental-Science.pdf",
+    "English" : "https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-4-English.pdf"
+  },
+  "Class 5" : {
+    "Hindi" : "https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-5-Hindi.pdf",
+    "Maths" : "",
+    "EVS" : "https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-5-Environmental-Science.pdf",
+    "English" : "https://freehomedelivery.net/wp-content/uploads/2016/11/NCERT-Class-5-English.pdf"
+  },
+}
+
+
+def addsubjectbutton(bot,update,classnmbr):
+  classitems = NCERTBOOKSPDF[f"Class {classnmbr}"]
+  Source_List = []
+  for subject,url in classitems.itmes():
+    addDict = {}
+    addList = ["dwldboobsncert"]
+    addList.append(str(url))
+    addDict["CallBtnTedt"] = str(f"{subject}")
+    addDict["CallBtnData"] = f"{addList}"
+  return Source_List
+
 
 def addclasslist(bot,update):
   Source_List = []
