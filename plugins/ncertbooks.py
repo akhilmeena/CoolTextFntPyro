@@ -43,7 +43,6 @@ NCERTBOOKSPDF = {
 
 def addsubjectbutton(bot,update,classnmbr):
   classsnumber = NCERTBOOKSPDF[f"Class {classnmbr}"]
-  print(classsnumber)
   Source_List = []
   for subject,url in classsnumber.items():
     addDict = {}
@@ -51,7 +50,7 @@ def addsubjectbutton(bot,update,classnmbr):
     addList.append(str(url))
     addDict["CallBtnTedt"] = str(f"{subject}")
     addDict["CallBtnData"] = f"{addList}"
-  print(Source_List)
+    Source_List.append(addDict)
   return Source_List
 
 
