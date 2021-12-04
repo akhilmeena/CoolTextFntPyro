@@ -22,9 +22,6 @@ async def cb_data(bot, update):
     getcodeheadwithday = ast.literal_eval(update.data)[1]
     Url2Dowload = "https://s3-us-west-2.amazonaws.com/visionresources/daily_current_affairs/{}.pdf".format(getcodeheadwithday)
     await Urlleaccher(bot,update,Url2Dowload)
-    #await update.message.edit_text(text=update.data)
-    #await update.message.reply_text(text="akhil")
-    #print(getcodeheadwithday)
   if (update.data.startswith("['getcurrentofmonthvsnias'")):
     month_num = ast.literal_eval(update.data)[1]
     year_num = ast.literal_eval(update.data)[2]
@@ -37,7 +34,7 @@ async def cb_data(bot, update):
     await update.message.edit_text(text="<b>Choose Your Month</b>",reply_markup=newbtns)
   if update.data == "ncertbooks":
     Source_List = ncertbooks.addclasslist(bot,update)
-    newbtns = ncertbooks.makeBtnFromDict(Source_List):
+    newbtns = ncertbooks.makeBtnFromDict(Source_List)
     await update.message.edit_text(text="<b>Choose Your Class</b>",reply_markup=newbtns)
   if update.data == "crnafrsdaily":
     await update.message.edit_text(text="<b>Choose Your Source</b>",reply_markup=currentaffairs.CRNTAFRSOURCEBTN)
