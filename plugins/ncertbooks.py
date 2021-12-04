@@ -39,10 +39,10 @@ NCERTBOOKSPDF = {
 
 
 def addsubjectbutton(bot,update,classnmbr):
-  classitems = NCERTBOOKSPDF[f"Class {classnmbr}"]
-  data = json.load(classitems)
+  classitems = NCERTBOOKSPDF[str(f"Class {classnmbr}")]
+  res = json.loads(str(classitems)) 
   Source_List = []
-  for subject,url in data.itmes():
+  for subject,url in res.itmes():
     addDict = {}
     addList = ["dwldboobsncert"]
     addList.append(str(url))
