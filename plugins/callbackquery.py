@@ -20,9 +20,9 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 async def cb_data(bot, update):
   if (update.data.startswith("['getsubjctofclass'")):
     classnmbr = ast.literal_eval(update.data)[1]
-    Source_List = ncertbooks.addsubjectbutton(bot,update,classnmbr)
+    Source_List,totalsubjcet = ncertbooks.addsubjectbutton(bot,update,classnmbr)
     newbtns = ncertbooks.makeBtnFromDict(Source_List)
-    await update.message.edit_text(text="<b>Click To Download Respective Subject Book</b>",reply_markup=newbtns)
+    await update.message.edit_text(text=ncertbooks.ClasssubjctText.format(classnmbr,classnmbr,totalsubjcet),reply_markup=newbtns)
     #Url2Dowload = "https://s3-us-west-2.amazonaws.com/visionresources/daily_current_affairs/{}.pdf".format(getcodeheadwithday)
     #await update.message.reply_text(update.data)
     #await update.message.reply_text(getClassNcert)
