@@ -47,7 +47,7 @@ def addsubjectbutton(bot,update,classnmbr):
   for subject,url in classsnumber.items():
     addDict = {}
     addList = ["dwldboobsncert"]
-    addList.append(str(classsnumber))
+    addList.append(str(classnmbr))
     addList.append(str(subject))
     addDict["CallBtnTedt"] = str(f"{subject}")
     addDict["CallBtnData"] = f"{addList}"
