@@ -3,14 +3,16 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton ,InlineKeyboardMarkup
 import string
 
+Classes = ["1⃣","2⃣","3⃣","4⃣","5⃣","6⃣","7⃣","8⃣","9⃣","🔟","1⃣1⃣","1⃣2⃣"]
+
 
 def addclasslist(bot,update):
   Source_List = []
   for clss in range(12):
     addDict = {}
     addList = ["getsubjctofclass"]
-    addDict["CallBtnTedt"] = str(f"Class {clss}")
-    addList.append(str(clss))
+    addDict["CallBtnTedt"] = str(f"Class {Classes[clss]}")
+    addList.append(str(int(clss) + 1))
     addDict["CallBtnData"] = f"{addList}"
     Source_List.append(addDict)
   return Source_List
