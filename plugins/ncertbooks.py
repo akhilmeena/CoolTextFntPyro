@@ -77,8 +77,8 @@ NCERTBOOKSPDF = {
     'English-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-9-English-Part-1.pdf',
     'English-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-9-English-Part-2.pdf',
     'Hindi-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-9-Hindi-Part-1.pdf',
-    'Hindi-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-9-Hindi-Part-2.pdf'
-    #'Hindi-Part-3' : '',
+    'Hindi-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-9-Hindi-Part-2.pdf',
+    'Hindi-Part-3' : '',
     'Hindi-Part-4' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-9-Hindi-Part-4.pdf',
     'Mathematics' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-9-Mathematics.pdf',
     'Mathematics-Exemplar-Problems' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-9-Mathematics-Exemplar-Problems.pdf',
@@ -92,13 +92,13 @@ NCERTBOOKSPDF = {
   'Class 10' : {
     'English-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-English-Part-1.pdf',
     'English-Part-2' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-English-Part-2.pdf',
-    'Hindi-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-10-Hindi-Part-1.pdf'
-    #'Hindi-Part-2' : '',
+    'Hindi-Part-1' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-10-Hindi-Part-1.pdf',
+    'Hindi-Part-2' : '',
     'Hindi-Part-3' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-10-Hindi-Part-3.pdf',
     'Hindi-Part-4' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Hindi-Class-10-Hindi-Part-4.pdf',
     'Mathematics' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-Mathematics.pdf',
-    'Mathematics-Exemplar-Problems' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-Mathematics-Exemplar-Problems.pdf'
-    #'Science' : '',
+    'Mathematics-Exemplar-Problems' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-Mathematics-Exemplar-Problems.pdf',
+    'Science' : '',
     'Science-Exemplar-Problems' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-Science-Exemplar-Problems-1.pdf',
     'Economics' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-Economics.pdf',
     'Geography' : 'https://freehomedelivery.net/wp-content/uploads/2016/12/NCERT-Class-10-Geography.pdf',
