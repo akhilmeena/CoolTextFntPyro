@@ -37,6 +37,9 @@ NCERTBOOKSPDF = {
   },
 }
 
+ClasssubjctText = """<b>Class {} NCERT Books PDF Download – All Subjects</b>
+
+<i>NCERT Books For Class {} download for {} in PDF are available for download here . Latest New Edition.</i>"""
 
 
 
@@ -44,15 +47,17 @@ NCERTBOOKSPDF = {
 def addsubjectbutton(bot,update,classnmbr):
   classsnumber = NCERTBOOKSPDF[f"Class {classnmbr}"]
   Source_List = []
+  totalsubjcet = ""
   for subject,url in classsnumber.items():
     addDict = {}
     addList = ["dwldboobsncert"]
     addList.append(str(classnmbr))
     addList.append(str(subject))
+    totalsubjcet+=f"{subject},"
     addDict["CallBtnTedt"] = str(f"{subject}")
     addDict["CallBtnData"] = f"{addList}"
     Source_List.append(addDict)
-  return Source_List
+  return Source_List,totalsubjcet
 
 
 def addclasslist(bot,update):
