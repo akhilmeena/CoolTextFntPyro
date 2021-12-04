@@ -2,6 +2,7 @@ import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton ,InlineKeyboardMarkup
 import string
+import json
 
 Classes = ["1⃣","2⃣","3⃣","4⃣","5⃣","6⃣","7⃣","8⃣","9⃣","🔟","1⃣1⃣","1⃣2⃣"]
 
@@ -39,8 +40,9 @@ NCERTBOOKSPDF = {
 
 def addsubjectbutton(bot,update,classnmbr):
   classitems = NCERTBOOKSPDF[f"Class {classnmbr}"]
+  data = json.load(classitems)
   Source_List = []
-  for subject,url in classitems.itmes():
+  for subject,url in data.itmes():
     addDict = {}
     addList = ["dwldboobsncert"]
     addList.append(str(url))
