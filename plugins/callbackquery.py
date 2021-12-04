@@ -19,10 +19,13 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @Client.on_callback_query()
 async def cb_data(bot, update):
   if (update.data.startswith("['getsubjctofclass'")):
-    getClassNcert = ast.literal_eval(update.data)[1]
+    classnmbr = ast.literal_eval(update.data)[1]
+    Source_List = ncertbooks.addsubjectbutton(bot,update,classnmbr)
+    newbtns = ncertbooks.makeBtnFromDict(Source_List)
+    await update.message.edit_text(text="<b>Click To Download Respective Subject Book</b>",reply_markup=newbtns)
     #Url2Dowload = "https://s3-us-west-2.amazonaws.com/visionresources/daily_current_affairs/{}.pdf".format(getcodeheadwithday)
-    await update.message.reply_text(update.data)
-    await update.message.reply_text(getClassNcert)
+    #await update.message.reply_text(update.data)
+    #await update.message.reply_text(getClassNcert)
     #await Urlleaccher(bot,update,Url2Dowload)
   if (update.data.startswith("['crnttodayvsnias'")):
     getcodeheadwithday = ast.literal_eval(update.data)[1]
