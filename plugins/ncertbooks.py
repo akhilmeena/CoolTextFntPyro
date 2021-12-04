@@ -60,6 +60,11 @@ def addsubjectbutton(bot,update,classnmbr):
   return Source_List,totalsubjcet
 
 
+def geturlforclasssunjevt(classnumber,subject):
+  Url2Dowload = NCERTBOOKSPDF[f"Class {classnumber}"][f"{subject}"]
+  return Url2Dowload
+
+
 def addclasslist(bot,update):
   Source_List = []
   for clss in range(12):
