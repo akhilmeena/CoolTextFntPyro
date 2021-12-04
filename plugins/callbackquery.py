@@ -19,9 +19,10 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @Client.on_callback_query()
 async def cb_data(bot, update):
   if (update.data.startswith("['getsubjctofclass'")):
-    getcodeheadwithday = ast.literal_eval(update.data)[1]
+    getClassNcert = ast.literal_eval(update.data)[1]
     #Url2Dowload = "https://s3-us-west-2.amazonaws.com/visionresources/daily_current_affairs/{}.pdf".format(getcodeheadwithday)
-    await update.reply_text(update.data)
+    await update.message.reply_text(update.data)
+    await update.message.reply_text(getClassNcert)
     #await Urlleaccher(bot,update,Url2Dowload)
   if (update.data.startswith("['crnttodayvsnias'")):
     getcodeheadwithday = ast.literal_eval(update.data)[1]
