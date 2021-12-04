@@ -72,6 +72,8 @@ def makeBtnFromDict(Source_List):
   for d in Source_List:
     CallbackText = d['CallBtnTedt']
     CallbackData = d['CallBtnData']
+    print(CallbackText)
+    print(CallbackData)
     x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
     Btn.append(x)
   ak = [Btn[i:i+2] for i in range(0, len(Btn)-1, 2)]
