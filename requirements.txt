@@ -1,6 +1,7 @@
 pyrogram
 tgcrypto
 bs4
+html2markdown
 requests
 datetime
 aiohttp
