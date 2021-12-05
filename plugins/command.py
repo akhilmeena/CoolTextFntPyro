@@ -7,6 +7,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins import helper
 import re
+from plugins import Newspapers
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -14,6 +15,10 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
+@Client.on_message(filters.private & filters.command(["check"]))
+async def settinguisjj(bot,message):
+  await message.reply_text(Newspapers.TheHindu30Resultfinal)
+  
 @Client.on_message(filters.private & filters.command(["admin"]))
 async def settingsjj(bot,message):
   print(f"{message.chat.id}")
