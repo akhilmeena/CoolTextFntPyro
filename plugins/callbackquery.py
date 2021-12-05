@@ -42,6 +42,7 @@ async def cb_data(bot, update):
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
     await update.message.edit_text(text="<b>Choose Your Date</b>",reply_markup=newbtns)
   if update.data == "thehindu":
+    Newspapers.gettingAllHinduresult(bot,update)
     await update.message.edit_text(text="<b>Searching Latest Newspapers..…..</b>")#,reply_markup=Newspapers.NewspaperType)
   if update.data == "newepapers":
     await update.message.edit_text(text="<b>Choose Your News-Paper</b>",reply_markup=Newspapers.NewspaperType)
