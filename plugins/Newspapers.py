@@ -28,7 +28,7 @@ async def gettingAllHinduresult(bot,update):
   data = response.text
   htmlParse = BeautifulSoup(data, 'html.parser') 
   for para in htmlParse.find_all("p"): 
-    if c =< 30:
+    if c <= 30:
       fullstring = f"{para}"
       substring = "https://vk.com/"
       if substring in fullstring:
