@@ -17,7 +17,8 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_message(filters.private & filters.command(["check"]))
 async def settinguisjj(bot,message):
-  await message.reply_text(Newspapers.TheHindu30Resultfinal)
+  #await message.reply_text(Newspapers.TheHindu30Resultfinal)
+  print(Newspapers.TheHindu30Resultfinal)
   
 @Client.on_message(filters.private & filters.command(["admin"]))
 async def settingsjj(bot,message):
