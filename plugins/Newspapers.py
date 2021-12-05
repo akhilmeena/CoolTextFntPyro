@@ -20,10 +20,8 @@ NewspaperType = InlineKeyboardMarkup([
 
 ############## THE HINDU NEWSPAPER FUNCITON START ############## 
 
-TheHindu30Resultfinal = {}
-
-
 async def gettingAllHinduresult(bot,update):
+  TheHindu30Resultfinal = {}
   c = 0
   url="https://dailyepaper.in/the-hindu-pdf-free-download-04-dec-2021/"
   response=requests.get(url)
@@ -60,8 +58,6 @@ async def gettingAllHinduresult(bot,update):
           tempdict["AL"] = f"{linklist[1]}"
         except:
           tempdict["AL"] = f"_"
-        #markwn4mat = html2markdown.convert(para)
-        #msg = await update.message.reply_text(markwn4mat)
         c+=1
       else:
         pass
@@ -73,11 +69,5 @@ async def gettingAllHinduresult(bot,update):
   TheHindu30Result.append([HomeToStart])
   NewpaperBtn = InlineKeyboardMarkup(TheHindu30Result)
   return NewpaperBtn
-    #print(akh)
-    #['http://www.google.com', 'http://stackoverflow.com/questions/839994/extracting-a-url-in-python']
-    
-      #htmlParse = BeautifulSoup(data, 'html.parser') 
-
-
 
 ############## THE HINDU NEWSPAPER FUNCITON END ############## 
