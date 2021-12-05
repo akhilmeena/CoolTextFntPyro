@@ -164,7 +164,7 @@ ClasssubjctText = """<b>Class {} NCERT Books PDF Download – All Subjects</b>
 
 
 
-def addsubjectbutton(bot,update,classnmbr):
+async def addsubjectbutton(bot,update,classnmbr):
   classsnumber = NCERTBOOKSPDF[f"Class {classnmbr}"]
   Source_List = []
   totalsubjcet = ""
@@ -180,12 +180,12 @@ def addsubjectbutton(bot,update,classnmbr):
   return Source_List,totalsubjcet
 
 
-def geturlforclasssunjevt(classnumber,subject):
+async def geturlforclasssunjevt(classnumber,subject):
   Url2Dowload = NCERTBOOKSPDF[f"Class {classnumber}"][f"{subject}"]
   return Url2Dowload
 
 
-def addclasslist(bot,update):
+async def addclasslist(bot,update):
   Source_List = []
   for clss in range(12):
     addDict = {}
@@ -197,7 +197,7 @@ def addclasslist(bot,update):
   return Source_List
         
 
-def makeBtnFromDict(Source_List):
+async def makeBtnFromDict(Source_List):
   Btn = []
   for d in Source_List:
     CallbackText = d['CallBtnTedt']
