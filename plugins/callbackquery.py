@@ -7,6 +7,7 @@ from plugins import helper
 from plugins import currentaffairs
 from plugins import ncertbooks
 from plugins.urluploader import Urlleaccher
+from plugins import Newspapers
 import ast
 
 
@@ -40,6 +41,8 @@ async def cb_data(bot, update):
     Source_List = currentaffairs.currentdaypdfbuttonvsnias(month_num,year_num)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
     await update.message.edit_text(text="<b>Choose Your Date</b>",reply_markup=newbtns)
+  if update.data == "newepapers":
+    await update.message.edit_text(text="<b>Choose Your News-Paper</b>",reply_markup=Newspapers.NewspaperType)
   if update.data == "vsniascrnt":
     Source_List = currentaffairs.getallmonthfromiasvsncurrentafr(bot,update)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
