@@ -31,19 +31,46 @@ async def gettingAllHinduresult(bot,update):
   htmlParse = BeautifulSoup(data, 'html.parser') 
   TheHindu30Result = []
   for para in htmlParse.find_all("p"): 
+    btn = []
+    tempdict = {}
     if c <= 30:
       fullstring = f"{para}"
       substring = "https://vk.com/"
       if substring in fullstring:
-        #akh = re.findall(r'(https?://[^\s]+)', fullstring)
-        markwn4mat = html2markdown.convert(para)
-        msg = await update.message.reply_text(markwn4mat)
+        items = para.text
+        itmelist = items.split(":")
+        linklist = re.findall(r'(https?://[^\s]+)', fullstring)
+        datebtn = InlineKeyboardButton(f"📆 {itmelist[0]}", callback_data="nothing")
+        try:
+          dwnldbtn = InlineKeyboardButton(f"📥 {itmelist[1]}", callback_data="['dwnldnewspaper" + ',' + "NP"  + ',' + str(c+1) + "']")
+        except:
+          dwnldbtn = InlineKeyboardButton(f"N/A", callback_data="['dwnldnewspaper" + ',' + "NP" + ',' + str(c+1) + "']")
+        try:
+          anylsisbtn = InlineKeyboardButton(f"📄 {itmelist[2]}", callback_data="['dwnldnewspaper" + ',' + "AL"  + ',' + str(c+1) + "']")
+        except:
+          anylsisbtn = InlineKeyboardButton(f"N/A", callback_data="['dwnldnewspaper" + ',' + "AL"  + ',' + str(c+1) + "']")
+        btn.append(datebtn)
+        btn.append(dwnldbtn)
+        btn.append(anylsisbtn)
+        try:
+          tempdict["NP"] = f"{linklist[0]}"
+        except:
+          tempdict["NP"] = f"_"
+        try:
+          tempdict["AL"] = f"{linklist[1]}"
+        except:
+          tempdict["AL"] = f"_"
+        #markwn4mat = html2markdown.convert(para)
+        #msg = await update.message.reply_text(markwn4mat)
         c+=1
-        #print(para.text)
       else:
         pass
     else:
       break
+    TheHindu30Result.append(btn)
+    TheHindu30Resultfinal[c] = tempdict
+  NewpaperBtn = InlineKeyboardMarkup(TheHindu30Result)
+  return NewpaperBtn
     #print(akh)
     #['http://www.google.com', 'http://stackoverflow.com/questions/839994/extracting-a-url-in-python']
     
