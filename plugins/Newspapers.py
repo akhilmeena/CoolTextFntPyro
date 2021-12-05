@@ -20,8 +20,9 @@ NewspaperType = InlineKeyboardMarkup([
 
 ############## THE HINDU NEWSPAPER FUNCITON START ############## 
 
+TheHindu30Resultfinal = {}
+
 async def gettingAllHinduresult(bot,update):
-  TheHindu30Resultfinal = {}
   c = 0
   url="https://dailyepaper.in/the-hindu-pdf-free-download-04-dec-2021/"
   response=requests.get(url)
