@@ -41,9 +41,9 @@ async def gettingAllHinduresult(bot,update):
         linklist = re.findall(r'(https?://[^\s]+)', fullstring)
         datebtn = InlineKeyboardButton(f"📆 {itmelist[0]}", callback_data="nothing")
         try:
-          dwnldbtn = InlineKeyboardButton(f"📥 {itmelist[1]}", callback_data="['dwnldnewspaper','KP','" + str(c+1) + "']")
+          dwnldbtn = InlineKeyboardButton(f"📥 {itmelist[1]}", callback_data="['dwnldnewspaper','NP','" + str(c+1) + "']")
         except:
-          dwnldbtn = InlineKeyboardButton(f"N/A", callback_data="['dwnldnewspaper','KP','" + str(c+1) + "']")
+          dwnldbtn = InlineKeyboardButton(f"N/A", callback_data="['dwnldnewspaper','NP','" + str(c+1) + "']")
         try:
           anylsisbtn = InlineKeyboardButton(f"📄 {itmelist[2]}", callback_data="['dwnldnewspaper','AL','" + str(c+1) + "']")
         except:
@@ -52,9 +52,9 @@ async def gettingAllHinduresult(bot,update):
         btn.append(dwnldbtn)
         btn.append(anylsisbtn)
         try:
-          tempdict["KP"] = f"{linklist[0]}"
+          tempdict["NP"] = f"{linklist[0]}"
         except:
-          tempdict["KP"] = f"_"
+          tempdict["NP"] = f"_"
         try:
           tempdict["AL"] = f"{linklist[1]}"
         except:
