@@ -71,4 +71,9 @@ async def gettingAllHinduresult(bot,update):
   NewpaperBtn = InlineKeyboardMarkup(TheHindu30Result)
   return NewpaperBtn
 
+
+async geturlfornewpaper(Id,Ctgry):
+  Url = TheHindu30Resultfinal[int(Id)][Ctgry]
+  print(Url)
+  return Url
 ############## THE HINDU NEWSPAPER FUNCITON END ############## 
