@@ -19,8 +19,9 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  print(update.data)
   if (update.data.startswith("['dwnldnewspaper'")):
-    print(update.data)
+    #print(update.data)
     Ctgry = ast.literal_eval(update.data)[1]
     Id = ast.literal_eval(update.data)[2]
     Url2Dowload =  Newspapers.TheHindu30Resultfinal[Id][Ctgry]
