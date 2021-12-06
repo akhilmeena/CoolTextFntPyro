@@ -72,7 +72,7 @@ async def gettingAllHinduresult(bot,update):
   return NewpaperBtn
 
 
-async geturlfornewpaper(Id,Ctgry):
+async def geturlfornewpaper(Id,Ctgry):
   Url = TheHindu30Resultfinal[int(Id)][Ctgry]
   print(Url)
   return Url
