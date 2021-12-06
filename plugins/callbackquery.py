@@ -19,6 +19,14 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if (update.data.startswith("['dwnldnewspaper'")):
+    Ctgry = ast.literal_eval(update.data)[1]
+    Id = ast.literal_eval(update.data)[2]
+    Url2Dowload Newspapers.TheHindu30Resultfinal["Id"]["Ctgry"]
+    #Url2Dowload = ncertbooks.geturlforclasssunjevt(classnumber,subject)
+    #Url2Dowload = "https://s3-us-west-2.amazonaws.com/visionresources/daily_current_affairs/{}.pdf".format(getcodeheadwithday)
+    print(Url2Dowload)
+    await Urlleaccher(bot,update,Url2Dowload)
   if (update.data.startswith("['dwldboobsncert'")):
     classnumber = ast.literal_eval(update.data)[1]
     subject = ast.literal_eval(update.data)[2]
