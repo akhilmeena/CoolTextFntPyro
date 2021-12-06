@@ -25,7 +25,7 @@ async def cb_data(bot, update):
     Ctgry = ast.literal_eval(update.data)[1]
     Id = ast.literal_eval(update.data)[2]
     Url2Dowload = await Newspapers.geturlfornewpaper(Id,Ctgry)
-    await message.reply_text(Url2Dowload)
+    await update.reply_text(Url2Dowload)
     #await bot.send_document(chat_id=update.message.chat.id,document=Url2Dowload)
     #Url2Dowload = ncertbooks.geturlforclasssunjevt(classnumber,subject)
     #Url2Dowload = "https://s3-us-west-2.amazonaws.com/visionresources/daily_current_affairs/{}.pdf".format(getcodeheadwithday)
