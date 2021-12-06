@@ -41,13 +41,13 @@ async def gettingAllHinduresult(bot,update):
         linklist = re.findall(r'(https?://[^\s]+)', fullstring)
         datebtn = InlineKeyboardButton(f"📆 {itmelist[0]}", callback_data="nothing")
         try:
-          dwnldbtn = InlineKeyboardButton(f"📥 {itmelist[1]}", callback_data="['dwnldnewspaper" + ',' + "NP"  + ',' + str(c+1) + "']")
+          dwnldbtn = InlineKeyboardButton(f"📥 {itmelist[1]}", callback_data="['dwnldnewspaper" + "','" + "NP"  + "','" + str(c+1) + "']")
         except:
-          dwnldbtn = InlineKeyboardButton(f"N/A", callback_data="['dwnldnewspaper" + ',' + "NP" + ',' + str(c+1) + "']")
+          dwnldbtn = InlineKeyboardButton(f"N/A", callback_data="['dwnldnewspaper" + "','" + "NP" + "','" + str(c+1) + "']")
         try:
-          anylsisbtn = InlineKeyboardButton(f"📄 {itmelist[2]}", callback_data="['dwnldnewspaper" + ',' + "AL"  + ',' + str(c+1) + "']")
+          anylsisbtn = InlineKeyboardButton(f"📄 {itmelist[2]}", callback_data="['dwnldnewspaper" + "','" + "AL"  + "','" + str(c+1) + "']")
         except:
-          anylsisbtn = InlineKeyboardButton(f"N/A", callback_data="['dwnldnewspaper" + ',' + "AL"  + ',' + str(c+1) + "']")
+          anylsisbtn = InlineKeyboardButton(f"N/A", callback_data="['dwnldnewspaper" + "','" + "AL"  + "','" + str(c+1) + "']")
         btn.append(datebtn)
         btn.append(dwnldbtn)
         btn.append(anylsisbtn)
