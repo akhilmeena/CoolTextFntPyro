@@ -52,9 +52,9 @@ async def gettingAllHinduresult(bot,update):
         btn.append(dwnldbtn)
         btn.append(anylsisbtn)
         try:
-          tempdict["NP"] = f"{linklist[0]}"
+          tempdict["KP"] = f"{linklist[0]}"
         except:
-          tempdict["NP"] = f"_"
+          tempdict["KP"] = f"_"
         try:
           tempdict["AL"] = f"{linklist[1]}"
         except:
