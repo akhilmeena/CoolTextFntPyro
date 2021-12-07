@@ -148,8 +148,17 @@ async def geturlfornewpaper(Id,Ctgry):
   return Url
 ############## THE HINDU NEWSPAPER FUNCITON END ############## 
 
-Textfornewspaperwithanylss = """Here is your Result:
+#Textfornewspaperwithanylss = """Here is your Result:
+#📆 Date : {}
+#📥 <h href='{}'>NewsPaper</a>
+#📥 <h href='{}'>Analysis</a> 
+#""".format(TheHindu30Resultfinal["Date"],TheHindu30Resultfinal["NP"],TheHindu30Resultfinal["AL"])
+
+
+async def captionfornewslink(Id):
+  Textfornewspaperwithanylss = """Here is your Result:
 📆 Date : {}
 📥 <h href='{}'>NewsPaper</a>
 📥 <h href='{}'>Analysis</a> 
-""".format(TheHindu30Resultfinal["Date"],TheHindu30Resultfinal["NP"],TheHindu30Resultfinal["AL"])
+""".format(TheHindu30Resultfinal[Id]["Date"],TheHindu30Resultfinal[Id]["NP"],TheHindu30Resultfinal[Id]["AL"])
+  return Textfornewspaperwithanylss
