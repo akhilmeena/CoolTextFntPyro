@@ -47,6 +47,10 @@ async def gettingAllHinduresult(bot,update):
         addDict["CallBtnData"] = f"{addList}"
         Source_List.append(addDict)
         try:
+          tempdict["Date"] = f"{itmelist[0]}"
+        except:
+          tempdict["Date"] = f"_"
+        try:
           tempdict["NP"] = f"{linklist[0]}"
         except:
           tempdict["NP"] = f"_"
