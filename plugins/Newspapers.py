@@ -161,5 +161,5 @@ async def captionfornewslink(Id):
 📆 Date : {}
 📥 <h href='{}'>NewsPaper</a>
 📥 <h href='{}'>Analysis</a> 
-""".format(TheHindu30Resultfinal[Id]["Date"],TheHindu30Resultfinal[Id]["NP"],TheHindu30Resultfinal[Id]["AL"])
+""".format(TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
   return Textfornewspaperwithanylss
