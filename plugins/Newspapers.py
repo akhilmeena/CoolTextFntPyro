@@ -66,7 +66,7 @@ async def gettingAllHinduresult(bot,update):
       break
     TheHindu30Result.append(btn)
     TheHindu30Resultfinal[c] = tempdict
-  ak = [Btn[i:i+2] for i in range(0, len(Btn), 2)]
+  ak = [TheHindu30Result[i:i+2] for i in range(0, len(TheHindu30Result), 2)]
   HomeToStart = InlineKeyboardButton('🔙', callback_data='libraryopen')
   #TheHindu30Result.append([HomeToStart])
   ak.append([HomeToStart])
