@@ -147,3 +147,9 @@ async def geturlfornewpaper(Id,Ctgry):
   print(Url)
   return Url
 ############## THE HINDU NEWSPAPER FUNCITON END ############## 
+
+Textfornewspaperwithanylss = """Here is your Result:
+📆 Date : {}
+📥 <h href='{}'>NewsPaper</a>
+📥 <h href='{}'>Analysis</a> 
+"""
