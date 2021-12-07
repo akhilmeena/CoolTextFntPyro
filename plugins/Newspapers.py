@@ -19,10 +19,57 @@ NewspaperType = InlineKeyboardMarkup([
 
 
 ############## THE HINDU NEWSPAPER FUNCITON START ############## 
+async def gettingAllHinduresult(bot,update):
+  Source_List = []
+  c = 0
+  url="https://dailyepaper.in/the-hindu-pdf-free-download-04-dec-2021/"
+  response=requests.get(url)
+  data = response.text
+  htmlParse = BeautifulSoup(data, 'html.parser') 
+  TheHindu30Result = []
+  for para in htmlParse.find_all("p"): 
+    btn = []
+    tempdict = {}
+    if c <= 30:
+      fullstring = f"{para}"
+      substring = "https://vk.com/"
+      if substring in fullstring:
+        items = para.text
+        itmelist = items.split(":")
+        linklist = re.findall(r'(https?://[^\s]+)', fullstring)
+        addDict = {}
+        addList = ["dwnldnewspaper"]
+        addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
+        addList.append(str(str(c+1)))
+        addDict["CallBtnData"] = f"{addList}"
+        Source_List.append(addDict)
+  return Source_List
+
+async def makeBtnFromDict(Source_List):
+  Btn = []
+  for d in Source_List:
+    CallbackText = d['CallBtnTedt']
+    CallbackData = d['CallBtnData']
+    print(CallbackText)
+    print(CallbackData)
+    x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
+    Btn.append(x)
+  ak = [Btn[i:i+2] for i in range(0, len(Btn), 2)]
+  x = InlineKeyboardButton("🔙",callback_data="libraryopen")
+  ak.append([x])
+  newbtns = InlineKeyboardMarkup(ak)
+  return newbtns
+
+
+
+
+
+
+
+
 
 TheHindu30Resultfinal = {}
-
-async def gettingAllHinduresult(bot,update):
+async def gettingAllHinduresult1(bot,update):
   c = 0
   url="https://dailyepaper.in/the-hindu-pdf-free-download-04-dec-2021/"
   response=requests.get(url)
@@ -70,7 +117,7 @@ async def gettingAllHinduresult(bot,update):
   HomeToStart = InlineKeyboardButton('🔙', callback_data='libraryopen')
   #TheHindu30Result.append([HomeToStart])
   ak.append([HomeToStart])
-  NewpaperBtn = InlineKeyboardMarkup(TheHindu30Result)
+  NewpaperBtn = InlineKeyboardMarkup(ak)
   return NewpaperBtn
 
 
