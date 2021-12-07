@@ -45,6 +45,7 @@ async def gettingAllHinduresult(bot,update):
         addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
         addList.append(str(str(c+1)))
         addDict["CallBtnData"] = f"{addList}"
+        #print(addList)
         Source_List.append(addDict)
         try:
           tempdict["Date"] = f"{itmelist[0]}"
