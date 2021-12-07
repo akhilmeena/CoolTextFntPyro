@@ -152,4 +152,4 @@ Textfornewspaperwithanylss = """Here is your Result:
 📆 Date : {}
 📥 <h href='{}'>NewsPaper</a>
 📥 <h href='{}'>Analysis</a> 
-"""
+""".format(TheHindu30Resultfinal["Date"],TheHindu30Resultfinal["NP"],TheHindu30Resultfinal["AL"])
