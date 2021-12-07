@@ -49,8 +49,8 @@ async def gettingAllHinduresult(bot,update):
         except:
           anylsisbtn = InlineKeyboardButton(f"N/A", callback_data="['dwnldnewspaper','AL','" + str(c+1) + "']")
         btn.append(datebtn)
-        btn.append(dwnldbtn)
-        btn.append(anylsisbtn)
+        #btn.append(dwnldbtn)
+        #btn.append(anylsisbtn)
         try:
           tempdict["NP"] = f"{linklist[0]}"
         except:
@@ -66,8 +66,10 @@ async def gettingAllHinduresult(bot,update):
       break
     TheHindu30Result.append(btn)
     TheHindu30Resultfinal[c] = tempdict
+  ak = [Btn[i:i+2] for i in range(0, len(Btn), 2)]
   HomeToStart = InlineKeyboardButton('🔙', callback_data='libraryopen')
-  TheHindu30Result.append([HomeToStart])
+  #TheHindu30Result.append([HomeToStart])
+  ak.append([HomeToStart])
   NewpaperBtn = InlineKeyboardMarkup(TheHindu30Result)
   return NewpaperBtn
 
