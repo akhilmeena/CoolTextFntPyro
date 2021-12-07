@@ -19,6 +19,9 @@ NewspaperType = InlineKeyboardMarkup([
 
 
 ############## THE HINDU NEWSPAPER FUNCITON START ############## 
+TheHindu30Resultfinal = {}
+
+
 async def gettingAllHinduresult(bot,update):
   Source_List = []
   c = 0
@@ -43,6 +46,20 @@ async def gettingAllHinduresult(bot,update):
         addList.append(str(str(c+1)))
         addDict["CallBtnData"] = f"{addList}"
         Source_List.append(addDict)
+        try:
+          tempdict["NP"] = f"{linklist[0]}"
+        except:
+          tempdict["NP"] = f"_"
+        try:
+          tempdict["AL"] = f"{linklist[1]}"
+        except:
+          tempdict["AL"] = f"_"
+        c+=1
+      else:
+        pass
+    else:
+      break
+    TheHindu30Resultfinal[c] = tempdict
   return Source_List
 
 async def makeBtnFromDict(Source_List):
@@ -68,7 +85,7 @@ async def makeBtnFromDict(Source_List):
 
 
 
-TheHindu30Resultfinal = {}
+
 async def gettingAllHinduresult1(bot,update):
   c = 0
   url="https://dailyepaper.in/the-hindu-pdf-free-download-04-dec-2021/"
