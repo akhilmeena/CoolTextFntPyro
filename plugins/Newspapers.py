@@ -157,9 +157,10 @@ async def geturlfornewpaper(Id,Ctgry):
 
 
 async def captionfornewslink(Id):
-  Textfornewspaperwithanylss = """Here is your Result:
-📆 Date : {}
-📥 <a href='{}'>NewsPaper</a>
-📥 <a href='{}'>Analysis</a> 
-""".format(TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
+  Textfornewspaperwithanylss1 = """Here is your Result:
+  📆 Date : {}
+  📥 <a href='{}'>NewsPaper</a>
+  📥 <a href='{}'>Analysis</a>
+  """
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
   return Textfornewspaperwithanylss
