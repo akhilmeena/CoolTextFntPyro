@@ -12,3 +12,5 @@ hachoir
 Pillow
 ffmpeg
 gdown
+gspread
+oauth2client
