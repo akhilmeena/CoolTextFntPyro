@@ -28,6 +28,6 @@ async def AddNewUser(UserID):
     h = UserData.get('A1000').first()
     h1 = int(h) + 1
     UserData.update_cell(int(h1),1 ,f"{h1}")
-    UserData.update_cell(int(h1),2 ,id2)
+    UserData.update_cell(int(h1),2 ,UserID)
     return
  
