@@ -21,7 +21,7 @@ UserData = ak.worksheet("User")
 
 
 async def AddNewUser(UserID):
-  cells = UserData.findall(UserID)
+  cells = UserData.findall(str(UserID))
   if len(cells) > 0:
     return
   else:
