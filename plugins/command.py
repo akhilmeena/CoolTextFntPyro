@@ -6,6 +6,7 @@ import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins import helper
+from plugins import Database
 import re
 from plugins import Newspapers
 
@@ -32,7 +33,9 @@ async def settingsjj(bot,message):
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
+  UserID = message.chat.id
   await message.reply_chat_action("typing")
+  await Database.AddNewUser(UserID)
   if str(Config.MaintainaceYN[0]) == "No":
     await message.reply_text(text=helper.STARTText.format(message.from_user.mention),reply_markup=helper.START_BUTTONS)
   else:
