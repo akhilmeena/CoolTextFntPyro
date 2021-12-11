@@ -22,8 +22,9 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 async def cb_data(bot, update):
   if (update.data.startswith("['dwnldnewspaper'")):
     Id = ast.literal_eval(update.data)[1]
-    Textfornewspaperwithanylss = await Newspapers.captionfornewslink(Id)
-    newbtns = InlineKeyboardMarkup([[InlineKeyboardButton("🔙",callback_data="libraryopen")]])
+    Forwhat = ast.literal_eval(update.data)[2]
+    Textfornewspaperwithanylss = await Newspapers.captionfornewslink(Id,Forwhat)
+    newbtns = InlineKeyboardMarkup([[InlineKeyboardButton("🔙",callback_data=Forwhat)]])
     await update.message.edit_text(text=Textfornewspaperwithanylss,reply_markup=newbtns)
   if (update.data.startswith("['dwldboobsncert'")):
     classnumber = ast.literal_eval(update.data)[1]
