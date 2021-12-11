@@ -19,18 +19,13 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
-  #print(update.data)
   if (update.data.startswith("['dwnldnewspaper'")):
-    #print(update.data)
     Id = ast.literal_eval(update.data)[1]
-    #Id = ast.literal_eval(update.data)[2]
     Textfornewspaperwithanylss = await Newspapers.captionfornewslink(Id)
-    await update.message.reply_text(Textfornewspaperwithanylss)
-    #await bot.send_document(chat_id=update.message.chat.id,document=Url2Dowload)
-    #Url2Dowload = ncertbooks.geturlforclasssunjevt(classnumber,subject)
-    #Url2Dowload = "https://s3-us-west-2.amazonaws.com/visionresources/daily_current_affairs/{}.pdf".format(getcodeheadwithday)
-    #print(Url2Dowload)
-    #await Urlleaccher(bot,update,Url2Dowload)
+    x = InlineKeyboardButton("🔙",callback_data="libraryopen")
+    #ak.append([x])
+    newbtns = InlineKeyboardMarkup([x])
+    await update.message.edit_text(text=Textfornewspaperwithanylss,reply_markup=newbtns)
   if (update.data.startswith("['dwldboobsncert'")):
     classnumber = ast.literal_eval(update.data)[1]
     subject = ast.literal_eval(update.data)[2]
