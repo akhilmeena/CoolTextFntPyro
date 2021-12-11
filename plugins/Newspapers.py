@@ -19,7 +19,7 @@ NewspaperType = InlineKeyboardMarkup([
 
 
 DisclaimerForAll = """
-<b>⚠️ Note:- <i>This pdf is shared only for educational purposes. We are not the publisher or owner of this e-paper.
+<b>⚠️ Note:-</b> <i>This pdf is shared only for educational purposes. We are not the publisher or owner of this e-paper.
 Have any complaints Please write us.</i>
 """
 ############## Notification For Copyrighted ############## 
