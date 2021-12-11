@@ -3,6 +3,7 @@ import pyrogram
 from pyrogram import Client, filters
 import requests
 from bs4 import BeautifulSoup
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import re
 import html2markdown
         
