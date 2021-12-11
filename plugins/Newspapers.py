@@ -1,8 +1,7 @@
 import json
 import pyrogram
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-import requests
+pimport requests
 from bs4 import BeautifulSoup
 import re
 import html2markdown
@@ -83,7 +82,17 @@ async def makeBtnFromDict(Source_List):
   return newbtns
 
 
+async def captionfornewslink(Id):
+  Textfornewspaperwithanylss1 = """Here is your Result:
+📆 Date : {}
+📥 <a href='{}'>NewsPaper</a>
+📥 <a href='{}'>Analysis</a>
+"""
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
+  return Textfornewspaperwithanylss
 
+
+###############EXTRA#####################
 
 
 
@@ -156,11 +165,3 @@ async def geturlfornewpaper(Id,Ctgry):
 #""".format(TheHindu30Resultfinal["Date"],TheHindu30Resultfinal["NP"],TheHindu30Resultfinal["AL"])
 
 
-async def captionfornewslink(Id):
-  Textfornewspaperwithanylss1 = """Here is your Result:
-📆 Date : {}
-📥 <a href='{}'>NewsPaper</a>
-📥 <a href='{}'>Analysis</a>
-"""
-  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
-  return Textfornewspaperwithanylss
