@@ -50,11 +50,11 @@ async def cb_data(bot, update):
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
     await update.message.edit_text(text="<b>Choose Your Date</b>",reply_markup=newbtns)
   if update.data == "thehindu":
-    query = update.callback_query
+    #query = update.callback_query
     #query = update.id
     #print(query)
     #query.answer()
-    query.answer(text = "text", show_alert=True)
+    update.answer(text = "text", show_alert=True)
     #Client.answer_callback_query(bot,callback_query_id=update.id, text='you chose cat')#, show_alert=True)
     #Client.answer_callback_query()
     Source_List = await Newspapers.gettingAllHinduresult(bot,update)
