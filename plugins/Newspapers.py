@@ -19,7 +19,25 @@ NewspaperType = InlineKeyboardMarkup([
 
 
 ############## Notification For Copyrighted ############## 
-TheHinduNotification = ""
+TheHinduNotification = """<b>Important Notice</b>
+
+This e-paper is shared only for the educational
+purposes. So if you can Afford The Hindu Paid
+Version. Then We suggest you please Don't Download
+From Here. And go to The Hindu Official Website and
+buy The Hindu Paid Version and support the
+publisher, otherwise the quality of the NewsPaper will deteriorate. We are not the publisher or owner
+of this e-paper. We are only sharing
+downloadable links for students, which is
+already available on social media and other
+internet platforms. If it violates any policy in
+any way or if anyone has a complaint about it,
+Please Write a msg to us.
+
+We update the page daily after
+07:00 am. If you have any problems related to
+downloading, please write us.
+"""
 ############## News Paper Code Head ############## 
 NewsCodeHead = {
   "thehindu" : "THE HINDU"
