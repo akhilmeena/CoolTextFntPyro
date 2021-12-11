@@ -1,7 +1,7 @@
 import json
 import pyrogram
 from pyrogram import Client, filters
-pimport requests
+import requests
 from bs4 import BeautifulSoup
 import re
 import html2markdown
