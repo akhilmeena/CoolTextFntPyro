@@ -18,6 +18,10 @@ NewspaperType = InlineKeyboardMarkup([
   ])
 
 
+############## News Paper Code Head ############## 
+NewsCodeHead = {
+  "thehindu" = "THE HINDU"
+}
 ############## THE HINDU NEWSPAPER FUNCITON START ############## 
 TheHindu30Resultfinal = {}
 
@@ -44,6 +48,7 @@ async def gettingAllHinduresult(bot,update):
         addList = ["dwnldnewspaper"]
         addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
         addList.append(str(str(c+1)))
+        addList.append("thehindu")
         addDict["CallBtnData"] = f"{addList}"
         #print(addList)
         Source_List.append(addDict)
@@ -83,13 +88,14 @@ async def makeBtnFromDict(Source_List):
   return newbtns
 
 
-async def captionfornewslink(Id):
+async def captionfornewslink(Id,Forwhat):
   Textfornewspaperwithanylss1 = """Here is your Result:
+🎟️ {}
 📆 Date : {}
 📥 <a href='{}'>NewsPaper</a>
 📥 <a href='{}'>Analysis</a>
 """
-  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
   return Textfornewspaperwithanylss
 
 
