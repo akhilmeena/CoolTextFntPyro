@@ -49,7 +49,7 @@ async def cb_data(bot, update):
     year_num = ast.literal_eval(update.data)[2]
     Source_List = currentaffairs.currentdaypdfbuttonvsnias(month_num,year_num)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
-    await update.message.edit_text(text="<b>Choose Your Date</b>",reply_markup=newbtns)
+    await update.message.edit_text(text=f"<b>Choose Your Date</b>\n\n{DisclaimerForAll}",reply_markup=newbtns)
   if update.data == "thehindu":
     await update.answer(text = Newspapers.TheHinduNotification, show_alert=True)
     Source_List = await Newspapers.gettingAllHinduresult(bot,update)
