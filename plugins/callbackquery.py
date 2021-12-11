@@ -49,6 +49,7 @@ async def cb_data(bot, update):
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
     await update.message.edit_text(text="<b>Choose Your Date</b>",reply_markup=newbtns)
   if update.data == "thehindu":
+    print(update)
     query = update.callback_query
     #query.answer()
     update.answer_callback_query(callback_query_id=query.id, text='you chose cat', show_alert=True)
