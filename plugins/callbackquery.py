@@ -7,6 +7,7 @@ from plugins import helper
 from plugins import currentaffairs
 from plugins import ncertbooks
 from pyrogram import types
+from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.urluploader import Urlleaccher
 from plugins import Newspapers
@@ -54,7 +55,7 @@ async def cb_data(bot, update):
     #query = update.id
     #print(query)
     #query.answer()
-    update.answer(text = "text", show_alert=True)
+    await update.answer(text = "text", show_alert=True)
     #Client.answer_callback_query(bot,callback_query_id=update.id, text='you chose cat')#, show_alert=True)
     #Client.answer_callback_query()
     Source_List = await Newspapers.gettingAllHinduresult(bot,update)
