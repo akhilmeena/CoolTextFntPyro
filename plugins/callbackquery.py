@@ -6,6 +6,7 @@ from pyrogram import Client, filters
 from plugins import helper
 from plugins import currentaffairs
 from plugins import ncertbooks
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.urluploader import Urlleaccher
 from plugins import Newspapers
 import ast
