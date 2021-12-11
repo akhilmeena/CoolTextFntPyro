@@ -23,9 +23,7 @@ async def cb_data(bot, update):
   if (update.data.startswith("['dwnldnewspaper'")):
     Id = ast.literal_eval(update.data)[1]
     Textfornewspaperwithanylss = await Newspapers.captionfornewslink(Id)
-    x = InlineKeyboardButton("🔙",callback_data="libraryopen")
-    #ak.append([x])
-    newbtns = InlineKeyboardMarkup([x])
+    newbtns = InlineKeyboardMarkup([[InlineKeyboardButton("🔙",callback_data="libraryopen")]])
     await update.message.edit_text(text=Textfornewspaperwithanylss,reply_markup=newbtns)
   if (update.data.startswith("['dwldboobsncert'")):
     classnumber = ast.literal_eval(update.data)[1]
