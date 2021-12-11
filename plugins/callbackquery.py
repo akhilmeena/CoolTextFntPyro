@@ -53,7 +53,7 @@ async def cb_data(bot, update):
     #print(query)
     #query.answer()
     #update.id.answer(text = "text", show_alert=True)
-    Client.answer_callback_query(callback_query_id=update.id, text='you chose cat', show_alert=True)
+    Client.answer_callback_query(bot,callback_query_id=update.id, text='you chose cat', show_alert=True)
     #Client.answer_callback_query()
     Source_List = await Newspapers.gettingAllHinduresult(bot,update)
     newbtns = await Newspapers.makeBtnFromDict(Source_List)
