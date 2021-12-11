@@ -95,9 +95,10 @@ async def makeBtnFromDict(Source_List):
 
 
 async def captionfornewslink(Id,Forwhat):
-  Textfornewspaperwithanylss1 = """Here is your Result:
+  Textfornewspaperwithanylss1 = """<b>Here is your Result:
+
 🎟️ {}
-📆 Date : {}
+📆 Date :</b><code> {}</code>
 📥 <a href='{}'>NewsPaper</a>
 📥 <a href='{}'>Analysis</a>
 """
