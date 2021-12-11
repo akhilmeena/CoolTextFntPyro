@@ -18,9 +18,11 @@ NewspaperType = InlineKeyboardMarkup([
   ])
 
 
+############## Notification For Copyrighted ############## 
+TheHinduNotification = ""
 ############## News Paper Code Head ############## 
 NewsCodeHead = {
-  "thehindu" = "THE HINDU"
+  "thehindu" : "THE HINDU"
 }
 ############## THE HINDU NEWSPAPER FUNCITON START ############## 
 TheHindu30Resultfinal = {}
