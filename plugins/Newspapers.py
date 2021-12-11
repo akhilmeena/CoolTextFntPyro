@@ -23,9 +23,7 @@ DisclaimerForAll = """
 Have any complaints Please write us.</i>
 """
 ############## Notification For Copyrighted ############## 
-TheHinduNotification = """<b>Important Notice</b>
-We suggest you please Don't Download From Here just go to The Hindu Official Website and buy The Hindu Paid Version and support the publisher.
-"""
+TheHinduNotification = """We suggest you please Don't Download From Here just go to The Hindu Official Website and buy The Hindu Paid Version and support the publisher."""
 ############## News Paper Code Head ############## 
 NewsCodeHead = {
   "thehindu" : "THE HINDU"
