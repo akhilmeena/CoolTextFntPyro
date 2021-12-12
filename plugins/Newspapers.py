@@ -28,7 +28,8 @@ TheHinduNotification = """We suggest you please Don't Download From Here just go
 TimesOfIndiaNotification = """We suggest you please Don't Download From Here just go to The Times Of India Official Website and buy The T.O.I Paid Version and support the publisher."""
 ############## News Paper Code Head ############## 
 NewsCodeHead = {
-  "thehindu" : "THE HINDU"
+  "thehindu" : "THE HINDU",
+  "timesofindia" : "TIMES OF INDIA"
 }
 ############## THE HINDU NEWSPAPER FUNCITON START ############## 
 TheHindu30Resultfinal = {}
@@ -106,6 +107,16 @@ async def captionfornewslink(Id,Forwhat):
   Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
   return Textfornewspaperwithanylss
 
+async def captionfornewslink1(Id,Forwhat):
+  Textfornewspaperwithanylss1 = """<b>Here is your Result:
+
+🎟️ {}
+📆 Date :</b><code> {}</code>
+📥 <a href='{}'>NewsPaper</a>
+"""
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],TheTOI30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
+  return Textfornewspaperwithanylss
+
 ###############TIMES OF INDIA#####################
 
 TheTOI30Resultfinal = {}
@@ -132,7 +143,7 @@ async def gettingallTOIresult(bot,update):
         addList = ["dwnldnewspaper"]
         addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
         addList.append(str(str(c+1)))
-        addList.append("thehindu")
+        addList.append("timesofindia")
         addDict["CallBtnData"] = f"{addList}"
         #print(addList)
         Source_List.append(addDict)
