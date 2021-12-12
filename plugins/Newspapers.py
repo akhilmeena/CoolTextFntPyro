@@ -8,12 +8,13 @@ import re
 import html2markdown
         
 
-NewsPapers = InlineKeyboardButton('The Hindu', callback_data='thehindu')
+TheHinduu = InlineKeyboardButton('The Hindu', callback_data='thehindu')
+TmsOfInd = InlineKeyboardButton('Times Of India', callback_data='timesofindia')
 HomeToStart = InlineKeyboardButton('🔙', callback_data='libraryopen')
 
 
 NewspaperType = InlineKeyboardMarkup([
-  [NewsPapers],
+  [TheHinduu,TmsOfInd],
   [HomeToStart]
   ])
 
@@ -24,13 +25,13 @@ Have any complaints Please write us.</i>
 """
 ############## Notification For Copyrighted ############## 
 TheHinduNotification = """We suggest you please Don't Download From Here just go to The Hindu Official Website and buy The Hindu Paid Version and support the publisher."""
+TimesOfIndiaNotification = """We suggest you please Don't Download From Here just go to The Times Of India Official Website and buy The T.O.I Paid Version and support the publisher."""
 ############## News Paper Code Head ############## 
 NewsCodeHead = {
   "thehindu" : "THE HINDU"
 }
 ############## THE HINDU NEWSPAPER FUNCITON START ############## 
 TheHindu30Resultfinal = {}
-
 
 async def gettingAllHinduresult(bot,update):
   Source_List = []
@@ -105,15 +106,89 @@ async def captionfornewslink(Id,Forwhat):
   Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
   return Textfornewspaperwithanylss
 
+###############TIMES OF INDIA#####################
+
+TheTOI30Resultfinal = {}
+
+async def gettingallTOIresult(bot,update):
+  Source_List = []
+  c = 0
+  url="https://dailyepaper.in/times-of-india-epaper-pdf-download-2021/"
+  response=requests.get(url)
+  data = response.text
+  htmlParse = BeautifulSoup(data, 'html.parser') 
+  TheHindu30Result = []
+  for para in htmlParse.find_all("p"): 
+    btn = []
+    tempdict = {}
+    if c <= 30:
+      fullstring = f"{para}"
+      substring = "https://vk.com/"
+      if substring in fullstring:
+        items = para.text
+        itmelist = items.split(":")
+        linklist = re.findall(r'(https?://[^\s]+)', fullstring)
+        addDict = {}
+        addList = ["dwnldnewspaper"]
+        addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
+        addList.append(str(str(c+1)))
+        addList.append("thehindu")
+        addDict["CallBtnData"] = f"{addList}"
+        #print(addList)
+        Source_List.append(addDict)
+        try:
+          tempdict["Date"] = f"{itmelist[0]}"
+        except:
+          tempdict["Date"] = f"_"
+        try:
+          tempdict["NP"] = f"{linklist[0]}"
+        except:
+          tempdict["NP"] = f"_"
+        #try:
+          #tempdict["AL"] = f"{linklist[1]}"
+        #except:
+          #tempdict["AL"] = f"_"
+        c+=1
+      else:
+        pass
+    else:
+      break
+    TheTOI30Resultfinal[c] = tempdict
+  return Source_List
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ###############EXTRA#####################
-
-
-
-
-
-
-
 async def gettingAllHinduresult1(bot,update):
   c = 0
   url="https://dailyepaper.in/the-hindu-pdf-free-download-04-dec-2021/"
@@ -170,12 +245,6 @@ async def geturlfornewpaper(Id,Ctgry):
   Url = TheHindu30Resultfinal[int(Id)][Ctgry]
   print(Url)
   return Url
-############## THE HINDU NEWSPAPER FUNCITON END ############## 
 
-#Textfornewspaperwithanylss = """Here is your Result:
-#📆 Date : {}
-#📥 <h href='{}'>NewsPaper</a>
-#📥 <h href='{}'>Analysis</a> 
-#""".format(TheHindu30Resultfinal["Date"],TheHindu30Resultfinal["NP"],TheHindu30Resultfinal["AL"])
 
 
