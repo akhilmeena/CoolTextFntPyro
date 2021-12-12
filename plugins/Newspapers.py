@@ -114,7 +114,7 @@ async def captionfornewslink1(Id,Forwhat):
 📆 Date :</b><code> {}</code>
 📥 <a href='{}'>NewsPaper</a>
 """
-  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],TheTOI30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],TheTOI30Resultfinal[int(Id)]["Date"],TheTOI30Resultfinal[int(Id)]["NP"])
   return Textfornewspaperwithanylss
 
 ###############TIMES OF INDIA#####################
