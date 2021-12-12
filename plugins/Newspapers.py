@@ -128,9 +128,7 @@ async def gettingallTOIresult(bot,update):
   response=requests.get(url)
   data = response.text
   htmlParse = BeautifulSoup(data, 'html.parser') 
-  TheHindu30Result = []
   for para in htmlParse.find_all("p"): 
-    btn = []
     tempdict = {}
     if c <= 30:
       fullstring = f"{para}"
@@ -155,10 +153,6 @@ async def gettingallTOIresult(bot,update):
           tempdict["NP"] = f"{linklist[0]}"
         except:
           tempdict["NP"] = f"_"
-        #try:
-          #tempdict["AL"] = f"{linklist[1]}"
-        #except:
-          #tempdict["AL"] = f"_"
         c+=1
       else:
         pass
