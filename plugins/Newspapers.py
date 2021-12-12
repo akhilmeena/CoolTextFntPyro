@@ -189,7 +189,7 @@ async def gettingallDainikJagranresult(bot,update):
         addList = ["dwnldnewspaper"]
         addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
         addList.append(str(str(c+1)))
-        addList.append("timesofindia")
+        addList.append("dainikjagaran")
         addDict["CallBtnData"] = f"{addList}"
         #print(addList)
         Source_List.append(addDict)
