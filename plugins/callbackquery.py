@@ -37,8 +37,8 @@ async def cb_data(bot, update):
     await Urlleaccher(bot,update,Url2Dowload)
   if (update.data.startswith("['getsubjctofclass'")):
     classnmbr = ast.literal_eval(update.data)[1]
-    Source_List,totalsubjcet = ncertbooks.addsubjectbutton(bot,update,classnmbr)
-    newbtns = ncertbooks.makeBtnFromDict(Source_List)
+    Source_List,totalsubjcet = await ncertbooks.addsubjectbutton(bot,update,classnmbr)
+    newbtns = await ncertbooks.makeBtnFromDict(Source_List)
     await update.message.edit_text(text=ncertbooks.ClasssubjctText.format(classnmbr,classnmbr,totalsubjcet),reply_markup=newbtns)
   if (update.data.startswith("['crnttodayvsnias'")):
     getcodeheadwithday = ast.literal_eval(update.data)[1]
