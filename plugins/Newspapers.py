@@ -10,13 +10,23 @@ import html2markdown
 
 TheHinduu = InlineKeyboardButton('The Hindu', callback_data='thehindu')
 TmsOfInd = InlineKeyboardButton('Times Of India', callback_data='timesofindia')
+FinancialExpress = InlineKeyboardButton('Financial Express', callback_data='financialexpress')
+EconomicTimes = InlineKeyboardButton('Economic Times', callback_data='economictimes')
 Dainikjagaran = InlineKeyboardButton("दैनिक जागरण", callback_data='dainikjagaran')
+Rjpatrika = InlineKeyboardButton('Times Of India', callback_data='rjpatrika')
+Dainikbhaskar = InlineKeyboardButton('Times Of India', callback_data='dainikbhaskar')
+Newduniyaa = InlineKeyboardButton('Times Of India', callback_data='newduniyaa')
+Navbharattimes = InlineKeyboardButton('Times Of India', callback_data='navbharattimes')
+Amarujala = InlineKeyboardButton('Times Of India', callback_data='amarujala')
 HomeToStart = InlineKeyboardButton('🔙', callback_data='libraryopen')
 
 
 NewspaperType = InlineKeyboardMarkup([
   [TheHinduu,TmsOfInd],
-  [Dainikjagaran],
+  [FinancialExpress,EconomicTimes],
+  [Dainikjagaran,Rjpatrika],
+  [Dainikbhaskar,Newduniyaa],
+  [Navbharattimes,Amarujala],
   [HomeToStart]
   ])
 
@@ -25,15 +35,36 @@ DisclaimerForAll = """
 <b>⚠️ Note:-</b> <i>This pdf is shared only for educational purposes. We are not the publisher or owner of this e-paper.
 Have any complaints Please write us.</i>
 """
+
+Textfornewspaperwithanylss1 = """<b>Here is your Result:
+
+🎟️ {}
+📆 Date :</b><code> {}</code>
+📥 <a href='{}'>NewsPaper</a>
+"""
 ############## Notification For Copyrighted ############## 
 TheHinduNotification = """We suggest you please Don't Download From Here just go to The Hindu Official Website and buy The Hindu Paid Version and support the publisher."""
 TimesOfIndiaNotification = """We suggest you please Don't Download From Here just go to The Times Of India Official Website and buy The T.O.I Paid Version and support the publisher."""
+FinancialExpressNotification = """We suggest you please Don't Download From Here just go to The Financial Express Official Website and buy The Financial Express Paid Version and support the publisher."""
+EconomicTimesNotification = """We suggest you please Don't Download From Here just go to Economic Times Official Website and buy Economic Times Paid Version and support the publisher."""
 DainikJagranNotification = """We suggest you please Don't Download From Here just go to The Dianik Jagran Official Website and buy The Dainik Jagran Paid Version and support the publisher."""
+RjpatrikaNotification = """We suggest you please Don't Download From Here just go to Rajsthan Patrika Official Website and buy Rajsthan Patrika Paid Version and support the publisher."""
+DainikbhaskarNotification = """We suggest you please Don't Download From Here just go to Dainik Bhaskar Official Website and buy Dainik Bhaskar Paid Version and support the publisher."""
+NewduniyaaNotification = """We suggest you please Don't Download From Here just go to Nayi Duniya Official Website and buy Nayi Duniya Paid Version and support the publisher."""
+NavbharattimesNotification = """We suggest you please Don't Download From Here just go to Nav-Bharat Times Official Website and buy Nav-Bharat Times Paid Version and support the publisher."""
+AmarujalaNotification = """We suggest you please Don't Download From Here just go to Amar Ujala Official Website and buy Amar Ujala Paid Version and support the publisher."""
 ############## News Paper Code Head ############## 
 NewsCodeHead = {
   "thehindu" : "THE HINDU",
   "timesofindia" : "TIMES OF INDIA",
+  "financialexpress" : "Financial Express",
+  "economictimes" : "Economic Times",
   "dainikjagaran" : "दैनिक जागरण",
+  "rjpatrika" : "राजस्थान पत्रिका",
+  "dainikbhaskar" : "दैनिक भास्कर",
+  "newduniyaa" : "नयी दुनिया",
+  "navbharattimes" : "नवभारतटाइम्स",
+  "amarujala" : "अमर उजाला"
 }
 ############## BUTTONS FROM SOURCE CODE ############## 
 async def makeBtnFromDict(Source_List):
@@ -155,17 +186,58 @@ async def gettingallTOIresult(bot,update):
   return Source_List
 
 async def captionfornewslink1(Id,Forwhat):
-  Textfornewspaperwithanylss1 = """<b>Here is your Result:
-
-🎟️ {}
-📆 Date :</b><code> {}</code>
-📥 <a href='{}'>NewsPaper</a>
-"""
   Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],TheTOI30Resultfinal[int(Id)]["Date"],TheTOI30Resultfinal[int(Id)]["NP"])
   return Textfornewspaperwithanylss
 
 
-###############TIMES OF INDIA#####################
+##############FINANCIAL EXPRESS#####################
+
+FinancialExpressResultfinal = {}
+
+async def gettingallFinancialExpressresult(bot,update):
+  Source_List = []
+  c = 0
+  url="https://dailyepaper.in/financial-express-newspaper/"
+  response=requests.get(url)
+  data = response.text
+  htmlParse = BeautifulSoup(data, 'html.parser') 
+  for para in htmlParse.find_all("p"): 
+    tempdict = {}
+    if c <= 30:
+      fullstring = f"{para}"
+      substring = "https://vk.com/"
+      if substring in fullstring:
+        items = para.text
+        itmelist = items.split(":")
+        linklist = re.findall(r'(https?://[^\s]+)', fullstring)
+        addDict = {}
+        addList = ["dwnldnewspaper"]
+        addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
+        addList.append(str(str(c+1)))
+        addList.append("financialexpress")
+        addDict["CallBtnData"] = f"{addList}"
+        #print(addList)
+        Source_List.append(addDict)
+        try:
+          tempdict["Date"] = f"{itmelist[0]}"
+        except:
+          tempdict["Date"] = f"_"
+        try:
+          tempdict["NP"] = f"{linklist[0]}"
+        except:
+          tempdict["NP"] = f"_"
+        c+=1
+      else:
+        pass
+    else:
+      break
+    FinancialExpressResultfinal[c] = tempdict
+  return Source_List
+
+async def captionfornewslinkfinancialexpress(Id,Forwhat):
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],FinancialExpressResultfinal[int(Id)]["Date"],FinancialExpressResultfinal[int(Id)]["NP"])
+  return Textfornewspaperwithanylss
+###############DAINKK JAGARAN#####################
 
 DainikJagranResultfinal = {}
 
@@ -210,12 +282,6 @@ async def gettingallDainikJagranresult(bot,update):
   return Source_List
 
 async def captionfornewslinkdainikjagaran(Id,Forwhat):
-  Textfornewspaperwithanylss1 = """<b>Here is your Result:
-
-🎟️ {}
-📆 Date :</b><code> {}</code>
-📥 <a href='{}'>NewsPaper</a>
-"""
   Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],DainikJagranResultfinal[int(Id)]["Date"],DainikJagranResultfinal[int(Id)]["NP"])
   return Textfornewspaperwithanylss
 
