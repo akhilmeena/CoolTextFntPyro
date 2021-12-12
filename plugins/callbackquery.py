@@ -62,8 +62,8 @@ async def cb_data(bot, update):
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
     await update.message.edit_text(text="<b>Choose Your Month</b>",reply_markup=newbtns)
   if update.data == "ncertbooks":
-    Source_List = ncertbooks.addclasslist(bot,update)
-    newbtns = ncertbooks.makeBtnFromDict(Source_List)
+    Source_List = await ncertbooks.addclasslist(bot,update)
+    newbtns = await ncertbooks.makeBtnFromDict(Source_List)
     await update.message.edit_text(text="<b>Choose Your Class</b>",reply_markup=newbtns)
   if update.data == "crnafrsdaily":
     await update.message.edit_text(text="<b>Choose Your Source</b>",reply_markup=currentaffairs.CRNTAFRSOURCEBTN)
