@@ -28,7 +28,7 @@ async def cb_data(bot, update):
     try:
       Textfornewspaperwithanylss = await Newspapers.captionfornewslink(Id,Forwhat)
     except:
-      if str(Forwhat) == "":
+      if str(Forwhat) == "dainikjagaran":
         Textfornewspaperwithanylss = await Newspapers.captionfornewslinkdainikjagaran(Id,Forwhat)
       else:
         Textfornewspaperwithanylss = await Newspapers.captionfornewslink1(Id,Forwhat)
