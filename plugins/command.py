@@ -7,6 +7,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins import helper
 from plugins import Database
+from plugins import urluploader
 import re
 from plugins import Newspapers
 
@@ -43,6 +44,6 @@ async def start(bot, message):
 
 @Client.on_message(filters.regex('http') & filters.private)
 async def pdisk(bot, message):
-  Url2Dowload = message.text
-  await Urlleaccher(bot,message,Url2Dowload)
+  Url2Dowload = re.search("(?P<url>https?://[^\s]+)", message.text).group("url")
+  await urluploader.Urlleaccher(bot,message,Url2Dowload)
     
