@@ -172,7 +172,7 @@ DainikJagranResultfinal = {}
 async def gettingallDainikJagranresult(bot,update):
   Source_List = []
   c = 0
-  url="https://dailyepaper.in/times-of-india-epaper-pdf-download-2021/"
+  url="https://dailyepaper.in/dainik-jagran-newspaper-2021/"
   response=requests.get(url)
   data = response.text
   htmlParse = BeautifulSoup(data, 'html.parser') 
