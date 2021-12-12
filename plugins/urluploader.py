@@ -30,16 +30,25 @@ async def Find(string):
   return [x[0] for x in url] 
 
 async def Urlleaccher(bot,update,Url2Dowload):
-  msg = await update.message.reply_text("Validating Url...")
+  try:
+    msg = await update.message.reply_text("Validating Url...")
+  except:
+    msg = await update.reply_text("Validating Url...")
   try:
     Url = await Find(Url2Dowload)
     url = Url[0]
   except:
-    msg = await update.message.reply_text("Couldn't Found Url in Given Text...")
+    try:
+      msg = await update.message.reply_text("Couldn't Found Url in Given Text...")
+    except:
+      msg = await update.reply_text("Couldn't Found Url in Given Text...")
     return
   msg = await msg.edit("Url Matched : {}".format(url),disable_web_page_preview=True)
-  directory = f"{update.message.chat.id}"
-  print(directory)
+  try:
+    CHAT_ID = update.message.chat.id
+  except:
+    CHAT_ID = update.chat.id
+  directory = f"{CHAT_ID}"
   parent_dir = "Downloads/"
   path = os.path.join(parent_dir, directory) 
   isExist = os.path.exists(path)
@@ -106,7 +115,7 @@ async def Urlleaccher(bot,update,Url2Dowload):
     with open(newfile_path, 'rb') as doc:
       c_time = time.time()
       await bot.send_document(
-        chat_id=update.message.chat.id,
+        chat_id=CHAT_ID,
         document=doc,
         file_name=newfilename,
         thumb=thumb_image_path,
