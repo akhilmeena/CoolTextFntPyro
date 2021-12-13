@@ -64,7 +64,7 @@ async def cb_data(bot, update):
     await update.message.edit_text(text=f"<b>Choose Your Date</b>",reply_markup=newbtns)
   if update.data == "rjpatrika":
     await update.answer(text = Newspapers.RjpatrikaNotification, show_alert=True)
-    Source_List = await Newspapers.gettingallDainikJagranresult(bot,update)
+    Source_List = await Newspapers.gettingallRjpatrikaresult(bot,update)
     newbtns = await Newspapers.makeBtnFromDict(Source_List)
     await update.message.edit_text(text=f"<b>Choose Date.</b>\n{Newspapers.DisclaimerForAll}",reply_markup=newbtns)
   if update.data == "dainikjagaran":
