@@ -30,6 +30,8 @@ async def cb_data(bot, update):
     except:
       if str(Forwhat) == "dainikjagaran":
         Textfornewspaperwithanylss = await Newspapers.captionfornewslinkdainikjagaran(Id,Forwhat)
+      elif str(Forwhat) == "financialexpress":
+        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkfinancialexpress(Id,Forwhat)
       elif str(Forwhat) == "economictimes":
         Textfornewspaperwithanylss = await Newspapers.captionfornewslinkEconomictimes(Id,Forwhat)
       else:
@@ -61,6 +63,11 @@ async def cb_data(bot, update):
   if update.data == "dainikjagaran":
     await update.answer(text = Newspapers.DainikJagranNotification, show_alert=True)
     Source_List = await Newspapers.gettingallDainikJagranresult(bot,update)
+    newbtns = await Newspapers.makeBtnFromDict(Source_List)
+    await update.message.edit_text(text=f"<b>Choose Date.</b>\n{Newspapers.DisclaimerForAll}",reply_markup=newbtns)
+  if update.data == "financialexpress":
+    await update.answer(text = Newspapers.FinancialExpressNotification, show_alert=True)
+    Source_List = await Newspapers.FinancialExpressResultfinal(bot,update)
     newbtns = await Newspapers.makeBtnFromDict(Source_List)
     await update.message.edit_text(text=f"<b>Choose Date.</b>\n{Newspapers.DisclaimerForAll}",reply_markup=newbtns)
   if update.data == "timesofindia":
