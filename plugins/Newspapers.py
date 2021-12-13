@@ -13,7 +13,7 @@ TmsOfInd = InlineKeyboardButton('Times Of India', callback_data='timesofindia')
 FinancialExpress = InlineKeyboardButton('Financial Express', callback_data='financialexpress')
 EconomicTimes = InlineKeyboardButton('Economic Times', callback_data='economictimes')
 Dainikjagaran = InlineKeyboardButton("दैनिक जागरण", callback_data='dainikjagaran')
-Rjpatrika = InlineKeyboardButton('Times Of India', callback_data='rjpatrika')
+Rjpatrika = InlineKeyboardButton('राजस्थान पत्रिका', callback_data='rjpatrika')
 Dainikbhaskar = InlineKeyboardButton('Times Of India', callback_data='dainikbhaskar')
 Newduniyaa = InlineKeyboardButton('Times Of India', callback_data='newduniyaa')
 Navbharattimes = InlineKeyboardButton('Times Of India', callback_data='navbharattimes')
@@ -331,6 +331,54 @@ async def gettingallDainikJagranresult(bot,update):
 
 async def captionfornewslinkdainikjagaran(Id,Forwhat):
   Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],DainikJagranResultfinal[int(Id)]["Date"],DainikJagranResultfinal[int(Id)]["NP"])
+  return Textfornewspaperwithanylss
+
+###############RAJSHTHAN PATRIKA#####################
+
+RjpatrikaResultfinal = {}
+
+async def gettingallRjpatrikaresult(bot,update):
+  Source_List = []
+  c = 0
+  url="https://dailyepaper.in/rajasthan-patrika-epaper/"
+  response=requests.get(url)
+  data = response.text
+  htmlParse = BeautifulSoup(data, 'html.parser') 
+  for para in htmlParse.find_all("p"): 
+    tempdict = {}
+    if c <= 30:
+      fullstring = f"{para}"
+      substring = "https://vk.com/"
+      if substring in fullstring:
+        items = para.text
+        itmelist = items.split(":")
+        linklist = re.findall(r'(https?://[^\s]+)', fullstring)
+        addDict = {}
+        addList = ["dwnldnewspaper"]
+        addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
+        addList.append(str(str(c+1)))
+        addList.append("rjpatrika")
+        addDict["CallBtnData"] = f"{addList}"
+        #print(addList)
+        Source_List.append(addDict)
+        try:
+          tempdict["Date"] = f"{itmelist[0]}"
+        except:
+          tempdict["Date"] = f"_"
+        try:
+          tempdict["NP"] = f"{linklist[0]}"
+        except:
+          tempdict["NP"] = f"_"
+        c+=1
+      else:
+        pass
+    else:
+      break
+    RjpatrikaResultfinal[c] = tempdict
+  return Source_List
+
+async def captionfornewslinkRjpatrika(Id,Forwhat):
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],RjpatrikaResultfinal[int(Id)]["Date"],RjpatrikaResultfinal[int(Id)]["NP"])
   return Textfornewspaperwithanylss
 
 
