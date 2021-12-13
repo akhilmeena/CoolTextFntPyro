@@ -14,10 +14,10 @@ FinancialExpress = InlineKeyboardButton('Financial Express', callback_data='fina
 EconomicTimes = InlineKeyboardButton('Economic Times', callback_data='economictimes')
 Dainikjagaran = InlineKeyboardButton("दैनिक जागरण", callback_data='dainikjagaran')
 Rjpatrika = InlineKeyboardButton('राजस्थान पत्रिका', callback_data='rjpatrika')
-Dainikbhaskar = InlineKeyboardButton('Times Of India', callback_data='dainikbhaskar')
-Newduniyaa = InlineKeyboardButton('Times Of India', callback_data='newduniyaa')
-Navbharattimes = InlineKeyboardButton('Times Of India', callback_data='navbharattimes')
-Amarujala = InlineKeyboardButton('Times Of India', callback_data='amarujala')
+Dainikbhaskar = InlineKeyboardButton('दैनिक भास्कर', callback_data='dainikbhaskar')
+Newduniyaa = InlineKeyboardButton('नयी दुनिया', callback_data='newduniyaa')
+Navbharattimes = InlineKeyboardButton('नवभारतटाइम्स', callback_data='navbharattimes')
+Amarujala = InlineKeyboardButton('अमर उजाला', callback_data='amarujala')
 HomeToStart = InlineKeyboardButton('🔙', callback_data='libraryopen')
 
 
@@ -428,6 +428,151 @@ async def gettingallDainikbhaskarresult(bot,update):
 
 async def captionfornewslinkDainikbhaskar(Id,Forwhat):
   Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],DainikbhaskarResultfinal[int(Id)]["Date"],DainikbhaskarResultfinal[int(Id)]["NP"])
+  return Textfornewspaperwithanylss
+
+###############New Duniyaa#####################
+
+NewduniyaaResultfinal = {}
+
+async def gettingallNewduniyaaresult(bot,update):
+  Source_List = []
+  c = 0
+  url="https://dailyepaper.in/naidunia-newspaper/"
+  response=requests.get(url)
+  data = response.text
+  htmlParse = BeautifulSoup(data, 'html.parser') 
+  for para in htmlParse.find_all("p"): 
+    tempdict = {}
+    if c <= 30:
+      fullstring = f"{para}"
+      substring = "https://vk.com/"
+      if substring in fullstring:
+        items = para.text
+        itmelist = items.split(":")
+        linklist = re.findall(r'(https?://[^\s]+)', fullstring)
+        addDict = {}
+        addList = ["dwnldnewspaper"]
+        addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
+        addList.append(str(str(c+1)))
+        addList.append("newduniyaa")
+        addDict["CallBtnData"] = f"{addList}"
+        #print(addList)
+        Source_List.append(addDict)
+        try:
+          tempdict["Date"] = f"{itmelist[0]}"
+        except:
+          tempdict["Date"] = f"_"
+        try:
+          tempdict["NP"] = f"{linklist[0]}"
+        except:
+          tempdict["NP"] = f"_"
+        c+=1
+      else:
+        pass
+    else:
+      break
+    NewduniyaaResultfinal[c] = tempdict
+  return Source_List
+
+async def captionfornewslinkNewduniyaa(Id,Forwhat):
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],NewduniyaaResultfinal[int(Id)]["Date"],NewduniyaaResultfinal[int(Id)]["NP"])
+  return Textfornewspaperwithanylss
+
+###############Nav Bharat Times#####################
+
+NavbharattimesResultfinal = {}
+
+async def gettingallNavbharattimesresult(bot,update):
+  Source_List = []
+  c = 0
+  url="https://dailyepaper.in/navbharat-times-epaper/"
+  response=requests.get(url)
+  data = response.text
+  htmlParse = BeautifulSoup(data, 'html.parser') 
+  for para in htmlParse.find_all("p"): 
+    tempdict = {}
+    if c <= 30:
+      fullstring = f"{para}"
+      substring = "https://vk.com/"
+      if substring in fullstring:
+        items = para.text
+        itmelist = items.split(":")
+        linklist = re.findall(r'(https?://[^\s]+)', fullstring)
+        addDict = {}
+        addList = ["dwnldnewspaper"]
+        addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
+        addList.append(str(str(c+1)))
+        addList.append("navbharattimes")
+        addDict["CallBtnData"] = f"{addList}"
+        #print(addList)
+        Source_List.append(addDict)
+        try:
+          tempdict["Date"] = f"{itmelist[0]}"
+        except:
+          tempdict["Date"] = f"_"
+        try:
+          tempdict["NP"] = f"{linklist[0]}"
+        except:
+          tempdict["NP"] = f"_"
+        c+=1
+      else:
+        pass
+    else:
+      break
+    NavbharattimesResultfinal[c] = tempdict
+  return Source_List
+
+async def captionfornewslinkNavbharattimes(Id,Forwhat):
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],NavbharattimesResultfinal[int(Id)]["Date"],NavbharattimesResultfinal[int(Id)]["NP"])
+  return Textfornewspaperwithanylss
+
+
+###############Amar Ujala#####################
+
+AmarujalaResultfinal = {}
+
+async def gettingallAmarujalaresult(bot,update):
+  Source_List = []
+  c = 0
+  url="https://dailyepaper.in/amar-ujala-news-paper-today/"
+  response=requests.get(url)
+  data = response.text
+  htmlParse = BeautifulSoup(data, 'html.parser') 
+  for para in htmlParse.find_all("p"): 
+    tempdict = {}
+    if c <= 30:
+      fullstring = f"{para}"
+      substring = "https://vk.com/"
+      if substring in fullstring:
+        items = para.text
+        itmelist = items.split(":")
+        linklist = re.findall(r'(https?://[^\s]+)', fullstring)
+        addDict = {}
+        addList = ["dwnldnewspaper"]
+        addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
+        addList.append(str(str(c+1)))
+        addList.append("amarujala")
+        addDict["CallBtnData"] = f"{addList}"
+        #print(addList)
+        Source_List.append(addDict)
+        try:
+          tempdict["Date"] = f"{itmelist[0]}"
+        except:
+          tempdict["Date"] = f"_"
+        try:
+          tempdict["NP"] = f"{linklist[0]}"
+        except:
+          tempdict["NP"] = f"_"
+        c+=1
+      else:
+        pass
+    else:
+      break
+    AmarujalaResultfinal[c] = tempdict
+  return Source_List
+
+async def captionfornewslinkAmarujala(Id,Forwhat):
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],AmarujalaResultfinal[int(Id)]["Date"],AmarujalaResultfinal[int(Id)]["NP"])
   return Textfornewspaperwithanylss
 
 
