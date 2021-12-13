@@ -242,7 +242,7 @@ async def captionfornewslinkfinancialexpress(Id,Forwhat):
 
 EconomictimesResultfinal = {}
 
-async def gettingallFinancialExpressresult(bot,update):
+async def gettingallEconomictimesresult(bot,update):
   Source_List = []
   c = 0
   url="https://dailyepaper.in/economic-times-newspaper-today/"
