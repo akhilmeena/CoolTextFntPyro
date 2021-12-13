@@ -237,6 +237,54 @@ async def gettingallFinancialExpressresult(bot,update):
 async def captionfornewslinkfinancialexpress(Id,Forwhat):
   Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],FinancialExpressResultfinal[int(Id)]["Date"],FinancialExpressResultfinal[int(Id)]["NP"])
   return Textfornewspaperwithanylss
+
+##############Economic Times#####################
+
+EconomictimesResultfinal = {}
+
+async def gettingallFinancialExpressresult(bot,update):
+  Source_List = []
+  c = 0
+  url="https://dailyepaper.in/economic-times-newspaper-today/"
+  response=requests.get(url)
+  data = response.text
+  htmlParse = BeautifulSoup(data, 'html.parser') 
+  for para in htmlParse.find_all("p"): 
+    tempdict = {}
+    if c <= 30:
+      fullstring = f"{para}"
+      substring = "https://vk.com/"
+      if substring in fullstring:
+        items = para.text
+        itmelist = items.split(":")
+        linklist = re.findall(r'(https?://[^\s]+)', fullstring)
+        addDict = {}
+        addList = ["dwnldnewspaper"]
+        addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
+        addList.append(str(str(c+1)))
+        addList.append("economictimes")
+        addDict["CallBtnData"] = f"{addList}"
+        #print(addList)
+        Source_List.append(addDict)
+        try:
+          tempdict["Date"] = f"{itmelist[0]}"
+        except:
+          tempdict["Date"] = f"_"
+        try:
+          tempdict["NP"] = f"{linklist[0]}"
+        except:
+          tempdict["NP"] = f"_"
+        c+=1
+      else:
+        pass
+    else:
+      break
+    EconomictimesResultfinal[c] = tempdict
+  return Source_List
+
+async def captionfornewslinkEconomictimes(Id,Forwhat):
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],EconomictimesResultfinal[int(Id)]["Date"],EconomictimesResultfinal[int(Id)]["NP"])
+  return Textfornewspaperwithanylss
 ###############DAINKK JAGARAN#####################
 
 DainikJagranResultfinal = {}
