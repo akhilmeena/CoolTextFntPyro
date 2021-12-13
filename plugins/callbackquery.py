@@ -30,6 +30,12 @@ async def cb_data(bot, update):
     except:
       if str(Forwhat) == "dainikjagaran":
         Textfornewspaperwithanylss = await Newspapers.captionfornewslinkdainikjagaran(Id,Forwhat)
+      elif str(Forwhat) == "amarujala":
+        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkAmarujala(Id,Forwhat)
+      elif str(Forwhat) == "navbharattimes":
+        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkNavbharattimes(Id,Forwhat)
+      elif str(Forwhat) == "newduniyaa":
+        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkNewduniyaa(Id,Forwhat)
       elif str(Forwhat) == "rjpatrika":
         Textfornewspaperwithanylss = await Newspapers.captionfornewslinkRjpatrika(Id,Forwhat)
       elif str(Forwhat) == "dainikbhaskar":
@@ -64,6 +70,21 @@ async def cb_data(bot, update):
     Source_List = currentaffairs.currentdaypdfbuttonvsnias(month_num,year_num)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
     await update.message.edit_text(text=f"<b>Choose Your Date</b>",reply_markup=newbtns)
+  if update.data == "amarujala":
+    await update.answer(text = Newspapers.AmarujalaNotification, show_alert=True)
+    Source_List = await Newspapers.gettingallAmarujalaresult(bot,update)
+    newbtns = await Newspapers.makeBtnFromDict(Source_List)
+    await update.message.edit_text(text=f"<b>Choose Date.</b>\n{Newspapers.DisclaimerForAll}",reply_markup=newbtns)
+  if update.data == "navbharattimes":
+    await update.answer(text = Newspapers.NavbharattimesNotification, show_alert=True)
+    Source_List = await Newspapers.gettingallNavbharattimesresult(bot,update)
+    newbtns = await Newspapers.makeBtnFromDict(Source_List)
+    await update.message.edit_text(text=f"<b>Choose Date.</b>\n{Newspapers.DisclaimerForAll}",reply_markup=newbtns)
+  if update.data == "newduniyaa":
+    await update.answer(text = Newspapers.NewduniyaaNotification, show_alert=True)
+    Source_List = await Newspapers.gettingallNewduniyaaresult(bot,update)
+    newbtns = await Newspapers.makeBtnFromDict(Source_List)
+    await update.message.edit_text(text=f"<b>Choose Date.</b>\n{Newspapers.DisclaimerForAll}",reply_markup=newbtns)
   if update.data == "dainikbhaskar":
     await update.answer(text = Newspapers.DainikbhaskarNotification, show_alert=True)
     Source_List = await Newspapers.gettingallDainikbhaskarresult(bot,update)
