@@ -30,6 +30,8 @@ async def cb_data(bot, update):
     except:
       if str(Forwhat) == "dainikjagaran":
         Textfornewspaperwithanylss = await Newspapers.captionfornewslinkdainikjagaran(Id,Forwhat)
+      elif str(Forwhat) == "economictimes":
+        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkEconomictimes(Id,Forwhat)
       else:
         Textfornewspaperwithanylss = await Newspapers.captionfornewslink1(Id,Forwhat)
     newbtns = InlineKeyboardMarkup([[InlineKeyboardButton("🔙",callback_data=Forwhat)]])
