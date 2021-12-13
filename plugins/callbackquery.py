@@ -32,6 +32,8 @@ async def cb_data(bot, update):
         Textfornewspaperwithanylss = await Newspapers.captionfornewslinkdainikjagaran(Id,Forwhat)
       elif str(Forwhat) == "rjpatrika":
         Textfornewspaperwithanylss = await Newspapers.captionfornewslinkRjpatrika(Id,Forwhat)
+      elif str(Forwhat) == "dainikbhaskar":
+        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkDainikbhaskar(Id,Forwhat)
       elif str(Forwhat) == "financialexpress":
         Textfornewspaperwithanylss = await Newspapers.captionfornewslinkfinancialexpress(Id,Forwhat)
       elif str(Forwhat) == "economictimes":
@@ -62,6 +64,11 @@ async def cb_data(bot, update):
     Source_List = currentaffairs.currentdaypdfbuttonvsnias(month_num,year_num)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
     await update.message.edit_text(text=f"<b>Choose Your Date</b>",reply_markup=newbtns)
+  if update.data == "dainikbhaskar":
+    await update.answer(text = Newspapers.DainikbhaskarNotification, show_alert=True)
+    Source_List = await Newspapers.gettingallDainikbhaskarresult(bot,update)
+    newbtns = await Newspapers.makeBtnFromDict(Source_List)
+    await update.message.edit_text(text=f"<b>Choose Date.</b>\n{Newspapers.DisclaimerForAll}",reply_markup=newbtns)
   if update.data == "rjpatrika":
     await update.answer(text = Newspapers.RjpatrikaNotification, show_alert=True)
     Source_List = await Newspapers.gettingallRjpatrikaresult(bot,update)
