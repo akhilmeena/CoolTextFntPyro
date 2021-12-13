@@ -382,6 +382,55 @@ async def captionfornewslinkRjpatrika(Id,Forwhat):
   return Textfornewspaperwithanylss
 
 
+###############Dainik Bhaskar#####################
+
+DainikbhaskarResultfinal = {}
+
+async def gettingallDainikbhaskarresult(bot,update):
+  Source_List = []
+  c = 0
+  url="https://dailyepaper.in/dainik-bhaskar-epaper/"
+  response=requests.get(url)
+  data = response.text
+  htmlParse = BeautifulSoup(data, 'html.parser') 
+  for para in htmlParse.find_all("p"): 
+    tempdict = {}
+    if c <= 30:
+      fullstring = f"{para}"
+      substring = "https://vk.com/"
+      if substring in fullstring:
+        items = para.text
+        itmelist = items.split(":")
+        linklist = re.findall(r'(https?://[^\s]+)', fullstring)
+        addDict = {}
+        addList = ["dwnldnewspaper"]
+        addDict["CallBtnTedt"] = str(f"📆 {itmelist[0]}")
+        addList.append(str(str(c+1)))
+        addList.append("dainikbhaskar")
+        addDict["CallBtnData"] = f"{addList}"
+        #print(addList)
+        Source_List.append(addDict)
+        try:
+          tempdict["Date"] = f"{itmelist[0]}"
+        except:
+          tempdict["Date"] = f"_"
+        try:
+          tempdict["NP"] = f"{linklist[0]}"
+        except:
+          tempdict["NP"] = f"_"
+        c+=1
+      else:
+        pass
+    else:
+      break
+    DainikbhaskarResultfinal[c] = tempdict
+  return Source_List
+
+async def captionfornewslinkDainikbhaskar(Id,Forwhat):
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],DainikbhaskarResultfinal[int(Id)]["Date"],DainikbhaskarResultfinal[int(Id)]["NP"])
+  return Textfornewspaperwithanylss
+
+
 
 
 
