@@ -232,6 +232,7 @@ async def gettingallFinancialExpressresult(bot,update):
     else:
       break
     FinancialExpressResultfinal[c] = tempdict
+  print(Source_List)
   return Source_List
 
 async def captionfornewslinkfinancialexpress(Id,Forwhat):
