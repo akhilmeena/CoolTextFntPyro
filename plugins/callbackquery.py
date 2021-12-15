@@ -38,7 +38,7 @@ async def cb_data(bot, update):
     file_path = await WorkWithPDF.GenerateScrennshotFromUrl(UrlToChlAcdyCrnAfr,update)
     mfile_path,newFileName = await WorkWithPDF.GenratePdfFromImg(update,file_path,Date)
     #print(SShotName)
-    msg = update.message.reply_text("ak")
+    msg = await update.message.reply_text("ak")
     akhil =  open(mfile_path, 'rb')
     c_time = time.time()
     await bot.send_document(
