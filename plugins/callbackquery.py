@@ -32,9 +32,10 @@ async def cb_data(bot, update):
     Code = ast.literal_eval(update.data)[2]
     UrlToChlAcdyCrnAfr = "https://chahalacademy.com/daily-current-affairs/" + str(Date) + "/" + str(Code)
     file_path = await WorkWithPDF.GenerateScrennshotFromUrl(UrlToChlAcdyCrnAfr,update)
+    mfile_path = await GenratePdfFromImg(file_path)
     #print(SShotName)
-    akhil =  open(file_path, 'rb')
-    await bot.send_photo(chat_id=CHAT_ID,photo=akhil)
+    akhil =  open(mfile_path, 'rb')
+    await bot.send_document(chat_id=CHAT_ID,documentp=akhil)
   if update.data == "chahalacdmy":
     Source_List = await currentaffairs.getalldateswithlinkfromchahalacadmy(bot,update)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
