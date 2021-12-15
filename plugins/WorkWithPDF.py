@@ -46,7 +46,7 @@ async def GenerateScrennshotFromUrl(Url,update):
         file.write(chunk)
   return file_path
 
-async def GenratePdfFromImg(update,file_path):
+async def GenratePdfFromImg(update,file_path,Date):
   try:
     CHAT_ID = update.message.chat.id
   except:
