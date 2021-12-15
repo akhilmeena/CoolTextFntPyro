@@ -16,7 +16,7 @@ async def GenarateRandomName(charachter):
 
 async def GenerateScrennshotFromUrl(Url):
   BASE = 'https://mini.s-shot.ru/1024x0/JPEG/1024/Z100/?' # you can modify size, format, zoom
-  url = urllib.parse.quote_plus(url) #service needs link to be joined in encoded format
+  url = urllib.parse.quote_plus(Url) #service needs link to be joined in encoded format
   try:
     CHAT_ID = update.message.chat.id
   except:
