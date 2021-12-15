@@ -44,7 +44,7 @@ async def GenerateScrennshotFromUrl(Url,update):
         file.write(chunk)
   return file_path
 
-async def GenratePdfFromImg(file_path):
+async def GenratePdfFromImg(update,file_path):
   image1 = Image.open(file_path)
   image1.convert('RGB')
   imageList = [image1]
