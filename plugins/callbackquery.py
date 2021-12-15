@@ -31,7 +31,7 @@ async def cb_data(bot, update):
     Date = ast.literal_eval(update.data)[1]
     Code = ast.literal_eval(update.data)[2]
     UrlToChlAcdyCrnAfr = "https://chahalacademy.com/daily-current-affairs/" + str(Date) + str(Code)
-    SShotName = await WorkWithPDF.GenerateScrennshotFromUrl(UrlToChlAcdyCrnAfr)
+    SShotName = await WorkWithPDF.GenerateScrennshotFromUrl(UrlToChlAcdyCrnAfr,update)
     print(SShotName)
     akhil =  open(file_path, 'wb')
     await bot.send_photo(chat_id=CHAT_ID,photo=akhil)
