@@ -9,12 +9,40 @@ from itertools import islice
 
 
 VisionIas = InlineKeyboardButton('✨ Vision IAS', callback_data='vsniascrnt')
+ChahalAcdmy = InlineKeyboardButton('Chahal Academy 🥇', callback_data='chahalacdmy')
 BackToLibrary = InlineKeyboardButton('🔙', callback_data='libraryopen')
 
 CRNTAFRSOURCEBTN = InlineKeyboardMarkup([
-  [VisionIas],
+  [VisionIas,ChahalAcdmy],
   [BackToLibrary]
   ])
+
+
+async def getalldateswithlinkfromchahalacadmy(bot,update):
+  url = "https://chahalacademy.com/daily-current-affairs-analysis"
+  response = requests.get(url)
+  soup = BeautifulSoup(response.text, 'html.parser')
+  urls = []
+  for link in soup.find_all('a'):
+    SedoUrl = link.get('href')
+    if "https://chahalacademy.com/daily-current-affairs/" in SedoUrl:
+      urls.append(link.get('href'))
+  Source_List = []
+  for Url in urls:
+    addDict = {}
+    addList = ["indxchlacdmy"]
+    date = Url.split("/")[4]
+    code = Url.split("/")[5]
+    Maindate = date.replace("-"," ")
+    addDict["CallBtnTedt"] = str(Maindate)
+    addList.append(str(date))
+    addList.append(str(code))
+    addDict["CallBtnData"] = f"{addList}"
+    Source_List.append(addDict)
+  return Source_List
+  
+
+
 
 def getallmonthfromiasvsncurrentafr(bot,update):
   url = "http://www.visionias.in/resources/daily_current_affairs.php?type=1"
