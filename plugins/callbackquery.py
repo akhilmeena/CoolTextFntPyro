@@ -47,7 +47,7 @@ async def cb_data(bot, update):
       file_name=newFileName,
       thumb=thumb_image_path,
       force_document=True,
-      caption=f"<b>{file_name}</b>",
+      caption=f"<b>{newFileName}</b>",
       progress=progress_for_pyrogram,
       progress_args=(
         f"<b>File is Uploading ⌛</b>\n\n<b>🗂️ File Name :</b> <code>{newFileName}</code>",
