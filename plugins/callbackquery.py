@@ -34,27 +34,20 @@ async def cb_data(bot, update):
       CHAT_ID = update.chat.id
     Date = ast.literal_eval(update.data)[1]
     Code = ast.literal_eval(update.data)[2]
+    msg = await update.message.reply_text("<b>Generating Link....</b>")
     UrlToChlAcdyCrnAfr = "https://chahalacademy.com/daily-current-affairs/" + str(Date) + "/" + str(Code)
+    msg = await msg.edit("<b>Generating Images....</b>")
     file_path = await WorkWithPDF.GenerateScrennshotFromUrl(UrlToChlAcdyCrnAfr,update)
+    msg = await msg.edit("<b>Generating PDF....</b>")
     mfile_path,newFileName = await WorkWithPDF.GenratePdfFromImg(update,file_path,Date)
-    #print(SShotName)
-    msg = await update.message.reply_text("ak")
+    msg = await msg.edit("<b>Uploading PDF....</b>")
     doc =  open(mfile_path, 'rb')
     c_time = time.time()
-    await bot.send_document(
-      chat_id=CHAT_ID,
-      document=doc,
-      file_name=newFileName,
-      thumb=thumb_image_path,
-      force_document=True,
-      caption=f"<b>{newFileName}</b>",
-      progress=progress_for_pyrogram,
-      progress_args=(
-        f"<b>File is Uploading ⌛</b>\n\n<b>🗂️ File Name :</b> <code>{newFileName}</code>",
-        msg, 
-        c_time
-        )
-      )
+    await bot.send_document(chat_id=CHAT_ID,document=doc,file_name=newFileName,
+      thumb=thumb_image_path,force_document=True,caption=f"<b>{newFileName}</b>",progress=progress_for_pyrogram,
+      progress_args=(f"<b>File is Uploading ⌛</b>\n\n<b>🗂️ File Name :</b> <code>{newFileName}</code>",msg, c_time))
+    await msg.delete()
+    os.remove(newFileName)
   if update.data == "chahalacdmy":
     Source_List = await currentaffairs.getalldateswithlinkfromchahalacadmy(bot,update)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
