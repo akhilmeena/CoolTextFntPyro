@@ -48,7 +48,7 @@ async def cb_data(bot, update):
       progress_args=(f"<b>File is Uploading ⌛</b>\n\n<b>🗂️ File Name :</b> <code>{newFileName}</code>",msg, c_time))
     doc.close()
     await msg.delete()
-    os.remove(newFileName)
+    os.remove(mfile_path)
   if update.data == "chahalacdmy":
     Source_List = await currentaffairs.getalldateswithlinkfromchahalacadmy(bot,update)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
