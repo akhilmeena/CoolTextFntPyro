@@ -45,11 +45,6 @@ async def GenerateScrennshotFromUrl(Url,update):
   return file_path
 
 async def GenratePdfFromImg(update,file_path):
-  image1 = Image.open(file_path)
-  image1.convert('RGB')
-  imageList = [image1]
-  fileName = 'Flowers.pdf'  # Filename of PDF
-  image1.save(fileName, save_all=True, append_images=imageList)
   try:
     CHAT_ID = update.message.chat.id
   except:
@@ -57,7 +52,10 @@ async def GenratePdfFromImg(update,file_path):
   directory = f"{CHAT_ID}"
   parent_dir = "Downloads/"
   path = os.path.join(parent_dir, directory) 
-  mfile_path = os.path.join(path, fileName)
+  mfile_path = os.path.join(path, f"@LibraryInBot {date}.pdf")
+  with open(mfile_path,"wb") as f:
+    f.write(img2pdf.convert(file_path))
   return mfile_path
+  
   
  
