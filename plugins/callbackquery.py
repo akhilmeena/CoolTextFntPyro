@@ -24,7 +24,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 async def cb_data(bot, update):
   if update.data == "chahalacdmy":
     Source_List = await currentaffairs.getalldateswithlinkfromchahalacadmy(bot,update)
-    newbtns = makeBtnFromDict(Source_List)
+    newbtns = makeBtnFromDict.makeBtnFromDict(Source_List)
     await update.message.edit_text(text=f"<b>Choose Your Date</b>",reply_markup=newbtns)
   if (update.data.startswith("['dwnldnewspaper'")):
     Id = ast.literal_eval(update.data)[1]
