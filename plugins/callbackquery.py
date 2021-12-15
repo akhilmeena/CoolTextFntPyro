@@ -11,6 +11,7 @@ from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.urluploader import Urlleaccher
 from plugins import Newspapers
+from plugins import WorkWithPDF
 import ast
 
 
@@ -22,6 +23,18 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if (update.data.startswith("['indxchlacdmy'")):
+    try:
+      CHAT_ID = update.message.chat.id
+    except:
+      CHAT_ID = update.chat.id
+    Date = ast.literal_eval(update.data)[1]
+    Code = ast.literal_eval(update.data)[2]
+    UrlToChlAcdyCrnAfr = "https://chahalacademy.com/daily-current-affairs/" + str(Date) + str(Code)
+    SShotName = await WorkWithPDF.GenerateScrennshotFromUrl(UrlToChlAcdyCrnAfr)
+    print(SShotName)
+    akhil =  open(file_path, 'wb')
+    await bot.send_photo(chat_id=CHAT_ID,photo=akhil)
   if update.data == "chahalacdmy":
     Source_List = await currentaffairs.getalldateswithlinkfromchahalacadmy(bot,update)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
