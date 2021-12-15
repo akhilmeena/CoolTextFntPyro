@@ -13,7 +13,9 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.urluploader import Urlleaccher
 from plugins import Newspapers
 from plugins import WorkWithPDF
+from plugins.display_progress import progress_for_pyrogram,get_size,TimeFormatter
 import ast
+import time
 
 thumb_image_path =  open(Config.LoGoPath, 'rb')
 
@@ -51,11 +53,11 @@ async def cb_data(bot, update):
         caption=f"<b>{file_name}</b>",
         progress=progress_for_pyrogram,
         progress_args=(
-          f"<b>File is Uploading ⌛</b>\n\n<b>🗂️ File Name :</b> <code>{file_name}</code>",
+          f"<b>File is Uploading ⌛</b>\n\n<b>🗂️ File Name :</b> <code>{newFileName}</code>",
           msg, 
           c_time
           )
-      )
+        )
   if update.data == "chahalacdmy":
     Source_List = await currentaffairs.getalldateswithlinkfromchahalacadmy(bot,update)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
