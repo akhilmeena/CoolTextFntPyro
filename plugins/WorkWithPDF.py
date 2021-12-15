@@ -5,6 +5,7 @@ import urllib.parse
 import requests
 import os
 import random
+from PIL import Image
 
 async def GenarateRandomName(charachter):
   password_length = int(charachter)
