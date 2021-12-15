@@ -41,7 +41,7 @@ async def cb_data(bot, update):
     msg = await msg.edit("<b>Generating PDF....</b>")
     mfile_path,newFileName = await WorkWithPDF.GenratePdfFromImg(update,file_path,Date)
     msg = await msg.edit("<b>Uploading PDF....</b>")
-    doc =  open(mfile_path, 'rb')
+    doc =  open(mfile_path, 'r')
     c_time = time.time()
     await bot.send_document(chat_id=CHAT_ID,document=doc,file_name=newFileName,
       thumb=thumb_image_path,force_document=True,caption=f"<b>{newFileName}</b>",progress=progress_for_pyrogram,
