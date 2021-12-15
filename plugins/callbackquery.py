@@ -39,7 +39,7 @@ async def cb_data(bot, update):
     mfile_path,newFileName = await WorkWithPDF.GenratePdfFromImg(update,file_path,Date)
     #print(SShotName)
     msg = await update.message.reply_text("ak")
-    akhil =  open(mfile_path, 'rb')
+    doc =  open(mfile_path, 'rb')
     c_time = time.time()
     await bot.send_document(
       chat_id=CHAT_ID,
