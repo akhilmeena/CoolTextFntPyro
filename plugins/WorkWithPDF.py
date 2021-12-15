@@ -46,6 +46,14 @@ async def GenerateScrennshotFromUrl(Url,update):
         file.write(chunk)
   return file_path
 
+
+async def CropImage(left,right,top,bottom,ImagPath):
+  im = Image.open(ImagPath)
+  im1 = im.crop((left, top, right, bottom))
+  im1.save(ImagPath)
+
+
+
 async def GenratePdfFromImg(update,file_path,Date):
   try:
     CHAT_ID = update.message.chat.id
