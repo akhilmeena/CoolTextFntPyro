@@ -2,6 +2,7 @@ import logging
 import os
 from config import Config
 import pyrogram
+from config import Config
 from pyrogram import Client, filters
 from plugins import helper
 from plugins import currentaffairs
@@ -14,6 +15,7 @@ from plugins import Newspapers
 from plugins import WorkWithPDF
 import ast
 
+thumb_image_path =  open(Config.LoGoPath, 'rb')
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -32,10 +34,28 @@ async def cb_data(bot, update):
     Code = ast.literal_eval(update.data)[2]
     UrlToChlAcdyCrnAfr = "https://chahalacademy.com/daily-current-affairs/" + str(Date) + "/" + str(Code)
     file_path = await WorkWithPDF.GenerateScrennshotFromUrl(UrlToChlAcdyCrnAfr,update)
-    mfile_path = await WorkWithPDF.GenratePdfFromImg(update,file_path,Date)
+    mfile_path,newFileName = await WorkWithPDF.GenratePdfFromImg(update,file_path,Date)
     #print(SShotName)
+    msg = update.message.reply_text("ak")
     akhil =  open(mfile_path, 'rb')
-    await bot.send_document(chat_id=CHAT_ID,document=akhil)
+    await bot.send_document(
+      chat_id=CHAT_ID,
+      document=akhil,
+      c_time = time.time()
+      await bot.send_document(
+        chat_id=CHAT_ID,
+        document=doc,
+        file_name=newFileName,
+        thumb=thumb_image_path,
+        force_document=True,
+        caption=f"<b>{file_name}</b>",
+        progress=progress_for_pyrogram,
+        progress_args=(
+          f"<b>File is Uploading ⌛</b>\n\n<b>🗂️ File Name :</b> <code>{file_name}</code>",
+          msg, 
+          c_time
+          )
+      )
   if update.data == "chahalacdmy":
     Source_List = await currentaffairs.getalldateswithlinkfromchahalacadmy(bot,update)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
