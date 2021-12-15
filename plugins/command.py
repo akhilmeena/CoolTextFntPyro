@@ -19,7 +19,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_message(filters.private & filters.command(["check"]))
 async def settinguisjj(bot,message):
-  for root, dirs, files in os.walk("Downloads"):
+  for root, dirs, files in os.walk("/Downloads"):
     for file in files:
         #if file.endswith('.txt'):
         print(file)
