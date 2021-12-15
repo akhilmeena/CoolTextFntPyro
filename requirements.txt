@@ -14,3 +14,4 @@ ffmpeg
 gdown
 gspread
 oauth2client
+img2pdf
