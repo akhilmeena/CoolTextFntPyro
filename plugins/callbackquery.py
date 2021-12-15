@@ -35,7 +35,7 @@ async def cb_data(bot, update):
     mfile_path = await WorkWithPDF.GenratePdfFromImg(update,file_path,Date)
     #print(SShotName)
     akhil =  open(mfile_path, 'rb')
-    await bot.send_document(chat_id=CHAT_ID,documentp=akhil)
+    await bot.send_document(chat_id=CHAT_ID,document=akhil)
   if update.data == "chahalacdmy":
     Source_List = await currentaffairs.getalldateswithlinkfromchahalacadmy(bot,update)
     newbtns = currentaffairs.makeBtnFromDict(Source_List)
