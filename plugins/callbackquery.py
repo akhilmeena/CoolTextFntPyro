@@ -43,9 +43,16 @@ async def cb_data(bot, update):
     msg = await msg.edit("<b>Uploading PDF....</b>")
     doc =  open(mfile_path, 'rb')
     c_time = time.time()
-    await bot.send_document(chat_id=CHAT_ID,document=doc,file_name=newFileName,
-      thumb=thumb_image_path,force_document=True,caption=f"<b>{newFileName}</b>",progress=progress_for_pyrogram,
-      progress_args=(f"<b>File is Uploading ⌛</b>\n\n<b>🗂️ File Name :</b> <code>{newFileName}</code>",msg, c_time))
+    await bot.send_document(
+      chat_id=CHAT_ID,
+      document=doc,
+      file_name=newFileName,
+      thumb=thumb_image_path,
+      force_document=True,
+      caption=f"<b>{newFileName}</b>",
+      progress=progress_for_pyrogram,
+      progress_args=(f"<b>File is Uploading ⌛</b>\n\n<b>🗂️ File Name :</b> <code>{newFileName}</code>",msg, c_time)
+      )
     await msg.delete()
     os.remove(newFileName)
   if update.data == "chahalacdmy":
