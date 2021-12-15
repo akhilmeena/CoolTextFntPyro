@@ -43,3 +43,20 @@ async def GenerateScrennshotFromUrl(Url,update):
         file.write(chunk)
   return file_path
 
+async def GenratePdfFromImg(file_path):
+  image1 = Image.open(file_path)
+  image1.convert('RGB')
+  imageList = [image1]
+  fileName = 'Flowers.pdf'  # Filename of PDF
+  image1.save(fileName, save_all=True, append_images=imageList)
+  try:
+    CHAT_ID = update.message.chat.id
+  except:
+    CHAT_ID = update.chat.id
+  directory = f"{CHAT_ID}"
+  parent_dir = "Downloads/"
+  path = os.path.join(parent_dir, directory) 
+  mfile_path = os.path.join(path, fileName)
+  return mfile_path
+  
+ 
