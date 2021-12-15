@@ -54,7 +54,7 @@ async def GenratePdfFromImg(update,file_path,Date):
   directory = f"{CHAT_ID}"
   parent_dir = "Downloads/"
   path = os.path.join(parent_dir, directory) 
-  mfile_path = os.path.join(path, f"@LibraryInBot {date}.pdf")
+  mfile_path = os.path.join(path, f"@LibraryInBot {Date}.pdf")
   with open(mfile_path,"wb") as f:
     f.write(img2pdf.convert(file_path))
   return mfile_path
