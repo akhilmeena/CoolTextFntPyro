@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton ,InlineKeyboardMarkup
 
 
-async GenarateRandomName(charachter):
+async def GenarateRandomName(charachter):
   password_length = int(charachter)
   possible_characters = "abcdefghijklmnopqrstuvwxyz1234567890"
   random_character_list = [random.choice(possible_characters) for i in range(password_length)]
@@ -11,7 +11,7 @@ async GenarateRandomName(charachter):
   return random_password
 
 
-async GenerateScrennshotFromUrl(Url):
+async def GenerateScrennshotFromUrl(Url):
   BASE = 'https://mini.s-shot.ru/1024x0/JPEG/1024/Z100/?' # you can modify size, format, zoom
   url = urllib.parse.quote_plus(url) #service needs link to be joined in encoded format
   try:
