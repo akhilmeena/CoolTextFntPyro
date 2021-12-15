@@ -36,6 +36,7 @@ async def GenerateScrennshotFromUrl(Url,update):
   response = requests.get(BASE + url, stream=True)
   # save file, see https://stackoverflow.com/a/13137873/7665691
   if response.status_code == 200:
+    print("response.status_code")
     with open(file_path, 'wb') as file:
       for chunk in response:
         file.write(chunk)
