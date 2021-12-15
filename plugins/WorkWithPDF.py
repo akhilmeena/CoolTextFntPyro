@@ -1,7 +1,10 @@
 import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton ,InlineKeyboardMarkup
-
+import urllib.parse
+import requests
+import os
+import random
 
 async def GenarateRandomName(charachter):
   password_length = int(charachter)
