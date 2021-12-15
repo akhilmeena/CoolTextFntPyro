@@ -49,8 +49,9 @@ async def GenerateScrennshotFromUrl(Url,update):
 
 async def CropImage(start_x, start_y, width, height,ImagPath):
   input_img = Image.open(ImagPath)
+  imgwidth, imgheight = input_img.size
   #input_img = Image.open(input_image)
-  box = (start_x, start_y, start_x + width, start_y + height)
+  box = (start_x, start_y, imgwidth - width, imgheight - height)
   output_img = input_img.crop(box)
   output_img.save(ImagPath)
   #output_img.save(output_image +".jpg")
