@@ -22,7 +22,7 @@ async def settinguisjj(bot,message):
   for root, dirs, files in os.walk("/Downloads"):
     for file in files:
         #if file.endswith('.txt'):
-        print(file)
+      print(file)
   #await message.reply_text(Newspapers.TheHindu30Resultfinal)
   #print(Newspapers.TheHindu30Resultfinal)
   
