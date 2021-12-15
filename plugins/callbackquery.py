@@ -38,6 +38,7 @@ async def cb_data(bot, update):
     msg = await msg.edit("<b>Generating Images....</b>")
     file_path = await WorkWithPDF.GenerateScrennshotFromUrl(UrlToChlAcdyCrnAfr,update)
     msg = await msg.edit("<b>Generating PDF....</b>")
+    await WorkWithPDF.CropImage(0,0,20,40,file_path)
     mfile_path,newFileName = await WorkWithPDF.GenratePdfFromImg(update,file_path,Date)
     msg = await msg.edit("<b>Uploading PDF....</b>")
     doc =  open(mfile_path, 'rb')
