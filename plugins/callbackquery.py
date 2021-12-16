@@ -12,6 +12,7 @@ from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.urluploader import Urlleaccher
 from plugins import Newspapers
+from plugins import Magzines
 from plugins import WorkWithPDF
 from plugins.display_progress import progress_for_pyrogram,get_size,TimeFormatter
 import ast
@@ -26,6 +27,8 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if update.data == "magzines":
+    await update.message.edit_text(text="<b>🎯 Choose Your Magzines To Download</b>",reply_markup=Magzines.MagzinesType)
   if (update.data.startswith("['indxchlacdmy'")):
     try:
       CHAT_ID = update.message.chat.id
