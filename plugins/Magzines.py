@@ -45,7 +45,7 @@ async def getAllChahalMagzResult(bot,update,Lang):
     Header = link.text
     SedoUrl = link.get('href')
     if "Current Affairs Magazine" in Header and ".pdf" in SedoUrl:
-      content = f"{Header} = {SedoUrl}"
+      content = f"{Header.strip()} = {SedoUrl}"
       if str(Lang) == "Hindi":
         if str(Lang) in content:
           data.append(content)
