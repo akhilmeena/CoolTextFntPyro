@@ -88,7 +88,7 @@ async def getDataChahalMagzResult(bot,update,Lang):
           Data.append(f"{content} = {Lang}")
   return Data
   
-  async def makeBtnFromDict(Source_List):
+async def makeBtnFromDict(Source_List):
   Btn = []
   for d in Source_List:
     CallbackText = d['CallBtnTedt']
