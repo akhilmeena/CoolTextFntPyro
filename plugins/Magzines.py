@@ -86,6 +86,7 @@ async def getDataChahalMagzResult(bot,update,Lang):
           pass
         else:
           Data.append(f"{content} = {Lang}")
+  print(Data)
   return Data
   
 async def GetLinkDateLang(Id,MagziCompany):
