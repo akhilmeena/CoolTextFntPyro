@@ -36,7 +36,7 @@ MagzinesType = InlineKeyboardMarkup([
 AllChahalMagzResult = {}
 
 async def getAllChahalMagzResult(bot,update,Data):
-  #print(Data)
+  print(Data)
   Source_List = []
   tempdict = {}
   c = 0
