@@ -88,6 +88,14 @@ async def getDataChahalMagzResult(bot,update,Lang):
           Data.append(f"{content} = {Lang}")
   return Data
   
+async def GetLinkDateLang(Id,MagziCompany):
+  if str(MagziCompany) == "chahal":
+    MainData = AllChahalMagzResult
+  Month = MainData[int(Id)]["Month"]
+  LinkMagzine = MainData[int(Id)]["LinkMagzine"]
+  Lang = MainData[int(Id)]["Lang"]
+  return Month,LinkMagzine,Lang
+  
 async def makeBtnFromDict(Source_List):
   Btn = []
   for d in Source_List:
