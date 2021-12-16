@@ -3,7 +3,10 @@ import os
 from config import Config
 import pyrogram
 from pyrogram import Client, filters
+import requests
+from bs4 import BeautifulSoup
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+import re
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
