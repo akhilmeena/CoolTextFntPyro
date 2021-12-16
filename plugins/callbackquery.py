@@ -30,7 +30,7 @@ async def cb_data(bot, update):
   if (update.data.startswith("['dwnldmagz'")):
     Id = ast.literal_eval(update.data)[1]
     MagziCompany = ast.literal_eval(update.data)[2]
-    Month,LinkMagzine,Lang = await Magzines.GetLinkDateLangChahal(Id,MagziCompany)
+    Month,LinkMagzine,Lang = await Magzines.GetLinkDateLang(Id,MagziCompany)
     await update.message.reply_text(f"<b>{Month}\n{LinkMagzine}\n{Lang}</b>")
   if (update.data.startswith("['Chlacdmycrntafrmagzine'")):
     Lang = ast.literal_eval(update.data)[1]
