@@ -36,13 +36,14 @@ MagzinesType = InlineKeyboardMarkup([
 AllChahalMagzResult = {}
 
 async def getAllChahalMagzResult(bot,update,Data):
-  print(Data)
+  #print(Data)
   Source_List = []
   tempdict = {}
   c = 0
   for i in Data:
     MagzineTitle = i.split(" = ")[0]
     Link = i.split(" = ")[1]
+    print(Link)
     Lang = i.split(" = ")[2]
     words = MagzineTitle.split()[:2]
     MonthName =" ".join(words)
@@ -102,8 +103,8 @@ async def makeBtnFromDict(Source_List):
   for d in Source_List:
     CallbackText = d['CallBtnTedt']
     CallbackData = d['CallBtnData']
-    print(CallbackText)
-    print(CallbackData)
+    #print(CallbackText)
+    #print(CallbackData)
     x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
     Btn.append(x)
   ak = [Btn[i:i+2] for i in range(0, len(Btn), 2)]
