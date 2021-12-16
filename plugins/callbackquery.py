@@ -27,6 +27,9 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if (update.data.startswith("['Chlacdmycrntafrmagzine'")):
+    Lang = ast.literal_eval(update.data)[1]
+    Source_List = await getAllChahalMagzResult(bot,update,Lang)
   if update.data == "magzines":
     await update.message.edit_text(text="<b>🎯 Choose Your Magzines To Download</b>",reply_markup=Magzines.MagzinesType)
   if (update.data.startswith("['indxchlacdmy'")):
