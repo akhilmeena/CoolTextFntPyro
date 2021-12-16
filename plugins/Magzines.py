@@ -65,7 +65,7 @@ async def getDataChahalMagzResult(bot,update,Lang):
   response = requests.get(url)
   soup = BeautifulSoup(response.text, 'html.parser')
   Data=[]
-  Lang= "English"
+  #Lang= "English"
   if str(Lang) == "Hindi":
     for link in soup.find_all('a'):
       Header = link.text.strip().split("\r")[0]
