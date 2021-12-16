@@ -13,13 +13,31 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+TemporaryData = {
+  'Chlacdmycrntafrmagzine' : {
+    'TextToFind' : 'Current Affairs Magazine',
+    'calldataToPut' : 'chahal',
+    'LinkToUse' : 'https://chahalacademy.com/current-affairs-magazine'
+  },
+  'YoznaMagzine' : {
+    'TextToFind' : 'Yojana',
+    'calldataToPut' : 'yojanaaa',
+    'LinkToUse' : 'https://chahalacademy.com/free-downloads-yojana'
+  },
+  'KurukshetraMagzine' : {
+    'TextToFind' : 'Kurukshetra',
+    'calldataToPut' : 'kurukhetra',
+    'LinkToUse' : 'https://chahalacademy.com/free-downloads-kurukshetra'
+  }
+}
 
-ChlacdmycrntafrmagzineHindi = InlineKeyboardButton('Chahal (Hindi)', callback_data="['Chlacdmycrntafrmagzine','Hindi']")
-ChlacdmycrntafrmagzineEnglish = InlineKeyboardButton('Chahal (English)', callback_data="['Chlacdmycrntafrmagzine','English']")
-YoznaMagzineHindi = InlineKeyboardButton('Yojana (Hindi)', callback_data="['YoznaMagzine','Hindi']")
-YoznaMagzineEnglish = InlineKeyboardButton('Yojana (English)', callback_data="['YoznaMagzine','English']")
-KurukshetraMagzineHindi = InlineKeyboardButton('Kurukshetra (Hindi)', callback_data="['KurukshetraMagzine','Hindi']")
-KurukshetraMagzineEnglish = InlineKeyboardButton('Kurukshetra (English)', callback_data="['KurukshetraMagzine','English']")
+
+ChlacdmycrntafrmagzineHindi = InlineKeyboardButton('Chahal (Hindi)', callback_data="['MazFromChahal','Chlacdmycrntafrmagzine','Hindi']")
+ChlacdmycrntafrmagzineEnglish = InlineKeyboardButton('Chahal (English)', callback_data="['MazFromChahal','Chlacdmycrntafrmagzine','English']")
+YoznaMagzineHindi = InlineKeyboardButton('Yojana (Hindi)', callback_data="['MazFromChahal','YoznaMagzine','Hindi']")
+YoznaMagzineEnglish = InlineKeyboardButton('Yojana (English)', callback_data="['MazFromChahal','YoznaMagzine','English']")
+KurukshetraMagzineHindi = InlineKeyboardButton('Kurukshetra (Hindi)', callback_data="['MazFromChahal','KurukshetraMagzine','Hindi']")
+KurukshetraMagzineEnglish = InlineKeyboardButton('Kurukshetra (English)', callback_data="['MazFromChahal','KurukshetraMagzine','English']")
 #"['KurukshetraMagzine','Hindi']"
 #"['KurukshetraMagzine','English']"
 HomeToStart = InlineKeyboardButton('🔙', callback_data='libraryopen')
@@ -34,9 +52,11 @@ MagzinesType = InlineKeyboardMarkup([
   
 ############## CHAHAL ACADEMY ############## 
 AllChahalMagzResult = {}
+AllYojanaMagzResult = {}
+AllKuruKhetraMagzResult = {}
 
-async def getAllChahalMagzResult(bot,update,Data):
-  #print(Data)
+async def getAllChahalMagzResult(bot,update,Data,DwnldCode):
+  callValuetoPut = TemporaryData[DwnldCode]["calldataToPut"]
   Source_List = []
   c = 0
   for i in Data:
@@ -50,18 +70,24 @@ async def getAllChahalMagzResult(bot,update,Data):
     addList = ["dwnldmagz"]
     addDict["CallBtnTedt"] = str(f"📆 {MonthName}")
     addList.append(str(str(c+1)))
-    addList.append("chahal")
+    addList.append(f"{callValuetoPut}")
     addDict["CallBtnData"] = f"{addList}"
     Source_List.append(addDict)
     tempdict["Month"] = f"{MonthName}"
     tempdict["LinkMagzine"] = f"{Link}"
     tempdict["Lang"] = f"{Lang}"
     c+=1
-    AllChahalMagzResult[c] = tempdict
+    if f"{DwnldCode}" == "Chlacdmycrntafrmagzine":
+      AllChahalMagzResult[c] = tempdict
+    elif f"{DwnldCode}" == "YoznaMagzine":
+      AllYojanaMagzResult[c] = tempdict
+    elif f"{DwnldCode}" == "KurukshetraMagzine":
+      AllKuruKhetraMagzResult[c] = tempdict
   return Source_List
 
-async def getDataChahalMagzResult(bot,update,Lang):
-  url = "https://chahalacademy.com/current-affairs-magazine"
+async def getDataChahalMagzResult(bot,update,Lang,DwnldCode):
+  TextTOFind = TemporaryData[DwnldCode]["TextToFind"]
+  url = TemporaryData[DwnldCode]["LinkToUse"]
   response = requests.get(url)
   soup = BeautifulSoup(response.text, 'html.parser')
   Data=[]
@@ -70,7 +96,7 @@ async def getDataChahalMagzResult(bot,update,Lang):
     for link in soup.find_all('a'):
       Header = link.text.strip().split("\r")[0]
       SedoUrl = link.get('href')
-      if "Current Affairs Magazine" in Header and ".pdf" in SedoUrl:
+      if f"{TextTOFind}" in Header and ".pdf" in SedoUrl:
         content =  f"{Header} = {SedoUrl}"
         if str(Lang) in content:
           Data.append(f"{content} = {Lang}")
@@ -80,7 +106,7 @@ async def getDataChahalMagzResult(bot,update,Lang):
     for link in soup.find_all('a'):
       Header = link.text.strip().split("\r")[0]
       SedoUrl = link.get('href')
-      if "Current Affairs Magazine" in Header and ".pdf" in SedoUrl:
+      if f"{TextTOFind}" in Header and ".pdf" in SedoUrl:
         content =  f"{Header} = {SedoUrl}"
         if "Hindi" in content:
           pass
@@ -91,6 +117,10 @@ async def getDataChahalMagzResult(bot,update,Lang):
 async def GetLinkDateLang(Id,MagziCompany):
   if str(MagziCompany) == "chahal":
     MainData = AllChahalMagzResult
+  elif str(MagziCompany) == "yojanaaa":
+    MainData = AllYojanaMagzResult
+  elif str(MagziCompany) == "kurukhetra":
+    MainData = AllKuruKhetraMagzResult
   Month = MainData[int(Id)]["Month"]
   LinkMagzine = MainData[int(Id)]["LinkMagzine"]
   Lang = MainData[int(Id)]["Lang"]
