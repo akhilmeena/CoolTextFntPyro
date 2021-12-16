@@ -36,6 +36,7 @@ MagzinesType = InlineKeyboardMarkup([
 AllChahalMagzResult = {}
 
 async def getAllChahalMagzResult(bot,update,Data):
+  #print(Data)
   Source_List = []
   tempdict = {}
   c = 0
@@ -86,7 +87,6 @@ async def getDataChahalMagzResult(bot,update,Lang):
           pass
         else:
           Data.append(f"{content} = {Lang}")
-  print(Data)
   return Data
   
 async def GetLinkDateLang(Id,MagziCompany):
