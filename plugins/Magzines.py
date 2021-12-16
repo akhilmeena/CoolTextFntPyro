@@ -43,7 +43,7 @@ async def getAllChahalMagzResult(bot,update,Data):
     MagzineTitle = i.split(" = ")[0]
     Link = i.split(" = ")[1]
     Lang = i.split(" = ")[2]
-    words = akh.split()[:2]
+    words = MagzineTitle.split()[:2]
     MonthName =" ".join(words)
     addDict = {}
     addList = ["dwnldmagz"]
