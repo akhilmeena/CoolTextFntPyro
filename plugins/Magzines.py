@@ -38,12 +38,11 @@ AllChahalMagzResult = {}
 async def getAllChahalMagzResult(bot,update,Data):
   #print(Data)
   Source_List = []
-  tempdict = {}
   c = 0
   for i in Data:
+    tempdict = {}
     MagzineTitle = i.split(" = ")[0]
     Link = i.split(" = ")[1]
-    print(Link)
     Lang = i.split(" = ")[2]
     words = MagzineTitle.split()[:2]
     MonthName =" ".join(words)
@@ -53,7 +52,6 @@ async def getAllChahalMagzResult(bot,update,Data):
     addList.append(str(str(c+1)))
     addList.append("chahal")
     addDict["CallBtnData"] = f"{addList}"
-    #print(addList)
     Source_List.append(addDict)
     tempdict["Month"] = f"{MonthName}"
     tempdict["LinkMagzine"] = f"{Link}"
