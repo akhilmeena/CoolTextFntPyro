@@ -28,3 +28,30 @@ MagzinesType = InlineKeyboardMarkup([
   [KurukshetraMagzineEnglish,KurukshetraMagzineHindi],
   [HomeToStart]
   ])
+  
+############## CHAHAL ACADEMY ############## 
+AllChahalMagzResult = {}
+
+async def getAllChahalMagzResult(bot,update,Lang):
+  Source_List = []
+  url = "https://chahalacademy.com/current-affairs-magazine"
+  response = requests.get(url)
+  soup = BeautifulSoup(response.text, 'html.parser')
+  data = []
+  for link in soup.find_all('a'):
+    Header = link.text
+    SedoUrl = link.get('href')
+    if "Current Affairs Magazine" in Header and ".pdf" in SedoUrl:
+      content = f"{Header} = {SedoUrl}"
+      if str(Lang) == "Hindi":
+        if str(Lang) in content:
+          data.append(content)
+        else:
+          pass
+      else:
+        if str(Lang) in content:
+          pass
+        else:
+          data.append(content)
+  print(data)
+  
