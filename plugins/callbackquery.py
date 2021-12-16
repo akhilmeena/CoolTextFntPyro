@@ -32,7 +32,7 @@ async def cb_data(bot, update):
     MagziCompany = ast.literal_eval(update.data)[2]
     Month,LinkMagzine,Lang = await Magzines.GetLinkDateLang(Id,MagziCompany)
     Url2Dowload = f"{LinkMagzine}".replace(" ","%20")
-    await urluploader.Urlleaccher(bot,update,Url2Dowload)
+    await Urlleaccher(bot,update,Url2Dowload)
     #await update.message.reply_text(f"<b>{Month}\n{LinkMagzine}\n{Lang}</b>")
   if (update.data.startswith("['Chlacdmycrntafrmagzine'")):
     Lang = ast.literal_eval(update.data)[1]
