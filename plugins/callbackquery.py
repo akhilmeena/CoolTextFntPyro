@@ -34,11 +34,12 @@ async def cb_data(bot, update):
     Url2Dowload = f"{LinkMagzine}".replace(" ","%20")
     await Urlleaccher(bot,update,Url2Dowload)
     #await update.message.reply_text(f"<b>{Month}\n{LinkMagzine}\n{Lang}</b>")
-  if (update.data.startswith("['Chlacdmycrntafrmagzine'")):
-    Lang = ast.literal_eval(update.data)[1]
-    Data = await Magzines.getDataChahalMagzResult(bot,update,Lang)
+  if (update.data.startswith("['MazFromChahal'")):
+    DwnldCode = ast.literal_eval(update.data)[1]
+    Lang = ast.literal_eval(update.data)[2]
+    Data = await Magzines.getDataChahalMagzResult(bot,update,Lang,DwnldCode)
     #print(Data)
-    Source_List = await Magzines.getAllChahalMagzResult(bot,update,Data)
+    Source_List = await Magzines.getAllChahalMagzResult(bot,update,Data,DwnldCode)
     newbtns = await Magzines.makeBtnFromDict(Source_List)
     await update.message.edit_text(text="<b>🎯 Choose Your Magzine</b>",reply_markup=newbtns)
   if update.data == "magzines":
