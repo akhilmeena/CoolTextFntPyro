@@ -35,26 +35,71 @@ MagzinesType = InlineKeyboardMarkup([
 ############## CHAHAL ACADEMY ############## 
 AllChahalMagzResult = {}
 
-async def getAllChahalMagzResult(bot,update,Lang):
+async def getAllChahalMagzResult(bot,update,Data):
   Source_List = []
+  tempdict = {}
+  c = 0
+  for i in Data:
+    MagzineTitle = i.split(" = ")[0]
+    Link = i.split(" = ")[1]
+    Lang = i.split(" = ")[2]
+    words = akh.split()[:2]
+    MonthName =" ".join(words)
+    addDict = {}
+    addList = ["dwnldmagz"]
+    addDict["CallBtnTedt"] = str(f"📆 {MonthName}")
+    addList.append(str(str(c+1)))
+    addList.append("chahal")
+    addDict["CallBtnData"] = f"{addList}"
+    #print(addList)
+    Source_List.append(addDict)
+    tempdict["Month"] = f"{MonthName}"
+    tempdict["LinkMagzine"] = f"{Link}"
+    tempdict["Lang"] = f"{Lang}"
+    c+=1
+    AllChahalMagzResult[c] = tempdict
+  return Source_List
+
+async def getDataChahalMagzResult(bot,update,Lang):
   url = "https://chahalacademy.com/current-affairs-magazine"
   response = requests.get(url)
   soup = BeautifulSoup(response.text, 'html.parser')
-  data = []
-  for link in soup.find_all('a'):
-    Header = link.text
-    SedoUrl = link.get('href')
-    if "Current Affairs Magazine" in Header and ".pdf" in SedoUrl:
-      content = f"{Header.strip()} = {SedoUrl}"
-      if str(Lang) == "Hindi":
+  Data=[]
+  Lang= "English"
+  if str(Lang) == "Hindi":
+    for link in soup.find_all('a'):
+      Header = link.text.strip().split("\r")[0]
+      SedoUrl = link.get('href')
+      if "Current Affairs Magazine" in Header and ".pdf" in SedoUrl:
+        content =  f"{Header} = {SedoUrl}"
         if str(Lang) in content:
-          data.append(content)
+          Data.append(f"{content} = {Lang}")
         else:
-          pass
-      else:
-        if str(Lang) in content:
+            pass
+  else:
+    for link in soup.find_all('a'):
+      Header = link.text.strip().split("\r")[0]
+      SedoUrl = link.get('href')
+      if "Current Affairs Magazine" in Header and ".pdf" in SedoUrl:
+        content =  f"{Header} = {SedoUrl}"
+        if "Hindi" in content:
           pass
         else:
-          data.append(content)
-  print(data)
+          Data.append(f"{content} = {Lang}")
+  return Data
+  
+  async def makeBtnFromDict(Source_List):
+  Btn = []
+  for d in Source_List:
+    CallbackText = d['CallBtnTedt']
+    CallbackData = d['CallBtnData']
+    print(CallbackText)
+    print(CallbackData)
+    x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
+    Btn.append(x)
+  ak = [Btn[i:i+2] for i in range(0, len(Btn), 2)]
+  x = InlineKeyboardButton("🔙",callback_data="libraryopen")
+  ak.append([x])
+  newbtns = InlineKeyboardMarkup(ak)
+  return newbtns
   
