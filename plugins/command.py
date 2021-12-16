@@ -10,6 +10,8 @@ from plugins import Database
 from plugins import urluploader
 import re
 from plugins import Newspapers
+from plugins import Magzines
+
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -19,12 +21,12 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_message(filters.private & filters.command(["check"]))
 async def settinguisjj(bot,message):
-  for root, dirs, files in os.walk("/Downloads"):
-    for file in files:
+  #for root, dirs, files in os.walk("/Downloads"):
+    #for file in files:
         #if file.endswith('.txt'):
-      print(file)
+      #print(file)
   #await message.reply_text(Newspapers.TheHindu30Resultfinal)
-  #print(Newspapers.TheHindu30Resultfinal)
+  print(Magzines.AllChahalMagzResult)
   
 @Client.on_message(filters.private & filters.command(["admin"]))
 async def settingsjj(bot,message):
