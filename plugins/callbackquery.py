@@ -29,7 +29,10 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 async def cb_data(bot, update):
   if (update.data.startswith("['Chlacdmycrntafrmagzine'")):
     Lang = ast.literal_eval(update.data)[1]
-    Source_List = await Magzines.getAllChahalMagzResult(bot,update,Lang)
+    Data = await Magzines.getDataChahalMagzResult(bot,update,Lang)
+    Source_List = await Magzines.getAllChahalMagzResult(bot,update,Data)
+    newbtns = await Magzines.makeBtnFromDict(Source_List)
+    await update.message.edit_text(text="<b>🎯 Choose Your Magzine</b>",reply_markup=newbtns)
   if update.data == "magzines":
     await update.message.edit_text(text="<b>🎯 Choose Your Magzines To Download</b>",reply_markup=Magzines.MagzinesType)
   if (update.data.startswith("['indxchlacdmy'")):
