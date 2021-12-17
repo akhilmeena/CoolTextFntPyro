@@ -225,11 +225,12 @@ async def cb_data(bot, update):
       except Exception as e:
         j+=1
         try:
+          print(e)
           error = f"{e}".split("Description: ")[1]
           ak+=f"\n{p} {error}"
-        except Exception as e:
-          print(e)
-          ak+=f"\n{p} {e}"
+        except Exception as ex:
+          print(ex)
+          ak+=f"\n{p} {ex}"
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
     try:
       await update.message.reply_text(f"{ak}")
