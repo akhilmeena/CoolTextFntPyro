@@ -218,7 +218,7 @@ async def cb_data(bot, update):
     print(values_list3)
     for p in values_list3:
       try:
-        await Client.send_chat_action(bot,f"{p}", "typing")
+        await Client.send_chat_action(p, "typing")
         #await message.reply_chat_action("typing")
         i+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
