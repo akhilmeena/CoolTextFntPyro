@@ -34,6 +34,6 @@ async def AddNewUser(UserID):
 async def GetAllUsersList(bot, update):
   values_list3 = UserData.col_values(2)
   ttlusers = len(values_list3)
-    while("" in values_list3):
-      values_list3.remove("")
+  while("" in values_list3):
+    values_list3.remove("")
   return values_list3,ttlusers
