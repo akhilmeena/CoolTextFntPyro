@@ -30,4 +30,10 @@ async def AddNewUser(UserID):
     UserData.update_cell(int(h1),1 ,f"{h1}")
     UserData.update_cell(int(h1),2 ,UserID)
     return
- 
+
+async def GetAllUsersList(bot, update):
+  values_list3 = UserData.col_values(2)
+  ttlusers = len(values_list3)
+    while("" in values_list3):
+      values_list3.remove("")
+  return values_list3,ttlusers
