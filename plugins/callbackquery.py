@@ -192,7 +192,10 @@ async def cb_data(bot, update):
   if update.data == "abtdvlngbot":
     await update.message.edit_text(text=helper.BotAboutText.format(update.message.from_user.mention),reply_markup=helper.DVLGBTN)
   if update.data == "BacktoAdminpnl":
-    await update.message.edit_text(text="<b>👤 Admin Pannel</b>",reply_markup=helper.AdminKeyboard)
+    try:
+      await update.message.edit_text(text="<b>👤 Admin Pannel</b>",reply_markup=helper.AdminKeyboard)
+    except Exception as e:
+      print(e)
   if update.data == "maintainanceoff":
     Config.MaintainaceYN.clear()
     Config.MaintainaceYN.append("YES")
