@@ -86,8 +86,12 @@ BacktoAdminpnl = InlineKeyboardButton('🔙', callback_data='backtoAdminpnl')
 
 UpdateOfBot = InlineKeyboardButton('🚀 Update ', url='https://telegram.dog/channelanalyser/')
 SupportPfBot = InlineKeyboardButton(' Support 💌', url='https://telegram.dog/channelanalyser/')
-MainTainanceMode = InlineKeyboardButton('Maintainance ', callback_data='chngemaintaincemode')
 ClosePannel = InlineKeyboardButton('❌ Close', callback_data='close')
+
+############### ADMIN PANNEL #####################
+
+VerifyUsers = InlineKeyboardButton('🙋 Verify Users', callback_data='vrfyusers')
+MainTainanceMode = InlineKeyboardButton('🔑 Maintainance ', callback_data='chngemaintaincemode')
 MainTainanceModeY = InlineKeyboardButton('✅ Maintainance ON', callback_data='maintainanceon')
 MainTainanceModeN = InlineKeyboardButton('◻️ Maintainance OFF', callback_data='maintainanceoff')
 
@@ -119,7 +123,7 @@ DVLGBTN = InlineKeyboardMarkup([
   ])
 
 AdminKeyboard = InlineKeyboardMarkup([
-  [MainTainanceMode],
+  [MainTainanceMode,VerifyUsers],
   [ClosePannel]
   ])
   
