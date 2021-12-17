@@ -14,6 +14,7 @@ from plugins.urluploader import Urlleaccher
 from plugins import Newspapers
 from plugins import Magzines
 from plugins import WorkWithPDF
+from plugins import Database
 from plugins.display_progress import progress_for_pyrogram,get_size,TimeFormatter
 import ast
 import time
@@ -207,3 +208,30 @@ async def cb_data(bot, update):
       await update.message.edit_text(text="Change Maintainace Mode",reply_markup=helper.MaintainanceKeyY)
   if update.data == "close":
     await update.message.delete()
+  ####################ADMIN PANNEL####################
+  if update.data == "vrfyusers":
+    values_list3,ttlusers = await Database.GetAllUsersList(bot, update)
+    i=0
+    j=0
+    ak = ""
+    msg = await update.message.reply_text(helper.usrststext.format(ttlusers,i,j))
+    for p in values_list3:
+      try:
+        await Client.send_chat_action(bot,f"{p}", "typing")
+        #await message.reply_chat_action("typing")
+        i+=1
+        await msg.edit(normaltext.usrststext.format(ttlusers,i,j))
+      except Exception as e:
+        j+=1
+        try:
+          error = f"{e}".split("Description: ")[1]
+          ak+=f"\n{p} {error}"
+        except Exception as e:
+          print(e)
+          ak+=f"\n{p} {e}"
+        await msg.edit(normaltext.usrststext.format(ttlusers,i,j))
+    try:
+      await update.message.reply_text(f"{ak}")
+    except:
+      await update.message.reply_text(f"All Users are Active")
+
