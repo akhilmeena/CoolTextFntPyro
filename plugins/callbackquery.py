@@ -220,7 +220,7 @@ async def cb_data(bot, update):
         await Client.send_chat_action(bot,f"{p}", "typing")
         #await message.reply_chat_action("typing")
         i+=1
-        await msg.edit(normaltext.usrststext.format(ttlusers,i,j))
+        await msg.edit(helper.usrststext.format(ttlusers,i,j))
       except Exception as e:
         j+=1
         try:
@@ -229,7 +229,7 @@ async def cb_data(bot, update):
         except Exception as e:
           print(e)
           ak+=f"\n{p} {e}"
-        await msg.edit(normaltext.usrststext.format(ttlusers,i,j))
+        await msg.edit(helper.usrststext.format(ttlusers,i,j))
     try:
       await update.message.reply_text(f"{ak}")
     except:
