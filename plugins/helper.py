@@ -23,6 +23,13 @@ def create_markup(_list: list=[[]]):
   return InlineKeyboardMarkup(result)
 ############### General Text #####################
 
+usrststext = '''<b>Bot Users Statics 📊
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+Total Users:</b> <code>{}</code>
+<b>Active Users:</b> <code>{}</code>
+<b>InActive Users:</b> <code>{}</code>'''
+
+
 STARTText = """<b>Hi {}!
 
 This Is Library Bot😇.........
