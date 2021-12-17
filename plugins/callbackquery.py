@@ -219,15 +219,13 @@ async def cb_data(bot, update):
     for p in values_list3:
       try:
         await bot.send_chat_action(chat_id = int(p), action = "typing")
-        #await Client.send_chat_action(chat_id = int(p), action = "typing")
-        #await message.reply_chat_action("typing")
         i+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
       except Exception as e:
         j+=1
         try:
           print(e)
-          error = f"{e}".split("Description: ")[1]
+          error = f"{e}".split(":")[0]
           ak+=f"\n{p} {error}"
         except Exception as ex:
           print(ex)
