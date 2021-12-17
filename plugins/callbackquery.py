@@ -215,6 +215,7 @@ async def cb_data(bot, update):
     j=0
     ak = ""
     msg = await update.message.reply_text(helper.usrststext.format(ttlusers,i,j))
+    print(values_list3)
     for p in values_list3:
       try:
         await Client.send_chat_action(bot,f"{p}", "typing")
