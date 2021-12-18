@@ -88,6 +88,7 @@ CurrentAfrsBtn = InlineKeyboardButton('⚡ Current Affairs', callback_data='crna
 NcertBooks = InlineKeyboardButton('📚 NCERT BOOKS', callback_data='ncertbooks')
 NewsPapers = InlineKeyboardButton('📰 News Papers', callback_data='newepapers')
 Magzines = InlineKeyboardButton('📔 Magzines', callback_data='magzines')
+JobAlert = InlineKeyboardButton('🔔 Job Alert ', callback_data='jobalert')
 HomeToStart = InlineKeyboardButton('🔙', callback_data='home2start')
 BacktoAdminpnl = InlineKeyboardButton('🔙', callback_data='backtoAdminpnl')
 
@@ -112,6 +113,7 @@ START_BUTTONS = InlineKeyboardMarkup([
   ])
 
 LBRYOPEN_BUTTONS = InlineKeyboardMarkup([
+  [JobAlert],
   [CurrentAfrsBtn,NcertBooks],
   [NewsPapers,Magzines],
   [HomeToStart]
