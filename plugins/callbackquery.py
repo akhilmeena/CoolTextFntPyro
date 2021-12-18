@@ -14,6 +14,7 @@ from plugins.urluploader import Urlleaccher
 from plugins import Newspapers
 from plugins import Magzines
 from plugins import WorkWithPDF
+from plugins import Job
 from plugins import Database
 from plugins.display_progress import progress_for_pyrogram,get_size,TimeFormatter
 import ast
@@ -28,6 +29,12 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if update.data == "jobalert":
+    jobList = await GetAllLatestJobs()
+    #await update.answer(text = Newspapers.AmarujalaNotification, show_alert=True)
+    #Source_List = await Newspapers.gettingallAmarujalaresult(bot,update)
+    #newbtns = await Newspapers.makeBtnFromDict(Source_List)
+    await update.message.edit_text(text=f"<b>Here is Result From Sarakri Result Website</b>{jobList}",reply_markup=Job.JOB_BUTTONS)
   if (update.data.startswith("['dwnldmagz'")):
     Id = ast.literal_eval(update.data)[1]
     MagziCompany = ast.literal_eval(update.data)[2]
