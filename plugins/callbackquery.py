@@ -30,7 +30,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @Client.on_callback_query()
 async def cb_data(bot, update):
   if update.data == "jobalert":
-    jobList = await GetAllLatestJobs()
+    jobList = await Job.GetAllLatestJobs()
     #await update.answer(text = Newspapers.AmarujalaNotification, show_alert=True)
     #Source_List = await Newspapers.gettingallAmarujalaresult(bot,update)
     #newbtns = await Newspapers.makeBtnFromDict(Source_List)
