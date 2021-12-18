@@ -29,12 +29,17 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if update.data == "sarakriresult":
+    #jobList = await Job.GetAllLatestJobs()
+    #await update.message.edit_text(text=f"<b>Here is Result From Sarakri Result Website</b>{jobList}",reply_markup=Job.JOB_BUTTONS,disable_web_page_preview=True)
+    await update.message.edit_text(text=f"<b>💡 Updating In Progress</b>",reply_markup=Job.RESULT_BUTTONS,disable_web_page_preview=True)
+  if update.data == "sarakariadmitcards":
+    #jobList = await Job.GetAllLatestJobs()
+    #await update.message.edit_text(text=f"<b>Here is Result From Sarakri Result Website</b>{jobList}",reply_markup=Job.JOB_BUTTONS,disable_web_page_preview=True)
+    await update.message.edit_text(text=f"<b>💡 Updating In Progress</b>",reply_markup=Job.ADMITCARD_BUTTONS,disable_web_page_preview=True)
   if update.data == "jobalert":
     jobList = await Job.GetAllLatestJobs()
-    #await update.answer(text = Newspapers.AmarujalaNotification, show_alert=True)
-    #Source_List = await Newspapers.gettingallAmarujalaresult(bot,update)
-    #newbtns = await Newspapers.makeBtnFromDict(Source_List)
-    await update.message.edit_text(text=f"<b>Here is Result From Sarakri Result Website</b>{jobList}",reply_markup=Job.JOB_BUTTONS)
+    await update.message.edit_text(text=f"<b>Here is Result From Sarakri Result Website</b>{jobList}",reply_markup=Job.JOB_BUTTONS,disable_web_page_preview=True)
   if (update.data.startswith("['dwnldmagz'")):
     Id = ast.literal_eval(update.data)[1]
     MagziCompany = ast.literal_eval(update.data)[2]
