@@ -23,9 +23,9 @@ async def getdata(url):
   return r.text
   
 async def GetAllLatestJobs():
-  PaeatoPost = """\n\n<b>{}. Post :</b><i>{}</i>
-<b>Last Date : <code>{}</code>
-<a href="{}">More Details</a>"""
+  PaeatoPost = """\n\n<b>{}. 🎯 Post :</b><i>{}</i>
+<b>📅 Last Date :</b> <code>{}</code>
+<a href="{}">🔗 More Details</a>"""
   res = ''
   htmldata = await getdata("https://www.sarkariresult.com/latestjob.php")
   soup = BeautifulSoup(htmldata, 'html.parser')
