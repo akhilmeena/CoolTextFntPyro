@@ -131,14 +131,14 @@ async def gettingAllHinduresult(bot,update):
   return Source_List
 
 async def captionfornewslink(Id,Forwhat):
-  Textfornewspaperwithanylss1 = """<b>Here is your Result:
+  Textfornewspaperwithanylss2 = """<b>Here is your Result:
 
 🎟️ {}
 📆 Date :</b><code> {}</code>
 📥 <a href='{}'>NewsPaper</a>
 📥 <a href='{}'>Analysis</a>
 """
-  Textfornewspaperwithanylss = Textfornewspaperwithanylss1.format(NewsCodeHead[str(Forwhat)],TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
+  Textfornewspaperwithanylss = Textfornewspaperwithanylss2.format(NewsCodeHead[str(Forwhat)],TheHindu30Resultfinal[int(Id)]["Date"],TheHindu30Resultfinal[int(Id)]["NP"],TheHindu30Resultfinal[int(Id)]["AL"])
   return Textfornewspaperwithanylss
  
 ###############TIMES OF INDIA#####################
