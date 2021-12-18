@@ -7,14 +7,21 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import re
 
 
-Result = InlineKeyboardButton('Results', callback_data='result')
-Admitcards = InlineKeyboardButton('Admit card', callback_data='admitcards')
+Result = InlineKeyboardButton('Results', callback_data='sarakriresult')
+Admitcards = InlineKeyboardButton('Admit card', callback_data='sarakariadmitcards')
 Latestjobs = InlineKeyboardButton('Latest Jobs', callback_data='jobalert')
 HomeToLib = InlineKeyboardButton('🔙', callback_data='libraryopen')
 
 JOB_BUTTONS = InlineKeyboardMarkup([
-  [Latestjobs],
   [Result,Admitcards],
+  [HomeToLib],
+  ])
+ADMITCARD_BUTTONS = InlineKeyboardMarkup([
+  [Result,Latestjobs],
+  [HomeToLib],
+  ])
+RESULT_BUTTONS = InlineKeyboardMarkup([
+  [Admitcards,Latestjobs],
   [HomeToLib],
   ])
   
