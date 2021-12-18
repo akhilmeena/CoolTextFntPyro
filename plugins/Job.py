@@ -51,3 +51,24 @@ async def GetAllLatestJobs():
       else:
         break
   return res
+  
+  
+async def GetAllResultsOrAdmitCardLink(URL):
+  PaeatoPost = """\n\n<b>{}. 🎯<i>{}</i></b>
+<a href="{}">🔗 Get Result</a>"""
+  res = ''
+  htmldata = getdata(URL)
+  soup = BeautifulSoup(htmldata, 'html.parser')
+  c = 0
+  for li in soup.find_all("div", id="post"):#, id="post"):
+    for para in li.find_all("li"):
+      if c <=19:
+        for a in para.find_all('a', href=True):
+          Link = a['href']
+        Text = para.get_text()
+        res += PaeatoPost.format(c+1,Text,Link)
+        #res += f"{c+1}. Post : {Title}\nLast Date : {Last_Date}\nFull Details : {Link}\n\n"
+        c+=1
+      else:
+        break
+  return res
