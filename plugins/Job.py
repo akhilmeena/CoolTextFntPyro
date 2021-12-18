@@ -43,4 +43,4 @@ async def GetAllLatestJobs():
         c+=1
       else:
         break
- retun res
+  return res
