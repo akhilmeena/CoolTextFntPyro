@@ -57,7 +57,7 @@ async def GetAllResultsOrAdmitCardLink(URL):
   PaeatoPost = """\n\n<b>{}. 🎯<i>{}</i></b>
 <a href="{}">🔗 Get Result</a>"""
   res = ''
-  htmldata = getdata(URL)
+  htmldata = await getdata(URL)
   soup = BeautifulSoup(htmldata, 'html.parser')
   c = 0
   for li in soup.find_all("div", id="post"):#, id="post"):
