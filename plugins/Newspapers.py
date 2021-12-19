@@ -87,7 +87,7 @@ TheHindu30Resultfinal = {}
 async def gettingAllHinduresult(bot,update):
   Source_List = []
   c = 0
-  url="https://dailyepaper.in/the-hindu-pdf-free-download-04-dec-2021/"
+  url="https://dailyepaper.in/the-hindu-pdf-free-download-19-dec-2021/"
   response=requests.get(url)
   data = response.text
   htmlParse = BeautifulSoup(data, 'html.parser') 
