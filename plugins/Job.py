@@ -44,7 +44,11 @@ async def GetAllLatestJobs():
           Link = a['href']
         Text = para.get_text()
         Title = Text.split("Last Date :")[0]
-        Last_Date = Text.split("Last Date :")[1]
+        Last_Date=""
+        try:
+          Last_Date+= Text.split("Last Date : ")[1]
+        except:
+          Last_Date+="N/A"
         res += PaeatoPost.format(c+1,Title,Last_Date,Link)
         #res += f"{c+1}. Post : {Title}\nLast Date : {Last_Date}\nFull Details : {Link}\n\n"
         c+=1
