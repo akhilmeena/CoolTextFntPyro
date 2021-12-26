@@ -59,7 +59,7 @@ async def GetAllLatestJobs():
   
 async def GetAllResultsOrAdmitCardLink(URL):
   PaeatoPost = """\n\n<b>{}. 🎯<i>{}</i></b>
-<a href="{}">🔗 Get Result</a>"""
+<a href="{}">🔗 Direct Link</a>"""
   res = ''
   htmldata = await getdata(URL)
   soup = BeautifulSoup(htmldata, 'html.parser')
