@@ -1,6 +1,7 @@
 pyrogram
 tgcrypto
 bs4
+urllib
 html2markdown
 requests
 datetime
