@@ -6,6 +6,7 @@ from config import Config
 import pyrogram
 from plugins import helper
 import requests
+import urllib.request
 from pyrogram import Client, filters
 from plugins.display_progress import progress_for_pyrogram,get_size,TimeFormatter
 import time
@@ -59,7 +60,12 @@ async def Urlleaccher(bot,update,Url2Dowload):
   file_name = url.split('/')[-1]
   file_path = os.path.join(path, file_name)
   response = requests.get(url)
-  total_length = int(response.headers["Content-Length"])
+  total_length = 0
+  try:
+    total_length+= int(response.headers["Content-Length"])
+  except:
+    site = urllib.request.urlopen(url)
+    total_length+= int(site.length)
   content_type = response.headers["Content-Type"]
   msg = await msg.edit(helper.DonloadFiletext.format(url,file_path,total_length,content_type),disable_web_page_preview=True)
   start = time.time()
