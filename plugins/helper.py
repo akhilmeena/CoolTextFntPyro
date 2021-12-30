@@ -32,7 +32,9 @@ Total Users:</b> <code>{}</code>
 
 STARTText = """<b>Hi {}!
 
-This Is Library Bot😇.........
+This is LIBRARY BOT 🏦. Here you can search 🔍 any many different reading materials...📖 
+Eg. <i>Textbooks 📚, Novels 📗, Daily Newspapers🗞️ , magazines📑 Etc</i>
+
 Get all the updates Daily
 ================================
 Note:</b> <i>All the Content uploaded here is taken out from other sources.if anybody have issue with that,just write ur msg...we will remove that.
