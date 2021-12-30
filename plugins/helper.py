@@ -86,7 +86,7 @@ OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryop
 Account = InlineKeyboardButton('💼 Account', callback_data='#########')
 HelpBtn = InlineKeyboardButton('🆘 Help 🆘', callback_data='help')
 AboutDev = InlineKeyboardButton('Dev. ❤️', callback_data='abtdvlngbot')
-Feedback = InlineKeyboardButton('💌 Feedback', , url='https://telegram.dog/amtgbots/30')
+Feedback = InlineKeyboardButton('💌 Feedback', url='https://telegram.dog/amtgbots/30')
 Share = InlineKeyboardButton('Share 🔄', callback_data='#########')
 
 CurrentAfrsBtn = InlineKeyboardButton('⚡ Current Affairs', callback_data='crnafrsdaily')
