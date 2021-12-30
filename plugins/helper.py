@@ -32,8 +32,8 @@ Total Users:</b> <code>{}</code>
 
 STARTText = """<b>Hi {}!
 
-This is LIBRARY BOT 🏦. Here you can search 🔍 any many different reading materials...📖 
-Eg. <i>Textbooks 📚, Novels 📗, Daily Newspapers🗞️ , magazines📑 Etc</i>
+This is LIBRARY BOT 🏦. Here you can search 🔍 Any Type of reading materials...📖 
+Eg. <i>Textbooks 📚, Novels 📗, Daily Newspapers🗞️ , magazines📑 , Current Affairs,UPSC/PSC NOTES Etc</i>
 
 Get all the updates Daily
 ================================
