@@ -250,4 +250,7 @@ async def cb_data(bot, update):
       await update.message.reply_text(f"{ak}")
     except:
       await update.message.reply_text(f"All Users are Active")
+  else:
+    await update.answer(text = "🛠️ Under Maintenance", show_alert=True)
+    
 
