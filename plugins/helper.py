@@ -83,8 +83,11 @@ MaintainanceProgress = """<b>🛠 Maintenance in Progress....
 ############### BUTTONS Text #####################
 
 OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
-HelpBtn = InlineKeyboardButton('🆘 Help', callback_data='help')
-AboutDev = InlineKeyboardButton('About Dev ❤️', callback_data='abtdvlngbot')
+Account = InlineKeyboardButton('💼 Account', callback_data='#########')
+HelpBtn = InlineKeyboardButton('🆘 Help 🆘', callback_data='help')
+AboutDev = InlineKeyboardButton('Dev. ❤️', callback_data='abtdvlngbot')
+Feedback = InlineKeyboardButton('💌 Feedback', , url='https://telegram.dog/amtgbots/30')
+Share = InlineKeyboardButton('Share 🔄', callback_data='#########')
 
 CurrentAfrsBtn = InlineKeyboardButton('⚡ Current Affairs', callback_data='crnafrsdaily')
 NcertBooks = InlineKeyboardButton('📚 NCERT BOOKS', callback_data='ncertbooks')
@@ -110,8 +113,8 @@ MainTainanceModeN = InlineKeyboardButton('◻️ Maintainance OFF', callback_dat
 
 START_BUTTONS = InlineKeyboardMarkup([
   [OpenLibeary],
-  [HelpBtn,AboutDev],
-  [UpdateOfBot,SupportPfBot],
+  [Account,HelpBtn,AboutDev],
+  [Feedback,Share],
   ])
 
 LBRYOPEN_BUTTONS = InlineKeyboardMarkup([
