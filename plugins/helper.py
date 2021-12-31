@@ -87,7 +87,7 @@ Account = InlineKeyboardButton('💼 Account', callback_data='#########')
 HelpBtn = InlineKeyboardButton('🆘 Help 🆘', callback_data='help')
 AboutDev = InlineKeyboardButton('Dev. ❤️', callback_data='abtdvlngbot')
 Feedback = InlineKeyboardButton('💌 Feedback', url='https://telegram.dog/amtgbots/30')
-Share = InlineKeyboardButton('Share 🔄', callback_data='#########')
+Share = InlineKeyboardButton('Share 🔄', switch_inline_query='')
 
 CurrentAfrsBtn = InlineKeyboardButton('⚡ Current Affairs', callback_data='crnafrsdaily')
 NcertBooks = InlineKeyboardButton('📚 NCERT BOOKS', callback_data='ncertbooks')
