@@ -17,7 +17,7 @@ async def inline(bot, inline_query):
           input_message_content=InputTextMessageContent(
             "I Invite You to join a LIBRARY BOT 🏦. Here you can search 🔍 Any Type of reading materials...📖 Eg. Textbooks 📚, Novels 📗, Daily Newspapers🗞️ , magazines📑 , Current Affairs,UPSC/PSC NOTES Etc"
             ),
-            #url="https://t.me/Libraryinbot",
+            url="https://t.me/Libraryinbot",
             description="Tap To Share",
             thumb_url="https://i.imgur.com/Fipj0l9.png",
             reply_markup=InlineKeyboardMarkup([
