@@ -23,18 +23,6 @@ async def inline(bot, inline_query):
             reply_markup=InlineKeyboardMarkup([
               [InlineKeyboardButton("Open website",url="https://docs.pyrogram.org/intro/install")]
             ])
-            ),
-        InlineQueryResultArticle(
-          title="Usage",
-          input_message_content=InputTextMessageContent(
-            "Here's how to use **Pyrogram**"
-            ),
-            url="https://docs.pyrogram.org/start/invoking",
-            description="How to use Pyrogram",
-            thumb_url="https://i.imgur.com/JyxrStE.png",
-            reply_markup=InlineKeyboardMarkup([
-              [InlineKeyboardButton("Open website",url="https://docs.pyrogram.org/start/invoking")]
-            ])
             )
         ],
         cache_time=1
