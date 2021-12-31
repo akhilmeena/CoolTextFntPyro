@@ -17,11 +17,11 @@ async def inline(bot, inline_query):
           input_message_content=InputTextMessageContent(
             "This is Library Bot"
             ),
-            url="https://t.me/Libraryinbot",
-            description="Just Read Here",
+            #url="https://t.me/Libraryinbot",
+            description="Tap To Share",
             thumb_url="https://i.imgur.com/JyxrStE.png",
             reply_markup=InlineKeyboardMarkup([
-              [InlineKeyboardButton("Open website",url="https://docs.pyrogram.org/intro/install")]
+              [InlineKeyboardButton("Open Library Bot 📚",url="https://t.me/Libraryinbot")]
             ])
             )
         ],
