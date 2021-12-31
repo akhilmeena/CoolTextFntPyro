@@ -19,7 +19,7 @@ async def inline(bot, inline_query):
             ),
             #url="https://t.me/Libraryinbot",
             description="Tap To Share",
-            thumb_url="https://imgur.com/gallery/nn1IZAU",
+            thumb_url="https://imgur.com/gallery/FZUbdGk",
             reply_markup=InlineKeyboardMarkup([
               [InlineKeyboardButton("Open Library Bot 📚",url="https://t.me/Libraryinbot")]
             ])
