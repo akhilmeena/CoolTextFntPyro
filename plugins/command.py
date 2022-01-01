@@ -42,7 +42,13 @@ async def settingsjj(bot,message):
 async def start(bot, message):
   UserID = message.chat.id
   await message.reply_chat_action("typing")
-  await Database.AddNewUser(UserID)
+  ReferredBy=""
+  try:
+    ReferredBy+= f"{message.text}".split("/start")[1].strip()
+  except:
+    ReferredBy+="None"
+print(akh[1])
+  await Database.AddNewUser(bot,UserID,ReferredBy)
   if str(Config.MaintainaceYN[0]) == "No":
     await message.reply_text(text=helper.STARTText.format(message.from_user.mention),reply_markup=helper.START_BUTTONS)
   else:
