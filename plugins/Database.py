@@ -36,7 +36,7 @@ async def AddNewUser(bot,UserID,ReferredBy):
     else:
       NowBalance = await CreditCoin(ReferredBy)
       TotalInvited = await UserInvited(ReferredBy)
-      await bot.send_message(chat_id=f"{ReferredBy}",text="<b>💐 Congrats!!  You are credited with 600 coins.</b>")
+      await bot.send_message(chat_id=int(ReferredBy),text="<b>💐 Congrats!!  You are credited with 600 coins.</b>")
     return
 
 async def CreditCoin(CHAT_ID):
