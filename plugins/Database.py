@@ -29,8 +29,8 @@ async def AddNewUser(bot,UserID,ReferredBy):
     h1 = int(h) + 1
     UserData.update_cell(int(h1),1 ,f"{h1}")
     UserData.update_cell(int(h1),2 ,UserID)
-    UserData.update_cell(int(h1),3 ,0)
-    UserData.update_cell(int(h1),4 ,1000)
+    UserData.update_cell(int(h1),3 ,1000)
+    UserData.update_cell(int(h1),4 ,0)
     if ReferredBy == "None":
       pass
     else:
@@ -45,7 +45,7 @@ async def CreditCoin(CHAT_ID):
   #UserInvited = UserData.get('C' + f"{row}").first()
   BALANCE = UserData.get('D' + f"{row}").first()
   NowBalance = int(BALANCE) + 600
-  UserData.update_cell(int(row),4 ,int(NowBalance))
+  UserData.update_cell(int(row),3 ,int(NowBalance))
 
 async def UserInvited(CHAT_ID):
   cellx = UserData.find(str(CHAT_ID))
@@ -53,7 +53,7 @@ async def UserInvited(CHAT_ID):
   UserInvited = UserData.get('C' + f"{row}").first()
   #BALANCE = UserData.get('D' + f"{row}").first()
   TotalInvited = int(UserInvited) + 1
-  UserData.update_cell(int(row),3 ,int(TotalInvited))
+  UserData.update_cell(int(row),4 ,int(TotalInvited))
   
 
 
