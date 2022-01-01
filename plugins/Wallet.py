@@ -8,7 +8,6 @@ import re
 
 #BALANCECOINS = 
 
-
 AccntDetails = """<b>💼 Account Details:
  ===========================
 💰 Balance : </b><code> {} Coins</code>
