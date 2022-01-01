@@ -206,7 +206,7 @@ async def cb_data(bot, update):
     except:
       CHAT_ID = update.chat.id
     UserInvited,BALANCE = await Database.GetBlanceCoinOfUser(CHAT_ID)
-    await update.message.edit_text(text=Wallet.AccntDetails.format(BALANCE,UserInvited,CHAT_ID),reply_markup=helper.WALLET_BUTTONS)
+    await update.message.edit_text(text=Wallet.AccntDetails.format(BALANCE,UserInvited,CHAT_ID),reply_markup=helper.WALLET_BUTTONS,disable_web_page_preview=True)
   if update.data == "help":
     await update.message.edit_text(text=helper.HELPTEXT,reply_markup=helper.HELP_BUTTONS)
   if update.data == "abtdvlngbot":
