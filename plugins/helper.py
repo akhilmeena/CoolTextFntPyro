@@ -83,7 +83,8 @@ MaintainanceProgress = """<b>🛠 Maintenance in Progress....
 ############### BUTTONS Text #####################
 
 OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
-Account = InlineKeyboardButton('💼 Account', callback_data='account')
+Account = InlineKeyboardButton('💼 Account', callback_data='#')
+#Account = InlineKeyboardButton('💼 Account', callback_data='account')
 HelpBtn = InlineKeyboardButton('🆘 Help 🆘', callback_data='help')
 AboutDev = InlineKeyboardButton('Dev. ❤️', callback_data='abtdvlngbot')
 Feedback = InlineKeyboardButton('💌 Feedback', url='https://telegram.dog/amtgbots/30')
