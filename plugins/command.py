@@ -9,6 +9,7 @@ from plugins import helper
 from plugins import Database
 from plugins import urluploader
 import re
+import string
 from plugins import Newspapers
 from plugins import Magzines
 
@@ -47,7 +48,6 @@ async def start(bot, message):
     ReferredBy+= f"{message.text}".split("/start")[1].strip()
   except:
     ReferredBy+="None"
-print(akh[1])
   await Database.AddNewUser(bot,UserID,ReferredBy)
   if str(Config.MaintainaceYN[0]) == "No":
     await message.reply_text(text=helper.STARTText.format(message.from_user.mention),reply_markup=helper.START_BUTTONS)
