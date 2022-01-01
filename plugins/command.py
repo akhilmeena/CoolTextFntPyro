@@ -42,6 +42,7 @@ async def settingsjj(bot,message):
 @Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
   UserID = message.chat.id
+  print(message.text)
   await message.reply_chat_action("typing")
   ReferredBy=""
   try:
