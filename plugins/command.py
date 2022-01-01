@@ -48,6 +48,13 @@ async def start(bot, message):
   else:
     await message.reply_text(text=helper.MaintainanceProgress)
 
+@Client.on_message(filters.text)
+async def give_filter(bot,message):
+  Chat_Id = message.chat.id
+  Text = message.text
+  print(Text)
+ 
+
 @Client.on_message(filters.regex('http') & filters.private)
 async def pdisk(bot, message):
   Url2Dowload = re.search("(?P<url>https?://[^\s]+)", message.text).group("url")
