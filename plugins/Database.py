@@ -37,3 +37,12 @@ async def GetAllUsersList(bot, update):
   while("" in values_list3):
     values_list3.remove("")
   return values_list3,ttlusers
+  
+async def GetBlanceCoinOfUser(CHAT_ID):
+  cellx = sheet1.find(CHAT_ID)
+  row = cellx.row
+  UserInvited = sheet1.get('C' + f"{row}").first()
+  BALANCE = sheet1.get('D' + f"{row}").first()
+  return UserInvited,BALANCE
+  
+  
