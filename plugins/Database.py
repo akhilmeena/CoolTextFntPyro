@@ -43,14 +43,14 @@ async def CreditCoin(CHAT_ID):
   cellx = UserData.find(str(CHAT_ID))
   row = cellx.row
   #UserInvited = UserData.get('C' + f"{row}").first()
-  BALANCE = UserData.get('D' + f"{row}").first()
+  BALANCE = UserData.get('C' + f"{row}").first()
   NowBalance = int(BALANCE) + 600
   UserData.update_cell(int(row),3 ,int(NowBalance))
 
 async def UserInvited(CHAT_ID):
   cellx = UserData.find(str(CHAT_ID))
   row = cellx.row
-  UserInvited = UserData.get('C' + f"{row}").first()
+  UserInvited = UserData.get('D' + f"{row}").first()
   #BALANCE = UserData.get('D' + f"{row}").first()
   TotalInvited = int(UserInvited) + 1
   UserData.update_cell(int(row),4 ,int(TotalInvited))
