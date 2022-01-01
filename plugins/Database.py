@@ -67,8 +67,8 @@ async def GetAllUsersList(bot, update):
 async def GetBlanceCoinOfUser(CHAT_ID):
   cellx = UserData.find(str(CHAT_ID))
   row = cellx.row
-  UserInvited = UserData.get('C' + f"{row}").first()
-  BALANCE = UserData.get('D' + f"{row}").first()
+  BALANCE = UserData.get('C' + f"{row}").first()
+  UserInvited = UserData.get('D' + f"{row}").first()
   return UserInvited,BALANCE
   
   
