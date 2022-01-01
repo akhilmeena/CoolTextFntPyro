@@ -16,6 +16,7 @@ from plugins import Magzines
 from plugins import WorkWithPDF
 from plugins import Job
 from plugins import Database
+from plugins import Wallet
 from plugins.display_progress import progress_for_pyrogram,get_size,TimeFormatter
 import ast
 import time
@@ -199,6 +200,13 @@ async def cb_data(bot, update):
     await update.message.edit_text(text="<b>Choose Your Study Material Items</b>",reply_markup=helper.LBRYOPEN_BUTTONS)
   if update.data == "home2start":
     await update.message.edit_text(text=helper.STARTText.format(update.from_user.mention),reply_markup=helper.START_BUTTONS)
+  if update.data == "account":
+    try:
+      CHAT_ID = update.message.chat.id
+    except:
+      CHAT_ID = update.chat.id
+    UserInvited,BALANCE = await Database.GetBlanceCoinOfUser(CHAT_ID)
+    await update.message.edit_text(text=Wallet.AccntDetails.format(BALANCE,UserInvited,CHAT_ID),reply_markup=helper.WALLET_BUTTONS)
   if update.data == "help":
     await update.message.edit_text(text=helper.HELPTEXT,reply_markup=helper.HELP_BUTTONS)
   if update.data == "abtdvlngbot":
