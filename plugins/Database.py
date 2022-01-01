@@ -29,14 +29,13 @@ async def AddNewUser(bot,UserID,ReferredBy):
     h1 = int(h) + 1
     UserData.update_cell(int(h1),1 ,f"{h1}")
     UserData.update_cell(int(h1),2 ,UserID)
+    UserData.update_cell(int(h1),3 ,0)
+    UserData.update_cell(int(h1),4 ,1000)
     if ReferredBy == "None":
-      UserData.update_cell(int(h1),3 ,0)
-      UserData.update_cell(int(h1),4 ,1000)
+      pass
     else:
       NowBalance = await CreditCoin(ReferredBy)
       TotalInvited = await UserInvited(ReferredBy)
-      UserData.update_cell(int(h1),3 ,int(TotalInvited))
-      UserData.update_cell(int(h1),4 ,int(NowBalance))
       await bot.send_message(chat_id=f"{ReferredBy}",text="<b>💐 Congrats!!  You are credited with 600 coins.</b>")
     return
 
@@ -46,7 +45,7 @@ async def CreditCoin(CHAT_ID):
   #UserInvited = UserData.get('C' + f"{row}").first()
   BALANCE = UserData.get('D' + f"{row}").first()
   NowBalance = int(BALANCE) + 600
-  return NowBalance
+  UserData.update_cell(int(row),4 ,int(NowBalance))
 
 async def UserInvited(CHAT_ID):
   cellx = UserData.find(str(CHAT_ID))
@@ -54,7 +53,7 @@ async def UserInvited(CHAT_ID):
   UserInvited = UserData.get('C' + f"{row}").first()
   #BALANCE = UserData.get('D' + f"{row}").first()
   TotalInvited = int(UserInvited) + 1
-  return TotalInvited
+  UserData.update_cell(int(row),3 ,int(TotalInvited))
   
 
 
