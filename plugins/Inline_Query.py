@@ -8,7 +8,8 @@ from pyrogram.types import (InlineQuery, InlineQueryResultArticle, InlineQueryRe
 @Client.on_inline_query()
 async def inline(bot, inline_query):
   string = inline_query.query.lower()
-  CHAT_ID = inline_query.chat.id
+  print(inline_query)
+  #CHAT_ID = inline_query.chat.id
   if string == "":
     await inline_query.answer(
       results=[
