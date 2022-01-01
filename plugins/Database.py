@@ -37,7 +37,7 @@ async def AddNewUser(bot,UserID,ReferredBy):
       TotalInvited = await UserInvited(ReferredBy)
       UserData.update_cell(int(h1),3 ,int(TotalInvited))
       UserData.update_cell(int(h1),4 ,int(NowBalance))
-      await bot.send_message(chat_id=ReferredBy,text="<b>💐 Congrats!!  You are credited with 600 coins.</b>")
+      await bot.send_message(chat_id=f"{ReferredBy}",text="<b>💐 Congrats!!  You are credited with 600 coins.</b>")
     return
 
 async def CreditCoin(CHAT_ID):
