@@ -41,7 +41,7 @@ async def settingsjj(bot,message):
 @Client.on_message(filters.private & filters.command(["test"]))
 async def settingsjj(bot,message):
   if int(message.chat.id) in Config.OWNER_ID:
-    RequestNewsPaper = InlineKeyboardButton('💌 Request NewsPaper', callback_data='#')
+    RequestNewsPaper = InlineKeyboardButton('💌 Request NewsPaper', callback_data='requestnewspaper')
     buttonnnn = InlineKeyboardMarkup([[RequestNewsPaper]])
     await message.reply_text("<b>Testing Pannel</b>",reply_markup=buttonnnn)
   else:
