@@ -18,6 +18,7 @@ Dainikbhaskar = InlineKeyboardButton('दैनिक भास्कर', callb
 Newduniyaa = InlineKeyboardButton('नयी दुनिया', callback_data='newduniyaa')
 Navbharattimes = InlineKeyboardButton('नवभारतटाइम्स', callback_data='navbharattimes')
 Amarujala = InlineKeyboardButton('अमर उजाला', callback_data='amarujala')
+RequestNewsPaper = InlineKeyboardButton('💌 Request NewsPaper', callback_data='requestnewspaper')
 HomeToStart = InlineKeyboardButton('🔙', callback_data='libraryopen')
 
 
@@ -27,6 +28,7 @@ NewspaperType = InlineKeyboardMarkup([
   [Dainikjagaran,Rjpatrika],
   [Dainikbhaskar,Newduniyaa],
   [Navbharattimes,Amarujala],
+  [RequestNewsPaper],
   [HomeToStart]
   ])
 
