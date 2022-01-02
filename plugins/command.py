@@ -42,7 +42,11 @@ async def settingsjj(bot,message):
 async def settingsjj(bot,message):
   if int(message.chat.id) in Config.OWNER_ID:
     RequestNewsPaper = InlineKeyboardButton('💌 Request NewsPaper', callback_data='requestnewspaper')
-    buttonnnn = InlineKeyboardMarkup([[RequestNewsPaper]])
+    ClosePannel = InlineKeyboardButton('❌ Close', callback_data='close')
+    buttonnnn = InlineKeyboardMarkup([
+      [RequestNewsPaper],
+      [ClosePannel]
+      ])
     await message.reply_text("<b>Testing Pannel</b>",reply_markup=buttonnnn)
   else:
     Chat_Id = message.chat.id
