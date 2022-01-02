@@ -12,10 +12,6 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 #Request Newspaper 
-@Client.on_callback_query()
-async def cb_data2(bot, update):
-  if update.data == "requestnewspaper":
-    await update.message.reply_text(f"Good")
 
 
 
