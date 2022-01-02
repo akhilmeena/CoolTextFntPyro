@@ -38,6 +38,16 @@ async def settingsjj(bot,message):
     Chat_Id = message.chat.id
     await message.reply_text("<b>💔 Only Admin Command!!</b>")
    
+@Client.on_message(filters.private & filters.command(["test"]))
+async def settingsjj(bot,message):
+  if int(message.chat.id) in Config.OWNER_ID:
+    RequestNewsPaper = InlineKeyboardButton('💌 Request NewsPaper', callback_data='#')
+    buttonnnn = InlineKeyboardMarkup([[RequestNewsPaper]])
+    await message.reply_text("<b>Testing Pannel</b>",reply_markup=buttonnnn)
+  else:
+    Chat_Id = message.chat.id
+    await message.reply_text("<b>💔 Only Admin Command!!</b>")
+
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
