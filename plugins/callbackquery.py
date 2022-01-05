@@ -35,6 +35,7 @@ async def cb_data(bot, update):
     Current_Operation.clear()
     Current_Operation.append("requestnewspaper")
     await update.message.edit_text(text=f"<b>Send me Your NESPAPAER Name</b>",disable_web_page_preview=True)
+    print(update)
     #await update.message.reply_text(f"Good")
   if update.data == "sarakriresult":
     URL = "https://www.sarkariresult.com/result.php"
