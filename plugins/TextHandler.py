@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-@bot.on_message()
+@Client.on_message()
 async def onMsg(client,message):
     #global messages
     #print("onMessage event")
