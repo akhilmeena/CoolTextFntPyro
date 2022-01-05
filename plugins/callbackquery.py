@@ -93,7 +93,7 @@ async def cb_data(bot, update):
     Forwhat = ast.literal_eval(update.data)[2]
     #try:
     #except:
-      Textfornewspaperwithanylss = await Newspapers.captionfornewslink(Id,Forwhat)
+    #Textfornewspaperwithanylss = await Newspapers.captionfornewslink(Id,Forwhat)
     if str(Forwhat) == "dainikjagaran":
       Textfornewspaperwithanylss = await Newspapers.captionfornewslinkdainikjagaran(Id,Forwhat)
     elif str(Forwhat) == "thehindu":
