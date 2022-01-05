@@ -11,7 +11,7 @@ from pyrogram import Client, filters
 from plugins.display_progress import progress_for_pyrogram,get_size,TimeFormatter
 import time
 #from callbackquery import GetRunningOprtn
-import callbackquery.GetRunningOprtn
+from plugins import callbackquery.GetRunningOprtn
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
