@@ -27,11 +27,15 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+Current_Operation = []
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
   if update.data == "requestnewspaper":
-    await update.message.reply_text(f"Good")
+    Current_Operation.clear()
+    Current_Operation.append("requestnewspaper")
+    await update.message.edit_text(text=f"<b>Send me Your NESPAPAER Name</b>",disable_web_page_preview=True)
+    #await update.message.reply_text(f"Good")
   if update.data == "sarakriresult":
     URL = "https://www.sarkariresult.com/result.php"
     ResultList = await Job.GetAllResultsOrAdmitCardLink(URL)
