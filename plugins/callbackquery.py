@@ -12,6 +12,7 @@ from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.urluploader import Urlleaccher
 from plugins import Newspapers
+from plugins import TextHandler
 from plugins import Magzines
 from plugins import WorkWithPDF
 from plugins import Job
@@ -38,7 +39,7 @@ async def cb_data(bot, update):
   if update.data == "requestnewspaper":
     Current_Operation.clear()
     Current_Operation.append("requestnewspaper")
-    msg = await update.message.edit_text(text=f"<b>Send me Your NESPAPAER Name</b>",disable_web_page_preview=True)
+    TextHandler.NewspaperName(bot, update)
     #print(update)
     #await update.message.reply_text(f"Good")
   if update.data == "sarakriresult":
