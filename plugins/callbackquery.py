@@ -91,27 +91,29 @@ async def cb_data(bot, update):
   if (update.data.startswith("['dwnldnewspaper'")):
     Id = ast.literal_eval(update.data)[1]
     Forwhat = ast.literal_eval(update.data)[2]
-    try:
+    #try:
+    #except:
       Textfornewspaperwithanylss = await Newspapers.captionfornewslink(Id,Forwhat)
-    except:
-      if str(Forwhat) == "dainikjagaran":
-        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkdainikjagaran(Id,Forwhat)
-      elif str(Forwhat) == "amarujala":
-        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkAmarujala(Id,Forwhat)
-      elif str(Forwhat) == "navbharattimes":
-        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkNavbharattimes(Id,Forwhat)
-      elif str(Forwhat) == "newduniyaa":
-        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkNewduniyaa(Id,Forwhat)
-      elif str(Forwhat) == "rjpatrika":
-        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkRjpatrika(Id,Forwhat)
-      elif str(Forwhat) == "dainikbhaskar":
-        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkDainikbhaskar(Id,Forwhat)
-      elif str(Forwhat) == "financialexpress":
-        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkfinancialexpress(Id,Forwhat)
-      elif str(Forwhat) == "economictimes":
-        Textfornewspaperwithanylss = await Newspapers.captionfornewslinkEconomictimes(Id,Forwhat)
-      else:
-        Textfornewspaperwithanylss = await Newspapers.captionfornewslink1(Id,Forwhat)
+    if str(Forwhat) == "dainikjagaran":
+      Textfornewspaperwithanylss = await Newspapers.captionfornewslinkdainikjagaran(Id,Forwhat)
+    elif str(Forwhat) == "thehindu":
+      Textfornewspaperwithanylss = await Newspapers.captionfornewslink(Id,Forwhat)
+    elif str(Forwhat) == "amarujala":
+      Textfornewspaperwithanylss = await Newspapers.captionfornewslinkAmarujala(Id,Forwhat)
+    elif str(Forwhat) == "navbharattimes":
+      Textfornewspaperwithanylss = await Newspapers.captionfornewslinkNavbharattimes(Id,Forwhat)
+    elif str(Forwhat) == "newduniyaa":
+      Textfornewspaperwithanylss = await Newspapers.captionfornewslinkNewduniyaa(Id,Forwhat)
+    elif str(Forwhat) == "rjpatrika":
+      Textfornewspaperwithanylss = await Newspapers.captionfornewslinkRjpatrika(Id,Forwhat)
+    elif str(Forwhat) == "dainikbhaskar":
+      Textfornewspaperwithanylss = await Newspapers.captionfornewslinkDainikbhaskar(Id,Forwhat)
+    elif str(Forwhat) == "financialexpress":
+      Textfornewspaperwithanylss = await Newspapers.captionfornewslinkfinancialexpress(Id,Forwhat)
+    elif str(Forwhat) == "economictimes":
+      Textfornewspaperwithanylss = await Newspapers.captionfornewslinkEconomictimes(Id,Forwhat)
+    else:
+      Textfornewspaperwithanylss = await Newspapers.captionfornewslink1(Id,Forwhat)
     newbtns = InlineKeyboardMarkup([[InlineKeyboardButton("🔙",callback_data=Forwhat)]])
     await update.message.edit_text(text=Textfornewspaperwithanylss,reply_markup=newbtns)
   if (update.data.startswith("['dwldboobsncert'")):
