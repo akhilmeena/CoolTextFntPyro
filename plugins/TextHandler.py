@@ -19,6 +19,23 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 #@Client.on_message()
+async def NewspaperName(bot, message):
+  msg = await update.message.edit_text(text=f"<b>Send me Your NESPAPAER Name</b>",reply_markup=ForceReply(True),disable_web_page_preview=True)
+  #await bot.send_message(
+    #message.reply_to_message.from_user.id,
+    #"Enter new name for media\n\nNote : Extension not required",
+    #reply_to_message_id=message.reply_to_message.message_id,
+    #reply_markup=ForceReply(True)
+    #)
+
+@Client.on_message(filters.private & filters.reply & filters.text)
+async def cus_name(bot, message):
+  if (message.reply_to_message.reply_markup) and isinstance(message.reply_to_message.reply_markup, ForceReply):
+    print("good")
+    #asyncio.create_task(rename_doc(bot, message))     
+  else:
+    print('No media present')
+ 
 async def onMsg(client,message):
     #global messages
     #print("onMessage event")
