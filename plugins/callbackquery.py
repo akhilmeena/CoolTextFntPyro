@@ -39,7 +39,7 @@ async def cb_data(bot, update):
   if update.data == "requestnewspaper":
     Current_Operation.clear()
     Current_Operation.append("requestnewspaper")
-    await = TextHandler.NewspaperName(bot, update)
+    await TextHandler.NewspaperName(bot, update)
     #print(update)
     #await update.message.reply_text(f"Good")
   if update.data == "sarakriresult":
