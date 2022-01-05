@@ -29,6 +29,10 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 Current_Operation = []
 
+async def GetRunningOprtn():
+  Current_Operation1 = Current_Operation[0]
+  return Current_Operation1
+
 @Client.on_callback_query()
 async def cb_data(bot, update):
   if update.data == "requestnewspaper":
