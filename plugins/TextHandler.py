@@ -28,7 +28,8 @@ async def NewspaperName(bot, message):
     #reply_markup=ForceReply(True)
     #)
 
-@Client.on_message(filters.private & filters.reply & filters.text)
+#@Client.on_message(filters.private & filters.reply & filters.text)
+@Client.on_message(filters.private & filters.text)
 async def TextCheck(bot,message):
   print("akhil")
 
