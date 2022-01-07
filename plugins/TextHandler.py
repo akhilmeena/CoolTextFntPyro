@@ -29,6 +29,10 @@ async def NewspaperName(bot, message):
     #)
 
 @Client.on_message(filters.private & filters.reply & filters.text)
+async def TextCheck(bot,message):
+  print("akhil")
+
+
 async def cus_name(bot, message):
   if (message.reply_to_message.reply_markup) and isinstance(message.reply_to_message.reply_markup, ForceReply):
     print("good")
