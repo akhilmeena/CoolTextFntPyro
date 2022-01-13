@@ -68,7 +68,7 @@ async def give_filter(bot,message):
   print(Text)
  
 
-@Client.on_message(filters.regex('http') & filters.private)
+@Client.on_message(filters.regex('^http') & filters.private)
 async def pdisk(bot, message):
   Url2Dowload = re.search("(?P<url>https?://[^\s]+)", message.text).group("url")
   await urluploader.Urlleaccher(bot,message,Url2Dowload)
