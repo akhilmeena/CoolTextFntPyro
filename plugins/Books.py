@@ -10,3 +10,12 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+
+BookTypeList = {
+  "NCERT BOOKS":"ncertbooks"
+  }
+
+
+async def BookTypeButton(bot, update):
+  for d in Source_List:
+    print(d)
