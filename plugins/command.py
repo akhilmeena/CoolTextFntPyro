@@ -70,7 +70,7 @@ async def start(bot, message):
   else:
     await message.reply_text(text=helper.MaintainanceProgress)
 
-@Client.on_message(filters.text)
+#@Client.on_message(filters.text)
 async def give_filter(bot,message):
   Chat_Id = message.chat.id
   Text = message.text
