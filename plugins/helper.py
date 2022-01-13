@@ -91,6 +91,7 @@ Feedback = InlineKeyboardButton('💌 Feedback', url='https://telegram.dog/amtgb
 Share = InlineKeyboardButton('Share 🔄', switch_inline_query='')
 
 CurrentAfrsBtn = InlineKeyboardButton('⚡ Current Affairs', callback_data='crnafrsdaily')
+BooksCollction = InlineKeyboardButton('📚 BOOKS', callback_data='BooksCollction')
 NcertBooks = InlineKeyboardButton('📚 NCERT BOOKS', callback_data='ncertbooks')
 NewsPapers = InlineKeyboardButton('📰 News Papers', callback_data='newepapers')
 Magzines = InlineKeyboardButton('📔 Magzines', callback_data='magzines')
@@ -124,7 +125,7 @@ START_BUTTONS = InlineKeyboardMarkup([
 
 LBRYOPEN_BUTTONS = InlineKeyboardMarkup([
   [JobAlert],
-  [CurrentAfrsBtn,NcertBooks],
+  [CurrentAfrsBtn,BooksCollction],
   [NewsPapers,Magzines],
   [PYQ,HNotes],
   [HomeToStart]
