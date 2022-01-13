@@ -18,4 +18,8 @@ BookTypeList = {
 
 async def BookTypeButton():
   for d in BookTypeList:
-    print(d)
+    CallbackText = d
+    CallbackData = BookTypeList[d]
+    print(CallbackText)
+    print(CallbackData)
+    #print(d)
