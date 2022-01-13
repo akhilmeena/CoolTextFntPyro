@@ -18,6 +18,7 @@ from plugins import WorkWithPDF
 from plugins import Job
 from plugins import Database
 from plugins import Wallet
+from plugins import Books
 from plugins.display_progress import progress_for_pyrogram,get_size,TimeFormatter
 import ast
 import time
@@ -36,6 +37,9 @@ async def GetRunningOprtn():
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if update.data == "BooksCollction":
+    newbtns = await Books.BookTypeButton()
+    #await update.message.edit_text(text="<b>🎯 Choose Your Magzine</b>",reply_markup=newbtns)
   if update.data == "requestnewspaper":
     Current_Operation.clear()
     Current_Operation.append("requestnewspaper")
