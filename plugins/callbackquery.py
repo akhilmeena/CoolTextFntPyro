@@ -39,7 +39,7 @@ async def GetRunningOprtn():
 async def cb_data(bot, update):
   if update.data == "BooksCollction":
     newbtns = await Books.BookTypeButton()
-    #await update.message.edit_text(text="<b>🎯 Choose Your Magzine</b>",reply_markup=newbtns)
+    await update.message.edit_text(text="<b>🎯 Choose Your Books</b>",reply_markup=newbtns)
   if update.data == "requestnewspaper":
     Current_Operation.clear()
     Current_Operation.append("requestnewspaper")
