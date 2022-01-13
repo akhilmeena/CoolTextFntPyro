@@ -17,9 +17,17 @@ BookTypeList = {
 
 
 async def BookTypeButton():
+  Btn = []
   for d in BookTypeList:
     CallbackText = d
     CallbackData = BookTypeList[d]
     print(CallbackText)
     print(CallbackData)
     #print(d)
+    x = InlineKeyboardButton(str(CallbackText),callback_data=CallbackData)
+    Btn.append(x)
+  ak = [Btn[i:i+2] for i in range(0, len(Btn), 2)]
+  x = InlineKeyboardButton("🔙",callback_data="libraryopen")
+  ak.append([x])
+  newbtns = InlineKeyboardMarkup(ak)
+  return newbtns
