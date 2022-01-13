@@ -19,6 +19,7 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+Process = ["Nothing"]
 
 @Client.on_message(filters.private & filters.command(["admin"]))
 async def settings(bot,message):
@@ -61,12 +62,15 @@ async def start(bot, message):
   else:
     await message.reply_text(text=helper.MaintainanceProgress)
 
-#@Client.on_message(filters.text)
+@Client.on_message(filters.text & filters.private)
 async def give_filter(bot,message):
   Chat_Id = message.chat.id
   Text = message.text
-  print(Text)
- 
+  if str(Config.MaintainaceYN[0]) == "No":
+    if Process[0] == "Nothing":
+      await message.reply_text(text="<b>Please /start The Bot And Find Your Require Materials.</b>")
+  else:
+    await message.reply_text(text=helper.MaintainanceProgress)
 
 @Client.on_message(filters.regex('^http') & filters.private)
 async def pdisk(bot, message):
