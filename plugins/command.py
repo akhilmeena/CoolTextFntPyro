@@ -21,7 +21,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 @Client.on_message(filters.private & filters.command(["admin"]))
-async def settingsjj(bot,message):
+async def settings(bot,message):
   #print(f"{message.chat.id}")
   if int(message.chat.id) in Config.OWNER_ID:
     await message.reply_text("<b>👤 Admin Pannel</b>",reply_markup=helper.AdminKeyboard)
