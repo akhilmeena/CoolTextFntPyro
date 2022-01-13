@@ -16,6 +16,6 @@ BookTypeList = {
   }
 
 
-async def BookTypeButton(bot, update):
+async def BookTypeButton():
   for d in Source_List:
     print(d)
