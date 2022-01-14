@@ -38,8 +38,9 @@ async def GetRunningOprtn():
 @Client.on_callback_query()
 async def cb_data(bot, update):
   if update.data == "Add24x7":
-    newbtns = await currentaffairs.MonthlyCureentAffaisrsAdd247x7()
-    await update.message.edit_text(text="<b>🧭 Choose Your Month</b>",reply_markup=newbtns)
+    await currentaffairs.MonthlyCureentAffaisrsAdd247x7()
+    await MakeButtonFor27x7Add
+    #await update.message.edit_text(text="<b>🧭 Choose Your Month</b>",reply_markup=newbtns)
   if update.data == "BooksCollction":
     newbtns = await Books.BookTypeButton()
     await update.message.edit_text(text="<b>🎯 Choose Your Books</b>",reply_markup=newbtns)
