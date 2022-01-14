@@ -116,12 +116,6 @@ def currentdaypdfbuttonvsnias(month_num,year_num):
     Source_List.append(addDict)
   return Source_List
  
- 
-joinButton = InlineKeyboardMarkup([
-  [InlineKeyboardButton("🍃 Channel", url="https://t.me/TeleRoidGroup"),InlineKeyboardButton("🛡 Support", url="https://t.me/TeleRoid14")],
-  [InlineKeyboardButton("👤 Github", url="https://github.com/PredatorHackerzZ"),InlineKeyboardButton("🤖 BotsList", url="https://t.me/joinchat/t1ko_FOJxhFiOThl")],
-  ])
-
 
 Add24x7_DataDict = {}
 async def MonthlyCureentAffaisrsAdd247x7():
@@ -156,8 +150,28 @@ async def MonthlyCureentAffaisrsAdd247x7():
 
 
 async def MakeButtonFor27x7Add():
+  ak = []
+  x1 = InlineKeyboardButton("❤️ Monthly Current Affairs ❤️", callback_data="Nothing")
+  ak.append([x1])
   for Title in Add24x7_DataDict:
-    print(Title)
+    Btn = []
+    #for d in Source_List:
+    #print(d)
+    #CallbackText = d['CallBtnTedt']
+    #CallbackData = d['CallBtnData']
+    MonthButton = InlineKeyboardButton(f"🗂️ {Title}",callback_data=Title)
+    Btn.append(MonthButton)
+    DataInsideMonth = Add24x7_DataDict[Title]
+    for Lan in DataInsideMonth:
+      LanBtn = InlineKeyboardButton(f"📥 {Lan}",callback_data=Lan)
+      Btn.append(LanBtn)
+    ak.append([Btn])
+  #ak = [Btn[i:i+2] for i in range(0, len(Btn)-1, 2)]
+  x = InlineKeyboardButton("🔙",callback_data="crnafrsdaily")
+  ak.append([x])
+  newbtns = InlineKeyboardMarkup(ak)
+  return newbtns
+  #print(Title)
 
 
 
