@@ -154,6 +154,7 @@ async def MonthlyCureentAffaisrsAdd247x7():
         Add24x7_DataDict[f"{Month} {Year}"] = AllLinks
 
 
+
 async def MakeButtonFor27x7Add():
   for Title in Add24x7_DataDict:
     print(Title)
