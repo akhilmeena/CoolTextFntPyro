@@ -39,7 +39,7 @@ async def GetRunningOprtn():
 async def cb_data(bot, update):
   if update.data == "Add24x7":
     await currentaffairs.MonthlyCureentAffaisrsAdd247x7()
-    await MakeButtonFor27x7Add
+    await currentaffairs.MakeButtonFor27x7Add()
     #await update.message.edit_text(text="<b>🧭 Choose Your Month</b>",reply_markup=newbtns)
   if update.data == "BooksCollction":
     newbtns = await Books.BookTypeButton()
