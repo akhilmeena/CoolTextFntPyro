@@ -7,13 +7,18 @@ import requests
 import datetime
 from itertools import islice
 
+async def getdata(url):
+  r = requests.get(url)
+  return r.text
 
 VisionIas = InlineKeyboardButton('✨ Vision IAS', callback_data='vsniascrnt')
 ChahalAcdmy = InlineKeyboardButton('Chahal Academy 🥇', callback_data='chahalacdmy')
+Add24x7 = InlineKeyboardButton('🌍 Add 24 × 7 🌍', callback_data='Add24x7')
 BackToLibrary = InlineKeyboardButton('🔙', callback_data='libraryopen')
 
 CRNTAFRSOURCEBTN = InlineKeyboardMarkup([
   [VisionIas,ChahalAcdmy],
+  [Add24x7],
   [BackToLibrary]
   ])
 
@@ -111,7 +116,43 @@ def currentdaypdfbuttonvsnias(month_num,year_num):
     Source_List.append(addDict)
   return Source_List
  
+ 
+joinButton = InlineKeyboardMarkup([
+  [InlineKeyboardButton("🍃 Channel", url="https://t.me/TeleRoidGroup"),InlineKeyboardButton("🛡 Support", url="https://t.me/TeleRoid14")],
+  [InlineKeyboardButton("👤 Github", url="https://github.com/PredatorHackerzZ"),InlineKeyboardButton("🤖 BotsList", url="https://t.me/joinchat/t1ko_FOJxhFiOThl")],
+  ])
 
+
+Add24x7_DataDict = {}
+async def MonthlyCureentAffaisrsAdd247x7()
+  MainButtons = []
+  htmldata = await getdata("https://www.bankersadda.com/monthly-current-affairs-pdf")
+  MainButtons.append([InlineKeyboardButton("❤️ Monthly Current Affairs ❤️", callback_data="Nothing")])
+  soup = BeautifulSoup(htmldata, 'html.parser')
+  for li in soup.find_all("tbody"):#, id="post")
+    for para in li.find_all("td"):
+      if "pdf" in f"{para}":
+        AllLinks = {}
+        AllLink = []
+        Title = para.get_text().strip()
+        TitleSplit = Title.split(" ")
+        Month = TitleSplit[0]
+        Year = TitleSplit[4].replace(":","")
+        for a in para.find_all('a', href=True):
+          Link = a['href']
+          AllLink.append(Link)
+        if len(AllLink) == 2:
+          AllLinks["English"] = AllLink[0]
+          AllLinks["Hindi"] = AllLink[1]
+          MainButtons.append(
+            [InlineKeyboardButton(f"{Month} {Year}", callback_data="Nothing")],
+            [InlineKeyboardButton("📥English", callback_data="Eng")],
+            [InlineKeyboardButton("📥हिंदी", callback_data="Hin")]
+            )
+        else:
+          AllLinks["English"] = AllLink[0]
+        Add24x7_DataDict[f"{Month} {Year}"] = AllLinks
+  return MainButtons
 
 
 
