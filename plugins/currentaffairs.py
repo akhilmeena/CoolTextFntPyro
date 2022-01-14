@@ -142,7 +142,7 @@ async def MonthlyCureentAffaisrsAdd247x7():
         Title = para.get_text().strip()
         TitleSplit = Title.split(" ")
         Month = TitleSplit[0][:3]
-        Year = TitleSplit[4].replace(":","")#[:4]
+        Year = TitleSplit[4].replace(":","")[-2:]
         for a in para.find_all('a', href=True):
           Link = a['href']
           AllLink.append(Link)
