@@ -141,7 +141,7 @@ async def MonthlyCureentAffaisrsAdd247x7():
         AllLink = []
         Title = para.get_text().strip()
         TitleSplit = Title.split(" ")
-        Month = TitleSplit[0][:2]
+        Month = TitleSplit[0][:3]
         Year = TitleSplit[4].replace(":","")[:-2]
         for a in para.find_all('a', href=True):
           Link = a['href']
@@ -152,7 +152,7 @@ async def MonthlyCureentAffaisrsAdd247x7():
         else:
           AllLinks["English"] = AllLink[0]
         Add24x7_DataDict[f"{Month} {Year}"] = AllLinks
-
+  print(Add24x7_DataDict)
 
 
 async def MakeButtonFor27x7Add():
