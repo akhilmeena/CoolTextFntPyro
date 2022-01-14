@@ -146,26 +146,26 @@ async def MonthlyCureentAffaisrsAdd247x7():
         else:
           AllLinks["English"] = AllLink[0]
         Add24x7_DataDict[f"{Month} {Year}"] = AllLinks
-  print(Add24x7_DataDict)
+  #print(Add24x7_DataDict)
 
 
 async def MakeButtonFor27x7Add():
   ak = []
   x1 = InlineKeyboardButton("❤️ Monthly Current Affairs ❤️", callback_data="Nothing")
   ak.append([x1])
-  for Title in Add24x7_DataDict:
-    Btn = []
+  #for Title in Add24x7_DataDict:
+    #Btn = []
     #for d in Source_List:
     #print(d)
     #CallbackText = d['CallBtnTedt']
     #CallbackData = d['CallBtnData']
-    MonthButton = InlineKeyboardButton(f"🗂️ {Title}",callback_data=Title)
-    Btn.append(MonthButton)
-    DataInsideMonth = Add24x7_DataDict[Title]
-    for Lan in DataInsideMonth:
-      LanBtn = InlineKeyboardButton(f"📥 {Lan}",callback_data=Lan)
-      Btn.append(LanBtn)
-    ak.append([Btn])
+    #MonthButton = InlineKeyboardButton(f"🗂️ {Title}",callback_data=Title)
+    #Btn.append(MonthButton)
+    #DataInsideMonth = Add24x7_DataDict[Title]
+    #for Lan in DataInsideMonth:
+      #LanBtn = InlineKeyboardButton(f"📥 {Lan}",callback_data=Lan)
+      #Btn.append(LanBtn)
+    #ak.append([Btn])
   #ak = [Btn[i:i+2] for i in range(0, len(Btn)-1, 2)]
   x = InlineKeyboardButton("🔙",callback_data="crnafrsdaily")
   ak.append([x])
