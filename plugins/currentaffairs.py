@@ -125,9 +125,14 @@ joinButton = InlineKeyboardMarkup([
 
 Add24x7_DataDict = {}
 async def MonthlyCureentAffaisrsAdd247x7():
-  MainButtons = []
+  #MainButtons = []
+  #MainButtons.append([InlineKeyboardButton("❤️ Monthly Current Affairs ❤️", callback_data="Nothing")])
+  #DwnldBtn = []
+  #DwnldBtn.append([InlineKeyboardButton(f"{Month} {Year}", callback_data="Nothing")])
+  #DwnldBtn.append([InlineKeyboardButton("📥English", callback_data="Eng")])
+  #DwnldBtn.append([InlineKeyboardButton("📥English", callback_data="Eng")])
+  #DwnldBtn.append([InlineKeyboardButton("📥हिंदी", callback_data="Hin")])
   htmldata = await getdata("https://www.bankersadda.com/monthly-current-affairs-pdf")
-  MainButtons.append([InlineKeyboardButton("❤️ Monthly Current Affairs ❤️", callback_data="Nothing")])
   soup = BeautifulSoup(htmldata, 'html.parser')
   for li in soup.find_all("tbody"):#, id="post")
     for para in li.find_all("td"):
@@ -136,25 +141,22 @@ async def MonthlyCureentAffaisrsAdd247x7():
         AllLink = []
         Title = para.get_text().strip()
         TitleSplit = Title.split(" ")
-        Month = TitleSplit[0]
-        Year = TitleSplit[4].replace(":","")
+        Month = TitleSplit[0][:2]
+        Year = TitleSplit[4].replace(":","")[:-2]
         for a in para.find_all('a', href=True):
           Link = a['href']
           AllLink.append(Link)
-        DwnldBtn = []
-        DwnldBtn.append([InlineKeyboardButton(f"{Month} {Year}", callback_data="Nothing")])
         if len(AllLink) == 2:
-          AllLinks["English"] = AllLink[0]
+          AllLinks["Eng"] = AllLink[0]
           AllLinks["Hindi"] = AllLink[1]
-          DwnldBtn.append([InlineKeyboardButton("📥English", callback_data="Eng")])
-          DwnldBtn.append([InlineKeyboardButton("📥हिंदी", callback_data="Hin")])
         else:
           AllLinks["English"] = AllLink[0]
-          DwnldBtn.append([InlineKeyboardButton("📥English", callback_data="Eng")])
         Add24x7_DataDict[f"{Month} {Year}"] = AllLinks
-  return MainButtons
 
 
+async def MakeButtonFor27x7Add():
+  for Title in Add24x7_DataDict:
+    print(Title)
 
 
 
