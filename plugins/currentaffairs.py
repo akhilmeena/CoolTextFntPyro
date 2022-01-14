@@ -124,7 +124,7 @@ joinButton = InlineKeyboardMarkup([
 
 
 Add24x7_DataDict = {}
-async def MonthlyCureentAffaisrsAdd247x7()
+async def MonthlyCureentAffaisrsAdd247x7():
   MainButtons = []
   htmldata = await getdata("https://www.bankersadda.com/monthly-current-affairs-pdf")
   MainButtons.append([InlineKeyboardButton("❤️ Monthly Current Affairs ❤️", callback_data="Nothing")])
