@@ -141,16 +141,16 @@ async def MonthlyCureentAffaisrsAdd247x7():
         for a in para.find_all('a', href=True):
           Link = a['href']
           AllLink.append(Link)
+        DwnldBtn = []
+        DwnldBtn.append([InlineKeyboardButton(f"{Month} {Year}", callback_data="Nothing")])
         if len(AllLink) == 2:
           AllLinks["English"] = AllLink[0]
           AllLinks["Hindi"] = AllLink[1]
-          MainButtons.append(
-            [InlineKeyboardButton(f"{Month} {Year}", callback_data="Nothing")],
-            [InlineKeyboardButton("📥English", callback_data="Eng")],
-            [InlineKeyboardButton("📥हिंदी", callback_data="Hin")]
-            )
+          DwnldBtn.append([InlineKeyboardButton("📥English", callback_data="Eng")])
+          DwnldBtn.append([InlineKeyboardButton("📥हिंदी", callback_data="Hin")])
         else:
           AllLinks["English"] = AllLink[0]
+          DwnldBtn.append([InlineKeyboardButton("📥English", callback_data="Eng")])
         Add24x7_DataDict[f"{Month} {Year}"] = AllLinks
   return MainButtons
 
