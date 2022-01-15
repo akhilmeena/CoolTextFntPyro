@@ -159,11 +159,11 @@ async def MakeButtonFor27x7Add():
     #print(d)
     #CallbackText = d['CallBtnTedt']
     #CallbackData = d['CallBtnData']
-    MonthButton = InlineKeyboardButton(f"🗂️ {Title}",callback_data=Title)
+    MonthButton = InlineKeyboardButton(f"🗂️ {Title}",callback_data"['MnthBtn','" + Title + "'")
     Btn.append(MonthButton)
     DataInsideMonth = Add24x7_DataDict[Title]
     for Lan in DataInsideMonth:
-      LanBtn = InlineKeyboardButton(f"📥 {Lan}",callback_data=Lan)
+      LanBtn = InlineKeyboardButton(f"📥 {Lan}",callback_data="['MnthlyCA','" + Title + "','" + Lan + "'")
       Btn.append(LanBtn)
     ak.append(Btn)
   #ak = [Btn[i:i+2] for i in range(0, len(Btn)-1, 2)]
@@ -172,7 +172,10 @@ async def MakeButtonFor27x7Add():
   newbtns = InlineKeyboardMarkup(ak)
   return newbtns
   #print(Title)
-
+  
+async def GetLinkOfMonthlyCurrentAdda24x7(Title,Lan):
+  DwnldUrl = Add24x7_DataDict[Title][lan]
+  return DwnldUrl
 
 
 
