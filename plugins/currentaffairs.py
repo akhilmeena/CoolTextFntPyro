@@ -174,7 +174,7 @@ async def MakeButtonFor27x7Add():
   #print(Title)
   
 async def GetLinkOfMonthlyCurrentAdda24x7(Title,Lan):
-  DwnldUrl = Add24x7_DataDict[Title][lan]
+  DwnldUrl = Add24x7_DataDict[Title][Lan]
   return DwnldUrl
 
 
