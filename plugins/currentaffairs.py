@@ -142,7 +142,7 @@ async def MonthlyCureentAffaisrsAdd247x7():
           AllLink.append(Link)
         if len(AllLink) == 2:
           AllLinks["Eng"] = AllLink[0]
-          AllLinks["Hindi"] = AllLink[1]
+          AllLinks["हिंदी"] = AllLink[1]
         else:
           AllLinks["English"] = AllLink[0]
         Add24x7_DataDict[f"{Month} {Year}"] = AllLinks
