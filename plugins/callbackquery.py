@@ -37,6 +37,11 @@ async def GetRunningOprtn():
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
+  if (update.data.startswith("['MnthlyCA'")):
+    Title = ast.literal_eval(update.data)[1]
+    Lan = ast.literal_eval(update.data)[2]
+    DwnldUrl = await GetLinkOfMonthlyCurrentAdda24x7(Title,Lan)
+    await Urlleaccher(bot,update,DwnldUrl)
   if update.data == "Add24x7":
     await currentaffairs.MonthlyCureentAffaisrsAdd247x7()
     newbtns = await currentaffairs.MakeButtonFor27x7Add()
