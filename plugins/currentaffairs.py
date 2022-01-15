@@ -153,14 +153,14 @@ async def MakeButtonFor27x7Add():
   ak = []
   x1 = InlineKeyboardButton("❤️ Monthly Current Affairs ❤️", callback_data="Nothing")
   ak.append([x1])
-  #for Title in Add24x7_DataDict:
-    #Btn = []
+  for Title in Add24x7_DataDict:
+    Btn = []
     #for d in Source_List:
     #print(d)
     #CallbackText = d['CallBtnTedt']
     #CallbackData = d['CallBtnData']
-    #MonthButton = InlineKeyboardButton(f"🗂️ {Title}",callback_data=Title)
-    #Btn.append(MonthButton)
+    MonthButton = InlineKeyboardButton(f"🗂️ {Title}",callback_data=Title)
+    Btn.append(MonthButton)
     #DataInsideMonth = Add24x7_DataDict[Title]
     #for Lan in DataInsideMonth:
       #LanBtn = InlineKeyboardButton(f"📥 {Lan}",callback_data=Lan)
