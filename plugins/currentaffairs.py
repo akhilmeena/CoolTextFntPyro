@@ -165,7 +165,7 @@ async def MakeButtonFor27x7Add():
     #for Lan in DataInsideMonth:
       #LanBtn = InlineKeyboardButton(f"📥 {Lan}",callback_data=Lan)
       #Btn.append(LanBtn)
-    ak.append([Btn])
+    ak.append(Btn)
   #ak = [Btn[i:i+2] for i in range(0, len(Btn)-1, 2)]
   x = InlineKeyboardButton("🔙",callback_data="crnafrsdaily")
   ak.append([x])
