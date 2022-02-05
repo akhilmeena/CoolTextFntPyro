@@ -7,11 +7,8 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from plugins import helper
 from plugins import Database
-from plugins import urluploader
 import re
 import string
-from plugins import Newspapers
-from plugins import Magzines
 
 
 logging.basicConfig(level=logging.DEBUG,
