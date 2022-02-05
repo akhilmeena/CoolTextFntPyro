@@ -75,30 +75,49 @@ def create_markup(_list: list=[[]]):
 
 ############### BUTTONS Text #####################
 
-OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
-#Account = InlineKeyboardButton('💼 Account', callback_data='#')
-Account = InlineKeyboardButton('💼 Account', callback_data='account')
-HelpBtn = InlineKeyboardButton('🆘 Help 🆘', callback_data='help')
+STARTFonting = InlineKeyboardButton(text='Font • Design • Decorators',callback_data='STARTFonting')
+HelpBtn = InlineKeyboardButton('🆘 Help', callback_data='help')
 AboutDev = InlineKeyboardButton('Dev. ❤️', callback_data='abtdvlngbot')
+MoreBots = InlineKeyboardButton('🗃️ More Bots 🗃️', callback_data='MoreBots')
 Feedback = InlineKeyboardButton('💌 Feedback', url='https://telegram.dog/amtgbots/30')
 Share = InlineKeyboardButton('Share 🔄', switch_inline_query='')
+HomeToStart = InlineKeyboardButton(text='🔙',callback_data='homeTostart')
+CoolFonts = InlineKeyboardButton(text='Cool Fonts',callback_data='CoolFonts')
+DecorateText = InlineKeyboardButton(text='Decorate Text',callback_data='DecorateText')
 
-CurrentAfrsBtn = InlineKeyboardButton('⚡ Current Affairs', callback_data='crnafrsdaily')
-BooksCollction = InlineKeyboardButton('📚 BOOKS', callback_data='BooksCollction')
-NcertBooks = InlineKeyboardButton('📚 NCERT BOOKS', callback_data='ncertbooks')
-NewsPapers = InlineKeyboardButton('📰 News Papers', callback_data='newepapers')
-Magzines = InlineKeyboardButton('📔 Magzines', callback_data='magzines')
-JobAlert = InlineKeyboardButton('🔔 Job Alert ', callback_data='jobalert')
-#PYQ = InlineKeyboardButton('📃 PYQ ', callback_data='pyearq')
-PYQ = InlineKeyboardButton('📃 PYQ ', callback_data='#')
-#HNotes = InlineKeyboardButton('📝 H-Notes ', callback_data='HandNotes')
-HNotes = InlineKeyboardButton('📝 H-Notes ', callback_data='#')
-HomeToStart = InlineKeyboardButton('🔙', callback_data='home2start')
-BacktoAdminpnl = InlineKeyboardButton('🔙', callback_data='backtoAdminpnl')
 
-UpdateOfBot = InlineKeyboardButton('🚀 Update ', url='https://telegram.dog/channelanalyser/')
-SupportPfBot = InlineKeyboardButton(' Support 💌', url='https://telegram.dog/channelanalyser/')
-ClosePannel = InlineKeyboardButton('❌ Close', callback_data='close')
+
+HOME_PAGE = InlineKeyboardMarkup(keyboard=[
+  [STARTFonting],
+  [HelpBtn,AboutDev],
+  [MoreBots],
+  [Feedback,Share],
+  ])
+
+DVLGBTN = InlineKeyboardMarkup([
+  [STARTFonting],
+  [HelpBtn,HomeToStart],
+  [MoreBots],
+  [Feedback,Share]
+  ])
+
+HELPBTN = InlineKeyboardMarkup([
+  [STARTFonting],
+  [HomeToStart,AboutDev],
+  [MoreBots],
+  [Feedback,Share]
+  ])
+
+MoreBots_BTN = InlineKeyboardMarkup([
+  [STARTFonting],
+  [HelpBtn,AboutDev],
+  [HomeToStart],
+  [Feedback,Share]
+  ])
+STARTFontingBTN = InlineKeyboardMarkup([
+  [CoolFonts,DecorateText],
+  [HomeToStart]
+  ])
 
 ############### ADMIN PANNEL #####################
 
@@ -108,39 +127,6 @@ MainTainanceModeY = InlineKeyboardButton('✅ Maintainance ON', callback_data='m
 MainTainanceModeN = InlineKeyboardButton('◻️ Maintainance OFF', callback_data='maintainanceoff')
 
 ############### BUTTONS Add #####################
-
-
-START_BUTTONS = InlineKeyboardMarkup([
-  [OpenLibeary],
-  [Account,HelpBtn,AboutDev],
-  [Feedback,Share],
-  ])
-
-LBRYOPEN_BUTTONS = InlineKeyboardMarkup([
-  [JobAlert],
-  [CurrentAfrsBtn,BooksCollction],
-  [NewsPapers,Magzines],
-  [PYQ,HNotes],
-  [HomeToStart]
-  ])
-  
-HELP_BUTTONS = InlineKeyboardMarkup([
-  [OpenLibeary],
-  [Account,HomeToStart,AboutDev],
-  [Feedback,Share]
-  ])
-
-WALLET_BUTTONS = InlineKeyboardMarkup([
-  [OpenLibeary],
-  [HomeToStart,HelpBtn,AboutDev],
-  [Feedback,Share]
-  ])
-
-DVLGBTN = InlineKeyboardMarkup([
-  [OpenLibeary],
-  [Account,HelpBtn,HomeToStart],
-  [Feedback,Share]
-  ])
 
 AdminKeyboard = InlineKeyboardMarkup([
   [MainTainanceMode,VerifyUsers],
