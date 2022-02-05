@@ -87,7 +87,7 @@ DecorateText = InlineKeyboardButton(text='Decorate Text',callback_data='Decorate
 
 
 
-HOME_PAGE = InlineKeyboardMarkup(keyboard=[
+HOME_PAGE = InlineKeyboardMarkup([
   [STARTFonting],
   [HelpBtn,AboutDev],
   [MoreBots],
