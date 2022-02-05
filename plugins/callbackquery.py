@@ -27,3 +27,5 @@ async def cb_data(bot, update):
     await update.message.edit_text(text=helper.STARTText.format(update.message.chat.first_name),reply_markup=helper.HOME_PAGE)
   if update.data == "MoreBots":
     await update.message.edit_text(text=helper.MoreBotsText.format(update.message.from_user.mention),reply_markup=helper.MoreBots_BTN)
+  if update.data == "STARTFonting":
+    await update.message.edit_text(text="Choose Your Methods",reply_markup=helper.STARTFontingBTN)
