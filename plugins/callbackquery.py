@@ -20,8 +20,10 @@ async def cb_data(bot, update):
     Title = ast.literal_eval(update.data)[1]
     Lan = ast.literal_eval(update.data)[2]
   if update.data == "help":
-    await update.message.edit_text(text=helper.HELPTEXT,reply_markup=helper.HELP_BUTTONS)
+    await update.message.edit_text(text=helper.HELPTEXT,reply_markup=helper.HELPBTN)
   if update.data == "abtdvlngbot":
     await update.message.edit_text(text=helper.BotAboutText.format(update.message.from_user.mention),reply_markup=helper.DVLGBTN)
   if update.data == "homeTostart":
     await update.message.edit_text(text=helper.STARTText.format(update.message.from_user.mention),reply_markup=helper.HOME_PAGE)
+  if update.data == "MoreBots":
+    await update.message.edit_text(text=helper.MoreBotsText.format(update.message.from_user.mention),reply_markup=helper.MoreBots_BTN)
