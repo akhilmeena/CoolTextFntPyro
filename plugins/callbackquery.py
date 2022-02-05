@@ -3,6 +3,7 @@ import logging
 import pyrogram
 from config import Config
 from pyrogram import types
+from plugins import helper
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
