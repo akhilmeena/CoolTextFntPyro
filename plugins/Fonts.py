@@ -43,5 +43,5 @@ async def GenerateButtonForF9ntList():
   FinalKeyboard = [ButtonList[i:i+2] for i in range(0, len(ButtonList), 2)]
   x = InlineKeyboardButton("🔙",callback_data="BooksCollction")
   FinalKeyboard.append([x])
-  NewKeyBoard = InlineKeyboardMarkup(keyboard=FinalKeyboard)
+  NewKeyBoard = InlineKeyboardMarkup(FinalKeyboard)
   return NewKeyBoard
