@@ -10,17 +10,6 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-
-############### Additional Functional #####################
-
-def create_markup(_list: list=[[]]):
-  result = []
-  for row in _list:
-    result.append([])
-    for item in row:
-      btn = cb(item)
-      result[-1].append(btn)
-  return InlineKeyboardMarkup(result)
 ############### General Text #####################
 
 usrststext = '''<b>Bot Users Statics 📊
@@ -29,36 +18,20 @@ Total Users:</b> <code>{}</code>
 <b>Active Users:</b> <code>{}</code>
 <b>InActive Users:</b> <code>{}</code>'''
 
+STARTText = """<b>👋 Hii {} !!!,
+<i>
+A fancy cool ✓ font generator that 
+helps create stylish text font styles 
+with beautiful symbols and fancy 
+characters for social networks & 
+any other platforms.
+</i>
+=======================
+❤️ From 🇮🇳</b>"""
 
-STARTText = """<b>Hi {}!
-
-This is LIBRARY BOT 🏦. Here you can search 🔍 Any Type of reading materials...📖 
-Eg. <i>Textbooks 📚, Novels 📗, Daily Newspapers🗞️ , magazines📑 , Current Affairs,UPSC/PSC NOTES Etc</i>
-
-Get all the updates Daily
-================================
-Note:</b> <i>All the Content uploaded here is taken out from other sources.if anybody have issue with that,just write ur msg...we will remove that.
-Thanks ❤️</i>
-"""
-
-HELPTEXT = """<b>⚠️ This is Help Pannel</b>:
-
-<i>This Is A Library Bot. If u Need any Type study Material Just send us in Complaint & Suggestions Pannel.
-</i>"""
-
-DonloadFiletext = """**Initiating Download**
-**URL:** {}
-**File Name:** {}
-**File Size:** {}
-**File Type:** {}"""
-
-DownloadingProgress = """Downloading : {}%
-URL: {}
-File Name: {}
-File Size: {}
-Downloaded: {}
-ETA: {}"""
-
+HELPTEXT = """<b>=========================
+😆 Sorry, I can't help u.
+=========================</b>"""
 
 BotAboutText = """<b>About Me 😎
 <b>----------------------------------------------------</b>
@@ -71,6 +44,14 @@ BotAboutText = """<b>About Me 😎
 <b>----------------------------------------------------</b>
 <b>Made With ❤️ In India 🇮🇳 </b>"""
 
+MoreBotsText = """<b>=========================
+🙏 Thanks to visite here ......
+
+➣ There are few bots:-
+<i>  ➥ @Love
+  ➥ @akhil
+</i>
+=========================</b>"""
 #AdminPannel = """👤 Admin Pannel:"""
 
 MaintainanceProgress = """<b>🛠 Maintenance in Progress....
@@ -80,6 +61,18 @@ MaintainanceProgress = """<b>🛠 Maintenance in Progress....
 ▪All functionality will be back after completion.
 
 🙏 Try Few Time Later…</b>"""
+
+############### Additional Functional #####################
+
+def create_markup(_list: list=[[]]):
+  result = []
+  for row in _list:
+    result.append([])
+    for item in row:
+      btn = cb(item)
+      result[-1].append(btn)
+  return InlineKeyboardMarkup(result)
+
 ############### BUTTONS Text #####################
 
 OpenLibeary = InlineKeyboardButton('📚 Open Library', callback_data='libraryopen')
