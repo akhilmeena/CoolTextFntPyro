@@ -27,7 +27,6 @@ async def settings(bot,message):
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
-  print(message)
   await message.reply_chat_action("typing")
   UserID = message.chat.id
   if str(Config.MaintainaceYN[0]) == "No":
