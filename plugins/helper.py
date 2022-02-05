@@ -129,8 +129,7 @@ MainTainanceModeN = InlineKeyboardButton('◻️ Maintainance OFF', callback_dat
 ############### BUTTONS Add #####################
 
 AdminKeyboard = InlineKeyboardMarkup([
-  [MainTainanceMode,VerifyUsers],
-  [ClosePannel]
+  [MainTainanceMode,VerifyUsers]
   ])
   
 #Conditional BUTTONS
