@@ -135,13 +135,11 @@ AdminKeyboard = InlineKeyboardMarkup([
 #Conditional BUTTONS
 
 MaintainanceKeyY = InlineKeyboardMarkup([
-  [MainTainanceModeY],
-  [BacktoAdminpnl]
+  [MainTainanceModeY]
   ])
   
 MaintainanceKeyN = InlineKeyboardMarkup([
-  [MainTainanceModeN],
-  [BacktoAdminpnl]
+  [MainTainanceModeN]
   ])
 
 
