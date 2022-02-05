@@ -3,7 +3,7 @@ import logging
 import pyrogram
 from config import Config
 from pyrogram import types
-from plugins import helper
+from plugins import helper,Fonts
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -29,3 +29,6 @@ async def cb_data(bot, update):
     await update.message.edit_text(text=helper.MoreBotsText.format(update.message.from_user.mention),reply_markup=helper.MoreBots_BTN)
   if update.data == "STARTFonting":
     await update.message.edit_text(text="Choose Your Methods",reply_markup=helper.STARTFontingBTN)
+  if update.data == "CoolFonts":
+    Fotnkeyboard = await Fonts.GenerateButtonForF9ntList()
+    await update.message.edit_text(text="Choose Your Fonts",reply_markup=helper.Fotnkeyboard)
