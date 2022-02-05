@@ -30,7 +30,7 @@ async def start(bot, message):
   await message.reply_chat_action("typing")
   UserID = message.chat.id
   if str(Config.MaintainaceYN[0]) == "No":
-    await message.reply_text(text=helper.STARTText.format(message.from_user.mention),reply_markup=helper.START_BUTTONS)
+    await message.reply_text(text=helper.STARTText.format(message.from_user.mention),reply_markup=helper.HOME_PAGE)
   else:
     await message.reply_text(text=helper.MaintainanceProgress)
 
