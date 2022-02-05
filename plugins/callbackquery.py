@@ -31,4 +31,4 @@ async def cb_data(bot, update):
     await update.message.edit_text(text="Choose Your Methods",reply_markup=helper.STARTFontingBTN)
   if update.data == "CoolFonts":
     Fotnkeyboard = await Fonts.GenerateButtonForF9ntList()
-    await update.message.edit_text(text="Choose Your Fonts",reply_markup=helper.Fotnkeyboard)
+    await update.message.edit_text(text="Choose Your Fonts",reply_markup=Fotnkeyboard)
