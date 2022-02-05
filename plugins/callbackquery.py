@@ -24,7 +24,7 @@ async def cb_data(bot, update):
   if update.data == "abtdvlngbot":
     await update.message.edit_text(text=helper.BotAboutText.format(update.message.from_user.mention),reply_markup=helper.DVLGBTN)
   if update.data == "homeTostart":
-    print(update.message)
+    print(update.message.chat)
     await update.message.edit_text(text=helper.STARTText.format(update.message.from_user.mention),reply_markup=helper.HOME_PAGE)
   if update.data == "MoreBots":
     await update.message.edit_text(text=helper.MoreBotsText.format(update.message.from_user.mention),reply_markup=helper.MoreBots_BTN)
