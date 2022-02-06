@@ -3,7 +3,7 @@ import logging
 import pyrogram
 from config import Config
 from pyrogram import types
-from plugins import helper,Fonts
+from plugins import helper,Fonts,TextHandler
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -16,9 +16,6 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @Client.on_callback_query()
 async def cb_data(bot, update):
-  if (update.data.startswith("['MnthlyCA'")):
-    Title = ast.literal_eval(update.data)[1]
-    Lan = ast.literal_eval(update.data)[2]
   if update.data == "help":
     await update.message.edit_text(text=helper.HELPTEXT,reply_markup=helper.HELPBTN)
   if update.data == "abtdvlngbot":
@@ -32,3 +29,15 @@ async def cb_data(bot, update):
   if update.data == "CoolFonts":
     Fotnkeyboard = await Fonts.GenerateButtonForF9ntList()
     await update.message.edit_text(text="Choose Your Fonts",reply_markup=Fotnkeyboard)
+  if (update.data.startswith("['CF'")):
+    #Title = ast.literal_eval(update.data)[1]
+    Font_Name = ast.literal_eval(update.data)[2]
+    Fotnkeyboard = await Fonts.GenerateButtonForF9ntList()
+    if len(TextHandler.Current_Text) =1:
+      TextToChange = TextHandler.Current_Text[0]
+      TextWithFont = await CreateFontFromText(TextToChange,Font_Name)
+      await update.message.edit_text(text=TextWithFont,reply_markup=Fotnkeyboard)
+    else:
+      TextHandler.Current_Text.clear()
+      await update.message.reply_text("<b>Send Some Text</b>")
+  
