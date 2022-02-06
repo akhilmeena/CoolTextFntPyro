@@ -12,11 +12,16 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
+Current_Text = []
+
+
 #@Client.on_message(filters.text & ~filters.command)
 def my_handler(client, message):
     print(message)
 
 @Client.on_message(filters.private & filters.text & filters.regex(r"^(?!/).*"))
 async def TextHandlewithFont(bot,message):
+  Current_Text.clear()
+  Current_Text.append(message)
   await message.reply_text("Choose Your Methods",reply_markup=helper.STARTFontingBTN)
 
