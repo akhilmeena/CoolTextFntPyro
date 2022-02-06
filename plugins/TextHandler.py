@@ -24,4 +24,4 @@ async def TextHandlewithFont(bot,message):
   Current_Text.clear()
   Current_Text.append(message.text)
   await message.reply_text("Choose Your Methods",reply_markup=helper.STARTFontingBTN)
-
+  
