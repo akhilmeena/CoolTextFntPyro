@@ -41,4 +41,5 @@ async def cb_data(bot, update):
     else:
       TextHandler.Current_Text.clear()
       await update.message.reply_text("<b>Send Some Text</b>")
+      await update.message.delete()
   
