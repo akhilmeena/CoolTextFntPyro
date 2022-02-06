@@ -32,7 +32,7 @@ async def cb_data(bot, update):
     await update.message.edit_text(text="Choose Your Fonts",reply_markup=Fotnkeyboard)
   if (update.data.startswith("['CF'")):
     #Title = ast.literal_eval(update.data)[1]
-    Font_Name = ast.literal_eval(update.data)[2]
+    Font_Name = ast.literal_eval(update.data)[1]
     Fotnkeyboard = await Fonts.GenerateButtonForF9ntList()
     if len(TextHandler.Current_Text) ==1:
       TextToChange = TextHandler.Current_Text[0]
