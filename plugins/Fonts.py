@@ -38,7 +38,7 @@ async def GenerateButtonForF9ntList():
   ButtonList = []
   for Font_Name in FontsList:
     Data = await CreateFontFromText(Font_Name,Font_Name)
-    NewBtn = await GenerateSingleButton(Data,"['CF','" + Font_Name + "'")
+    NewBtn = await GenerateSingleButton(Data,"['CF','" + Font_Name + "']")
     ButtonList.append(NewBtn)
   FinalKeyboard = [ButtonList[i:i+2] for i in range(0, len(ButtonList), 2)]
   x = InlineKeyboardButton("🔙",callback_data="STARTFonting")
