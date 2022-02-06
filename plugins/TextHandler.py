@@ -12,11 +12,11 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
-#@app.on_message(filters.text & ~filters.edited)
-#def my_handler(client, message):
-#    print(message)
+@Client.on_message(filters.text & ~filters.edited)
+def my_handler(client, message):
+    print(message)
 
-@Client.on_message(filters.private & ~filters.command & filters.text)
+#@Client.on_message(filters.private & ~filters.command & filters.text)
 async def TextHandlewithFont(bot,message):
   await message.reply_text("Choose Your Methods",reply_markup=helper.STARTFontingBTN)
 
