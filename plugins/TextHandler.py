@@ -22,6 +22,6 @@ def my_handler(client, message):
 @Client.on_message(filters.private & filters.text & filters.regex(r"^(?!/).*"))
 async def TextHandlewithFont(bot,message):
   Current_Text.clear()
-  Current_Text.append(message)
+  Current_Text.append(message.text)
   await message.reply_text("Choose Your Methods",reply_markup=helper.STARTFontingBTN)
 
