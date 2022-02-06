@@ -37,7 +37,7 @@ async def cb_data(bot, update):
     if len(TextHandler.Current_Text) ==1:
       TextToChange = TextHandler.Current_Text[0]
       TextWithFont = await Fonts.CreateFontFromText(TextToChange,Font_Name)
-      await update.message.edit_text(text=TextWithFont,reply_markup=Fotnkeyboard)
+      await update.message.edit_text(text=f"{TextWithFont}",reply_markup=Fotnkeyboard)
     else:
       TextHandler.Current_Text.clear()
       await update.message.reply_text("<b>Send Some Text</b>")
