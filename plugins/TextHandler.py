@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
-@Client.on_message(filters.text & ~filters.edited)
+@Client.on_message(filters.text & ~filters.command)
 def my_handler(client, message):
     print(message)
 
