@@ -22,7 +22,7 @@ async def GenerateSingleButton(Text,callback_data):
 
 async def CreateFontFromText(Text,Font_Name):
   GetFontList = FontsList[Font_Name]
-  TextCharchaterList = list(Text)
+  TextCharchaterList = list(f"{Text}")
   TextWithFont = ""
   for i in TextCharchaterList:
     try:
