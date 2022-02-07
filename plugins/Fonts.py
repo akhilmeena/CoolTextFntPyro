@@ -4,6 +4,7 @@ from pyrogram import Client, filters
 import requests
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import re
+import itertools
 from itertools import izip_longest, ifilter
 
 
