@@ -64,8 +64,8 @@ async def GetListOfSplit():
 
 async def GenerateButtonForF9ntList():
   ButtonList = []
-  1stPageOfFonts = await GetListOfSplit()
-  for Font_Name in 1stPageOfFonts:
+  PageOfFonts = await GetListOfSplit()
+  for Font_Name in PageOfFonts:
     Data = await CreateFontFromText(Font_Name,Font_Name)
     NewBtn = await GenerateSingleButton(Data,"['CF','" + Font_Name + "']")
     ButtonList.append(NewBtn)
