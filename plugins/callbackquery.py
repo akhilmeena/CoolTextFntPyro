@@ -28,7 +28,7 @@ async def cb_data(bot, update):
   if update.data == "STARTFonting":
     await update.message.edit_text(text="Choose Your Methods",reply_markup=helper.STARTFontingBTN)
   if update.data == "CoolFonts":
-    Fotnkeyboard = await Fonts.GenerateButtonForF9ntList(Page_No=1)
+    Fotnkeyboard = await Fonts.GenerateButtonForF9ntList(1)
     await update.message.edit_text(text="Choose Your Fonts",reply_markup=Fotnkeyboard)
   if (update.data.startswith("['CF'")):
     #Title = ast.literal_eval(update.data)[1]
