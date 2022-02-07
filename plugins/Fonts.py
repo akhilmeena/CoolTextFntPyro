@@ -58,8 +58,9 @@ async def CreateFontFromText(Text,Font_Name):
   
 async def GetListOfSplit():
   chunks = [FontsList.iteritems()]*3
-  g = (dict(ifilter(None, v)) for v in izip_longest(*chunks))
-  return list(g).[0]
+  g = list(dict(ifilter(None, v)) for v in izip_longest(*chunks))
+  FirstPage = g[0]
+  return FirstPage
 
 async def GenerateButtonForF9ntList():
   ButtonList = []
