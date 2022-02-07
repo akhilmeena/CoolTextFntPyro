@@ -63,16 +63,30 @@ async def GetTotalPageAfterSplit():
     q=+1
   return q
 
-async def GenerateButtonForF9ntList():
+async def MakePrevNextKeyboardForFont(TotalPageFormed):
+  ButtonList = []
+  x1 = InlineKeyboardButton("⏮️",callback_data="['ChangePage','0']")
+  x2 = InlineKeyboardButton("⏭️",callback_data="['ChangePage','"+TotalPageFormed+"']")
+  x3 = InlineKeyboardButton("◀️",callback_data="['ChangePage','"+TotalPageFormed+"']")
+  x4 = InlineKeyboardButton("▶️",callback_data="['ChangePage','"+TotalPageFormed+"']")
+  ButtonList.append(x1)
+  ButtonList.append(x2)
+  ButtonList.append(x3)
+  ButtonList.append(x4)
+  return ButtonList
+  
+async def GenerateButtonForF9ntList(Page_No):
   ButtonList = []
   TotalPageFormed = await GetTotalPageAfterSplit()
-  PageOfFonts = await GetPageOfFont(TotalPageFormed)
+  PageOfFonts = await GetPageOfFont(Page_No)
   for Font_Name in PageOfFonts:
     Data = await CreateFontFromText(Font_Name,Font_Name)
     NewBtn = await GenerateSingleButton(Data,"['CF','" + Font_Name + "']")
     ButtonList.append(NewBtn)
   FinalKeyboard = [ButtonList[i:i+2] for i in range(0, len(ButtonList), 2)]
   x = InlineKeyboardButton("🔙",callback_data="STARTFonting")
+  BackPreclvBtn = await = MakePrevNextKeyboardForFont(TotalPageFormed)
+  FinalKeyboard.append(BackPreclvBtn)
   FinalKeyboard.append([x])
   NewKeyBoard = InlineKeyboardMarkup(FinalKeyboard)
   return NewKeyBoard
