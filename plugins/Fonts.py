@@ -4,9 +4,6 @@ from pyrogram import Client, filters
 import requests
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import re
-import itertools
-from itertools import izip_longest, ifilter
-
 
 FontsList = {
   "Small caps" : ['ᴀ','ʙ','ᴄ','ᴅ','ᴇ','ғ','ɢ','ʜ','ɪ','ᴊ','ᴋ','ʟ','ᴍ','ɴ','ᴏ','ᴘ','ǫ','ʀ','s','ᴛ','ᴜ','ᴠ','ᴡ','x','ʏ','ᴢ','𝟶','𝟷','𝟸','𝟹','𝟺','𝟻','𝟼','𝟽','𝟾','𝟿','ᴀ','ʙ','ᴄ','ᴅ','ᴇ','ғ','ɢ','ʜ','ɪ','ᴊ','ᴋ','ʟ','ᴍ','ɴ','ᴏ','ᴘ','ǫ','ʀ','s','ᴛ','ᴜ','ᴠ','ᴡ','x','ʏ','ᴢ',' '],
@@ -29,16 +26,6 @@ FontsList = {
   #"Bold " : [],
 AlphabetList =  "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz "
 
-#async def chunks(data, SIZE=10000):
-  #it = iter(data)
-  #for i in range(0, len(data), SIZE):
-    #yield {k:data[k] for k in islice(it, SIZE)}
-
-
-#for item in chunks({i:i for i in xrange(10)}, 3):
-    #print(item)
-
-
 async def GenerateSingleButton(Text,callback_data):
   Button = InlineKeyboardButton(Text,callback_data=callback_data)
   return Button
@@ -57,16 +44,20 @@ async def CreateFontFromText(Text,Font_Name):
   TextWithFont+=""
   return TextWithFont
   
-async def GetListOfSplit():
-  chunks = [FontsList.iteritems()]*3
-  g = list(dict(ifilter(None, v)) for v in izip_longest(*chunks))
-  FirstPage = g[0]
-  return FirstPage
+def split_dict(d,n):
+  keys = list(d.keys())
+  for i in range(0, len(keys), n):
+    yield {k: d[k] for k in keys[i: i + n]}
 
+async def GetPageOfFont(PageNo):
+  print(split_dict(FontsList,3))
+  #for item in split_dict({i: i for i in range(10)}, 3):
+    #print(item)
+    
 async def GenerateButtonForF9ntList():
   ButtonList = []
-  PageOfFonts = await GetListOfSplit()
-  for Font_Name in PageOfFonts:
+  PageOfFonts = await GetPageOfFont(3)
+  for Font_Name in FontsList:
     Data = await CreateFontFromText(Font_Name,Font_Name)
     NewBtn = await GenerateSingleButton(Data,"['CF','" + Font_Name + "']")
     ButtonList.append(NewBtn)
