@@ -53,7 +53,7 @@ async def GetPageOfFont(PageNo):
   Total_Pages = []
   for item in split_dict(FontsList, FontInOnePage):
     Total_Pages.append(item)
-  return Total_Pages[0]
+  return Total_Pages[PageNo]
     
 async def GetTotalPageAfterSplit():
   TotalFont = len(FontsList)
