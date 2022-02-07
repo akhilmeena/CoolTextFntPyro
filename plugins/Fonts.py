@@ -85,7 +85,7 @@ async def GenerateButtonForF9ntList(Page_No):
     ButtonList.append(NewBtn)
   FinalKeyboard = [ButtonList[i:i+2] for i in range(0, len(ButtonList), 2)]
   x = InlineKeyboardButton("🔙",callback_data="STARTFonting")
-  BackPreclvBtn = await = MakePrevNextKeyboardForFont(TotalPageFormed)
+  BackPreclvBtn await = MakePrevNextKeyboardForFont(TotalPageFormed)
   FinalKeyboard.append(BackPreclvBtn)
   FinalKeyboard.append([x])
   NewKeyBoard = InlineKeyboardMarkup(FinalKeyboard)
