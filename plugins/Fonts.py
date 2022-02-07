@@ -60,7 +60,7 @@ async def GetTotalPageAfterSplit():
   q = TotalFont//FontInOnePage
   mod = TotalFont % FontInOnePage
   if mod >= 1:
-    q+1
+    q=+1
   return q
 
 async def GenerateButtonForF9ntList():
