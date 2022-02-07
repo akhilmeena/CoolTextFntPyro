@@ -25,7 +25,7 @@ FontsList = {
   
   #"Bold " : [],
 AlphabetList =  "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz "
-
+FontInOnePage = 15
 async def GenerateSingleButton(Text,callback_data):
   Button = InlineKeyboardButton(Text,callback_data=callback_data)
   return Button
@@ -51,13 +51,22 @@ def split_dict(d,n):
 
 async def GetPageOfFont(PageNo):
   Total_Pages = []
-  for item in split_dict(FontsList, 10):
+  for item in split_dict(FontsList, FontInOnePage):
     Total_Pages.append(item)
   return Total_Pages[0]
     
+async def GetTotalPageAfterSplit():
+  TotalFont = len(FontsList)
+  q = TotalFont//FontInOnePage
+  mod = TotalFont % FontInOnePage
+  if mod >= 1:
+    q+1
+  return q
+
 async def GenerateButtonForF9ntList():
   ButtonList = []
-  PageOfFonts = await GetPageOfFont(0)
+  TotalPageFormed = await GetTotalPageAfterSplit()
+  PageOfFonts = await GetPageOfFont(TotalPageFormed)
   for Font_Name in PageOfFonts:
     Data = await CreateFontFromText(Font_Name,Font_Name)
     NewBtn = await GenerateSingleButton(Data,"['CF','" + Font_Name + "']")
