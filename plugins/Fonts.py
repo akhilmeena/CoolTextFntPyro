@@ -66,9 +66,9 @@ async def GetTotalPageAfterSplit():
 async def MakePrevNextKeyboardForFont(TotalPageFormed):
   ButtonList = []
   x1 = InlineKeyboardButton("⏮️",callback_data="['ChangePage','0']")
-  x2 = InlineKeyboardButton("⏭️",callback_data="['ChangePage','"+str(TotalPageFormed)+"']")
-  x3 = InlineKeyboardButton("◀️",callback_data="['ChangePage','"+str(TotalPageFormed)+"']")
-  x4 = InlineKeyboardButton("▶️",callback_data="['ChangePage','"+str(TotalPageFormed)+"']")
+  x2 = InlineKeyboardButton("◀️",callback_data="['ChangePage','"+str(TotalPageFormed)+"']")
+  x3 = InlineKeyboardButton("▶️",callback_data="['ChangePage','"+str(TotalPageFormed)+"']")
+  x4 = InlineKeyboardButton("⏭️",callback_data="['ChangePage','"+str(TotalPageFormed)+"']")
   ButtonList.append(x1)
   ButtonList.append(x2)
   ButtonList.append(x3)
