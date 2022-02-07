@@ -50,15 +50,15 @@ def split_dict(d,n):
     yield {k: d[k] for k in keys[i: i + n]}
 
 async def GetPageOfFont(PageNo):
-  #print(split_dict(FontsList,3))
-  for item in split_dict(FontsList, 3):
-  #for item in split_dict({i: i for i in range(10)}, 3):
-    print(item)
+  Total_Pages = []
+  for item in split_dict(FontsList, 10):
+    Total_Pages.append(item)
+  return Total_Pages[0]
     
 async def GenerateButtonForF9ntList():
   ButtonList = []
-  PageOfFonts = await GetPageOfFont(3)
-  for Font_Name in FontsList:
+  PageOfFonts = await GetPageOfFont(0)
+  for Font_Name in PageOfFonts:
     Data = await CreateFontFromText(Font_Name,Font_Name)
     NewBtn = await GenerateSingleButton(Data,"['CF','" + Font_Name + "']")
     ButtonList.append(NewBtn)
