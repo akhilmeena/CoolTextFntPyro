@@ -2,4 +2,3 @@ pyrogram
 tgcrypto
 gspread
 oauth2client
-itertools
