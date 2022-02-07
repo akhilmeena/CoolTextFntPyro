@@ -31,8 +31,9 @@ async def cb_data(bot, update):
     Fotnkeyboard = await Fonts.GenerateButtonForF9ntList(0)
     await update.message.edit_text(text="Choose Your Fonts",reply_markup=Fotnkeyboard)
   if (update.data.startswith("['ChangePage'")):
-    page = ast.literal_eval(update.data)[1]
-    await Client.edit_inline_reply_markup(update.message.message_id,InlineKeyboardMarkup([[InlineKeyboardButton("New button", callback_data="new_data")]]))
+    print(update.message)
+    #page = ast.literal_eval(update.data)[1]
+    #await Client.edit_inline_reply_markup(update.message.message_id,InlineKeyboardMarkup([[InlineKeyboardButton("New button", callback_data="new_data")]]))
   if (update.data.startswith("['CF'")):
     #Title = ast.literal_eval(update.data)[1]
     Font_Name = ast.literal_eval(update.data)[1]
