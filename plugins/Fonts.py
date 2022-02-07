@@ -50,9 +50,10 @@ def split_dict(d,n):
     yield {k: d[k] for k in keys[i: i + n]}
 
 async def GetPageOfFont(PageNo):
-  print(split_dict(FontsList,3))
+  #print(split_dict(FontsList,3))
+  for item in split_dict(FontsList, 3):
   #for item in split_dict({i: i for i in range(10)}, 3):
-    #print(item)
+    print(item)
     
 async def GenerateButtonForF9ntList():
   ButtonList = []
