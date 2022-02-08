@@ -37,7 +37,7 @@ async def cb_data(bot, update):
   if (update.data.startswith("['CF'")):
     #Title = ast.literal_eval(update.data)[1]
     Font_Name = ast.literal_eval(update.data)[1]
-    Fotnkeyboard = await Fonts.GenerateButtonForF9ntList()
+    Fotnkeyboard = await Fonts.GenerateButtonForF9ntList(0)
     if len(TextHandler.Current_Text) ==1:
       TextToChange = TextHandler.Current_Text[0]
       TextWithFont = await Fonts.CreateFontFromText(TextToChange,Font_Name)
