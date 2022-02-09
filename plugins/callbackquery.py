@@ -33,7 +33,7 @@ async def cb_data(bot, update):
   if (update.data.startswith("['ChangePage'")):
     #print(update.message.message_id)
     page = ast.literal_eval(update.data)[1]
-    await Client.edit_inline_reply_markup(inline_message_id = str(update.message.message_id),reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("New button", callback_data="new_data")]]))
+    await bot.edit_inline_reply_markup(inline_message_id = str(update.message.message_id),reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("New button", callback_data="new_data")]]))
   if (update.data.startswith("['CF'")):
     #Title = ast.literal_eval(update.data)[1]
     Font_Name = ast.literal_eval(update.data)[1]
