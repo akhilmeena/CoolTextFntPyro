@@ -85,7 +85,7 @@ async def MakePrevNextKeyboardForFont(TotalPageFormed,CurrentPage):
   else:
     ButtonList.append(x3)
   x4 = InlineKeyboardButton("⏭️",callback_data="['ChangePage','"+str(TotalPageFormed-1)+"']")
-  if int(CurrentPage) in [int(TotalPageFormed)]:
+  if int(CurrentPage) in [int(TotalPageFormed-1),int(TotalPageFormed)]:
     pass
   else:
     ButtonList.append(x4)
