@@ -62,7 +62,6 @@ async def GetTotalPageAfterSplit():
   if mod >= 1:
     q=+1
   return q
-  print(q)
 
 async def MakePrevNextKeyboardForFont(TotalPageFormed,CurrentPage):
   ButtonList = []
@@ -93,6 +92,7 @@ async def MakePrevNextKeyboardForFont(TotalPageFormed,CurrentPage):
 async def GenerateButtonForF9ntList(Page_No):
   ButtonList = []
   TotalPageFormed = await GetTotalPageAfterSplit()
+  print(TotalPageFormed)
   PageOfFonts = await GetPageOfFont(Page_No)
   for Font_Name in PageOfFonts:
     Data = await CreateFontFromText(Font_Name,Font_Name)
