@@ -36,7 +36,8 @@ async def cb_data(bot, update):
     await update.edit_message_reply_markup(reply_markup=Fotnkeyboard)#inline_message_id = update.message.message_id,text="akhil")#reply_markup=helper.MoreBots_BTN)#InlineKeyboardMarkup([[InlineKeyboardButton("New button", callback_data="new_data")]]))
   if (update.data.startswith("['CF'")):
     Font_Name = ast.literal_eval(update.data)[1]
-    Fotnkeyboard = await Fonts.GenerateButtonForF9ntList(0)
+    Page_No = ast.literal_eval(update.data)[2]
+    Fotnkeyboard = await Fonts.GenerateButtonForF9ntList(int(Page_No))
     if len(TextHandler.Current_Text) ==1:
       TextToChange = TextHandler.Current_Text[0]
       TextWithFont = await Fonts.CreateFontFromText(TextToChange,Font_Name)
