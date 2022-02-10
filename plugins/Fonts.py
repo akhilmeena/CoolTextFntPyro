@@ -57,6 +57,7 @@ async def GetPageOfFont(PageNo):
     
 async def GetTotalPageAfterSplit():
   TotalFont = len(FontsList)
+  print(TotalFont)
   q = TotalFont//FontInOnePage
   mod = TotalFont % FontInOnePage
   if mod >= 1:
