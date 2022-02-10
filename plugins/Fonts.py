@@ -61,8 +61,8 @@ async def GetTotalPageAfterSplit():
   mod = TotalFont % FontInOnePage
   if mod >= 1:
     q=+1
-  return q
   print(q)
+  return q
 
 async def MakePrevNextKeyboardForFont(TotalPageFormed,CurrentPage):
   ButtonList = []
