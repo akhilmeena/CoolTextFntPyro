@@ -69,22 +69,22 @@ async def MakePrevNextKeyboardForFont(TotalPageFormed,CurrentPage):
   print(CurrentPage)
   x1 = InlineKeyboardButton("⏮️",callback_data="['ChangePage','0']")
   if int(CurrentPage) in [0]:
-    continue
+    pass
   else:
     ButtonList.append(x1)
   x2 = InlineKeyboardButton("◀️",callback_data="['ChangePage','"+str(CurrentPage-1)+"']")
   if int(CurrentPage) in [0,1]:
-    continue
+    pass
   else:
     ButtonList.append(x2)
   x3 = InlineKeyboardButton("▶️",callback_data="['ChangePage','"+str(CurrentPage+1)+"']")
   if int(CurrentPage) in [int(TotalPageFormed),int(TotalPageFormed)-1]:
-    continue
+    pass
   else:
     ButtonList.append(x3)
   x4 = InlineKeyboardButton("⏭️",callback_data="['ChangePage','"+str(TotalPageFormed)+"']")
   if int(CurrentPage) in [int(TotalPageFormed)]:
-    continue
+    pass
   else:
     ButtonList.append(x4)
   return ButtonList
@@ -99,7 +99,7 @@ async def GenerateButtonForF9ntList(Page_No):
     ButtonList.append(NewBtn)
   FinalKeyboard = [ButtonList[i:i+2] for i in range(0, len(ButtonList), 2)]
   x = InlineKeyboardButton("🔙",callback_data="STARTFonting")
-  BackPreclvBtn =  await MakePrevNextKeyboardForFont(TotalPageFormed,0)
+  BackPreclvBtn =  await MakePrevNextKeyboardForFont(TotalPageFormed,Page_No)
   FinalKeyboard.append(BackPreclvBtn)
   FinalKeyboard.append([x])
   NewKeyBoard = InlineKeyboardMarkup(FinalKeyboard)
