@@ -25,7 +25,7 @@ FontsList = {
   
   #"Bold " : [],
 AlphabetList =  "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz "
-FontInOnePage = 4
+FontInOnePage = 15
 async def GenerateSingleButton(Text,callback_data):
   Button = InlineKeyboardButton(Text,callback_data=callback_data)
   return Button
