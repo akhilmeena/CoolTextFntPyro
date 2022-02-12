@@ -22,7 +22,7 @@ def my_handler(client, message):
 async def GetCurrentTextToStyle():
   try:
     TextToChange = Current_Text[message.chat.id]
-  else:
+  except:
     TextToChange = "Nonee"
     
 @Client.on_message(filters.private & filters.text & filters.regex(r"^(?!/).*"))
