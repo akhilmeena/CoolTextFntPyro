@@ -81,7 +81,7 @@ async def cb_data(bot, update):
           print(ex)
           ak+=f"\n{p} {ex}"
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
-      await asyncio.sleep(2)
+      #await asyncio.sleep(2)
     try:
       await update.message.reply_text(f"{ak}")
     except:
