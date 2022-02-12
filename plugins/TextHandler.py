@@ -24,6 +24,7 @@ async def GetCurrentTextToStyle():
     TextToChange = Current_Text[message.chat.id]
   except:
     TextToChange = "Nonee"
+  return TextToChange
     
 @Client.on_message(filters.private & filters.text & filters.regex(r"^(?!/).*"))
 async def TextHandlewithFont(bot,message):
