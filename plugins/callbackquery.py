@@ -42,7 +42,7 @@ async def cb_data(bot, update):
     Page_No = ast.literal_eval(update.data)[2]
     Fotnkeyboard = await Fonts.GenerateButtonForF9ntList(int(Page_No))
     TextToChange = await TextHandler.GetCurrentTextToStyle()
-    if str(TextToChange) =="Nonee":
+    if str(TextToChange) =="None":
       await update.message.reply_text("<b>Send Some Text</b>")
       await update.message.delete()
     else:
@@ -58,7 +58,6 @@ async def cb_data(bot, update):
       await update.message.reply_text("<b>Send Some Text</b>")
       await update.message.delete()
     else:
-      TextToChange = TextHandler.Current_Text[0]
       TextWithFont = await TextDecorator.DesignWithText(TextToChange,DesignNumber)
       await update.message.edit_text(text=f"{TextWithFont}",reply_markup=Designkeyboard)
       
