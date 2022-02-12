@@ -40,7 +40,8 @@ async def GenerateSingleButton(Text,callback_data):
   return Button
 
 async def GetDesignTitle(DesignNumber):
-  DesignTitle = DecorateList[DesignNumber]
+  DesignTitle = DecorateList[DesignNumber].split("@#")[0]
+  
   return DesignTitle
 
 async def GenerateButtonForDecorate():
@@ -50,7 +51,7 @@ async def GenerateButtonForDecorate():
   #PageOfFonts = await GetPageOfFont(Page_No)
   for DesignNumber in DecorateList:
     Data = await GetDesignTitle(DesignNumber)
-    NewBtn = await GenerateSingleButton(Data,"['CF','" + DesignNumber + "']")
+    NewBtn = await GenerateSingleButton(Data,"['DSGN','" + DesignNumber + "']")
     #NewBtn = await GenerateSingleButton(Data,"['CF','" + DesignNumber + "','" + str(Page_No) + "']")
     ButtonList.append(NewBtn)
   FinalKeyboard = [ButtonList[i:i+2] for i in range(0, len(ButtonList), 2)]
