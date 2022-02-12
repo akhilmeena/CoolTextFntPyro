@@ -49,7 +49,6 @@ async def cb_data(bot, update):
       TextWithFont = await Fonts.CreateFontFromText(TextToChange,Font_Name)
       await update.message.edit_text(text=f"{TextWithFont}",reply_markup=Fotnkeyboard)
   if (update.data.startswith("['DSGN'")):
-    print(update.message.chat.id)
     DesignNumber = ast.literal_eval(update.data)[1]
     Designkeyboard = await TextDecorator.GenerateButtonForDecorate()
     TextToChange = await TextHandler.GetCurrentTextToStyle(update.message.chat.id)
