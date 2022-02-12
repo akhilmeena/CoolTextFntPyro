@@ -35,6 +35,10 @@ DecorateList = {
   #"16" : "Sample",
   }
 
+async def GenerateSingleButton(Text,callback_data):
+  Button = InlineKeyboardButton(Text,callback_data=callback_data)
+  return Button
+
 async def GetDesignTitle(DesignNumber):
   DesignTitle = DecorateList[DesignNumber]
   return DesignTitle
