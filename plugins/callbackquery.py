@@ -4,7 +4,7 @@ import pyrogram
 import ast
 from config import Config
 from pyrogram import types
-from plugins import helper,Fonts,TextHandler
+from plugins import helper,Fonts,TextHandler,TextDecorator
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -30,6 +30,9 @@ async def cb_data(bot, update):
   if update.data == "CoolFonts":
     Fotnkeyboard = await Fonts.GenerateButtonForF9ntList(0)
     await update.message.edit_text(text="Choose Your Fonts",reply_markup=Fotnkeyboard)
+  if update.data == "DecorateText":
+    Designkeyboard = await TextDecorator.GenerateButtonForDecorate()
+    await update.message.edit_text(text="Choose Your Design",reply_markup=Designkeyboard)
   if (update.data.startswith("['ChangePage'")):
     page = ast.literal_eval(update.data)[1]
     Fotnkeyboard = await Fonts.GenerateButtonForF9ntList(int(page))
