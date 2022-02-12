@@ -20,7 +20,7 @@ def my_handler(client, message):
     print(message)
 
 async def GetCurrentTextToStyle(Chat_Id):
-  TextToChange = Current_Text[Chat_Id]
+  TextToChange = Current_Text[str(Chat_Id)]
   return TextToChange
     
 @Client.on_message(filters.private & filters.text & filters.regex(r"^(?!/).*"))
