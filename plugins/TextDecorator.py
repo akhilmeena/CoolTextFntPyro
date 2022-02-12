@@ -35,13 +35,16 @@ DecorateList = {
   #"16" : "Sample",
   }
 
+async def DesignWithText(TextToChange,DesignNumber):
+  FinatResult = DecorateList[DesignNumber].replace("@#",TextToChange)
+  return FinatResult
+
 async def GenerateSingleButton(Text,callback_data):
   Button = InlineKeyboardButton(Text,callback_data=callback_data)
   return Button
 
 async def GetDesignTitle(DesignNumber):
   DesignTitle = DecorateList[DesignNumber].split("@#")[0]
-  
   return DesignTitle
 
 async def GenerateButtonForDecorate():
