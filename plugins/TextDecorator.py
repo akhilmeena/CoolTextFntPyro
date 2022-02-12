@@ -31,7 +31,7 @@ DecorateList = {
   "24" : "ღ(¯`◕‿◕´¯) ♫ ♪ ♫ @# ♫ ♪ ♫ (¯`◕‿◕´¯)ღ",
   "25" : "(¯`*•.¸,¤°´✿.｡.:* @# *.:｡.✿`°¤,¸.•*´¯)",
   "26" : "๑۞๑,¸¸,ø¤º°`°๑۩ @# ๑۩ ,¸¸,ø¤º°`°๑۞๑",
-  #"16" : "Sample",
+  "27" : "||@#||",
   #"16" : "Sample",
   }
 
@@ -44,7 +44,10 @@ async def GenerateSingleButton(Text,callback_data):
   return Button
 
 async def GetDesignTitle(DesignNumber):
-  DesignTitle = DecorateList[DesignNumber].split("@#")[0]
+  if DesignNumber=="27":
+    DesignTitle = "Scattered Pattern"
+  else:
+    DesignTitle = DecorateList[DesignNumber].split("@#")[0]
   return DesignTitle
 
 async def GenerateButtonForDecorate():
