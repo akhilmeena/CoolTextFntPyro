@@ -27,6 +27,7 @@ async def GetCurrentTextToStyle(bot,update):
 async def TextHandlewithFont(bot,message):
   #Current_Text.clear()
   #Current_Text.append(message.text)
+  print(message.chat.id)
   Current_Text[message.chat.id] = message.text
   await message.reply_text("Choose Your Methods",reply_markup=helper.STARTFontingBTN)
   
