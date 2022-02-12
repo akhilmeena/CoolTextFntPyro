@@ -58,5 +58,32 @@ async def cb_data(bot, update):
     else:
       TextWithFont = await TextDecorator.DesignWithText(TextToChange,DesignNumber)
       await update.message.edit_text(text=f"{TextWithFont}",reply_markup=Designkeyboard)
-      
+  if update.data == "vrfyusers":
+    values_list3,ttlusers = await Database.GetAllUsersList(bot, update)
+    i=0
+    j=0
+    ak = ""
+    msg = await update.message.reply_text(helper.usrststext.format(ttlusers,i,j))
+    print(values_list3)
+    for p in values_list3:
+      try:
+        await bot.send_chat_action(chat_id = int(p), action = "typing")
+        i+=1
+        await msg.edit(helper.usrststext.format(ttlusers,i,j))
+      except Exception as e:
+        j+=1
+        try:
+          print(e)
+          error = f"{e}".split(":")[0]
+          ak+=f"\n{p} {error}"
+        except Exception as ex:
+          print(ex)
+          ak+=f"\n{p} {ex}"
+        await msg.edit(helper.usrststext.format(ttlusers,i,j))
+      await asyncio.sleep(2)
+    try:
+      await update.message.reply_text(f"{ak}")
+    except:
+      await update.message.reply_text(f"All Users are Active")
+
   
