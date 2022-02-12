@@ -35,7 +35,7 @@ DecorateList = {
   #"16" : "Sample",
   }
 
-async GetDesignTitle(DesignNumber):
+async def GetDesignTitle(DesignNumber):
   DesignTitle = DecorateList[DesignNumber]
   return DesignTitle
 
