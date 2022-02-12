@@ -19,8 +19,8 @@ Current_Text = {}
 def my_handler(client, message):
     print(message)
 
-async def GetCurrentTextToStyle():
-  TextToChange = Current_Text[message.chat.id]
+async def GetCurrentTextToStyle(bot,update):
+  TextToChange = Current_Text[update.message.chat.id]
   return TextToChange
     
 @Client.on_message(filters.private & filters.text & filters.regex(r"^(?!/).*"))
