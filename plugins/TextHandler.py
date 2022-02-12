@@ -20,7 +20,7 @@ def my_handler(client, message):
     print(message)
 
 async def GetCurrentTextToStyle(Chat_Id):
-  TextToChange = Current_Text[str(Chat_Id)]
+  TextToChange = Current_Text[Chat_Id]
   return TextToChange
     
 @Client.on_message(filters.private & filters.text & filters.regex(r"^(?!/).*"))
@@ -30,4 +30,4 @@ async def TextHandlewithFont(bot,message):
   print(message.chat.id)
   Current_Text[message.chat.id] = message.text
   await message.reply_text("Choose Your Methods",reply_markup=helper.STARTFontingBTN)
-  
+  print(Current_Text)
