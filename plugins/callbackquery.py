@@ -4,7 +4,7 @@ import pyrogram
 import ast
 from config import Config
 from pyrogram import types
-from plugins import helper,Fonts,TextHandler,TextDecorator
+from plugins import helper,Fonts,TextHandler,TextDecorator,Database
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
