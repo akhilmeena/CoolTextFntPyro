@@ -48,8 +48,10 @@ MoreBotsText = """<b>=========================
 🙏 Thanks to visite here ......
 
 ➣ There are few bots:-
-<i>  ➥ @Love
-  ➥ @akhil
+<i>
+  ➥ @HDCINEMAMOVIESBOT
+  ➥ @LIBRARYINBOT
+  ➥ @COOLTEXTFONTBOT
 </i>
 =========================</b>"""
 #AdminPannel = """👤 Admin Pannel:"""
