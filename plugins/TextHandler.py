@@ -19,6 +19,12 @@ Current_Text = {}
 def my_handler(client, message):
     print(message)
 
+async def GetCurrentTextToStyle():
+  try:
+    TextToChange = Current_Text[message.chat.id]
+  else:
+    TextToChange = "Nonee"
+    
 @Client.on_message(filters.private & filters.text & filters.regex(r"^(?!/).*"))
 async def TextHandlewithFont(bot,message):
   #Current_Text.clear()
