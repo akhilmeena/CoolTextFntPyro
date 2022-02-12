@@ -2,6 +2,7 @@ import os
 import logging
 import pyrogram
 import ast
+import asyncio
 from config import Config
 from pyrogram import types
 from plugins import helper,Fonts,TextHandler,TextDecorator,Database
