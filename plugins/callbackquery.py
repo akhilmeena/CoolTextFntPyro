@@ -41,19 +41,18 @@ async def cb_data(bot, update):
     Font_Name = ast.literal_eval(update.data)[1]
     Page_No = ast.literal_eval(update.data)[2]
     Fotnkeyboard = await Fonts.GenerateButtonForF9ntList(int(Page_No))
-    if len(TextHandler.Current_Text) ==1:
-      TextToChange = TextHandler.Current_Text[0]
-      TextWithFont = await Fonts.CreateFontFromText(TextToChange,Font_Name)
-      await update.message.edit_text(text=f"{TextWithFont}",reply_markup=Fotnkeyboard)
-    else:
-      TextHandler.Current_Text.clear()
+    TextToChange = await TextHandler.GetCurrentTextToStyle()
+    if str(TextToChange) =="Nonee":
       await update.message.reply_text("<b>Send Some Text</b>")
       await update.message.delete()
+    else:
+      TextWithFont = await Fonts.CreateFontFromText(TextToChange,Font_Name)
+      await update.message.edit_text(text=f"{TextWithFont}",reply_markup=Fotnkeyboard)
   if (update.data.startswith("['DSGN'")):
     DesignNumber = ast.literal_eval(update.data)[1]
     #Page_No = ast.literal_eval(update.data)[2]
     Designkeyboard = await TextDecorator.GenerateButtonForDecorate()
-    TextToChange = TextHandler.GetCurrentTextToStyle()
+    TextToChange = await TextHandler.GetCurrentTextToStyle()
     if str(TextToChange) =="Nonee":
       #TextHandler.Current_Text.clear()
       await update.message.reply_text("<b>Send Some Text</b>")
