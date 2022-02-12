@@ -16,17 +16,15 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("credential.json", scope)
 client = gspread.authorize(creds)
-ak = client.open("usercollection")
-UserData = ak.worksheet("cooltext")
-sheet2 = ak.worksheet("admin")
-
+ak = client.open("CoolTextPyro")
+UserData = ak.worksheet("Users")
 
 async def AddNewUser(bot,UserID):
   cells = UserData.findall(str(UserID))
   if len(cells) > 0:
     return
   else:
-    h = UserData.get('A15000').first()
+    h = UserData.get('A20000').first()
     h1 = int(h) + 1
     UserData.update_cell(int(h1),1 ,f"{h1}")
     UserData.update_cell(int(h1),2 ,UserID)
