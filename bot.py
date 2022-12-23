@@ -2,7 +2,7 @@ import logging
 import os
 from config import Config
 import pyrogram
-from pyrogram import Client
+from pyrogram import Client,idle
 
 
 logging.basicConfig(level=logging.DEBUG,
@@ -21,5 +21,7 @@ if __name__ == "__main__" :
     parse_mode = "combined"
     )
   app.run()
+  idle()
+  app.stop()
   
 
