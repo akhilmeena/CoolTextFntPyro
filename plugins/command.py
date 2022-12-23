@@ -7,7 +7,7 @@ import pyrogram
 from config import Config
 from plugins import helper
 from plugins import Database
-from pyrogram import Client, filters
+from pyrogram import Client, filters ,enums
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
@@ -27,7 +27,7 @@ async def settings(bot,message):
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
-  await message.reply_chat_action("typing")
+  #await message.reply_chat_action("typing")
   UserID = message.chat.id
   await Database.AddNewUser(bot,UserID)
   if str(Config.MaintainaceYN[0]) == "No":
