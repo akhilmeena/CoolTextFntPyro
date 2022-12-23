@@ -7,7 +7,7 @@ import pyrogram
 from config import Config
 from plugins import helper
 from plugins import Database
-from pyrogram import Client, filters ,enums
+from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
