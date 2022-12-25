@@ -24,7 +24,7 @@ async def AddNewUser(bot,UserID):
   if len(cells) > 0:
     return
   else:
-    h = UserData.get('A20000').first()
+    h = UserData.get('A45000').first()
     h1 = int(h) + 1
     UserData.update_cell(int(h1),1 ,f"{h1}")
     UserData.update_cell(int(h1),2 ,UserID)
