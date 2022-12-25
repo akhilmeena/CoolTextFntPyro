@@ -105,7 +105,7 @@ async def cb_data(bot, update):
       #  except Exception as ex:
    #       print(ex)
        #   ak+=f"\n{p} {ex}"
-        await msg.edit(helper.usrststext.format(ttlusers,i,j))
+        #await msg.edit(helper.usrststext.format(ttlusers,i,j))
       await asyncio.sleep(1)
     try:
       await update.message.reply_text(f"{ak}")
