@@ -25,7 +25,8 @@ async def Clear_Cell(UserID):
   
 async def FintUserLine(UserID):
   cells = UserData.findall(str(UserID))
-  return cellurowuser = cells.row
+  cellurowuser = cells.row
+  return int(cellurowuser)
   
 
 async def AddNewUser(bot,UserID):
