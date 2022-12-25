@@ -92,10 +92,10 @@ async def cb_data(bot, update):
         #logger.info(f"{user_id} -Blocked the bot.")
         #return False, "Blocked"
       except Exception as e:
-        j+=1
-        await msg.edit(helper.usrststext.format(ttlusers,i,j))
-       error = f"{e}".split(":")[0]
-       ak+=f"\n{p} {error}"
+        #j+=1
+        #await msg.edit(helper.usrststext.format(ttlusers,i,j))
+        error = f"{e}".split(":")[0]
+        ak+=f"\n{p} {error}"
         #return False, "Error"
         
       #except Exception as e:
