@@ -19,6 +19,15 @@ client = gspread.authorize(creds)
 ak = client.open("CoolTextPyro")
 UserData = ak.worksheet("Users")
 
+async def Clear_Cell(UserID):
+  cellnumber = await FintUserLine(UserID)
+  UserData.batch_clear([f"A{cellnumber}:B{cellnumber}"])
+def
+async def FintUserLine(UserID):
+  cells = UserData.findall(str(UserID))
+  return cellurowuser = cells.row
+  
+
 async def AddNewUser(bot,UserID):
   cells = UserData.findall(str(UserID))
   if len(cells) > 0:
