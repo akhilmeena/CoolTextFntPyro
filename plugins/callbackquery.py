@@ -79,14 +79,14 @@ async def cb_data(bot, update):
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
         #return await broadcast_messages(user_id, message)
       except InputUserDeactivated:
-        await Clear_Cell(int(p))
+        await Database.Clear_Cell(int(p))
         j+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
         #await db.delete_user(int(user_id))
         #logger.info(f"{user_id}-Removed from Database, since deleted account.")
         #return False, "Deleted"
       except UserIsBlocked:
-        await Clear_Cell(int(p))
+        await Database.Clear_Cell(int(p))
         j+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
         #logger.info(f"{user_id} -Blocked the bot.")
