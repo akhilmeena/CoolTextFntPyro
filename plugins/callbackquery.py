@@ -9,6 +9,7 @@ from plugins import helper,Fonts,TextHandler,TextDecorator,Database
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import InputUserDeactivated, FloodWait, UserIsBlocked
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -63,7 +64,7 @@ async def cb_data(bot, update):
     values_list3,ttlusers = await Database.GetAllUsersList(bot, update)
     i=0
     j=0
-    ak = ""
+    ak = "ak"
     msg = await update.message.reply_text(helper.usrststext.format(ttlusers,i,j))
     print(values_list3)
     for p in values_list3:
@@ -71,17 +72,41 @@ async def cb_data(bot, update):
         await bot.send_chat_action(chat_id = int(p), action = "typing")
         i+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
+      except FloodWait as e:
+        await asyncio.sleep(e.x)
+        await bot.send_chat_action(chat_id = int(p), action = "typing")
+        i+=1
+        await msg.edit(helper.usrststext.format(ttlusers,i,j))
+        #return await broadcast_messages(user_id, message)
+      except InputUserDeactivated:
+        await Clear_Cell(int(p))
+        j+=1
+        await msg.edit(helper.usrststext.format(ttlusers,i,j))
+        #await db.delete_user(int(user_id))
+        #logger.info(f"{user_id}-Removed from Database, since deleted account.")
+        #return False, "Deleted"
+      except UserIsBlocked:
+        await Clear_Cell(int(p))
+        j+=1
+        await msg.edit(helper.usrststext.format(ttlusers,i,j))
+        #logger.info(f"{user_id} -Blocked the bot.")
+        #return False, "Blocked"
       except Exception as e:
         j+=1
-        try:
-          print(e)
-          error = f"{e}".split(":")[0]
-          ak+=f"\n{p} {error}"
-        except Exception as ex:
-          print(ex)
-          ak+=f"\n{p} {ex}"
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
-      await asyncio.sleep(2)
+       error = f"{e}".split(":")[0]
+       ak+=f"\n{p} {error}"
+        #return False, "Error"
+        
+      #except Exception as e:
+        #j+=1
+      #  try:
+    #      print(e)
+      #  except Exception as ex:
+   #       print(ex)
+       #   ak+=f"\n{p} {ex}"
+        await msg.edit(helper.usrststext.format(ttlusers,i,j))
+      await asyncio.sleep(1)
     try:
       await update.message.reply_text(f"{ak}")
     except:
