@@ -22,7 +22,7 @@ UserData = ak.worksheet("Users")
 async def Clear_Cell(UserID):
   cellnumber = await FintUserLine(UserID)
   UserData.batch_clear([f"A{cellnumber}:B{cellnumber}"])
-def
+  
 async def FintUserLine(UserID):
   cells = UserData.findall(str(UserID))
   return cellurowuser = cells.row
