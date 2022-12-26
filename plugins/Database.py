@@ -24,7 +24,7 @@ async def Clear_Cell(UserID):
   UserData.batch_clear([f"A{cellnumber}:B{cellnumber}"])
   
 async def FintUserLine(UserID):
-  cells = UserData.find(str(UserID))
+  cells = UserData.findall(str(UserID))
   cellurowuser = cells.row
   return int(cellurowuser)
   
