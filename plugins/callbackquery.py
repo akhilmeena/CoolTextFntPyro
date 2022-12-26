@@ -92,12 +92,12 @@ async def cb_data(bot, update):
         #logger.info(f"{user_id}-Removed from Database, since deleted account.")
         #return False, "Deleted"
       except UserIsBlocked:
-        await Database.Clear_Cell(int(p))
         j+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
         #logger.info(f"{user_id} -Blocked the bot.")
         #return False, "Blocked"
       except Exception as e:
+        await Database.Clear_Cell(int(p))
         print(traceback.format_exc())
         j+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
