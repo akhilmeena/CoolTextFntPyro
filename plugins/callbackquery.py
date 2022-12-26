@@ -1,5 +1,7 @@
 import os
 import logging
+import traceback
+from pyrogram import enums
 import pyrogram
 import ast
 import asyncio
@@ -66,15 +68,19 @@ async def cb_data(bot, update):
     j=0
     ak = "ak"
     msg = await update.message.reply_text(helper.usrststext.format(ttlusers,i,j))
-    print(values_list3)
+    #print(values_list3)
     for p in values_list3:
+      #print("1")
       try:
-        await bot.send_chat_action(chat_id = int(p), action = "typing")
+        Chtid = int(p)
+        #print("2")
+        await bot.send_chat_action(chat_id = Chtid, action=enums.ChatAction.TYPING)
+        #print("3")
         i+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
       except FloodWait as e:
         await asyncio.sleep(e.x)
-        await bot.send_chat_action(chat_id = int(p), action = "typing")
+        await bot.send_chat_action(chat_id = int(p), action=enums.ChatAction.TYPING)
         i+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
         #return await broadcast_messages(user_id, message)
@@ -92,8 +98,10 @@ async def cb_data(bot, update):
         #logger.info(f"{user_id} -Blocked the bot.")
         #return False, "Blocked"
       except Exception as e:
-        #j+=1
-        #await msg.edit(helper.usrststext.format(ttlusers,i,j))
+        print(traceback.format_exc())
+        j+=1
+        await msg.edit(helper.usrststext.format(ttlusers,i,j))
+        print(e)
         error = f"{e}".split(":")[0]
         ak+=f"\n{p} {error}"
         #return False, "Error"
@@ -111,5 +119,3 @@ async def cb_data(bot, update):
       await update.message.reply_text(f"{ak}")
     except:
       await update.message.reply_text(f"All Users are Active")
-
-  
