@@ -3,8 +3,6 @@ tgcrypto
 gspread
 oauth2client
 
-
-https://github.com/Mahesh0253/pyrogram/archive/inline.zip
 TgCrypto
 motor
 dnspython
