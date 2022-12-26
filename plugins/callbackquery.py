@@ -1,14 +1,14 @@
 import os
 import logging
 import traceback
-from pyrogram import enums
 import pyrogram
+#from pyrogram import 
 import ast
 import asyncio
 from config import Config
 from pyrogram import types
 from plugins import helper,Fonts,TextHandler,TextDecorator,Database
-from pyrogram import Client, filters
+from pyrogram import Client, filters,
 from pyrogram.types import CallbackQuery, ChatPermissions, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import InputUserDeactivated, FloodWait, UserIsBlocked
@@ -74,13 +74,13 @@ async def cb_data(bot, update):
       try:
         Chtid = int(p)
         #print("2")
-        await bot.send_chat_action(chat_id = Chtid, action=enums.ChatAction.TYPING)
+        await bot.send_chat_action(chat_id = Chtid, action=pyrogram.enums.ChatAction.TYPING)
         #print("3")
         i+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
       except FloodWait as e:
         await asyncio.sleep(e.x)
-        await bot.send_chat_action(chat_id = int(p), action=enums.ChatAction.TYPING)
+        await bot.send_chat_action(chat_id = int(p), action=pyrogram.enums.ChatAction.TYPING)
         i+=1
         await msg.edit(helper.usrststext.format(ttlusers,i,j))
         #return await broadcast_messages(user_id, message)
