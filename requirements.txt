@@ -1,0 +1,5 @@
+Pyrogram==2.0.79
+tgcrypto
+gspread
+oauth2client
+TgCrypto
